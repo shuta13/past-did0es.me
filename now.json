@@ -7,9 +7,9 @@
     "enabled": false
   },
   "builds": [
-    { "src": "./pages/index.tsx", "use": "@now/static" }
+    { "src": "./pages/**", "use": "@now/static" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "public/" }
+    { "src": "/", "dest": "/" }
   ]
 }
