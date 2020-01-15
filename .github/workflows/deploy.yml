@@ -9,6 +9,5 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           zeit-token: ${{ secrets.ZEIT_TOKEN }}
-          zeit-team-id: team_XXXXXXXXXXX
+          zeit-team-id: did0es
           now-args: '--prod'
-
