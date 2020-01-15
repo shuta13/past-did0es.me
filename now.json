@@ -1,0 +1,15 @@
+{
+  "name": "zeit-now-deployment",
+  "version": 2,
+  "scope": "amond",
+  "public": false,
+  "github": {
+    "enabled": false
+  },
+  "builds": [
+    { "src": "./pages/**", "use": "@now/static" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "public/$1" }
+  ]
+}
