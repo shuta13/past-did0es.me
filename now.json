@@ -7,9 +7,9 @@
     "enabled": false
   },
   "builds": [
-    { "src": "./pages/**", "use": "@now/static" }
+    { "src": "./**", "use": "@now/static" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "public/$1" }
+    { "src": "/(.*)", "dest": "public/" }
   ]
 }
