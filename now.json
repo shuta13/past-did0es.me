@@ -8,8 +8,5 @@
   },
   "builds": [
     { "src": "./pages/**", "use": "@now/static" }
-  ],
-  "routes": [
-    { "src": "/", "dest": "/" }
   ]
 }
