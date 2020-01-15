@@ -1,7 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
 
-const links = [
+type Links = {
+  key?: string,
+  href: string,
+  label: string
+}[]
+
+const links: Links = [
   { key: '', href: 'https://zeit.co/now', label: 'ZEIT' },
   { href: 'https://github.com/zeit/next.js', label: 'GitHub' },
 ].map(link => {
