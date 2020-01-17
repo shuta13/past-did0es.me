@@ -7,7 +7,7 @@
     "enabled": false
   },
   "builds": [
-    { "src": "./pages/**", "use": "@now/next" }
+    { "src": "./package.json", "use": "@now/next" }
   ],
   "routes": [
     { "src": "/(.*)", "dest": "/$1" }
