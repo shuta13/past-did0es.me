@@ -1,4 +1,4 @@
-name: deploy website
+name: deploy did0es.me
 on: [push, pull_request]
 jobs:
   deploy:
