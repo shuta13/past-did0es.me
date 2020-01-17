@@ -12,7 +12,7 @@ const Home: React.FC = () => (
     <Nav />
 
     <div className="hero">
-      <div>ほげ</div>
+      <div>did0es.me</div>
     </div>
 
     <style jsx>{`
