@@ -8,14 +8,14 @@
     "start": "next start"
   },
   "dependencies": {
-    "@now/next": "^2.3.9",
+    "@now/next": "2.3.9",
     "next": "9.1.7",
     "react": "16.12.0",
     "react-dom": "16.12.0"
   },
   "devDependencies": {
-    "@types/node": "^13.1.6",
-    "@types/react": "^16.9.17",
-    "typescript": "^3.7.4"
+    "@types/node": "13.1.6",
+    "@types/react": "16.9.17",
+    "typescript": "3.7.4"
   }
 }
