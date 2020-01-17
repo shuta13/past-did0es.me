@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import THREE from 'three'
 
 const Canvas: React.FC = () => {
+  // useEffect(() => {
+
+  // },
+  // [])
   return (
     <div>
-      {/* Three.js入れる */}
       Canvas
       <style jsx>{`
       `}</style>
