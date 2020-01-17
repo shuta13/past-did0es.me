@@ -1,4 +1,6 @@
-const Layout = (props: any) => (
+import React from 'react'
+
+const Layout: React.FC = (props: any) => (
   <div>
     {props.children}
     <style jsx global>

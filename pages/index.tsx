@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Layout from '../components/common/Layout'
+import Canvas from '../components/partials/Canvas'
 
 const Home: React.FC = () => (
   <Layout>
@@ -9,7 +10,7 @@ const Home: React.FC = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <div>hoge</div>
+    <Canvas></Canvas>
 
     <style jsx>{`
     `}</style>
