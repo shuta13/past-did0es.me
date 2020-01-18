@@ -11,7 +11,10 @@ import {
 import useGetWindowSize from '../../hooks/useGetWindowSize'
 
 type OnCanvasLoaded = {
-  renderer: THREE.WebGLRenderer, scene: THREE.Scene, camera: THREE.PerspectiveCamera, cube: THREE.Mesh
+  renderer: THREE.WebGLRenderer,
+  scene: THREE.Scene,
+  camera: THREE.PerspectiveCamera,
+  cube: THREE.Mesh
 }
 
 const Canvas: React.FC = () => {
