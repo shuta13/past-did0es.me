@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Layout from '../components/common/Layout'
-import Canvas from '../components/partials/Canvas'
+import Canvas from '../components/partials/Head/Canvas'
 
 const Home: React.FC = () => (
   <Layout>
