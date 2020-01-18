@@ -1,20 +1,25 @@
 import React from 'react'
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
 
 import Header from '../components/common/Header'
 import Layout from '../components/common/Layout'
-import Canvas from '../components/partials/Head/Canvas'
+
+const CanvasNoSSR = dynamic(
+  () => import('../components/partials/Head/Canvas'),
+  { ssr: false }
+)
 
 const Home: React.FC = () => (
   <Layout>
     <Head>
-      <title>did0es.me</title>
+      <title>APOSTRO</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
     <Header></Header>
 
-    <Canvas></Canvas>
+    <CanvasNoSSR></CanvasNoSSR>
 
   </Layout>
 )
