@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   WebGLRenderer,
   Scene, 
@@ -7,16 +7,19 @@ import {
   MeshBasicMaterial,
   Mesh
 } from 'three'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import * as VFX from 'react-vfx'
 
 import './Canvas.scss'
 import useGetWindowSize from '../../hooks/useGetWindowSize'
 
+const model = require('../../../public/static/models/marcus_aurelius/scene.gltf')
+
 type OnCanvasLoaded = {
   renderer: THREE.WebGLRenderer,
   scene: THREE.Scene,
   camera: THREE.PerspectiveCamera,
-  cube: THREE.Mesh
+  cube?: THREE.Mesh
 }
 
 const Canvas: React.FC = () => {
@@ -30,30 +33,32 @@ const Canvas: React.FC = () => {
     const scene = new Scene()
     const camera = new PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000)
 
+    const loader = new GLTFLoader()
+    loader.load(model, (gltf) => {
+      scene.add(gltf.scene)
+    })
+
     const geometry = new BoxGeometry(1, 1, 1)
     const material = new MeshBasicMaterial({ color: 0xff00ff })
-    const cube = new Mesh(geometry, material)
 
     camera.position.z = 4
     renderer.setClearColor('#1d1d1d')
-    scene.add(cube)
+
+    
 
     renderer.setSize(width, height)
-    animate({ renderer, scene, camera, cube })
+    animate({ renderer, scene, camera })
   }
 
-  const animate = ({ renderer, scene, camera, cube }: OnCanvasLoaded) => {
-    window.requestAnimationFrame(() => animate({ renderer, scene, camera, cube }))
-    cube.rotation.x += 0.01
-    cube.rotation.y += 0.01
+  const animate = ({ renderer, scene, camera }: OnCanvasLoaded) => {
+    window.requestAnimationFrame(() => animate({ renderer, scene, camera }))
     renderer.render(scene, camera)
   }
 
   return (
     <div className="WrapCanvas">
-      {/* <canvas ref={onCanvasLoaded}></canvas> */}
+      <canvas className="Canvas" ref={onCanvasLoaded}></canvas>
       <VFX.VFXProvider>
-        {/* Render text as image, then apply the shader effect! */}
         <div className="ClipVFX">
           <VFX.VFXImg className="VFX" shader={"rgbShift"} src={require('../../../public/static/apostro.png')} alt="APOSTRO logo"/>
         </div>

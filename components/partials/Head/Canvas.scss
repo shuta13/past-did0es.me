@@ -7,6 +7,10 @@
   text-align: center;
 }
 
+.Canvas {
+  position: absolute;
+}
+
 .ClipVFX {
   width: 64%;
   min-width: 300px;
@@ -17,6 +21,7 @@
 }
 
 .VFX {
+  position: absolute;
   width: 60vw;
   min-width: 300px;
 }
