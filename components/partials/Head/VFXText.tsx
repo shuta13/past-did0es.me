@@ -7,7 +7,7 @@ const VFXText: React.FC = () => {
   return (
     <VFX.VFXProvider>
       <div className="ClipVFX">
-        <VFX.VFXImg className="VFX" shader={"rgbShift"} src={require('../../../public/static/apostro.png')} alt="APOSTRO logo"/>
+        <VFX.VFXImg className="VFX" shader={"glitch"} src={require('../../../public/static/apostro.png')} alt="APOSTRO logo"/>
       </div>
     </VFX.VFXProvider>
   )
