@@ -6,6 +6,7 @@ import './Contents.scss'
 import Profile from './Profile'
 import AppTitle from '../../common/AppTitle'
 import AppWorks from './AppWorks'
+import Skills from '../Foot/Skills'
 
 const WrapContents: React.FC = () => (
   <div className="ContentsWrap">
@@ -64,6 +65,9 @@ const WrapContents: React.FC = () => (
           desc="music provider 'Veginning' for #VTuberHackPremium"
           link="https://youtu.be/J_CrAM6PEwQ"
         />
+
+        <AppTitle title="- Skills -"></AppTitle>
+        <Skills></Skills>
 
       </Fade>
     </div>

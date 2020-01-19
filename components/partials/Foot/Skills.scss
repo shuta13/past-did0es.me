@@ -1,0 +1,28 @@
+.SkillsWrap {
+  width: 480px;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.SkillsTitleWrap, .SkillsDescriptionWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SkillsTitle {
+  font-size: 20px;
+  font-family: 'Poiret One';
+  text-align: center;
+  color: #fff;
+}
+
+.SkillsDescription {
+  font-size: 14px;
+  font-family: 'Poiret One';
+  text-align: center;
+  color: #fff;
+}
