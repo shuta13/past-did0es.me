@@ -1,0 +1,27 @@
+.SocialWrap {
+  width: 480px;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.SocialContentsWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.SocialLinkWrap {
+  width: 100%;
+  font-family: 'Poiret One';
+  text-align: center;
+}
+
+.SocialLink {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+}

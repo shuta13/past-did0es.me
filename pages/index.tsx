@@ -17,6 +17,15 @@ const Home: React.FC = () => (
       <title>APOSTRO</title>
       <link rel="icon" href="/favicon.ico" />
       <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet"></link>
+
+      <meta name="description" content="APOSTRO"/>
+      <meta property="og:site_name" content="APOSTRO"/>
+      <meta property="og:type" content="website"/>
+      <meta property="og:url" content="https://did0es.me"/>
+      <meta property="og:title" content="APOSTRO"/>
+      <meta name="twitter:card" content="summary_large_image"/>
+      <meta property="og:description" content="APOSTRO"/>
+      <meta property="og:image" content={require('../public/static/ogp.jpg')} />
     </Head>
 
     <Header></Header>

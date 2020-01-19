@@ -7,6 +7,8 @@ import Profile from './Profile'
 import AppTitle from '../../common/AppTitle'
 import AppWorks from './AppWorks'
 import Skills from '../Foot/Skills'
+import Social from '../Foot/Social'
+import Copywrite from '../Foot/Copyright'
 
 const WrapContents: React.FC = () => (
   <div className="ContentsWrap">
@@ -66,8 +68,21 @@ const WrapContents: React.FC = () => (
           link="https://youtu.be/J_CrAM6PEwQ"
         />
 
+        <AppWorks
+          img={require('../../../public/static/works/towaynight.jpg')}
+          title="TO WAY NIGHT"
+          desc="remixed my own music published for university festival"
+          link="https://soundcloud.com/user-858183512/to-way-night"
+        />
+
         <AppTitle title="- Skills -"></AppTitle>
         <Skills></Skills>
+
+        <AppTitle title="- Social -"></AppTitle>
+
+        <Social></Social>
+
+        <Copywrite person="© 2019 did0es"></Copywrite>
 
       </Fade>
     </div>
