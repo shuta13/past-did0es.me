@@ -33,6 +33,9 @@ const Skills: React.FC = () => (
         <p>Netlify, Zeit Now, Heroku, Firebase Hosting, AWS Lambda</p>
       </div>
     </div>
+    <div className="SkillsLinkWrap">
+      <a href="https://www.wantedly.com/users/95976645" target="_blank" className="SkillsLink">Wantedly : https://www.wantedly.com/users/95976645</a>
+    </div>
   </div>
 )
 

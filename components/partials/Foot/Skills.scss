@@ -6,7 +6,7 @@
   flex-wrap: wrap;
 }
 
-.SkillsTitleWrap, .SkillsDescriptionWrap {
+.SkillsTitleWrap, .SkillsDescriptionWrap, .SkillsLinkWrap {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -20,7 +20,7 @@
   color: #fff;
 }
 
-.SkillsDescription {
+.SkillsDescription, .SkillsLink {
   font-size: 14px;
   font-family: 'Poiret One';
   text-align: center;
