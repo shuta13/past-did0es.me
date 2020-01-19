@@ -18,12 +18,14 @@
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "react-reveal": "^1.2.2",
+    "react-scroll": "^1.7.16",
     "react-vfx": "^0.1.2",
     "three": "^0.112.1"
   },
   "devDependencies": {
     "@types/node": "13.1.7",
     "@types/react": "16.9.17",
+    "@types/react-scroll": "^1.5.4",
     "typescript": "3.7.5"
   }
 }
