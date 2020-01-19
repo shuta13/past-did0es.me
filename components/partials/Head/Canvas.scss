@@ -7,8 +7,16 @@
   text-align: center;
 }
 
+.ClipVFX {
+  width: 64%;
+  min-width: 300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .VFX {
-  color: #ffffff;
-  width: 56%;
+  width: 72vw;
   min-width: 300px;
 }

@@ -54,7 +54,9 @@ const Canvas: React.FC = () => {
       {/* <canvas ref={onCanvasLoaded}></canvas> */}
       <VFX.VFXProvider>
         {/* Render text as image, then apply the shader effect! */}
-        <VFX.VFXImg className="VFX" shader={"glitch"} src={require('../../../public/static/apostro.png')} alt="APOSTRO logo"/>
+        <div className="ClipVFX">
+          <VFX.VFXImg className="VFX" shader={"rgbShift"} src={require('../../../public/static/apostro.png')} alt="APOSTRO logo"/>
+        </div>
       </VFX.VFXProvider>
     </div>
   )
