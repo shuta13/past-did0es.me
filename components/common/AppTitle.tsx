@@ -3,7 +3,7 @@ import './AppTitle.scss'
 
 const AppTitle: React.FC<{ title: string }> = ({ title }) => (
   <div className="AppTitleWrap">
-    {title}
+    <div className="AppTitle">{title}</div>
   </div>
 )
 

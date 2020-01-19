@@ -2,12 +2,9 @@ import React from 'react'
 
 import './Profile.scss'
 
-import AppTitle from '../../common/AppTitle'
-
 const Profile: React.FC = () => (
   <div className="ProfileWrap">
     <div className="ProfileContentsWrap">
-      <AppTitle title="- Profile -"></AppTitle>
       <div className="ProfileImageWrap">
         <img className="ProfileImage" src={require('../../../public/static/icon.jpg')} alt="logo" />
       </div>

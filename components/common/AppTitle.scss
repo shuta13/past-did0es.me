@@ -1,4 +1,13 @@
 .AppTitleWrap {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40vh;
+}
+
+.AppTitle {
   width: 100px;
   height: 24px;
   display: flex;

@@ -1,7 +1,7 @@
 import React from 'react'
 import './AppWorks.scss'
 
-const AppWorks: React.FC<{ img: string, title: string, desc: string }> = ({ img, title, desc }) => (
+const AppWorks: React.FC<{ img: string, title: string, desc: string, link?: string }> = ({ img, title, desc, link }) => (
   <div className="AppWorksWrap">
     <div className="AppWorksImageWrap">
       <div className="AppWorksImageClip">
@@ -17,6 +17,11 @@ const AppWorks: React.FC<{ img: string, title: string, desc: string }> = ({ img,
       <div className="AppWorksDescription">
         {desc}
       </div>
+    </div>
+    <div className="AppWorksLinkWrap">
+      <a className="AppWorksLink" href={link} target="_blank">
+        {link}
+      </a>
     </div>
   </div>
 )

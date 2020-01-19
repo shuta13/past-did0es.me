@@ -65,9 +65,9 @@ const Canvas: React.FC = () => {
         flatShading: true
       })
       const mesh = new Mesh(geometry, material)
-      mesh.position.set(Math.random() - 0.5, Math.random() - 0.5, 0.1).normalize()
+      mesh.position.set(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.1).normalize()
       mesh.position.multiplyScalar(Math.random() * 400)
-      mesh.rotation.set(Math.random() * 2, Math.random() * 2, 2)
+      mesh.rotation.set(Math.random() * 2, Math.random() * 2, Math.random() * 2)
       mesh.scale.x = mesh.scale.y = mesh.scale.z = Math.random() * 50
       object.add(mesh)
     }
@@ -77,7 +77,7 @@ const Canvas: React.FC = () => {
     const renderPass = new RenderPass(scene, camera)
     composer.addPass(renderPass)
       
-    const effectGlitch = new GlitchPass(16)
+    const effectGlitch = new GlitchPass(64)
     // true => exstreme
     effectGlitch.goWild = false
     effectGlitch.renderToScreen = true
@@ -88,6 +88,8 @@ const Canvas: React.FC = () => {
 
   const animate = ({ object, composer }: ParamsAnimate) => {
     window.requestAnimationFrame(() => animate({ object, composer }))
+    object.rotation.x += 0.01
+    object.rotation.z += 0.01
     composer.render()
   }
 

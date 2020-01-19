@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin: 200px 0;
 }
 
 .AppWorksImageWrap {
@@ -15,7 +16,7 @@
 
 .AppWorksImageClip {
   width: 420px;
-  height: 280px;
+  height: 240px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,6 +32,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 40px;
 }
 
 .AppWorksTitle {
@@ -45,13 +47,24 @@
 .AppWorksDescriptionWrap {
   width: 100%;
   height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.AppWorksDescription {
+.AppWorksDescription, .AppWorksLink {
   width: 420px;
   height: auto;
   text-align: center;
   font-size: 12px;
   font-family: 'Poiret One';
   color: #fff;
+}
+
+.AppWorksLinkWrap {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
