@@ -82,7 +82,7 @@ const WrapContents: React.FC = () => (
 
         <Social></Social>
 
-        <Copywrite person="© 2019 did0es"></Copywrite>
+        <Copywrite person="© 2020 did0es"></Copywrite>
 
       </Fade>
     </div>
