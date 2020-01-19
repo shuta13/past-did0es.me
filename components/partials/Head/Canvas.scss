@@ -1,4 +1,14 @@
-.Canvas {
+.WrapCanvas {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.VFX {
+  color: #ffffff;
+  width: 56%;
+  min-width: 300px;
 }

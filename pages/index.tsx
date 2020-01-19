@@ -15,6 +15,7 @@ const Home: React.FC = () => (
     <Head>
       <title>APOSTRO</title>
       <link rel="icon" href="/favicon.ico" />
+      <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet"></link>
     </Head>
 
     <Header></Header>
