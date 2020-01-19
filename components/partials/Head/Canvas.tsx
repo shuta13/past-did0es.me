@@ -3,20 +3,24 @@ import {
   WebGLRenderer,
   Scene, 
   PerspectiveCamera,
-  BoxGeometry, 
-  MeshBasicMaterial,
+  Object3D,
+  Fog,
+  DirectionalLight,
+  AmbientLight,
+  SphereBufferGeometry,
+  MeshPhongMaterial,
   Mesh
 } from 'three'
-import * as VFX from 'react-vfx'
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
+import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass'
 
 import './Canvas.scss'
 import useGetWindowSize from '../../hooks/useGetWindowSize'
 
-type OnCanvasLoaded = {
-  renderer: THREE.WebGLRenderer,
-  scene: THREE.Scene,
-  camera: THREE.PerspectiveCamera,
-  cube: THREE.Mesh
+type ParamsAnimate = {
+  object: THREE.Object3D
+  composer: EffectComposer
 }
 
 const Canvas: React.FC = () => {
@@ -26,37 +30,68 @@ const Canvas: React.FC = () => {
     if (!canvas) {
       return;
     }
-    const renderer = new WebGLRenderer({ canvas: canvas, antialias: true })
+
+    // init scene
     const scene = new Scene()
     const camera = new PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000)
+    camera.position.z = 400
 
-    const geometry = new BoxGeometry(1, 1, 1)
-    const material = new MeshBasicMaterial({ color: 0xff00ff })
-    const cube = new Mesh(geometry, material)
-
-    camera.position.z = 4
+    // init renderer
+    const renderer = new WebGLRenderer({ canvas: canvas, antialias: true })
     renderer.setClearColor('#1d1d1d')
-    scene.add(cube)
-
     renderer.setSize(width, height)
-    animate({ renderer, scene, camera, cube })
+    
+    // init object
+    const object = new Object3D()
+    scene.add(object)
+
+    // add fog
+    scene.fog = new Fog(0xffffff, 1, 1000)
+
+    // add light
+    const spotLight = new DirectionalLight(0xffffff)
+    spotLight.position.set(1, 1, 1)
+    scene.add(spotLight)
+    const ambientLight = new AmbientLight(0x222222)
+    scene.add(ambientLight)
+
+    // add object
+    const geometry = new SphereBufferGeometry(2, 3, 4)
+    for (let i = 0; i < 100; i++) {
+      const material = new MeshPhongMaterial({
+        color: 0x000000,
+        flatShading: true
+      })
+      const mesh = new Mesh(geometry, material)
+      mesh.position.set(Math.random() - 0.5, Math.random() - 0.5, 0.1).normalize()
+      mesh.position.multiplyScalar(Math.random() * 400)
+      mesh.rotation.set(Math.random() * 2, Math.random() * 2, 2)
+      mesh.scale.x = mesh.scale.y = mesh.scale.z = Math.random() * 50
+      object.add(mesh)
+    }
+
+    // add postprocessing
+    const composer = new EffectComposer(renderer)
+    const renderPass = new RenderPass(scene, camera)
+    composer.addPass(renderPass)
+      
+    const effectGlitch = new GlitchPass(16)
+    // true => exstreme
+    effectGlitch.goWild = false
+    effectGlitch.renderToScreen = true
+    composer.addPass(effectGlitch)
+
+    animate({ object, composer })
   }
 
-  const animate = ({ renderer, scene, camera, cube }: OnCanvasLoaded) => {
-    window.requestAnimationFrame(() => animate({ renderer, scene, camera, cube }))
-    cube.rotation.x += 0.01
-    cube.rotation.y += 0.01
-    renderer.render(scene, camera)
+  const animate = ({ object, composer }: ParamsAnimate) => {
+    window.requestAnimationFrame(() => animate({ object, composer }))
+    composer.render()
   }
 
   return (
     <div className="WrapCanvas">
       <canvas className="Canvas" ref={onCanvasLoaded}></canvas>
-      <VFX.VFXProvider>
-        <div className="ClipVFX">
-          <VFX.VFXImg className="VFX" shader={"rgbShift"} src={require('../../../public/static/apostro.png')} alt="APOSTRO logo"/>
-        </div>
-      </VFX.VFXProvider>
     </div>
   )
 }

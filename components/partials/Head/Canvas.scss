@@ -1,4 +1,5 @@
 .WrapCanvas {
+  position: fixed;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -9,18 +10,4 @@
 
 .Canvas {
   position: absolute;
-}
-
-.ClipVFX {
-  width: 64%;
-  min-width: 300px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.VFX {
-  width: 60vw;
-  min-width: 300px;
 }

@@ -20,9 +20,7 @@ const Home: React.FC = () => (
     </Head>
 
     <Header></Header>
-
     <CanvasNoSSR></CanvasNoSSR>
-
     <Contents></Contents>
 
   </Layout>
