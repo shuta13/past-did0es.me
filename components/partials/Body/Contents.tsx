@@ -7,7 +7,7 @@ import Profile from './Profile'
 
 const WrapContents: React.FC = () => (
   <div className="ContentsWrap">
-    <div className="ClipContents">
+    <div className="ContentsClip">
       <Fade delay={600} duration={600} effects="fadeInUp">
         <Profile></Profile>
       </Fade>
