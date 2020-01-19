@@ -1,9 +1,45 @@
 .ProfileWrap {
-  width: 480px;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ProfileContentsWrap {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ProfileImageWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .ProfileImage {
   width: 170px;
+}
+
+.ProfileDescriptionWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0;
+}
+
+.ProfileDescription {
+  width: 320px;
+  text-align: center;
+  font-family: 'Poiret One';
+  font-size: 14px;
+  color: #fff;
+  line-height: 2;
 }

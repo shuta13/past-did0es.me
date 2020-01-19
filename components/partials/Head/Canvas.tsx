@@ -15,6 +15,8 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
 import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass'
 
+import VFXText from './VFXText'
+
 import './Canvas.scss'
 import useGetWindowSize from '../../hooks/useGetWindowSize'
 
@@ -91,6 +93,7 @@ const Canvas: React.FC = () => {
 
   return (
     <div className="WrapCanvas">
+      <VFXText></VFXText>
       <canvas className="Canvas" ref={onCanvasLoaded}></canvas>
     </div>
   )
