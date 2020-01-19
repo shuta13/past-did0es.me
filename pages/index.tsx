@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 
 import Header from '../components/common/Header'
 import Layout from '../components/common/Layout'
+import Contents from '../components/partials/Body/Contents'
 
 const CanvasNoSSR = dynamic(
   () => import('../components/partials/Head/Canvas'),
@@ -21,6 +22,8 @@ const Home: React.FC = () => (
     <Header></Header>
 
     <CanvasNoSSR></CanvasNoSSR>
+
+    <Contents></Contents>
 
   </Layout>
 )

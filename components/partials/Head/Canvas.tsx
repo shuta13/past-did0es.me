@@ -51,9 +51,8 @@ const Canvas: React.FC = () => {
 
   return (
     <div className="WrapCanvas">
-      {/* <canvas ref={onCanvasLoaded}></canvas> */}
+      <canvas className="Canvas" ref={onCanvasLoaded}></canvas>
       <VFX.VFXProvider>
-        {/* Render text as image, then apply the shader effect! */}
         <div className="ClipVFX">
           <VFX.VFXImg className="VFX" shader={"rgbShift"} src={require('../../../public/static/apostro.png')} alt="APOSTRO logo"/>
         </div>
