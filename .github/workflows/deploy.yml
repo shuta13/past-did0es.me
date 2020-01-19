@@ -1,5 +1,7 @@
 name: deploy did0es.me
 on: [push, pull_request]
+  push:
+    branches: master
 jobs:
   deploy:
     runs-on: ubuntu-latest
