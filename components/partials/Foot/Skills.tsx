@@ -6,7 +6,7 @@ const Skills: React.FC = () => (
     <div className="SkillsDescriptionWrap">
       <div className="SkillsDescription">
         <p>Web Development(Design, Coding, building CI/CD)</p>
-        <p>Composing, DTM(Future Bass, Progressive House, Pops...)</p>
+        <p>Making Track, DJ(Future Bass, Progressive House, Pops...)</p>
       </div>
     </div>
     <div className="SkillsTitleWrap">
