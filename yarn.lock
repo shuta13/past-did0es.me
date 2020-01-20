@@ -880,10 +880,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@now/next@2.3.9":
-  version "2.3.9"
-  resolved "https://registry.yarnpkg.com/@now/next/-/next-2.3.9.tgz#ed1ad52d5158af86a768741cf8a999e558e48a59"
-  integrity sha512-fnS5Y+PnFik+BfaKJ95IPnYWXEHHy9+Y7XuOc4Ljt7llkfdiJYWzryqIQrdgrFcvPtIMDVbnli/rHGj/0nnUEg==
+"@now/next@2.3.10":
+  version "2.3.10"
+  resolved "https://registry.yarnpkg.com/@now/next/-/next-2.3.10.tgz#2708886c0e45d40447b4c717f003e43879893191"
+  integrity sha512-hETBT1O7q/zgKiBp7OgftBcW80xBniQnx56T7T2709FOOe3flziCQH6gCviAAe3547Ke7XGr8zusDw4Sx7Y2zg==
 
 "@types/node@13.1.7":
   version "13.1.7"
