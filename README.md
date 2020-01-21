@@ -2,5 +2,3 @@
 # did0es.me
 "APOSTRO" comes from apostrophe
 > portfolio
-> dev(zeit now) : https://dev.did0es.now.sh/
-> prod(netlify) : https://did0es.me
