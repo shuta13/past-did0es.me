@@ -64,7 +64,7 @@ const WrapContents: React.FC = () => (
         <AppWorks
           img={require('../../../public/static/works/miko-music.jpg')}
           title="Veginning"
-          desc="Music Provider 'Veginning' for #VTuberHackPremium"
+          desc="Music Provided 'Veginning' for #VTuberHackPremium"
           subDesc="Award : Special Award of noitomu"
           link="https://youtu.be/J_CrAM6PEwQ"
         />
