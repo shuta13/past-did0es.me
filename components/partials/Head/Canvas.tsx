@@ -36,7 +36,7 @@ const Canvas: React.FC = () => {
     // init scene
     const scene = new Scene()
     const camera = new PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000)
-    camera.position.z = 400
+    camera.position.z = 240
 
     // init renderer
     const renderer = new WebGLRenderer({ canvas: canvas, antialias: true })
