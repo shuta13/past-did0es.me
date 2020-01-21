@@ -10,8 +10,8 @@ const Header: React.FC = () => (
       src={require('../../public/static/apostro.svg')}
       onClick={
         () => animateScroll.scrollToTop({
-          smooth: true,
-          duration: 1000
+          smooth: 'easeInOutQuint',
+          duration: 1200
         })
       }
     />
