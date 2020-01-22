@@ -5,10 +5,10 @@ import dynamic from 'next/dynamic'
 import Header from '../components/common/Header'
 import Layout from '../components/common/Layout'
 
-const CanvasNoSSR = dynamic(
-  () => import('../components/partials/Head/Canvas'),
-  { ssr: false }
-)
+// const CanvasNoSSR = dynamic(
+//   () => import('../components/partials/Head/Canvas'),
+//   { ssr: false }
+// )
 
 const ContentsNoSSR = dynamic(
   () => import('../components/partials/Body/Contents'),
