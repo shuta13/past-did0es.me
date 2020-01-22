@@ -1,15 +1,14 @@
 .ContentsWrap {
   width: 100vw;
-  height: auto;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .ContentsClip {
   width: 600px;
   height: auto;
-  min-height: 100vh;
+  min-height: 200vh;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

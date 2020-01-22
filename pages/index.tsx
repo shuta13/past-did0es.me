@@ -4,10 +4,14 @@ import dynamic from 'next/dynamic'
 
 import Header from '../components/common/Header'
 import Layout from '../components/common/Layout'
-import Contents from '../components/partials/Body/Contents'
 
 const CanvasNoSSR = dynamic(
   () => import('../components/partials/Head/Canvas'),
+  { ssr: false }
+)
+
+const ContentsNoSSR = dynamic(
+  () => import('../components/partials/Body/Contents'),
   { ssr: false }
 )
 
@@ -29,8 +33,8 @@ const Home: React.FC = () => (
     </Head>
 
     <Header></Header>
-    <CanvasNoSSR></CanvasNoSSR>
-    <Contents></Contents>
+    {/* <CanvasNoSSR></CanvasNoSSR> */}
+    <ContentsNoSSR></ContentsNoSSR>
 
   </Layout>
 )
