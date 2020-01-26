@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from 'react'
 import CommonContents from '../../common/CommonContents'
 
-const WrapContentsForPhone: React.FC = () => (
+const ContentsForPhone: React.FC = () => (
   <CommonContents />
 )
 
-export default WrapContentsForPhone;
+export default ContentsForPhone;

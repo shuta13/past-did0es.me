@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import CommonContents from '../../common/CommonContents'
 
-const WrapContentsForPC: React.FC = () => {
+const ContentsForPC: React.FC = () => {
   // scroll easing
   const mousewheelevent = 'onwheel' in document ? 'wheel' : 'onmousewheel' in document ? 'mousewheel' : 'DOMMouseScroll';
   const mount = useRef<HTMLDivElement | null>(null)
@@ -40,4 +40,4 @@ const WrapContentsForPC: React.FC = () => {
   )
 }
 
-export default WrapContentsForPC;
+export default ContentsForPC;
