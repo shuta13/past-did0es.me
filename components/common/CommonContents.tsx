@@ -57,6 +57,12 @@ const CommonContents: React.FC = () => (
           link="https://developers.tam-bourine.co.jp/entry/2019/12/19/190000"
         />
         <AppWorks
+          img={require('../../public/static/works/lt-kyotojs17.jpg')}
+          title="LT @Kyoto.js17"
+          desc="Lighting Talk of vue-tsx-keyframes @Kyoto.js17"
+          link="https://speakerdeck.com/shuta/keyframes-of-vue-and-tsx-with-css-in-js"
+        />
+        <AppWorks
           img={require('../../public/static/works/miko-music.jpg')}
           title="Veginning"
           desc="Music Provided 'Veginning' for #VTuberHackPremium"
