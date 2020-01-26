@@ -10,7 +10,6 @@ const Layout: React.FC = (props: any) => (
         margin: 0;
         box-sizing: border-box;
         background: #1d1d1d;
-        overflow: hidden
       }
     `}
     </style>
