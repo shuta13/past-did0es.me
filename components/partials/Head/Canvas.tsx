@@ -95,8 +95,11 @@ const Canvas: React.FC = () => {
 
   return (
     <div className="WrapCanvas">
-      <VFXText></VFXText>
-      <canvas className="Canvas" ref={onCanvasLoaded}></canvas>
+      <VFXText />
+      <div className="WrapScrollBtn">
+        <span />
+      </div>
+      <canvas className="Canvas" ref={onCanvasLoaded} />
     </div>
   )
 }
