@@ -62,7 +62,7 @@ const CommonContents: React.FC = () => (
         <AppWorks
           img={require('../../public/static/works/design-works.jpg')}
           title="Design Works 2020"
-          desc="Works as designing in 2020"
+          desc="Works designed in 2020"
           link="https://did0es.hatenablog.jp/entry/2020/02/05/185451"
         />
         <AppWorks
