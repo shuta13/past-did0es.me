@@ -60,6 +60,12 @@ const CommonContents: React.FC = () => (
         />
         <AppSubTitle subtitle="Design"></AppSubTitle>
         <AppWorks
+          img={require('../../public/static/works/kukkakanukka-flyer.jpg')}
+          title="Design Works 2020"
+          desc="Works as designing in 2020"
+          link="https://did0es.hatenablog.jp/entry/2020/02/05/185451"
+        />
+        <AppWorks
           img={require('../../public/static/works/FC2019-flyer.jpg')}
           title="ElevenBack's Flyer for FC2019"
           desc="Co-created Flyer of ElevenBack"
