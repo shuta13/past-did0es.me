@@ -5,6 +5,7 @@ import './CommonContents.scss'
 
 import Profile from '../partials/Body/Profile'
 import AppTitle from '../common/AppTitle'
+import AppSubTitle from '../common/AppSubTitle'
 import AppWorks from '../partials/Body/AppWorks'
 import Skills from '../partials/Foot/Skills'
 import Social from '../partials/Foot/Social'
@@ -20,6 +21,7 @@ const CommonContents: React.FC = () => (
         <AppTitle title="- Profile -"></AppTitle>
         <Profile></Profile>
         <AppTitle title="- Works -"></AppTitle>
+        <AppSubTitle subtitle="Development"></AppSubTitle>
         <AppWorks
           img={require('../../public/static/works/garelly.jpg')}
           title="GARELLY"
@@ -39,12 +41,6 @@ const CommonContents: React.FC = () => (
           link="https://blog.candy.ac"
         />
         <AppWorks
-          img={require('../../public/static/works/FC2019-flyer.jpg')}
-          title="ElevenBack's Flyer for FC2019"
-          desc="Co-created Flyer of ElevenBack"
-          link="https://techblog.elevenback.co.jp/entry/2019/11/08/145616"
-        />
-        <AppWorks
           img={require('../../public/static/works/vue-tsx-keyframes.jpg')}
           title="vue-tsx-keyframes"
           desc="JavaScript Library for Supporting CSS of Vue-TSX"
@@ -62,6 +58,14 @@ const CommonContents: React.FC = () => (
           desc="Lighting Talk of vue-tsx-keyframes @Kyoto.js17"
           link="https://speakerdeck.com/shuta/keyframes-of-vue-and-tsx-with-css-in-js"
         />
+        <AppSubTitle subtitle="Design"></AppSubTitle>
+        <AppWorks
+          img={require('../../public/static/works/FC2019-flyer.jpg')}
+          title="ElevenBack's Flyer for FC2019"
+          desc="Co-created Flyer of ElevenBack"
+          link="https://techblog.elevenback.co.jp/entry/2019/11/08/145616"
+        />
+        <AppSubTitle subtitle="Track Making"></AppSubTitle>
         <AppWorks
           img={require('../../public/static/works/miko-music.jpg')}
           title="Veginning"
