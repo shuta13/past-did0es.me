@@ -5,8 +5,8 @@ module.exports = withSass(withImages({
   devIndicators: {
     autoPrerender: false,
   },
-  webpack(config) {
-    // add opt
+  webpack: (config) => {
+    // config.module.rules.push({ something loader opts })
     return config
   }
 }))
