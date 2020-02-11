@@ -9,8 +9,8 @@ const AppWorks: React.FC<{ img: string, title: string, desc: string, link?: stri
     <div className="AppWorksWrap">
       <div className="AppWorksImageWrap">
         <a href={link} target="_blank" className="AppWorksImageClip">
-          { width > 1000 && <ImageCanvas img={img} /> }
-          { width <= 1000 && <img src={img} className="AppWorksImage" /> }
+          { width > 615 && <ImageCanvas img={img} /> }
+          { width <= 615 && <img src={img} className="AppWorksImage" /> }
         </a>
       </div>
       <div className="AppWorksTitleWrap">

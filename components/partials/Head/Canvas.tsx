@@ -36,8 +36,7 @@ type HandleCameraAspectParams = {
 // let mouseY = 0.0
 
 const Canvas: React.FC = () => {
-  const width = window.innerWidth
-  const height = window.innerHeight
+  const width = window.innerWidth * 0.8
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
     if (!canvas) {
       return
@@ -105,7 +104,7 @@ const Canvas: React.FC = () => {
 
   // handle resize
   const handleResize = ({ camera, renderer }: HandleCameraAspectParams) => {
-    const width = window.innerWidth
+    const width = window.innerWidth * 0.8
     camera.aspect = width / width
     camera.updateProjectionMatrix()
     renderer.setSize(width, width)

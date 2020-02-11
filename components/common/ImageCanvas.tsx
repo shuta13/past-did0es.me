@@ -138,6 +138,7 @@ const ImageCanvas: React.FC<{ img: string }> = ({ img }) => {
       <canvas className="ImageCanvas"
         ref={onCanvasLoaded}
       />
+      <img src={img} className="ImageCanvasImg" />
     </button>
   )
 }
