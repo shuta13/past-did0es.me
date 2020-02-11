@@ -74,6 +74,7 @@ const ImageCanvas: React.FC<{ img: string }> = ({ img }) => {
     const mesh = new Mesh(geometry, material)
     scene.add(mesh)
 
+    // render neutral
     renderer.render(scene, camera)
 
     const composer = new EffectComposer(renderer)
