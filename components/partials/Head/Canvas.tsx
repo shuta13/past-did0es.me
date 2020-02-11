@@ -126,25 +126,21 @@ const Canvas: React.FC = () => {
 
   // render
   const render = ({ scene, camera, renderer }: RenderParams) => {
-    if (width > 1000) {
-      const time = performance.now()
-      const object = scene.children[0] as any
-      let positions = [] as any
-      object.geometry.attributes.position.array.map((pos: number, index: number) => {
-        pos += 0.005 * Math.sin(time * Math.random() * Math.sin(time))
-        pos %= 0.6
-        positions.push(pos)
-      })
-      const positionAttribute = new Float32BufferAttribute(positions, 4)
-      object.geometry.setAttribute('position', positionAttribute)
+    const time = performance.now()
+    const object = scene.children[0] as any
+    let positions = [] as any
+    object.geometry.attributes.position.array.map((pos: number, index: number) => {
+      pos += 0.005 * Math.sin(time * Math.random() * Math.sin(time))
+      pos %= 0.6
+      positions.push(pos)
+    })
+    const positionAttribute = new Float32BufferAttribute(positions, 4)
+    object.geometry.setAttribute('position', positionAttribute)
 
-      object.material.uniforms.time.value = Math.atan(time * 0.005)
+    object.material.uniforms.time.value = Math.atan(time * 0.005)
 
-      // object.rotation.y = mouseX * 0.0008
-      // object.rotation.x = mouseY * 0.0008
-    } else if (width <= 1000) {
-      window.cancelAnimationFrame(requestRef.current)
-    }
+    // object.rotation.y = mouseX * 0.0008
+    // object.rotation.x = mouseY * 0.0008
 
 		renderer.render( scene, camera )
   }
