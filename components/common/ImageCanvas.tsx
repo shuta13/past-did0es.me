@@ -5,7 +5,7 @@ import {
   PerspectiveCamera,
   PlaneGeometry,
   TextureLoader,
-  ShaderMaterial,
+  NearestFilter,
   Mesh,
   Vector2,
   AmbientLight,
@@ -65,8 +65,10 @@ const ImageCanvas: React.FC<{ img: string }> = ({ img }) => {
 
     // object
     const loader = new TextureLoader()
+    const texture = loader.load(`${img}`)
+    texture.minFilter = NearestFilter
     const material = new MeshPhongMaterial({
-      map: loader.load(`${img}`)
+      map: texture
     })
     const geometry = new PlaneGeometry(1, 1, 1, 1)
     const mesh = new Mesh(geometry, material)
