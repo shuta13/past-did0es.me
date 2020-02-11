@@ -1,106 +1,148 @@
-import React from 'react'
+import React, { useRef, useCallback, useEffect } from 'react'
 import {
   WebGLRenderer,
   Scene, 
   PerspectiveCamera,
-  Object3D,
-  Fog,
-  DirectionalLight,
-  AmbientLight,
-  SphereBufferGeometry,
-  MeshPhongMaterial,
+  BufferGeometry,
+  Float32BufferAttribute,
+  Uint8BufferAttribute,
+  RawShaderMaterial,
+  DoubleSide,
   Mesh
 } from 'three'
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
-import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
-import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass'
-
-import VFXText from './VFXText'
 
 import './Canvas.scss'
-import useGetWindowSize from '../../hooks/useGetWindowSize'
 
-type ParamsAnimate = {
-  object: THREE.Object3D
-  composer: EffectComposer
+const fragment = require('../../shaders/Canvas/frag.glsl')
+const vertex = require('../../shaders/Canvas/vert.glsl')
+
+// types
+type RenderParams = {
+  scene: Scene
+  camera: PerspectiveCamera
+  renderer: WebGLRenderer
+}
+type AnimateParams = {
+  scene: Scene
+  camera: PerspectiveCamera
+  renderer: WebGLRenderer
+}
+type HandleCameraAspectParams = {
+  camera: PerspectiveCamera
+  renderer: WebGLRenderer
 }
 
 const Canvas: React.FC = () => {
-  const { width, height } = useGetWindowSize()
-
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
     if (!canvas) {
-      return;
+      return
     }
 
     // init scene
     const scene = new Scene()
-    const camera = new PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000)
-    camera.position.z = 240
+    const camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+    camera.position.z = 1.5
 
-    // init renderer
-    const renderer = new WebGLRenderer({ canvas: canvas, antialias: true })
-    renderer.setClearColor('#1d1d1d')
-    renderer.setSize(width, height)
-    
-    // init object
-    const object = new Object3D()
-    scene.add(object)
-
-    // add fog
-    scene.fog = new Fog(0xffffff, 1, 1000)
-
-    // add light
-    const spotLight = new DirectionalLight(0xffffff)
-    spotLight.position.set(1, 1, 1)
-    scene.add(spotLight)
-    const ambientLight = new AmbientLight(0x222222)
-    scene.add(ambientLight)
-
-    // add object
-    const geometry = new SphereBufferGeometry(2, 3, 4)
-    for (let i = 0; i < 100; i++) {
-      const material = new MeshPhongMaterial({
-        color: 0x000000,
-        flatShading: true
-      })
-      const mesh = new Mesh(geometry, material)
-      mesh.position.set(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.1).normalize()
-      mesh.position.multiplyScalar(Math.random() * 400)
-      mesh.rotation.set(Math.random() * 2, Math.random() * 2, Math.random() * 2)
-      mesh.scale.x = mesh.scale.y = mesh.scale.z = Math.random() * 50
-      object.add(mesh)
+    const vertexCount = 200 * 4;
+    const geometry = new BufferGeometry()
+    const positions = []
+    const colors = []
+    for (let i = 0; i < vertexCount; i++) {
+      // adding x,y,z
+      positions.push( Math.random() - 0.5 )
+			positions.push( Math.random() - 0.5 )
+			positions.push( Math.random() - 0.5 )
+			positions.push( Math.random() - 0.5 )
+			// adding r,g,b,a
+			colors.push( Math.random() * 255 % 200)
+			colors.push( Math.random() * 255 % 100)
+			colors.push( Math.random() * 255 )
+			colors.push( Math.random() * 255)
     }
+    const positionAttribute = new Float32BufferAttribute(positions, 4)
+    const colorAttribute = new Uint8BufferAttribute(colors, 4)
+    colorAttribute.normalized = true
+    geometry.setAttribute('position', positionAttribute)
+    geometry.setAttribute('color', colorAttribute)
+    const material = new RawShaderMaterial({
+      uniforms: {
+        time: { value: 0.1 }
+      },
+      vertexShader: vertex.default,
+      fragmentShader: fragment.default,
+      side: DoubleSide,
+      transparent: true
+    })
+    const mesh = new Mesh(geometry, material)
+    scene.add(mesh)
 
-    // add postprocessing
-    const composer = new EffectComposer(renderer)
-    const renderPass = new RenderPass(scene, camera)
-    composer.addPass(renderPass)
-      
-    const effectGlitch = new GlitchPass(64)
-    // true => exstreme
-    effectGlitch.goWild = false
-    effectGlitch.renderToScreen = true
-    composer.addPass(effectGlitch)
+    // render scene
+    const renderer = new WebGLRenderer({ canvas: canvas, antialias: true })
+    renderer.setPixelRatio(window.devicePixelRatio)
+    renderer.setClearColor('#1d1d1d')
+    renderer.setSize(window.innerWidth, window.innerHeight)
 
-    animate({ object, composer })
+    // start animation
+    requestRef.current = window.requestAnimationFrame(() => animate({ scene, camera, renderer }))
+
+    window.addEventListener('resize', () => handleResize({ camera, renderer }))
   }
 
-  const animate = ({ object, composer }: ParamsAnimate) => {
-    window.requestAnimationFrame(() => animate({ object, composer }))
-    object.rotation.x += 0.01
-    object.rotation.z += 0.01
-    composer.render()
-  }
+  // animate
+  const requestRef = useRef(0)
+  const animate = useCallback(({ scene, camera, renderer }: AnimateParams) => {
+    requestRef.current = window.requestAnimationFrame(() => animate({ scene, camera, renderer }))
+    render({ scene, camera, renderer })
+  }, [])
+  useEffect(() => {
+    return () => window.cancelAnimationFrame(requestRef.current)
+  }, [animate])
 
+  // handle resize
+  const handleResize = ({ camera, renderer }: HandleCameraAspectParams) => {
+    camera.aspect = window.innerWidth / window.innerHeight
+    camera.updateProjectionMatrix()
+    renderer.setSize(window.innerWidth, window.innerHeight)
+  }
+  useEffect(() => {
+    return () => window.removeEventListener('resize', () => handleResize)
+  })
+
+  // render
+  const render = ({ scene, camera, renderer }: RenderParams) => {
+    const time = performance.now()
+    const object = scene.children[0] as any
+    let positions = [] as any
+    object.geometry.attributes.position.array.map((pos: number, index: number) => {
+      if (index % 4 === 1) {
+        pos += Math.random() * 0.05 * Math.cos(time * 0.005 * Math.sin(time)) * Math.sin(time * Math.random() * Math.sin(time))
+        pos %= 0.6
+        positions.push(pos)
+      }
+      else if (index % 4 === 2) {
+        pos += Math.random() * 0.04 * Math.cos(time * 0.005) * Math.sin(time * 0.005)
+        pos %= 0.6
+        positions.push(pos)
+      }
+      else if (index % 4 === 3) {
+        pos += Math.random() * 0.0024 * Math.cos(time * 0.005) * Math.sin(time * 0.005)
+        pos %= 0.6
+        positions.push(pos)
+      } else {
+        pos += Math.random() * 0.0024 * Math.cos(time * 0.005) * Math.sin(time * 0.005)
+        pos %= 0.6
+        positions.push(pos)
+      }
+    })
+    const positionAttribute = new Float32BufferAttribute(positions, 4)
+    object.geometry.setAttribute('position', positionAttribute)
+
+    object.material.uniforms.time.value = Math.atan(time * 0.005)
+
+		renderer.render( scene, camera )
+  }
   return (
-    <div className="WrapCanvas">
-      <VFXText />
-        { width > 615 &&
-          <div className="WrapScrollBtn">
-            <span />
-          </div>
-        }
+    <div className="CanvasWrap">
       <canvas className="Canvas" ref={onCanvasLoaded} />
     </div>
   )

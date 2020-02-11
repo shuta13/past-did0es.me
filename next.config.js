@@ -5,8 +5,13 @@ module.exports = withSass(withImages({
   devIndicators: {
     autoPrerender: false,
   },
-  webpack: (config) => {
-    // config.module.rules.push({ something loader opts })
+  webpack: (config, options) => {
+    config.module.rules.push({
+      test: /\.glsl$/,
+      use: [
+        "raw-loader"
+      ]
+    })
     return config
   }
 }))
