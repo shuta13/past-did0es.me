@@ -12,7 +12,6 @@ import {
 } from 'three'
 
 import './Canvas.scss'
-import useGetWindowSize from '../../hooks/useGetWindowSize'
 
 const fragment = require('../../shaders/Canvas/frag.glsl')
 const vertex = require('../../shaders/Canvas/vert.glsl')
@@ -37,8 +36,8 @@ type HandleCameraAspectParams = {
 // let mouseY = 0.0
 
 const Canvas: React.FC = () => {
-  const { width, height } = useGetWindowSize()
-
+  const width = window.innerWidth
+  const height = window.innerHeight
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
     if (!canvas) {
       return
@@ -46,14 +45,14 @@ const Canvas: React.FC = () => {
 
     // init scene
     const scene = new Scene()
-    const camera = new PerspectiveCamera(75, width / height, 0.1, 1000)
+    const camera = new PerspectiveCamera(75, width / width, 0.1, 1000)
     camera.position.z = 1.5
 
     // render scene
     const renderer = new WebGLRenderer({ canvas: canvas, antialias: true })
     renderer.setPixelRatio(window.devicePixelRatio)
     renderer.setClearColor('#1d1d1d')
-    renderer.setSize(width, height)
+    renderer.setSize(width, width)
 
     const vertexCount = 100 * 4;
     const geometry = new BufferGeometry()
@@ -106,9 +105,10 @@ const Canvas: React.FC = () => {
 
   // handle resize
   const handleResize = ({ camera, renderer }: HandleCameraAspectParams) => {
-    camera.aspect = width / height
+    const width = window.innerWidth
+    camera.aspect = width / width
     camera.updateProjectionMatrix()
-    renderer.setSize(width, height)
+    renderer.setSize(width, width)
   }
   useEffect(() => {
     return () => window.removeEventListener('resize', () => handleResize)

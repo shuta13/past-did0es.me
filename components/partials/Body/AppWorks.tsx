@@ -3,10 +3,8 @@ import './AppWorks.scss'
 
 import ImageCanvas from '../../common/ImageCanvas'
 
-import useGetWindowSize from '../../hooks/useGetWindowSize'
-
 const AppWorks: React.FC<{ img: string, title: string, desc: string, link?: string, subDesc?: string }> = ({ img, title, desc, link, subDesc }) => {
-  const { width } = useGetWindowSize()
+  const width = window.innerWidth
   return (
     <div className="AppWorksWrap">
       <div className="AppWorksImageWrap">

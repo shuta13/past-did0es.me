@@ -3,10 +3,8 @@ import React, { useRef, useEffect } from 'react'
 import ContentsForPC from './ContentsForPC'
 import ContentsForPhone from './ContentsForPhone'
 
-import useGetWindowSize from '../../hooks/useGetWindowSize'
-
 const Contents = () => {
-  const { width } = useGetWindowSize()
+  const width = window.innerWidth
   return (
     <div>
       { width > 615 && <ContentsForPC />}
