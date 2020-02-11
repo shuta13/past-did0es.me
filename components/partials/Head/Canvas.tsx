@@ -43,14 +43,14 @@ const Canvas: React.FC = () => {
 
     // init scene
     const scene = new Scene()
-    const camera = new PerspectiveCamera(100, window.innerWidth / window.innerWidth, 0.1, 1000)
+    const camera = new PerspectiveCamera(55, 480 / 480, 0.1, 1000)
     camera.position.z = 1.5
 
     // render scene
     const renderer = new WebGLRenderer({ canvas: canvas, antialias: true })
     renderer.setPixelRatio(window.devicePixelRatio)
     renderer.setClearColor('#1d1d1d')
-    renderer.setSize(window.innerWidth, window.innerWidth)
+    renderer.setSize(480, 480)
 
     const vertexCount = 200 * 4;
     const geometry = new BufferGeometry()
@@ -88,7 +88,7 @@ const Canvas: React.FC = () => {
     // start animation
     requestRef.current = window.requestAnimationFrame(() => animate({ scene, camera, renderer }))
 
-    window.addEventListener('resize', () => handleResize({ camera, renderer }))
+    // window.addEventListener('resize', () => handleResize({ camera, renderer }))
   }
 
   // animate
@@ -102,14 +102,14 @@ const Canvas: React.FC = () => {
   }, [animate])
 
   // handle resize
-  const handleResize = ({ camera, renderer }: HandleCameraAspectParams) => {
-    camera.aspect = window.innerWidth / window.innerHeight
-    camera.updateProjectionMatrix()
-    renderer.setSize(window.innerWidth, window.innerWidth)
-  }
-  useEffect(() => {
-    return () => window.removeEventListener('resize', () => handleResize)
-  })
+  // const handleResize = ({ camera, renderer }: HandleCameraAspectParams) => {
+  //   camera.aspect = window.innerWidth / window.innerHeight
+  //   camera.updateProjectionMatrix()
+  //   renderer.setSize(window.innerWidth, window.innerWidth)
+  // }
+  // useEffect(() => {
+  //   return () => window.removeEventListener('resize', () => handleResize)
+  // })
 
   // track mouse pos
   // const handleMouseMove = (event: any) => {
