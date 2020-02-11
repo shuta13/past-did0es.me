@@ -16,7 +16,7 @@ const Skills: React.FC = () => (
     </div>
     <div className="SkillsDescriptionWrap">
       <div className="SkillsDescription">
-        <p>JavaScript, TypeScript, Ruby, C/C++, OpenGL</p>
+        <p>JavaScript, TypeScript, Ruby, GLSL, C/C++</p>
         <p>React.js, Vue.js, Three.js, Node.js, Jest, ESLint, Webpack</p>
         <p>Next.js, Gatsby.js, Nuxt.js, Rails, Laravel, Serverless Framework</p>
       </div>
