@@ -50,14 +50,14 @@ const ImageCanvas: React.FC<{ img: string }> = ({ img }) => {
 
     // init scene
     const scene = new Scene()
-    const camera = new PerspectiveCamera(75, 400 / 480, 1, 1000)
+    const camera = new PerspectiveCamera(75, 360 / 480, 1, 1000)
     camera.position.z = 1
 
     // render init
     const renderer = new WebGLRenderer({ canvas: canvas, antialias: true })
     renderer.setPixelRatio(window.devicePixelRatio)
     renderer.setClearColor('#1d1d1d')
-    renderer.setSize(480, 400)
+    renderer.setSize(480, 360)
 
     // light 
     const light = new AmbientLight(0xffffff, 1.0)
@@ -138,7 +138,6 @@ const ImageCanvas: React.FC<{ img: string }> = ({ img }) => {
       <canvas className="ImageCanvas"
         ref={onCanvasLoaded}
       />
-      <img className="ImageCanvasImg" src={img} />
     </button>
   )
 }
