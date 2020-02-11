@@ -5418,13 +5418,6 @@ react-scroll@1.7.16:
     lodash.throttle "^4.1.1"
     prop-types "^15.5.8"
 
-react-vfx@0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/react-vfx/-/react-vfx-0.1.4.tgz#15a506be791cc548027326905da177dce3d85b7c"
-  integrity sha512-jCVmqRxNzpuBWrPd12eejbD2treFvZwrtADCUqQfznztUKl72cnl7zHif43B3DPnqZY4Xra0+rCAIrL9xVO4tQ==
-  dependencies:
-    three "^0.111.0"
-
 react@16.12.0:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.12.0.tgz#0c0a9c6a142429e3614834d5a778e18aa78a0b83"
@@ -6334,11 +6327,6 @@ three@0.113.2:
   version "0.113.2"
   resolved "https://registry.yarnpkg.com/three/-/three-0.113.2.tgz#04791d491fe4359330f9dbe7b767db18bfb35d67"
   integrity sha512-x3vrKW41/UtbWbWduWKGlfIc043SvHWr3YltehYq+UGb9YglQ2oztNGvl2eut05JtNSmP11Mh3t6Xak5/0e+Fg==
-
-three@^0.111.0:
-  version "0.111.0"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.111.0.tgz#9cedb73e79b7f6bf2440cb67a273f883faa923b6"
-  integrity sha512-AcTqyGJ3H75AIusOuADy0LsP958QKQwm/YhABHFMzd6RFXPNVay1rlSbbG6WYv7KM72G2THMMwqbjQd4dVHMkQ==
 
 through2@^2.0.0:
   version "2.0.5"

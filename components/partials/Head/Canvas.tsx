@@ -32,6 +32,9 @@ type HandleCameraAspectParams = {
   renderer: WebGLRenderer
 }
 
+let mouseX = 0.0
+let mouseY = 0.0
+
 const Canvas: React.FC = () => {
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
     if (!canvas) {
@@ -108,6 +111,16 @@ const Canvas: React.FC = () => {
     return () => window.removeEventListener('resize', () => handleResize)
   })
 
+  // track mouse pos
+  const handleMouseMove = (event: any) => {
+    mouseX = event.clientX
+    mouseY = event.clientY
+  }
+  useEffect(() => {
+    window.addEventListener('mousemove', () => handleMouseMove(event))
+    return window.removeEventListener('mousemove', () => handleMouseMove)
+  }, [])
+
   // render
   const render = ({ scene, camera, renderer }: RenderParams) => {
     const time = performance.now()
@@ -139,11 +152,14 @@ const Canvas: React.FC = () => {
 
     object.material.uniforms.time.value = Math.atan(time * 0.005)
 
+    object.rotation.y = mouseX * 0.001
+    object.rotation.x = mouseY * 0.001
+
 		renderer.render( scene, camera )
   }
   return (
     <div className="CanvasWrap">
-      <canvas className="Canvas" ref={onCanvasLoaded} />
+      <canvas ref={onCanvasLoaded} />
     </div>
   )
 }
