@@ -44,7 +44,7 @@ const Canvas: React.FC = () => {
 
     // init scene
     const scene = new Scene()
-    const camera = new PerspectiveCamera(75, width / width, 0.1, 1000)
+    const camera = new PerspectiveCamera(80, width / width, 0.1, 1000)
     camera.position.z = 1.5
 
     // render scene
@@ -129,9 +129,21 @@ const Canvas: React.FC = () => {
     const object = scene.children[0] as any
     let positions = [] as any
     object.geometry.attributes.position.array.map((pos: number, index: number) => {
-      pos += 0.005 * Math.sin(time * Math.random() * Math.sin(time))
-      pos %= 0.6
-      positions.push(pos)
+      if (index % 3 === 1) {
+        pos += Math.random() * 0.05 * Math.cos(time * 0.005 * Math.sin(time)) * Math.sin(time * Math.random() * Math.sin(time))
+        pos %= 1
+        positions.push(pos)
+      }
+      else if (index % 3 === 2) {
+        pos += Math.random() * 0.04 * Math.cos(time * 0.005) * Math.sin(time * 0.005)
+        pos %= 1
+        positions.push(pos)
+      }
+      else {
+        pos += Math.random() * 0.0024 * Math.cos(time * 0.005) * Math.sin(time * 0.005)
+        pos %= 1
+        positions.push(pos)
+      }
     })
     const positionAttribute = new Float32BufferAttribute(positions, 4)
     object.geometry.setAttribute('position', positionAttribute)
