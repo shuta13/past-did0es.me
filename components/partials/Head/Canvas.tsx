@@ -52,7 +52,7 @@ const Canvas: React.FC = () => {
     renderer.setClearColor('#1d1d1d')
     renderer.setSize(480, 480)
 
-    const vertexCount = 200 * 4;
+    const vertexCount = 100 * 4;
     const geometry = new BufferGeometry()
     const positions = []
     const colors = []
@@ -105,7 +105,6 @@ const Canvas: React.FC = () => {
   // const handleResize = ({ camera, renderer }: HandleCameraAspectParams) => {
   //   camera.aspect = window.innerWidth / window.innerHeight
   //   camera.updateProjectionMatrix()
-  //   renderer.setSize(window.innerWidth, window.innerWidth)
   // }
   // useEffect(() => {
   //   return () => window.removeEventListener('resize', () => handleResize)
@@ -123,34 +122,18 @@ const Canvas: React.FC = () => {
 
   // render
   const render = ({ scene, camera, renderer }: RenderParams) => {
-    const time = performance.now()
-    const object = scene.children[0] as any
-    let positions = [] as any
-    object.geometry.attributes.position.array.map((pos: number, index: number) => {
-      if (index % 4 === 1) {
-        pos += Math.random() * 0.05 * Math.cos(time * 0.005 * Math.sin(time)) * Math.sin(time * Math.random() * Math.sin(time))
-        pos %= 0.6
-        positions.push(pos)
-      }
-      else if (index % 4 === 2) {
-        pos += Math.random() * 0.04 * Math.cos(time * 0.005) * Math.sin(time * 0.005)
-        pos %= 0.6
-        positions.push(pos)
-      }
-      else if (index % 4 === 3) {
-        pos += Math.random() * 0.0024 * Math.cos(time * 0.005) * Math.sin(time * 0.005)
-        pos %= 0.6
-        positions.push(pos)
-      } else {
-        pos += Math.random() * 0.0024 * Math.cos(time * 0.005) * Math.sin(time * 0.005)
-        pos %= 0.6
-        positions.push(pos)
-      }
-    })
-    const positionAttribute = new Float32BufferAttribute(positions, 4)
-    object.geometry.setAttribute('position', positionAttribute)
+    // const time = performance.now()
+    // const object = scene.children[0] as any
+    // let positions = [] as any
+    // object.geometry.attributes.position.array.map((pos: number, index: number) => {
+    //   pos += 0.005 * Math.sin(time * Math.random() * Math.sin(time))
+    //   pos %= 0.6
+    //   positions.push(pos)
+    // })
+    // const positionAttribute = new Float32BufferAttribute(positions, 4)
+    // object.geometry.setAttribute('position', positionAttribute)
 
-    object.material.uniforms.time.value = Math.atan(time * 0.005)
+    // object.material.uniforms.time.value = Math.atan(time * 0.005)
 
     // object.rotation.y = mouseX * 0.0008
     // object.rotation.x = mouseY * 0.0008

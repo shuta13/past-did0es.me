@@ -15,7 +15,7 @@ import Canvas from '../partials/Head/Canvas'
 
 const CommonContents: React.FC = () => (
   <div className="ContentsWrap">
-    <Canvas></Canvas>
+    <Canvas />
     <div className="ContentsClip">
       <Fade delay={400} duration={400} effects="fadeInUp">
         <AppTitle title="- Profile -"></AppTitle>
