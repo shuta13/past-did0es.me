@@ -43,8 +43,14 @@ const Canvas: React.FC = () => {
 
     // init scene
     const scene = new Scene()
-    const camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+    const camera = new PerspectiveCamera(100, window.innerWidth / window.innerWidth, 0.1, 1000)
     camera.position.z = 1.5
+
+    // render scene
+    const renderer = new WebGLRenderer({ canvas: canvas, antialias: true })
+    renderer.setPixelRatio(window.devicePixelRatio)
+    renderer.setClearColor('#1d1d1d')
+    renderer.setSize(window.innerWidth, window.innerWidth)
 
     const vertexCount = 200 * 4;
     const geometry = new BufferGeometry()
@@ -79,12 +85,6 @@ const Canvas: React.FC = () => {
     const mesh = new Mesh(geometry, material)
     scene.add(mesh)
 
-    // render scene
-    const renderer = new WebGLRenderer({ canvas: canvas, antialias: true })
-    renderer.setPixelRatio(window.devicePixelRatio)
-    renderer.setClearColor('#1d1d1d')
-    renderer.setSize(window.innerWidth, window.innerHeight)
-
     // start animation
     requestRef.current = window.requestAnimationFrame(() => animate({ scene, camera, renderer }))
 
@@ -105,21 +105,21 @@ const Canvas: React.FC = () => {
   const handleResize = ({ camera, renderer }: HandleCameraAspectParams) => {
     camera.aspect = window.innerWidth / window.innerHeight
     camera.updateProjectionMatrix()
-    renderer.setSize(window.innerWidth, window.innerHeight)
+    renderer.setSize(window.innerWidth, window.innerWidth)
   }
   useEffect(() => {
     return () => window.removeEventListener('resize', () => handleResize)
   })
 
   // track mouse pos
-  const handleMouseMove = (event: any) => {
-    mouseX = event.clientX
-    mouseY = event.clientY
-  }
-  useEffect(() => {
-    window.addEventListener('mousemove', () => handleMouseMove(event))
-    return window.removeEventListener('mousemove', () => handleMouseMove)
-  }, [])
+  // const handleMouseMove = (event: any) => {
+  //   mouseX = event.clientX
+  //   mouseY = event.clientY
+  // }
+  // useEffect(() => {
+  //   window.addEventListener('mousemove', () => handleMouseMove(event))
+  //   return window.removeEventListener('mousemove', () => handleMouseMove)
+  // }, [])
 
   // render
   const render = ({ scene, camera, renderer }: RenderParams) => {
@@ -152,8 +152,8 @@ const Canvas: React.FC = () => {
 
     object.material.uniforms.time.value = Math.atan(time * 0.005)
 
-    object.rotation.y = mouseX * 0.001
-    object.rotation.x = mouseY * 0.001
+    // object.rotation.y = mouseX * 0.0008
+    // object.rotation.x = mouseY * 0.0008
 
 		renderer.render( scene, camera )
   }
