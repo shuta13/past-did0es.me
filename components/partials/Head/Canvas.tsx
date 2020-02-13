@@ -36,7 +36,11 @@ type HandleCameraAspectParams = {
 // let mouseY = 0.0
 
 const Canvas: React.FC = () => {
-  const width = window.innerWidth * 0.7
+  let width = window.innerWidth * 0.7
+  const maxObjWidth = 720
+  const minObjWidth = 360
+  if (width >= maxObjWidth) width = maxObjWidth
+  else if (width <= minObjWidth) width = minObjWidth
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
     if (!canvas) {
       return
@@ -104,7 +108,9 @@ const Canvas: React.FC = () => {
 
   // handle resize
   const handleResize = ({ camera, renderer }: HandleCameraAspectParams) => {
-    const width = window.innerWidth * 0.7
+    let width = window.innerWidth
+    if (width >= maxObjWidth) width = maxObjWidth
+    else if (width <= minObjWidth) width = minObjWidth
     camera.aspect = width / width
     camera.updateProjectionMatrix()
     renderer.setSize(width, width)
@@ -128,20 +134,21 @@ const Canvas: React.FC = () => {
     const time = performance.now()
     const object = scene.children[0] as any
     let positions = [] as any
+    const threshold = 0.6
     object.geometry.attributes.position.array.map((pos: number, index: number) => {
       if (index % 3 === 1) {
         pos += Math.random() * 0.05 * Math.cos(time * 0.005 * Math.sin(time)) * Math.sin(time * Math.random() * Math.sin(time))
-        pos %= 1
+        pos %= threshold
         positions.push(pos)
       }
       else if (index % 3 === 2) {
         pos += Math.random() * 0.04 * Math.cos(time * 0.005) * Math.sin(time * 0.005)
-        pos %= 1
+        pos %= threshold
         positions.push(pos)
       }
       else {
         pos += Math.random() * 0.0024 * Math.cos(time * 0.005) * Math.sin(time * 0.005)
-        pos %= 1
+        pos %= threshold
         positions.push(pos)
       }
     })
