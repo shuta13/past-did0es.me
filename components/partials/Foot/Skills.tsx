@@ -29,8 +29,8 @@ const Skills: React.FC = () => (
     <div className="SkillsDescriptionWrap">
       <div className="SkillsDescription">
         <p>Docker, macOS, Linux, Windows, GitHub</p>
-        <p>GitHub Actions, CircleCI, TravisCI, Figma, Sketch</p>
-        <p>Netlify, Zeit Now, Heroku, Firebase Hosting, AWS Lambda</p>
+        <p>GitHub Actions, CircleCI, TravisCI, AWS Codepipeline/Codebuild, Figma, Sketch</p>
+        <p>Netlify, Zeit Now, Google App Engine, Firebase Hosting, AWS Lambda</p>
       </div>
     </div>
     <div className="SkillsLinkWrap">

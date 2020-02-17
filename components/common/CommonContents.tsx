@@ -18,7 +18,7 @@ const CommonContents: React.FC = () => (
     <Canvas />
     <div className="ContentsClip">
       <Fade delay={400} duration={400} effects="fadeInUp">
-        <AppTitle title="- Profile -"></AppTitle>
+        <AppTitle title="- profile -"></AppTitle>
         <Profile></Profile>
         <AppTitle title="- Works -"></AppTitle>
         <AppSubTitle subtitle="Development"></AppSubTitle>

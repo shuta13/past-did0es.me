@@ -21,6 +21,8 @@ const Home: React.FC = () => (
       <title>APOSTRO</title>
       <link rel="icon" href="/favicon.ico" />
       <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet"></link>
+      <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative&display=swap" rel="stylesheet"></link>
+      <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet"></link>
 
       <meta name="description" content="APOSTRO"/>
       <meta property="og:site_name" content="APOSTRO"/>
