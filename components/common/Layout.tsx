@@ -10,7 +10,7 @@ const Layout: React.FC = (props: any) => (
         margin: 0;
         box-sizing: border-box;
         background: #1d1d1d;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
       }
     `}
     </style>

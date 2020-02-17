@@ -9,6 +9,9 @@ const Skills: React.FC = () => (
         <p>Making Track, DJ(Future Bass, Progressive House, Pops...)</p>
       </div>
     </div>
+    <div className="SkillsLinkWrap">
+      <a href="https://www.wantedly.com/users/95976645" target="_blank" className="SkillsLink">Wantedly : https://www.wantedly.com/users/95976645</a>
+    </div>
     <div className="SkillsTitleWrap">
       <div className="SkillsTitle">
         Language / Library / FrameWork
@@ -32,9 +35,6 @@ const Skills: React.FC = () => (
         <p>GitHub Actions, CircleCI, TravisCI, AWS Codepipeline/Codebuild, Figma, Sketch</p>
         <p>Netlify, Zeit Now, Google App Engine, Firebase Hosting, AWS Lambda</p>
       </div>
-    </div>
-    <div className="SkillsLinkWrap">
-      <a href="https://www.wantedly.com/users/95976645" target="_blank" className="SkillsLink">Wantedly : https://www.wantedly.com/users/95976645</a>
     </div>
   </div>
 )

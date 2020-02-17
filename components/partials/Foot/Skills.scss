@@ -7,7 +7,7 @@
 }
 
 .SkillsTitleWrap, .SkillsDescriptionWrap, .SkillsLinkWrap {
-  width: 100%;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,6 +25,13 @@
 .SkillsDescription, .SkillsLink {
   font-size: 14px;
   font-family: 'Cormorant Garamond';
-  text-align: center;
   color: #fff;
+}
+
+.SkillsDescription {
+  text-align: justify;
+}
+
+.SkillsLink {
+  text-align: center;
 }
