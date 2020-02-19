@@ -8,8 +8,6 @@ const Skills: React.FC = () => (
         <p>Web Development(Design, Coding, building CI/CD)</p>
         <p>Making Track, DJ(Future Bass, Progressive House, Pops...)</p>
       </div>
-    </div>
-    <div className="SkillsLinkWrap">
       <a href="https://www.wantedly.com/users/95976645" target="_blank" className="SkillsLink">
         Wantedly : https://www.wantedly.com/users/95976645
       </a>

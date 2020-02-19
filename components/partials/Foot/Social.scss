@@ -14,17 +14,19 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin-top: 80px;
 }
 
 .SocialLinkWrap {
   width: 100%;
   font-family: 'Cinzel Decorative';
   text-align: center;
-  margin: 16px 0;
+  margin: 24px 0;
 }
 
 .SocialLink {
   font-size: 20px;
   color: #fff;
   text-decoration: none;
+  line-height: 2;
 }

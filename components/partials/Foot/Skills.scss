@@ -6,11 +6,12 @@
   flex-wrap: wrap;
 }
 
-.SkillsTitleWrap, .SkillsDescriptionWrap, .SkillsLinkWrap {
+.SkillsTitleWrap, .SkillsDescriptionWrap {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   line-height: 1.6;
 }
 
@@ -19,7 +20,7 @@
   font-family: 'Cinzel Decorative';
   text-align: center;
   color: #fff;
-  margin-top: 48px;
+  margin-top: 64px;
   margin-bottom: 32px;
 }
 
