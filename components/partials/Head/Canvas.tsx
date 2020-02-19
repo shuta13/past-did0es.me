@@ -36,7 +36,7 @@ type HandleCameraAspectParams = {
 // let mouseY = 0.0
 
 const Canvas: React.FC = () => {
-  let width = window.innerWidth * 0.7
+  let width = window.innerWidth;
   const maxObjWidth = 720
   const minObjWidth = 300
   if (width >= maxObjWidth) width = maxObjWidth

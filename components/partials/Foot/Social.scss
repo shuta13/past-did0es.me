@@ -1,8 +1,10 @@
 .SocialWrap {
   width: 480px;
-  height: 420px;
+  max-height: 420px;
+  height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -18,11 +20,11 @@
   width: 100%;
   font-family: 'Cinzel Decorative';
   text-align: center;
+  margin: 16px 0;
 }
 
 .SocialLink {
   font-size: 20px;
   color: #fff;
   text-decoration: none;
-  line-height: 2;
 }
