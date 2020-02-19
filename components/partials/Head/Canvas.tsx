@@ -38,7 +38,7 @@ type HandleCameraAspectParams = {
 const Canvas: React.FC = () => {
   let width = window.innerWidth * 0.7
   const maxObjWidth = 720
-  const minObjWidth = 360
+  const minObjWidth = 300
   if (width >= maxObjWidth) width = maxObjWidth
   else if (width <= minObjWidth) width = minObjWidth
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
