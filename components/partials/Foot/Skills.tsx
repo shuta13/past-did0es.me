@@ -5,8 +5,8 @@ const Skills: React.FC = () => (
   <div className="SkillsWrap">
     <div className="SkillsDescriptionWrap">
       <div className="SkillsDescription">
-        Web Development(Design, Coding, building CI/CD)
-        Making Track, DJ(Future Bass, Progressive House, Pops...)
+        <p>Web Development(Design, Coding, building CI/CD)</p>
+        <p>Making Track, DJ(Future Bass, Progressive House, Pops...)</p>
       </div>
     </div>
     <div className="SkillsLinkWrap">
@@ -21,9 +21,9 @@ const Skills: React.FC = () => (
     </div>
     <div className="SkillsDescriptionWrap">
       <div className="SkillsDescription">
-        JavaScript, TypeScript, Ruby, GLSL, C/C++
-        React.js, Vue.js, Three.js, Node.js, Jest, ESLint, Webpack
-        Next.js, Gatsby.js, Nuxt.js, Rails, Laravel, Serverless Framework
+        <p>JavaScript, TypeScript, Ruby, GLSL, C/C++</p>
+        <p>React.js, Vue.js, Three.js, Node.js, Jest, ESLint, Webpack</p>
+        <p>Next.js, Gatsby.js, Nuxt.js, Rails, Laravel, Serverless Framework</p>
       </div>
     </div>
     <div className="SkillsTitleWrap">
@@ -33,9 +33,9 @@ const Skills: React.FC = () => (
     </div>
     <div className="SkillsDescriptionWrap">
       <div className="SkillsDescription">
-        Docker, macOS, Linux, Windows, GitHub
-        GitHub Actions, CircleCI, TravisCI, AWS Codepipeline/Codebuild, Figma, Sketch
-        Netlify, Zeit Now, Google App Engine, Firebase Hosting, Heroku, AWS Lambda
+        <p>Docker, macOS, Linux, Windows, GitHub, Figma, Sketch</p>
+        <p>GitHub Actions, CircleCI, TravisCI, AWS Codepipeline/Codebuild</p>
+        <p>Netlify, Zeit Now, Google App Engine, Firebase Hosting, Heroku, AWS Lambda</p>
       </div>
     </div>
   </div>

@@ -1,5 +1,5 @@
 .SkillsWrap {
-  width: 480px;
+  width: 100%;
   height: 420px;
   display: flex;
   justify-content: center;
@@ -7,12 +7,11 @@
 }
 
 .SkillsTitleWrap, .SkillsDescriptionWrap, .SkillsLinkWrap {
-  width: 60%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  line-height: 2;
+  line-height: 1.2;
 }
 
 .SkillsTitle {
@@ -25,8 +24,10 @@
 }
 
 .SkillsDescription, .SkillsLink {
+  width: 90%;
   font-size: 14px;
   font-family: 'Cormorant Garamond';
   color: #fff;
   text-align: center;
+  white-space: normal;
 }
