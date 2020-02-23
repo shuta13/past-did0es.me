@@ -1,5 +1,10 @@
 import React from 'react'
 import Head from 'next/head'
+import DetailsImage from '../../common/DetailsImage'
+import DetailsInfo from '../../common/DetailsInfo'
+import DetailsDescription from '../../common/DetailsDescription'
+
+import './Details.scss'
 
 const Details: React.FC = () => {
   // will coming props values
@@ -24,6 +29,12 @@ const Details: React.FC = () => {
         <meta property="og:description" content={"APOSTRO - " + worksTitle}/>
         <meta property="og:image" content="https://did0es.me/static/ogp.jpg" />
       </Head>
+
+      <div className="WrapDetailsContents">
+        <DetailsImage></DetailsImage>
+        <DetailsInfo></DetailsInfo>
+        <DetailsDescription></DetailsDescription>
+      </div>
     </div>
   )
 }
