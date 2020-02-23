@@ -39,7 +39,14 @@ type AnimateParams = {
 // ----------
 
 let time = 0.0
-let shakeWidth = 0.02
+let shakeWidth = 0.015
+
+let fov = 80
+
+let canvasWidth = window.innerWidth
+let canvasHeight = window.innerWidth * 0.75
+
+const maxCanvasWidth = 800
 
 const ImageCanvas: React.FC<{ img: string, isDetails?: boolean }> = ({ img, isDetails }) => {
   // set canvas
@@ -49,15 +56,26 @@ const ImageCanvas: React.FC<{ img: string, isDetails?: boolean }> = ({ img, isDe
     }
 
     // init scene
+
     const scene = new Scene()
-    const camera = new PerspectiveCamera(75, 360 / 480, 1, 1000)
+    if (!isDetails) {
+      shakeWidth = 0.02
+      fov = 75
+      canvasWidth = 480
+      canvasHeight = 360
+    }
+    if (canvasWidth >= maxCanvasWidth) {
+      canvasWidth = maxCanvasWidth
+      canvasHeight = maxCanvasWidth * 0.75
+    }
+    const camera = new PerspectiveCamera(fov, canvasHeight / canvasWidth, 1, 1000)
     camera.position.z = 1
 
     // render init
     const renderer = new WebGLRenderer({ canvas: canvas, antialias: true })
     renderer.setPixelRatio(window.devicePixelRatio)
     renderer.setClearColor('#1d1d1d')
-    renderer.setSize(480, 360)
+    renderer.setSize(canvasWidth, canvasHeight)
 
     // light 
     const light = new AmbientLight(0xffffff, 1.0)
@@ -135,21 +153,19 @@ const ImageCanvas: React.FC<{ img: string, isDetails?: boolean }> = ({ img, isDe
 
   return (
     <div>
-      { isDetails === undefined &&
+      { isDetails &&
+        <button className="ImageCanvasClip">
+          <canvas className="ImageCanvasDetails"
+            ref={onCanvasLoaded}
+          />
+        </button>
+      }
+      { !isDetails &&
         <button className="ImageCanvasClip">
           <canvas className="ImageCanvas"
             ref={onCanvasLoaded}
           />
           <img src={img} className="ImageCanvasImg" />
-        </button>
-      }
-      {
-        isDetails && 
-        <button className="ImageCanvasClipDetails">
-          <canvas className="ImageCanvasDetails"
-            ref={onCanvasLoaded}
-          />
-          <img src={img} className="ImageCanvasImgDetails" />
         </button>
       }
     </div>
