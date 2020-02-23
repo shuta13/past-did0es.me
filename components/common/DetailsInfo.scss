@@ -11,12 +11,14 @@
 .DetailsInfoDescription,
 .DetailsInfoLink {
   width: 100%;
-  height: 24px;
+  height: 16px;
   margin: 8px;
   color: #fff;
   font-size: 14px;
   font-family: 'Cormorant Garamond';
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .DetailsInfoDescription {
@@ -24,6 +26,7 @@
   font-family: 'Noto Serif JP';
   width: 60%;
   height: auto;
+  justify-content: justify;
 }
 
 .DetailsInfoLink {

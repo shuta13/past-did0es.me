@@ -43,14 +43,7 @@ type HandleCameraAspectParams = {
 // ----------
 
 let time = 0.0
-let shakeWidth = 0.008
-
-const fov = 70
-
 const payloadHeight = 0.75
-let canvasWidth = window.innerWidth
-let canvasHeight = window.innerWidth * payloadHeight
-
 const maxCanvasWidth = 740
 
 const ImageCanvas: React.FC<{ img: string, isDetails?: boolean }> = ({ img, isDetails }) => {
@@ -61,7 +54,10 @@ const ImageCanvas: React.FC<{ img: string, isDetails?: boolean }> = ({ img, isDe
     }
 
     // init scene
-
+    const fov = 75
+    let canvasWidth = window.innerWidth
+    let canvasHeight = window.innerWidth * payloadHeight
+    let shakeWidth = 0.008
     const scene = new Scene()
     if (!isDetails) {
       shakeWidth = 0.02

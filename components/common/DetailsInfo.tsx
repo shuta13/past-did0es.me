@@ -23,7 +23,7 @@ const DetailsInfo: React.FC<{info: InfoParams}> = ({ info }) => {
         tags : { info.tags }
       </div>
       <a href={info.link} target="_blank" className="DetailsInfoLink">
-        { info.link }
+        link : { info.link }
       </a>
       <div className="DetailsInfoDescription">
         { info.desc }

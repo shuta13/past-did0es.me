@@ -12,8 +12,8 @@ const Details: React.FC = () => {
   const info = {
     title: 'garelly',
     date: '2020/02/23',
-    tags: 'website',
-    desc: 'ファックファックファック卍',
+    tags: 'website, generative, hogefuga, fuckin',
+    desc: 'ファックファックファック卍メンヘラへらへらへらへらぴよよよよよよよ〜〜〜〜〜〜',
     link: 'https://did0es.netlify.com/garelly'
   }
 

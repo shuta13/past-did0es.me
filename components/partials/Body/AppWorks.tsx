@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import './AppWorks.scss'
 
 import ImageCanvas from '../../common/ImageCanvas'
@@ -8,10 +9,12 @@ const AppWorks: React.FC<{ img: string, title: string, desc: string, link?: stri
   return (
     <div className="AppWorksWrap">
       <div className="AppWorksImageWrap">
-        <a href={link} target="_blank" className="AppWorksImageClip">
-          { width > 615 && <ImageCanvas img={img} /> }
-          { width <= 615 && <img src={img} className="AppWorksImage" /> }
-        </a>
+        <Link href="/details">
+          <a className="AppWorksImageClip">
+            { width > 615 && <ImageCanvas img={img} /> }
+            { width <= 615 && <img src={img} className="AppWorksImage" /> }
+          </a>
+        </Link>
       </div>
       <div className="AppWorksTitleWrap">
         <div className="AppWorksTitle">
