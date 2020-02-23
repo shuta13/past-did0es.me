@@ -36,6 +36,10 @@ type AnimateParams = {
   composer: EffectComposer
   customPass?: ShaderPass
 }
+type HandleCameraAspectParams = {
+  camera: PerspectiveCamera
+  renderer: WebGLRenderer
+}
 // ----------
 
 let time = 0.0
@@ -128,6 +132,8 @@ const ImageCanvas: React.FC<{ img: string, isDetails?: boolean }> = ({ img, isDe
     // start animation
     composer.render()
     requestRef.current = window.requestAnimationFrame(() => animate({ scene, composer, customPass }))
+
+    if (isDetails) window.addEventListener('resize', () => handleResize({ camera, renderer }))
   }
 
   // animate
@@ -139,6 +145,19 @@ const ImageCanvas: React.FC<{ img: string, isDetails?: boolean }> = ({ img, isDe
   useEffect(() => {
     return () => window.cancelAnimationFrame(requestRef.current)
   }, [animate])
+
+  // handle resize
+  const handleResize = ({ camera, renderer }: HandleCameraAspectParams) => {
+    let width = window.innerWidth
+    let height = width * 0.75
+    if (width >= maxCanvasWidth) {
+      width = maxCanvasWidth
+      height = maxCanvasWidth * 0.75
+    }
+    camera.aspect = height / width
+    camera.updateProjectionMatrix()
+    renderer.setSize(width, height)
+  }
 
   // render
   const render = ({ scene, composer, customPass }: RenderParams) => {
