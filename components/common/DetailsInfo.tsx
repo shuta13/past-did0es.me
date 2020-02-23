@@ -17,21 +17,23 @@ const DetailsInfo: React.FC<{info: InfoParams}> = ({ info }) => {
       <div className="DetailsInfoTitle">
         { info.title }
       </div>
-      <div className="DetailsInfoDate">
-        date : { info.date }
+      <div className="DetailsInfoMetaWrap">
+        <div className="DetailsInfoDate">
+          date : { info.date }
+        </div>
+        <div className="DetailsInfoTags">
+          tags : { info.tags }
+        </div>
       </div>
-      <div className="DetailsInfoTags">
-        tags : { info.tags }
-      </div>
+      <a href={info.link} target="_blank" className="DetailsInfoLink">
+        { info.link }
+      </a>
       <div className="DetailsInfoDescription">
         { info.desc }
       </div>
       <div className="DetailsInfoDescription">
         { info.subDesc }
       </div>
-      <a href={info.link} target="_blank" className="DetailsInfoLink">
-        { info.link }
-      </a>
     </div>
   )
 }
