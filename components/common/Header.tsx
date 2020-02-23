@@ -2,7 +2,6 @@ import React from 'react'
 import { animateScroll } from 'react-scroll'
 
 import './Header.scss'
-import Link from 'next/link'
 
 const Header: React.FC<{ isDetails: boolean }> = ({ isDetails }) => (
   <div className="HeaderWrap">

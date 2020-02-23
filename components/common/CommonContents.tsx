@@ -13,6 +13,8 @@ import Copywrite from '../partials/Foot/Copyright'
 
 import Canvas from '../partials/Head/Canvas'
 
+import data from '../../public/static/data.json'
+
 const CommonContents: React.FC = () => (
   <div className="ContentsWrap">
     <Canvas />
@@ -22,13 +24,19 @@ const CommonContents: React.FC = () => (
         <Profile />
         <AppTitle title="- Works -" />
         <AppSubTitle subtitle="Development" />
-        <AppWorks
-          img={require('../../public/static/works/garelly.jpg')}
-          title="GARELLY"
-          desc="Site of Generative Art & 2D, 3D Graphics."
-          link="https://did0es.netlify.com/garelly"
-        />
-        <AppWorks
+        {
+          data.map(params => {
+            return (
+              <AppWorks
+                img={`/static/works/${params.img}`}
+                title={params.info.title}
+                desc={params.info.desc}
+                link={params.info.link}
+              />
+            )
+          })
+        }
+        {/* <AppWorks
           img={require('../../public/static/works/experiments.jpg')}
           title="EXPERIMENTS"
           desc="Site of WebGL(Three.js) & Nuxt.js Experiments"
@@ -84,7 +92,7 @@ const CommonContents: React.FC = () => (
           title="TO WAY NIGHT"
           desc="Remixed My Own Music Published for University Festival"
           link="https://soundcloud.com/user-858183512/to-way-night"
-        />
+        /> */}
         <AppTitle title="- Skills -" />
         <Skills />
         <AppTitle title="- Social -" />
