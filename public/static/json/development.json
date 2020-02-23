@@ -6,6 +6,7 @@
       "date": "2019/05/25",
       "tags": "website, generative, vue.js",
       "desc": "Site of Generative Art & 2D, 3D Graphics.",
+      "subDesc": "",
       "link": "https://did0es.netlify.com/garelly"
     }
   },
@@ -16,6 +17,7 @@
       "date": "2020/02/23",
       "tags": "website, webgl, three.js",
       "desc": "Site of WebGL(Three.js) & Nuxt.js Experiments",
+      "subDesc": "",
       "link": "https://experiments.did0es.me"
     }
   },
@@ -26,6 +28,7 @@
       "date": "2020/02/23",
       "tags": "blog, gatsby.js",
       "desc": "Candy Official Blog of ElevenBack LLC.",
+      "subDesc": "",
       "link": "https://blog.candy.ac"
     }
   },
@@ -36,6 +39,7 @@
       "date": "2020/02/23",
       "tags": "library of npm, vue.js, tsx",
       "desc": "JavaScript Library for Supporting CSS of Vue-TSX",
+      "subDesc": "",
       "link": "https://github.com/shuta13/vue-tsx-keyframes"
     }
   },
@@ -46,6 +50,7 @@
       "date": "2020/02/23",
       "tags": "website, podcast, nuxt.js",
       "desc": "Podcast Site of tambourine.inc for Co-workers",
+      "subDesc": "",
       "link": "https://developers.tam-bourine.co.jp/entry/2019/12/19/190000"
     }
   },
@@ -56,6 +61,7 @@
       "date": "2020/02/23",
       "tags": "LT",
       "desc": "Lighting Talk of vue-tsx-keyframes @Kyoto.js17",
+      "subDesc": "",
       "link": "https://speakerdeck.com/shuta/keyframes-of-vue-and-tsx-with-css-in-js"
     }
   }
