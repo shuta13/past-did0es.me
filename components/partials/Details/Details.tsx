@@ -15,16 +15,17 @@ const Details: React.FC = () => {
     date: '2020/02/23',
     tags: 'website'
   }
-  const desc = 'hogepiyofugafugo'
+  const desc = 'ファックファックファック卍'
 
   return (
     <div>
       <Head>
         <title>APOSTRO - {worksTitle}</title>
         <link rel="icon" href="/favicon.ico" />
-        {/* <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet" /> */}
+        <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet" />
 
         <meta name="description" content={"APOSTRO - " + worksTitle}/>
         <meta property="og:site_name" content={"APOSTRO - " + worksTitle}/>
@@ -36,7 +37,7 @@ const Details: React.FC = () => {
         <meta property="og:image" content="https://did0es.me/static/ogp.jpg" />
       </Head>
 
-      <div className="WrapDetailsContents">
+      <div className="DetailsContentsWrap">
         <DetailsImage img={img} />
         <DetailsInfo info={info} />
         <DetailsDescription desc={desc} />

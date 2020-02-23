@@ -1,9 +1,11 @@
 import React from 'react'
 import ImageCanvas from './ImageCanvas'
 
+import './DetailsImage.scss'
+
 const DetailsImage: React.FC<{ img: string }> = ({ img }) => {
   return (
-    <div>
+    <div className="DetailsImageWrap">
       <ImageCanvas img={img} />
     </div>
   )

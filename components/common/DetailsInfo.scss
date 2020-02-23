@@ -1,0 +1,14 @@
+.DetailsInfoWrap {
+  width: 60%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.DetailsInfoTitle,
+.DetailsInfoDate,
+.DetailsInfoTags {
+  color: #fff;
+  font-family: 'Cormorant Garamond';
+}
