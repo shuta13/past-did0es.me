@@ -7,7 +7,8 @@ type InfoParams = {
   date: string
   tags: string
   desc: string
-  link?: string
+  subDesc?: string
+  link: string
 }
 
 const DetailsInfo: React.FC<{info: InfoParams}> = ({ info }) => {
@@ -24,6 +25,9 @@ const DetailsInfo: React.FC<{info: InfoParams}> = ({ info }) => {
       </div>
       <div className="DetailsInfoDescription">
         { info.desc }
+      </div>
+      <div className="DetailsInfoDescription">
+        { info.subDesc }
       </div>
       <a href={info.link} target="_blank" className="DetailsInfoLink">
         { info.link }
