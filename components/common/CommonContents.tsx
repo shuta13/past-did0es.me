@@ -30,6 +30,7 @@ const CommonContents: React.FC = () => (
           development.map(params => {
             return (
               <AppWorks
+                key={params.img}
                 img={`/static/works/${params.img}`}
                 title={params.info.title}
                 desc={params.info.desc}
@@ -43,6 +44,7 @@ const CommonContents: React.FC = () => (
           design.map(params => {
             return (
               <AppWorks
+                key={params.img}
                 img={`/static/works/${params.img}`}
                 title={params.info.title}
                 desc={params.info.desc}
@@ -56,6 +58,7 @@ const CommonContents: React.FC = () => (
           trackMaking.map(params => {
             return (
               <AppWorks
+                key={params.img}
                 img={`/static/works/${params.img}`}
                 title={params.info.title}
                 desc={params.info.desc}

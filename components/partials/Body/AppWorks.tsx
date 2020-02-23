@@ -22,16 +22,6 @@ const AppWorks: React.FC<{ img: string, title: string, desc: string, link: strin
           {title}
         </div>
       </div>
-      <div className="AppWorksDescriptionWrap">
-        <div className="AppWorksDescription">
-          {desc}
-        </div>
-      </div>
-      <div className="AppWorksDescriptionWrap">
-        <div className="AppWorksDescription">
-          {subDesc}
-        </div>
-      </div>
     </div>
   )
 }
