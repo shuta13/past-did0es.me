@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DetailsImage = () => {
+const DetailsImage: React.FC<{ img: string }> = ({ img }) => {
   return (
     <div>this is details info</div>
   )

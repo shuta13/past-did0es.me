@@ -9,7 +9,12 @@ import './Details.scss'
 const Details: React.FC = () => {
   // will coming props values
   const worksTitle = 'f*ck'
-  const worksImage = ''
+  const img = require('../../../public/static/works/garelly.jpg')
+  const info = {
+    date: '2020/02/23',
+    tags: 'website'
+  }
+  const desc = 'hogepiyofugafugo'
 
   return (
     <div>
@@ -31,9 +36,9 @@ const Details: React.FC = () => {
       </Head>
 
       <div className="WrapDetailsContents">
-        <DetailsImage />
-        <DetailsInfo />
-        <DetailsDescription />
+        <DetailsImage img={img} />
+        <DetailsInfo info={info} />
+        <DetailsDescription desc={desc} />
       </div>
     </div>
   )
