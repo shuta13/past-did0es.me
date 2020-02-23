@@ -11,7 +11,7 @@ const DetailsNoSSR = dynamic(
 const DetailsHome = () => {
   return (
     <Layout>
-      <Header />
+      <Header isDetails={true} />
       <DetailsNoSSR />
     </Layout>
   )

@@ -34,7 +34,7 @@ const Home: React.FC = () => (
       <meta property="og:image" content="https://did0es.me/static/ogp.jpg" />
     </Head>
 
-    <Header />
+    <Header isDetails={false} />
     {/* <CanvasNoSSR /> */}
     <ContentsNoSSR />
 

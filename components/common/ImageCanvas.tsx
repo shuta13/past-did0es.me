@@ -154,6 +154,9 @@ const ImageCanvas: React.FC<{ img: string, isDetails?: boolean }> = ({ img, isDe
     camera.updateProjectionMatrix()
     renderer.setSize(width, height)
   }
+  useEffect(() => {
+    return () => window.removeEventListener('resize', () => handleResize)
+  })
 
   // render
   const render = ({ scene, composer, customPass }: RenderParams) => {
