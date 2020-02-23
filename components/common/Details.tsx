@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 
-const CommonDetails: React.FC = () => {
+const Details: React.FC = () => {
   // will coming props values
   const worksTitle = 'f*ck'
   const worksImage = ''
@@ -28,4 +28,4 @@ const CommonDetails: React.FC = () => {
   )
 }
 
-export default CommonDetails
+export default Details
