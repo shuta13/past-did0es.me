@@ -8,9 +8,10 @@ import './Details.scss'
 
 const Details: React.FC = () => {
   // will coming props values
-  const worksTitle = 'f*ck'
+  const worksTitle = 'garelly'
   const img = require('../../../public/static/works/garelly.jpg')
   const info = {
+    title: 'garelly',
     date: '2020/02/23',
     tags: 'website'
   }

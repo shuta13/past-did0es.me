@@ -1,8 +1,11 @@
 import React from 'react'
+import ImageCanvas from './ImageCanvas'
 
 const DetailsImage: React.FC<{ img: string }> = ({ img }) => {
   return (
-    <div>this is details info</div>
+    <div>
+      <ImageCanvas img={img} />
+    </div>
   )
 }
 

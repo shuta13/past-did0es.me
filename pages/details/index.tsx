@@ -1,13 +1,18 @@
-import React from 'react';
-import Layout from '../../components/common/Layout';
-import Header from '../../components/common/Header';
-import Details from '../../components/partials/Details/Details';
+import React from 'react'
+import dynamic from 'next/dynamic'
+import Layout from '../../components/common/Layout'
+import Header from '../../components/common/Header'
+
+const DetailsNoSSR = dynamic(
+  () => import('../../components/partials/Details/Details'),
+  { ssr: false }
+)
 
 const DetailsHome = () => {
   return (
     <Layout>
       <Header />
-      <Details />
+      <DetailsNoSSR />
     </Layout>
   )
 }
