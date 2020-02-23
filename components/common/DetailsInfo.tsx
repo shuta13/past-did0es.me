@@ -2,7 +2,7 @@ import React from 'react'
 
 import './DetailsInfo.scss'
 
-const DetailsInfo: React.FC<{ info: { title: string, date: string, tags: string } }> = ({ info }) => {
+const DetailsInfo: React.FC<{ info: { title: string, date: string, tags: string, desc: string } }> = ({ info }) => {
   return (
     <div className="DetailsInfoWrap">
       <div className="DetailsInfoTitle">
@@ -13,6 +13,9 @@ const DetailsInfo: React.FC<{ info: { title: string, date: string, tags: string 
       </div>
       <div className="DetailsInfoTags">
         tags : { info.tags }
+      </div>
+      <div className="DetailsInfoDescription">
+        { info.desc }
       </div>
     </div>
   )

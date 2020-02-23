@@ -3,28 +3,25 @@
   outline: none;
   border: none;
   background: #1d1d1d;
-  width: 400px;
-  height: 400px;
+  width: 90vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .ImageCanvasWrap {
-  width: 400px;
-  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .ImageCanvas, .ImageCanvasDetails {
-  position: absolute;
   transform: scale(1, 1);
   transition: all cubic-bezier(.27,.19,.44,1) .6s;
 }
 
 .ImageCanvas {
+  position: absolute;
   opacity: 0;
   cursor: pointer;
 }

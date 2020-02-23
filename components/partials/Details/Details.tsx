@@ -2,7 +2,6 @@ import React from 'react'
 import Head from 'next/head'
 import DetailsImage from '../../common/DetailsImage'
 import DetailsInfo from '../../common/DetailsInfo'
-import DetailsDescription from '../../common/DetailsDescription'
 
 import './Details.scss'
 
@@ -13,9 +12,9 @@ const Details: React.FC = () => {
   const info = {
     title: 'garelly',
     date: '2020/02/23',
-    tags: 'website'
+    tags: 'website',
+    desc: 'ファックファックファック卍'
   }
-  const desc = 'ファックファックファック卍'
 
   return (
     <div>
@@ -40,7 +39,6 @@ const Details: React.FC = () => {
       <div className="DetailsContentsWrap">
         <DetailsImage img={img} />
         <DetailsInfo info={info} />
-        <DetailsDescription desc={desc} />
       </div>
     </div>
   )
