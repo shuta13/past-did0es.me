@@ -42,7 +42,7 @@ const Details: React.FC = () => {
         <meta name="description" content={"APOSTRO - " + worksTitle}/>
         <meta property="og:site_name" content={"APOSTRO - " + worksTitle}/>
         <meta property="og:type" content="website"/>
-        <meta property="og:url" content="https://did0es.me/details"/>
+        <meta property="og:url" content={`https://did0es.me/details?title=${img.split('.')[0]}`}/>
         <meta property="og:title" content="APOSTRO"/>
         <meta name="twitter:card" content="summary_large_image"/>
         <meta property="og:description" content={"APOSTRO - " + worksTitle}/>
