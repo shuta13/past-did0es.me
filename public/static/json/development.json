@@ -1,0 +1,62 @@
+[
+  {
+    "img": "garelly.jpg",
+    "info": {
+      "title": "garelly",
+      "date": "2019/05/25",
+      "tags": "website, generative, vue.js",
+      "desc": "Site of Generative Art & 2D, 3D Graphics.",
+      "link": "https://did0es.netlify.com/garelly"
+    }
+  },
+  {
+    "img": "experiments.jpg",
+    "info": {
+      "title": "EXPERIMENTS",
+      "date": "2020/02/23",
+      "tags": "website, webgl, three.js",
+      "desc": "Site of WebGL(Three.js) & Nuxt.js Experiments",
+      "link": "https://experiments.did0es.me"
+    }
+  },
+  {
+    "img": "blog-candy.jpg",
+    "info": {
+      "title": "Candy Official Blog",
+      "date": "2020/02/23",
+      "tags": "blog, gatsby.js",
+      "desc": "Candy Official Blog of ElevenBack LLC.",
+      "link": "https://blog.candy.ac"
+    }
+  },
+  {
+    "img": "vue-tsx-keyframes.jpg",
+    "info": {
+      "title": "vue-tsx-keyframes",
+      "date": "2020/02/23",
+      "tags": "library of npm, vue.js, tsx",
+      "desc": "JavaScript Library for Supporting CSS of Vue-TSX",
+      "link": "https://github.com/shuta13/vue-tsx-keyframes"
+    }
+  },
+  {
+    "img": "tam-podcast.jpg",
+    "info": {
+      "title": "tambourine.inc podcast site",
+      "date": "2020/02/23",
+      "tags": "website, podcast, nuxt.js",
+      "desc": "Podcast Site of tambourine.inc for Co-workers",
+      "link": "https://developers.tam-bourine.co.jp/entry/2019/12/19/190000"
+    }
+  },
+  {
+    "img": "lt-kyotojs17.jpg",
+    "info": {
+      "title": "LT @Kyoto.js17",
+      "date": "2020/02/23",
+      "tags": "LT",
+      "desc": "Lighting Talk of vue-tsx-keyframes @Kyoto.js17",
+      "link": "https://speakerdeck.com/shuta/keyframes-of-vue-and-tsx-with-css-in-js"
+    }
+  }
+]

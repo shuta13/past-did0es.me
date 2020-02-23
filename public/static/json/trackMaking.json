@@ -1,0 +1,23 @@
+[
+  {
+    "img": "miko-music.jpg",
+    "info": {
+      "title": "Veginning",
+      "date": "2020/01/10",
+      "tags": "EDM, future bass",
+      "desc": "Music Provided 'Veginning' for #VTuberHackPremium",
+      "subDesc": "Award : Special Award of noitomu",
+      "link": "https://youtu.be/J_CrAM6PEwQ"
+    }
+  },
+  {
+    "img": "towaynight.jpg",
+    "info": {
+      "title": "To Way Night",
+      "date": "2020/01/10",
+      "tags": "EDM, Progressive House",
+      "desc": "Remixed My Own Music Published for University Festival",
+      "link": "https://soundcloud.com/user-858183512/to-way-night"
+    }
+  }
+]
