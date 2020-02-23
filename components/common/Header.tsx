@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { animateScroll } from 'react-scroll'
 
 import './Header.scss'
@@ -6,7 +7,7 @@ import './Header.scss'
 const Header: React.FC<{ isDetails: boolean }> = ({ isDetails }) => (
   <div className="HeaderWrap">
     { isDetails &&
-      <a href="/">
+      <Link href="/">
         <img
           className="HeaderImage"
           src={require('../../public/static/apostro.svg')}
@@ -17,7 +18,7 @@ const Header: React.FC<{ isDetails: boolean }> = ({ isDetails }) => (
             })
           }
         />
-      </a>
+      </Link>
     }
     { !isDetails &&
       <img
