@@ -6,8 +6,8 @@ import Details from '../../components/partials/Details/Details';
 const DetailsHome = () => {
   return (
     <Layout>
-      <Header></Header>
-      <Details></Details>
+      <Header />
+      <Details />
     </Layout>
   )
 }

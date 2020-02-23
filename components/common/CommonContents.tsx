@@ -18,10 +18,10 @@ const CommonContents: React.FC = () => (
     <Canvas />
     <div className="ContentsClip">
       <Fade delay={400} duration={400} effects="fadeInUp">
-        <AppTitle title="- profile -"></AppTitle>
-        <Profile></Profile>
-        <AppTitle title="- Works -"></AppTitle>
-        <AppSubTitle subtitle="Development"></AppSubTitle>
+        <AppTitle title="- profile -" />
+        <Profile />
+        <AppTitle title="- Works -" />
+        <AppSubTitle subtitle="Development" />
         <AppWorks
           img={require('../../public/static/works/garelly.jpg')}
           title="GARELLY"
@@ -58,7 +58,7 @@ const CommonContents: React.FC = () => (
           desc="Lighting Talk of vue-tsx-keyframes @Kyoto.js17"
           link="https://speakerdeck.com/shuta/keyframes-of-vue-and-tsx-with-css-in-js"
         />
-        <AppSubTitle subtitle="Design"></AppSubTitle>
+        <AppSubTitle subtitle="Design" />
         <AppWorks
           img={require('../../public/static/works/design-works.jpg')}
           title="Design Works 2020"
@@ -71,7 +71,7 @@ const CommonContents: React.FC = () => (
           desc="Co-created Flyer of ElevenBack"
           link="https://techblog.elevenback.co.jp/entry/2019/11/08/145616"
         />
-        <AppSubTitle subtitle="Track Making"></AppSubTitle>
+        <AppSubTitle subtitle="Track Making" />
         <AppWorks
           img={require('../../public/static/works/miko-music.jpg')}
           title="Veginning"
@@ -85,11 +85,11 @@ const CommonContents: React.FC = () => (
           desc="Remixed My Own Music Published for University Festival"
           link="https://soundcloud.com/user-858183512/to-way-night"
         />
-        <AppTitle title="- Skills -"></AppTitle>
-        <Skills></Skills>
-        <AppTitle title="- Social -"></AppTitle>
-        <Social></Social>
-        <Copywrite person="© 2020 did0es / Hirai Shuta"></Copywrite>
+        <AppTitle title="- Skills -" />
+        <Skills />
+        <AppTitle title="- Social -" />
+        <Social />
+        <Copywrite person="© 2020 did0es / Hirai Shuta" />
       </Fade>
     </div>
   </div>

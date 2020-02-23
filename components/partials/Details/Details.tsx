@@ -16,9 +16,9 @@ const Details: React.FC = () => {
       <Head>
         <title>APOSTRO - {worksTitle}</title>
         <link rel="icon" href="/favicon.ico" />
-        {/* <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet"></link>
-        <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative&display=swap" rel="stylesheet"></link>
-        <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet"></link> */}
+        {/* <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet" /> */}
 
         <meta name="description" content={"APOSTRO - " + worksTitle}/>
         <meta property="og:site_name" content={"APOSTRO - " + worksTitle}/>
@@ -31,9 +31,9 @@ const Details: React.FC = () => {
       </Head>
 
       <div className="WrapDetailsContents">
-        <DetailsImage></DetailsImage>
-        <DetailsInfo></DetailsInfo>
-        <DetailsDescription></DetailsDescription>
+        <DetailsImage />
+        <DetailsInfo />
+        <DetailsDescription />
       </div>
     </div>
   )
