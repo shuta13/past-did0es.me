@@ -13,7 +13,8 @@ const Details: React.FC = () => {
     title: 'garelly',
     date: '2020/02/23',
     tags: 'website',
-    desc: 'ファックファックファック卍'
+    desc: 'ファックファックファック卍',
+    link: 'https://did0es.netlify.com/garelly'
   }
 
   return (
@@ -37,8 +38,10 @@ const Details: React.FC = () => {
       </Head>
 
       <div className="DetailsContentsWrap">
-        <DetailsImage img={img} />
-        <DetailsInfo info={info} />
+        <div className="DetailsContents">
+          <DetailsImage img={img} />
+          <DetailsInfo info={info} />
+        </div>
       </div>
     </div>
   )

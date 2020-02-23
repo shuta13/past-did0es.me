@@ -45,12 +45,13 @@ type HandleCameraAspectParams = {
 let time = 0.0
 let shakeWidth = 0.008
 
-const fov = 75
+const fov = 70
 
+const payloadHeight = 0.75
 let canvasWidth = window.innerWidth
-let canvasHeight = window.innerWidth * 0.75
+let canvasHeight = window.innerWidth * payloadHeight
 
-const maxCanvasWidth = 900
+const maxCanvasWidth = 740
 
 const ImageCanvas: React.FC<{ img: string, isDetails?: boolean }> = ({ img, isDetails }) => {
   // set canvas
@@ -69,7 +70,7 @@ const ImageCanvas: React.FC<{ img: string, isDetails?: boolean }> = ({ img, isDe
     }
     if (canvasWidth >= maxCanvasWidth) {
       canvasWidth = maxCanvasWidth
-      canvasHeight = maxCanvasWidth * 0.75
+      canvasHeight = maxCanvasWidth * payloadHeight
     }
     const camera = new PerspectiveCamera(fov, canvasHeight / canvasWidth, 1, 1000)
     camera.position.z = 1
@@ -148,10 +149,10 @@ const ImageCanvas: React.FC<{ img: string, isDetails?: boolean }> = ({ img, isDe
   // handle resize
   const handleResize = ({ camera, renderer }: HandleCameraAspectParams) => {
     let width = window.innerWidth
-    let height = width * 0.75
+    let height = width * payloadHeight
     if (width >= maxCanvasWidth) {
       width = maxCanvasWidth
-      height = maxCanvasWidth * 0.75
+      height = maxCanvasWidth * payloadHeight
     }
     camera.aspect = height / width
     camera.updateProjectionMatrix()
