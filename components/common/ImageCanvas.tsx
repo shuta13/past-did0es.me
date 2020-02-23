@@ -41,7 +41,7 @@ type AnimateParams = {
 let time = 0.0
 let shakeWidth = 0.02
 
-const ImageCanvas: React.FC<{ img: string }> = ({ img }) => {
+const ImageCanvas: React.FC<{ img: string, isDetails?: boolean }> = ({ img, isDetails }) => {
   // set canvas
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
     if (!canvas) {
@@ -134,12 +134,25 @@ const ImageCanvas: React.FC<{ img: string }> = ({ img }) => {
   }
 
   return (
-    <button className="ImageCanvasClip">
-      <canvas className="ImageCanvas"
-        ref={onCanvasLoaded}
-      />
-      <img src={img} className="ImageCanvasImg" />
-    </button>
+    <div>
+      { isDetails === undefined &&
+        <button className="ImageCanvasClip">
+          <canvas className="ImageCanvas"
+            ref={onCanvasLoaded}
+          />
+          <img src={img} className="ImageCanvasImg" />
+        </button>
+      }
+      {
+        isDetails && 
+        <button className="ImageCanvasClipDetails">
+          <canvas className="ImageCanvasDetails"
+            ref={onCanvasLoaded}
+          />
+          <img src={img} className="ImageCanvasImgDetails" />
+        </button>
+      }
+    </div>
   )
 }
 
