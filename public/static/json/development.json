@@ -27,7 +27,7 @@
       "title": "Candy Official Blog",
       "date": "2020/02/23",
       "tags": "blog, gatsby.js",
-      "desc": "ElevenBack LLC.様からの受託業務として制作したブログ",
+      "desc": "ElevenBack LLC.の受託業務として制作したブログ",
       "subDesc": "",
       "link": "https://blog.candy.ac"
     }
@@ -38,7 +38,7 @@
       "title": "vue-tsx-keyframes",
       "date": "2020/02/23",
       "tags": "library of npm, vue.js, tsx",
-      "desc": "Vue-TSXにおけるkeyframesを使えるようにするTypeScript製ライブラリ",
+      "desc": "Vue-TSXにおいてkeyframesを使えるようにするTypeScript製ライブラリ",
       "subDesc": "",
       "link": "https://github.com/shuta13/vue-tsx-keyframes"
     }
@@ -60,7 +60,7 @@
       "title": "LT @Kyoto.js17",
       "date": "2020/02/23",
       "tags": "LT",
-      "desc": "Kyoto.js第17回にて行ったvue-tsx-keyframesの制作に関するLT",
+      "desc": "Kyoto.js第17回にて行ったvue-tsx-keyframesに関するLT",
       "subDesc": "",
       "link": "https://speakerdeck.com/shuta/keyframes-of-vue-and-tsx-with-css-in-js"
     }
