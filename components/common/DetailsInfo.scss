@@ -14,7 +14,7 @@
   height: 16px;
   margin: 8px;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   font-family: 'Cormorant Garamond';
   display: flex;
   justify-content: center;
@@ -22,16 +22,20 @@
 }
 
 .DetailsInfoMetaWrap {
-  width: 100%;
+  width: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin: 16px 0;
 }
 
 .DetailsInfoDate,
-.DetailsInfoTags {
-  width: auto;
+.DetailsInfoTags,
+.DetailsInfoLink {
+  font-size: 14px;
+  width: 100%;
+  margin: 16px 0;
 }
 
 .DetailsInfoTitle {
@@ -41,12 +45,12 @@
 .DetailsInfoDescription {
   font-size: 12px;
   font-family: 'Noto Serif JP';
-  width: 60%;
+  width: 80%;
   height: auto;
   justify-content: justify;
+  overflow-wrap : break-word;
 }
 
 .DetailsInfoLink {
-  width: 60%;
   text-decoration: none;
 }

@@ -4,8 +4,8 @@
     "info": {
       "title": "garelly",
       "date": "2019/05/25",
-      "tags": "website, generative, web components, shadow dom",
-      "desc": "制作したジェネラティブアートやグラフィックデザインをまとめたWeb Components製Webサイト",
+      "tags": "website, generative, web components",
+      "desc": "制作したジェネラティブアートやグラフィックデザインをまとめたWebComponents製Webサイト",
       "subDesc": "",
       "link": "https://garelly.did0es.me"
     }
