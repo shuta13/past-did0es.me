@@ -14,25 +14,30 @@ type InfoParams = {
 const DetailsInfo: React.FC<{info: InfoParams}> = ({ info }) => {
   return (
     <div className="DetailsInfoWrap">
-      <div className="DetailsInfoTitle">
-        { info.title }
-      </div>
-      <div className="DetailsInfoMetaWrap">
-        <div className="DetailsInfoDate">
-          date : { info.date }
-        </div>
-        <div className="DetailsInfoTags">
-          tags : { info.tags }
-        </div>
-        <a href={info.link} target="_blank" className="DetailsInfoLink">
-          { info.link }
+      <div className="DetailsInfoWrapCommon">
+        <a href={info.link} target="_blank" className="DetailsInfoLink DetailsInfoTitle DetailsInfoCommon">
+          { info.title } : { info.link }
         </a>
       </div>
-      <div className="DetailsInfoDescription">
-        { info.desc }
+      <div className="DetailsInfoWrapCommon">
+        <div className="DetailsInfoDate DetailsInfoCommon">
+          date : { info.date }
+        </div>
       </div>
-      <div className="DetailsInfoDescription">
-        { info.subDesc }
+      <div className="DetailsInfoWrapCommon">
+        <div className="DetailsInfoTags DetailsInfoCommon">
+          tags : { info.tags }
+        </div>
+      </div>
+      <div className="DetailsInfoWrapCommon">
+        <div className="DetailsInfoDescription DetailsInfoCommon">
+          { info.desc }
+        </div>
+      </div>
+      <div className="DetailsInfoWrapCommon">
+        <div className="DetailsInfoDescription DetailsInfoCommon">
+          { info.subDesc }
+        </div>
       </div>
     </div>
   )

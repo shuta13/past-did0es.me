@@ -1,9 +1,17 @@
-.DetailsContents {
+.DetailsContentsWrap {
   width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.DetailsContents {
+  width: 72vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  overflow: hidden;
 }
