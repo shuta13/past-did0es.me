@@ -7,6 +7,7 @@ import development from "../../../public/static/json/development.json";
 import design from "../../../public/static/json/design.json";
 import trackMaking from "../../../public/static/json/trackMaking.json";
 import "./Details.scss";
+import Loading from "../../common/Loading";
 
 const Details: React.FC = () => {
   const queryTitle = new URL(window.location.href).searchParams.get("title");
@@ -63,6 +64,7 @@ const Details: React.FC = () => {
         <meta property="og:image" content="https://did0es.me/static/ogp.jpg" />
       </Head>
 
+      <Loading />
       <div className="DetailsContentsWrap">
         <div className="DetailsContents">
           <DetailsImage img={`/static/works/${img}`} />

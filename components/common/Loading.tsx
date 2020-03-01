@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Router from "next/router";
 
 import "./Loading.scss";
 
@@ -10,10 +11,14 @@ const Loading: React.FC = () => {
       setIsLoaded(true);
       document.body.style.overflow = "scroll";
     });
-    return window.removeEventListener("load", () => {
-      setIsLoaded(false);
-    });
   }, []);
+  Router.events.on("routeChangeComplete", () => {
+    console.log(isLoaded);
+    setTimeout(() => {
+      setIsLoaded(true);
+      document.body.style.overflow = "scroll";
+    }, 3000);
+  });
   return (
     <div className={isLoaded ? "LoadingWrapLoaded" : "LoadingWrap"}>
       {/* now loading */}
