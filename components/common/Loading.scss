@@ -18,6 +18,5 @@
 
 .LoadingWrapLoaded {
   @extend .LoadingWrapCommon;
-  opacity: .4;
-  transform: translateX(100%) rotate(-30deg);
+  transform: translateX(108%) rotate(-4deg) translateY(-4%);
 }
