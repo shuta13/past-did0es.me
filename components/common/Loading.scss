@@ -22,6 +22,11 @@
   transition-delay: .6s;
 }
 
+.LoadingWrapFinished {
+  width: 0vw;
+  z-index: 0;
+}
+
 .LoadingTextsCommon {
   color: #fff;
   font-size: 32px;

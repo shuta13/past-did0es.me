@@ -5,41 +5,64 @@ import "./Loading.scss";
 
 const Loading: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
   useEffect(() => {
     const linkEvent = new Event("link");
+    // for on load
+    const startOnLoadAnimation = () => {
+      return new Promise(resolve => {
+        setIsLoaded(true);
+        document.body.style.overflowY = "scroll";
+        resolve();
+      });
+    };
+    // delay for webkit...
+    const startOnChangeAnimation = () => {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          window.dispatchEvent(linkEvent);
+          resolve();
+        }, 5000);
+      });
+    };
+    const finishedAnimate = () => {
+      setTimeout(() => {
+        setIsFinished(true);
+      }, 3000);
+    };
     window.addEventListener("link", () => {
-      setIsLoaded(true);
-      document.body.style.overflowY = "scroll";
+      startOnLoadAnimation().then(() => finishedAnimate());
     });
     document.body.style.overflow = "hidden";
     window.addEventListener("load", () => {
-      setIsLoaded(true);
-      document.body.style.overflowY = "scroll";
+      startOnLoadAnimation().then(() => finishedAnimate());
     });
     Router.events.on("routeChangeStart", () => {
-      // for webkit...
-      const startAnimation = () => {
-        return new Promise(resolve => {
-          setTimeout(() => {
-            window.dispatchEvent(linkEvent);
-            resolve();
-          }, 5000);
-        });
-      };
-      startAnimation().then(() => {
-        setIsLoaded(false);
-      });
+      startOnChangeAnimation().then(() => finishedAnimate());
     });
 
     // Safari... (; ;)
-    setTimeout(() => {
-      setIsLoaded(true);
-      document.body.style.overflow = "hidden";
-      document.body.style.overflowY = "scroll";
-    }, 5000);
+    const notSupportedAnimation = () => {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          setIsLoaded(true);
+          document.body.style.overflowY = "scroll";
+          resolve();
+        }, 5000);
+      });
+    };
+    notSupportedAnimation().then(() => finishedAnimate());
   }, []);
   return (
-    <div className={isLoaded ? "LoadingWrapLoaded" : "LoadingWrap"}>
+    <div
+      className={
+        isLoaded
+          ? isFinished
+            ? "LoadingWrapFinished"
+            : "LoadingWrapLoaded"
+          : "LoadingWrap"
+      }
+    >
       <div className={isLoaded ? "LoadingTextsLoaded" : "LoadingTexts"}>
         LOADING
       </div>
