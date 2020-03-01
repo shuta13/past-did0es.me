@@ -172,14 +172,14 @@ const ImageCanvas: React.FC<{ img: string, isDetails?: boolean }> = ({ img, isDe
   return (
     <div>
       { isDetails &&
-        <button className="ImageCanvasClip">
+        <button className="ImageCanvasClip" aria-label="Works Link Button">
           <canvas className="ImageCanvasDetails"
             ref={onCanvasLoaded}
           />
         </button>
       }
       { !isDetails &&
-        <button className="ImageCanvasClip">
+        <button className="ImageCanvasClip" aria-label="Works Link Button">
           <canvas className="ImageCanvas"
             ref={onCanvasLoaded}
           />
