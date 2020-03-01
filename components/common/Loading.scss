@@ -1,4 +1,4 @@
-.LoadingWrap {
+.LoadingWrapCommon {
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -8,8 +8,16 @@
   background: #1d1d1d;
   color: #fff;
   z-index: 999999;
+  transform: translateX(0%);
+  transition: transform cubic-bezier(.9,.23,.48,.97) 1s;
+}
+
+.LoadingWrap {
+  @extend .LoadingWrapCommon;
 }
 
 .LoadingWrapLoaded {
-
+  @extend .LoadingWrapCommon;
+  opacity: .4;
+  transform: translateX(100%) rotate(-30deg);
 }
