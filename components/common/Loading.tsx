@@ -9,12 +9,12 @@ const Loading: React.FC = () => {
     const linkEvent = new Event("link");
     window.addEventListener("link", () => {
       setIsLoaded(true);
-      document.body.style.overflow = "scroll";
+      document.body.style.overflowY = "scroll";
     });
     document.body.style.overflow = "hidden";
     window.addEventListener("load", () => {
       setIsLoaded(true);
-      document.body.style.overflow = "scroll";
+      document.body.style.overflowY = "scroll";
     });
     Router.events.on("routeChangeStart", () => {
       // for webkit...
