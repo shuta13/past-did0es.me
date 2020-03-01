@@ -17,7 +17,7 @@ const ContentsForPC: React.FC = () => {
       if (targetHeight === undefined) return
       scrollAmount = Math.max(-1 * (targetHeight - window.innerHeight), scrollAmount)
       scrollAmount = Math.min(0, scrollAmount)
-    })
+    }, { passive: true })
     let y = 0
     const scrollContent = () => {
       requestAnimationFrame(scrollContent)
