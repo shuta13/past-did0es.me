@@ -18,14 +18,24 @@ const Loading: React.FC = () => {
     });
     Router.events.on("routeChangeStart", () => {
       // for webkit...
-      setTimeout(() => {
-        window.dispatchEvent(linkEvent);
-      }, 5000);
+      const startAnimation = () => {
+        return new Promise(resolve => {
+          setTimeout(() => {
+            window.dispatchEvent(linkEvent);
+            resolve();
+          }, 5000);
+        });
+      };
+      startAnimation().then(() => {
+        setIsLoaded(false);
+      });
     });
 
     // Safari... (; ;)
     setTimeout(() => {
       setIsLoaded(true);
+      document.body.style.overflow = "hidden";
+      document.body.style.overflowY = "scroll";
     }, 5000);
   }, []);
   return (

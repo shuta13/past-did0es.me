@@ -13,6 +13,7 @@
 
 .LoadingWrap {
   @extend .LoadingWrapCommon;
+  transform: translateX(0%) rotate(0deg) translateY(0%);
 }
 
 .LoadingWrapLoaded {
