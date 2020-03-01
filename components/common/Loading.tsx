@@ -17,6 +17,7 @@ const Loading: React.FC = () => {
       document.body.style.overflow = "scroll";
     });
     Router.events.on("routeChangeStart", () => {
+      // for webkit...
       setTimeout(() => {
         window.dispatchEvent(linkEvent);
       }, 5000);
