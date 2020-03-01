@@ -183,7 +183,7 @@ const ImageCanvas: React.FC<{ img: string, isDetails?: boolean }> = ({ img, isDe
           <canvas className="ImageCanvas"
             ref={onCanvasLoaded}
           />
-          <img src={img} className="ImageCanvasImg" />
+          <img src={img} className="ImageCanvasImg" alt="media" />
         </button>
       }
     </div>

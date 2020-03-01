@@ -17,6 +17,7 @@ const Header: React.FC<{ isDetails: boolean }> = ({ isDetails }) => (
               duration: 1200
             })
           }
+          alt="logo"
         />
       </Link>
     }
@@ -30,6 +31,7 @@ const Header: React.FC<{ isDetails: boolean }> = ({ isDetails }) => (
             duration: 1200
           })
         }
+        alt="logo"
       />
     }
   </div>

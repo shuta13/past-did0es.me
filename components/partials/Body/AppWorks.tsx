@@ -13,7 +13,7 @@ const AppWorks: React.FC<{ img: string, title: string, desc: string, link: strin
         <Link href={{ pathname: '/details', query: {title: `${query}`} }} >
           <a className="AppWorksImageClip">
             { width > 615 && <ImageCanvas img={img} /> }
-            { width <= 615 && <img src={img} className="AppWorksImage" /> }
+            { width <= 615 && <img src={img} className="AppWorksImage" alt="media" /> }
           </a>
         </Link>
       </div>
