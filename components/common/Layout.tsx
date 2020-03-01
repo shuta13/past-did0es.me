@@ -11,6 +11,9 @@ const Layout: React.FC = (props: any) => (
           box-sizing: border-box;
           background: #1d1d1d;
           letter-spacing: 1px;
+          width: 100vw;
+          min-height: 100vh;
+          overflow-x: hidden;
         }
       `}
     </style>
