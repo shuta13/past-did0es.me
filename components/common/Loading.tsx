@@ -13,11 +13,10 @@ const Loading: React.FC = () => {
     });
   }, []);
   Router.events.on("routeChangeComplete", () => {
-    console.log(isLoaded);
     setTimeout(() => {
       setIsLoaded(true);
       document.body.style.overflow = "scroll";
-    }, 3000);
+    }, 3600);
   });
   return (
     <div className={isLoaded ? "LoadingWrapLoaded" : "LoadingWrap"}>
