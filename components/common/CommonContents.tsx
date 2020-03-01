@@ -1,21 +1,21 @@
-import React from 'react'
-const Fade = require('react-reveal/Fade')
+import React from "react";
+const Fade = require("react-reveal/Fade");
 
-import './CommonContents.scss'
+import "./CommonContents.scss";
 
-import Profile from '../partials/Body/Profile'
-import AppTitle from '../common/AppTitle'
-import AppSubTitle from '../common/AppSubTitle'
-import AppWorks from '../partials/Body/AppWorks'
-import Skills from '../partials/Foot/Skills'
-import Social from '../partials/Foot/Social'
-import Copywrite from '../partials/Foot/Copyright'
+import Profile from "../partials/Body/Profile";
+import AppTitle from "../common/AppTitle";
+import AppSubTitle from "../common/AppSubTitle";
+import AppWorks from "../partials/Body/AppWorks";
+import Skills from "../partials/Foot/Skills";
+import Social from "../partials/Foot/Social";
+import Copywrite from "../partials/Foot/Copyright";
 
-import Canvas from '../partials/Head/Canvas'
+import Canvas from "../partials/Head/Canvas";
 
-import development from '../../public/static/json/development.json'
-import design from '../../public/static/json/design.json'
-import trackMaking from '../../public/static/json/trackMaking.json'
+import development from "../../public/static/json/development.json";
+import design from "../../public/static/json/design.json";
+import trackMaking from "../../public/static/json/trackMaking.json";
 
 const CommonContents: React.FC = () => (
   <div className="ContentsWrap">
@@ -26,48 +26,42 @@ const CommonContents: React.FC = () => (
         <Profile />
         <AppTitle title="- Works -" />
         <AppSubTitle subtitle="Development" />
-        {
-          development.map(params => {
-            return (
-              <AppWorks
-                key={params.img}
-                img={`/static/works/${params.img}`}
-                title={params.info.title}
-                desc={params.info.desc}
-                link={params.info.link}
-              />
-            )
-          })
-        }
+        {development.map(params => {
+          return (
+            <AppWorks
+              key={params.img}
+              img={`/static/works/${params.img}`}
+              title={params.info.title}
+              desc={params.info.desc}
+              link={params.info.link}
+            />
+          );
+        })}
         <AppSubTitle subtitle="Design" />
-        {
-          design.map(params => {
-            return (
-              <AppWorks
-                key={params.img}
-                img={`/static/works/${params.img}`}
-                title={params.info.title}
-                desc={params.info.desc}
-                link={params.info.link}
-              />
-            )
-          })
-        }
+        {design.map(params => {
+          return (
+            <AppWorks
+              key={params.img}
+              img={`/static/works/${params.img}`}
+              title={params.info.title}
+              desc={params.info.desc}
+              link={params.info.link}
+            />
+          );
+        })}
         <AppSubTitle subtitle="Track Making" />
-        {
-          trackMaking.map(params => {
-            return (
-              <AppWorks
-                key={params.img}
-                img={`/static/works/${params.img}`}
-                title={params.info.title}
-                desc={params.info.desc}
-                subDesc={params.info.subDesc}
-                link={params.info.link}
-              />
-            )
-          })
-        }
+        {trackMaking.map(params => {
+          return (
+            <AppWorks
+              key={params.img}
+              img={`/static/works/${params.img}`}
+              title={params.info.title}
+              desc={params.info.desc}
+              subDesc={params.info.subDesc}
+              link={params.info.link}
+            />
+          );
+        })}
         <AppTitle title="- Skills -" />
         <Skills />
         <AppTitle title="- Social -" />
@@ -76,6 +70,6 @@ const CommonContents: React.FC = () => (
       </Fade>
     </div>
   </div>
-)
+);
 
-export default CommonContents
+export default CommonContents;

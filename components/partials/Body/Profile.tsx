@@ -1,12 +1,16 @@
-import React from 'react'
+import React from "react";
 
-import './Profile.scss'
+import "./Profile.scss";
 
 const Profile: React.FC = () => (
   <div className="ProfileWrap">
     <div className="ProfileContentsWrap">
       <div className="ProfileImageWrap">
-        <img className="ProfileImage" src={require('../../../public/static/icon.jpg')} alt="logo" />
+        <img
+          className="ProfileImage"
+          src={require("../../../public/static/icon.jpg")}
+          alt="logo"
+        />
       </div>
       <div className="ProfileDescriptionWrap">
         <div className="ProfileDescription">
@@ -18,6 +22,6 @@ const Profile: React.FC = () => (
       </div>
     </div>
   </div>
-)
+);
 
 export default Profile;

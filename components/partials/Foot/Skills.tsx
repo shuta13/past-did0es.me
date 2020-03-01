@@ -1,5 +1,5 @@
-import React from 'react'
-import './Skills.scss'
+import React from "react";
+import "./Skills.scss";
 
 const Skills: React.FC = () => (
   <div className="SkillsWrap">
@@ -8,14 +8,16 @@ const Skills: React.FC = () => (
         <p>Web Development(Design, Coding, building CI/CD)</p>
         <p>Making Track, DJ(Future Bass, Progressive House, Pops...)</p>
       </div>
-      <a href="https://www.wantedly.com/users/95976645" target="_blank" className="SkillsLink">
+      <a
+        href="https://www.wantedly.com/users/95976645"
+        target="_blank"
+        className="SkillsLink"
+      >
         Wantedly : https://www.wantedly.com/users/95976645
       </a>
     </div>
     <div className="SkillsTitleWrap">
-      <div className="SkillsTitle">
-        Language / Library / FrameWork
-      </div>
+      <div className="SkillsTitle">Language / Library / FrameWork</div>
     </div>
     <div className="SkillsDescriptionWrap">
       <div className="SkillsDescription">
@@ -25,18 +27,19 @@ const Skills: React.FC = () => (
       </div>
     </div>
     <div className="SkillsTitleWrap">
-      <div className="SkillsTitle">
-        Tools / PaaS, SaaS
-      </div>
+      <div className="SkillsTitle">Tools / PaaS, SaaS</div>
     </div>
     <div className="SkillsDescriptionWrap">
       <div className="SkillsDescription">
         <p>Docker, macOS, Linux, Windows, GitHub, Figma, Sketch</p>
         <p>GitHub Actions, CircleCI, TravisCI, AWS Codepipeline/Codebuild</p>
-        <p>Netlify, Zeit Now, Google App Engine, Firebase Hosting, Heroku, AWS Lambda</p>
+        <p>
+          Netlify, Zeit Now, Google App Engine, Firebase Hosting, Heroku, AWS
+          Lambda
+        </p>
       </div>
     </div>
   </div>
-)
+);
 
 export default Skills;
