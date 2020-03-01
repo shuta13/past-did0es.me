@@ -3,7 +3,7 @@ import {
   WebGLRenderer,
   Scene,
   PerspectiveCamera,
-  PlaneGeometry,
+  PlaneBufferGeometry,
   TextureLoader,
   NearestFilter,
   Mesh,
@@ -60,10 +60,10 @@ const ImageCanvas: React.FC<{ img: string; isDetails?: boolean }> = ({
     const fov = 75;
     let canvasWidth = window.innerWidth;
     let canvasHeight = window.innerWidth * payloadHeight;
-    let shakeWidth = 0.008;
+    let shakeWidth = 0.025;
     const scene = new Scene();
     if (!isDetails) {
-      shakeWidth = 0.02;
+      shakeWidth = 0.03;
       canvasWidth = 480;
       canvasHeight = 360;
     }
@@ -96,7 +96,7 @@ const ImageCanvas: React.FC<{ img: string; isDetails?: boolean }> = ({
     const material = new MeshPhongMaterial({
       map: texture
     });
-    const geometry = new PlaneGeometry(1, 1, 1, 1);
+    const geometry = new PlaneBufferGeometry(1, 1, 1, 1);
     const mesh = new Mesh(geometry, material);
     scene.add(mesh);
 
@@ -182,7 +182,7 @@ const ImageCanvas: React.FC<{ img: string; isDetails?: boolean }> = ({
     const object = scene.children[0] as any;
     const sec = performance.now() / 1000;
     const pass = customPass as any;
-    pass.uniforms.time.value = sec;
+    pass.uniforms.time.value = sec * 0.75;
 
     composer.render();
   };
