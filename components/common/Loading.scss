@@ -6,7 +6,6 @@
   justify-content: center;
   align-items: center;
   background: #1d1d1d;
-  color: #fff;
   z-index: 999999;
   transform: translateX(0%);
   transition: transform cubic-bezier(.9,.23,.48,.97) 1s;
@@ -19,4 +18,21 @@
 .LoadingWrapLoaded {
   @extend .LoadingWrapCommon;
   transform: translateX(108%) rotate(-4deg) translateY(-4%);
+  transition-delay: .6s;
+}
+
+.LoadingTextsCommon {
+  color: #fff;
+  font-size: 24px;
+  font-family: "Poiret One";
+  transition: opacity cubic-bezier(.9,.23,.48,.97) .4s;
+}
+
+.LoadingTexts {
+  @extend .LoadingTextsCommon;
+}
+
+.LoadingTextsLoaded {
+  @extend .LoadingTextsCommon;
+  opacity: 0;
 }

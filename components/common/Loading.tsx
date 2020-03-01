@@ -30,7 +30,9 @@ const Loading: React.FC = () => {
   }, []);
   return (
     <div className={isLoaded ? "LoadingWrapLoaded" : "LoadingWrap"}>
-      {/* now loading */}
+      <div className={isLoaded ? "LoadingTextsLoaded" : "LoadingTexts"}>
+        LOADING
+      </div>
     </div>
   );
 };
