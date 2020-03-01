@@ -9,7 +9,7 @@
     "export": "next export",
     "deploy": "yarn build && yarn export",
     "lint": "eslint './{components,pages}/**/*.{ts,tsx}'",
-    "format": "prettier --write './{components,pages}/**/*.{ts,tsx}'"
+    "format": "prettier --write './{index.tsx,components,pages}/**/*.{ts,tsx}'"
   },
   "dependencies": {
     "@now/next": "2.3.12",
