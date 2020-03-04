@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #9b9b9b;
+  background: #161616;
   z-index: 999999;
   transform: translateX(0%);
   transition: transform cubic-bezier(.9,.23,.48,.97) 1s;
@@ -42,7 +42,7 @@
 
 .LoadingTexts {
   @extend .LoadingTextsCommon;
-  // animation: blink .1s ease-in-out infinite;
+  animation: blink .1s ease-in-out infinite;
 }
 
 .LoadingTextsLoaded {
