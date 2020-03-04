@@ -1,12 +1,13 @@
 .AppLoadingTextWrap {
-  width: 10vw;
-  height: 10vw;
-  max-width: 64px;
-  max-height: 64px;
+  width: 4vw;
+  height: 4vw;
+  min-width: 24px;
+  min-height: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #0F0F0F;
   color: #fff;
-  font-size: 16px;
+  font-size: 1.4vw;
+  font-family: "Poiret One";
 }
