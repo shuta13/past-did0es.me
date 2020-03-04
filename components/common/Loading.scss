@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #1d1d1d;
+  background: #1b1b1b;
   z-index: 999999;
   transform: translateX(0%);
   transition: transform cubic-bezier(.9,.23,.48,.97) 1s;
@@ -18,7 +18,7 @@
 
 .LoadingWrapLoaded {
   @extend .LoadingWrapCommon;
-  transform: translateX(108%) rotate(-4deg) translateY(-4%);
+  transform: translateX(114%) scale(1.2) rotate(-4deg) translateY(-4%);
   transition-delay: .6s;
 }
 
