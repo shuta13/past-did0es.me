@@ -1,7 +1,8 @@
+import "./Loading.scss";
 import React, { useState, useEffect } from "react";
 import Router from "next/router";
 
-import "./Loading.scss";
+import AppLoading from "../partials/Loading/AppLoading";
 
 const Loading: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -34,24 +35,24 @@ const Loading: React.FC = () => {
       startOnLoadAnimation().then(() => finishedAnimate());
     });
     document.body.style.overflow = "hidden";
-    window.addEventListener("load", () => {
-      startOnLoadAnimation().then(() => finishedAnimate());
-    });
+    // window.addEventListener("load", () => {
+    //   startOnLoadAnimation().then(() => finishedAnimate());
+    // });
     Router.events.on("routeChangeStart", () => {
       startOnChangeAnimation().then(() => finishedAnimate());
     });
 
     // Safari... (; ;)
-    const notSupportedAnimation = () => {
-      return new Promise(resolve => {
-        setTimeout(() => {
-          setIsLoaded(true);
-          document.body.style.overflowY = "scroll";
-          resolve();
-        }, 5000);
-      });
-    };
-    notSupportedAnimation().then(() => finishedAnimate());
+    // const notSupportedAnimation = () => {
+    //   return new Promise(resolve => {
+    //     setTimeout(() => {
+    //       setIsLoaded(true);
+    //       document.body.style.overflowY = "scroll";
+    //       resolve();
+    //     }, 5000);
+    //   });
+    // };
+    // notSupportedAnimation().then(() => finishedAnimate());
   }, []);
   return (
     <div
@@ -64,7 +65,13 @@ const Loading: React.FC = () => {
       }
     >
       <div className={isLoaded ? "LoadingTextsLoaded" : "LoadingTexts"}>
-        LOADING
+        <AppLoading text="L" />
+        <AppLoading text="O" />
+        <AppLoading text="A" />
+        <AppLoading text="D" />
+        <AppLoading text="I" />
+        <AppLoading text="N" />
+        <AppLoading text="G" />
       </div>
     </div>
   );

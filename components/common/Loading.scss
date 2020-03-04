@@ -23,9 +23,10 @@
 }
 
 .LoadingTextsCommon {
-  color: #fff;
-  font-size: 32px;
-  font-family: "Poiret One";
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: transform cubic-bezier(.9,.23,.48,.97) 1s, opacity ease-in-out .4s;
 }
 
