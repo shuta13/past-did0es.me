@@ -1,5 +1,5 @@
 .LoadingWrapCommon {
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -20,14 +20,6 @@
   @extend .LoadingWrapCommon;
   transform: translateX(114%) scale(1.2) rotate(-4deg) translateY(-4%);
   transition-delay: .6s;
-}
-
-.LoadingWrapFinished {
-  width: 0vw;
-  height: 0vh;
-  opacity: 0;
-  z-index: 0;
-  top: 0;
 }
 
 .LoadingTextsCommon {
@@ -54,4 +46,12 @@
 .LoadingTextsLoaded {
   @extend .LoadingTextsCommon;
   opacity: 0;
+}
+
+.LoadingWrapFinished {
+  width: 0vw;
+  height: 0vh;
+  opacity: 0;
+  z-index: 0;
+  top: 0;
 }
