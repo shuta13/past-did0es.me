@@ -1,12 +1,31 @@
 .AppLoadingCubeWrap {
   margin: 0 8px;
-  width: 16vw;
-  height: 16vw;
+  width: 5vw;
+  height: 15vw;
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.AppLoadingCubeWrapCommon {
+  width: 16vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.AppLoadingCubeTopWrap {
+  @extend .AppLoadingCubeWrapCommon;
+}
+
+.AppLoadingCubeBottomWrap {
+  @extend .AppLoadingCubeWrapCommon;
+}
+
+.AppLoadingCubeFrontWrap {
+  @extend .AppLoadingCubeWrapCommon;
 }
 
 .AppLoadingCubeCommon {
@@ -18,8 +37,8 @@
 
 .AppLoadingCubeTop {
   @extend .AppLoadingCubeCommon;
-  top: 0;
   background: #5D5D5D;
+  transform: translateY(30px) rotateX(90deg);
 }
 
 .AppLoadingCubeFront {
@@ -31,12 +50,14 @@
   color: #fff;
   font-size: 1.4vw;
   font-family: "Poiret One";
+  transform: translateZ(100px);
 }
 
 .AppLoadingCubeBottom {
   @extend .AppLoadingCubeCommon;
   bottom: 0;
   background: #5D5D5D;
+  transform: translateY(-30px) rotateX(90deg);
 }
 
 .AppLoadingCubeBack {
@@ -44,8 +65,12 @@
 
 .AppLoadingCubeLeft {
   @extend .AppLoadingCubeCommon;
+  background: #5D5D5D;
+  transform: translateX(30px) rotateY(-90deg);
 }
 
 .AppLoadingCubeRight {
   @extend .AppLoadingCubeCommon;
+  background: #5D5D5D;
+  transform: translateX(-30px) rotateY(90deg);
 }
