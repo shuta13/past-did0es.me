@@ -1,8 +1,7 @@
 import "./AppLoadingBottom.scss";
-import AppLoadingPolygon from "./AppLoadingPolygon";
 
 const AppLoadingBottom: React.FC = () => {
-  return <AppLoadingPolygon />;
+  return <div className="AppLoadingBottom" />;
 };
 
 export default AppLoadingBottom;
