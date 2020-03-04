@@ -2,7 +2,7 @@ import "./Loading.scss";
 import React, { useState, useEffect } from "react";
 import Router from "next/router";
 
-import AppLoading from "../partials/Loading/AppLoading";
+import AppLoadingCube from "../partials/Loading/AppLoadingCube";
 
 const Loading: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -65,13 +65,13 @@ const Loading: React.FC = () => {
       }
     >
       <div className={isLoaded ? "LoadingTextsLoaded" : "LoadingTexts"}>
-        <AppLoading text="L" />
-        <AppLoading text="O" />
-        <AppLoading text="A" />
-        <AppLoading text="D" />
-        <AppLoading text="I" />
-        <AppLoading text="N" />
-        <AppLoading text="G" />
+        <AppLoadingCube text="L" />
+        <AppLoadingCube text="O" />
+        <AppLoadingCube text="A" />
+        <AppLoadingCube text="D" />
+        <AppLoadingCube text="I" />
+        <AppLoadingCube text="N" />
+        <AppLoadingCube text="G" />
       </div>
     </div>
   );

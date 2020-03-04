@@ -1,0 +1,51 @@
+.AppLoadingCubeWrap {
+  margin: 0 8px;
+  width: 16vw;
+  height: 16vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.AppLoadingCubeCommon {
+  width: 4vw;
+  height: 4vw;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.AppLoadingCubeTop {
+  @extend .AppLoadingCubeCommon;
+  top: 0;
+  background: #5D5D5D;
+}
+
+.AppLoadingCubeFront {
+  @extend .AppLoadingCubeCommon;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0F0F0F;
+  color: #fff;
+  font-size: 1.4vw;
+  font-family: "Poiret One";
+}
+
+.AppLoadingCubeBottom {
+  @extend .AppLoadingCubeCommon;
+  bottom: 0;
+  background: #5D5D5D;
+}
+
+.AppLoadingCubeBack {
+}
+
+.AppLoadingCubeLeft {
+  @extend .AppLoadingCubeCommon;
+}
+
+.AppLoadingCubeRight {
+  @extend .AppLoadingCubeCommon;
+}
