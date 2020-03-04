@@ -19,6 +19,7 @@ const DetailsInfo: React.FC<{ info: InfoParams }> = ({ info }) => {
           href={info.link}
           target="_blank"
           className="DetailsInfoLink DetailsInfoTitle DetailsInfoCommon"
+          rel="noopener noreferrer"
         >
           {info.title} : {info.link}
         </a>
