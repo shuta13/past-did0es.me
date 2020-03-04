@@ -31,8 +31,8 @@
 .AppLoadingCubeCommon {
   width: 4vw;
   height: 4vw;
-  min-width: 24px;
-  min-height: 24px;
+  min-width: 32px;
+  min-height: 32px;
 }
 
 .AppLoadingCubeTop {
@@ -48,7 +48,7 @@
   align-items: center;
   background: #0F0F0F;
   color: #fff;
-  font-size: 1.4vw;
+  font-size: 4vw;
   font-family: "Poiret One";
   transform: translateZ(100px);
 }
