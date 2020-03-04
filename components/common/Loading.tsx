@@ -35,24 +35,24 @@ const Loading: React.FC = () => {
       startOnLoadAnimation().then(() => finishedAnimate());
     });
     document.body.style.overflow = "hidden";
-    window.addEventListener("load", () => {
-      startOnLoadAnimation().then(() => finishedAnimate());
-    });
+    // window.addEventListener("load", () => {
+    //   startOnLoadAnimation().then(() => finishedAnimate());
+    // });
     Router.events.on("routeChangeStart", () => {
       startOnChangeAnimation().then(() => finishedAnimate());
     });
 
     // Safari... (; ;)
-    const notSupportedAnimation = () => {
-      return new Promise(resolve => {
-        setTimeout(() => {
-          setIsLoaded(true);
-          document.body.style.overflowY = "scroll";
-          resolve();
-        }, 5000);
-      });
-    };
-    notSupportedAnimation().then(() => finishedAnimate());
+    // const notSupportedAnimation = () => {
+    //   return new Promise(resolve => {
+    //     setTimeout(() => {
+    //       setIsLoaded(true);
+    //       document.body.style.overflowY = "scroll";
+    //       resolve();
+    //     }, 5000);
+    //   });
+    // };
+    // notSupportedAnimation().then(() => finishedAnimate());
   }, []);
   return (
     <div
