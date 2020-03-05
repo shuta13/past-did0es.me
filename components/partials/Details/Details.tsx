@@ -67,7 +67,7 @@ const Details: React.FC = () => {
       <Loading />
       <div className="DetailsContentsWrap">
         <div className="DetailsContents">
-          <DetailsImage img={`/static/works/${img}`} />
+          <DetailsImage img={`/static/works/${img}`} href={info.link} />
           <DetailsInfo info={info} />
         </div>
       </div>

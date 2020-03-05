@@ -14,6 +14,7 @@
 .ImageCanvas, .ImageCanvasDetails {
   transform: scale(1, 1);
   transition: all cubic-bezier(.27,.19,.44,1) .6s;
+  cursor: pointer;
 }
 
 .ImageCanvas {

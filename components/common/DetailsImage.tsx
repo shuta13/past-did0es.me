@@ -3,11 +3,19 @@ import ImageCanvas from "./ImageCanvas";
 
 import "./DetailsImage.scss";
 
-const DetailsImage: React.FC<{ img: string }> = ({ img }) => {
+const DetailsImage: React.FC<{ img: string; href: string }> = ({
+  img,
+  href
+}) => {
   return (
-    <div className="DetailsImageWrap">
+    <a
+      className="DetailsImageWrap"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <ImageCanvas img={img} isDetails={true} />
-    </div>
+    </a>
   );
 };
 

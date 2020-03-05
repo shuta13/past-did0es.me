@@ -8,6 +8,7 @@ const Social: React.FC = () => (
         <a
           href="https://twitter.com/did0es"
           target="_blank"
+          rel="noopener noreferrer"
           className="SocialLink"
         >
           Twitter
@@ -17,6 +18,7 @@ const Social: React.FC = () => (
         <a
           href="https://www.facebook.com/profile.php?id=100028982675881"
           target="_blank"
+          rel="noopener noreferrer"
           className="SocialLink"
         >
           Facebook
@@ -26,6 +28,7 @@ const Social: React.FC = () => (
         <a
           href="https://www.instagram.com/did0es13"
           target="_blank"
+          rel="noopener noreferrer"
           className="SocialLink"
         >
           Instagram
@@ -35,13 +38,19 @@ const Social: React.FC = () => (
         <a
           href="https://github.com/shuta13"
           target="_blank"
+          rel="noopener noreferrer"
           className="SocialLink"
         >
           GitHub
         </a>
       </div>
       <div className="SocialLinkWrap">
-        <a href="https://blog.did0es.me" target="_blank" className="SocialLink">
+        <a
+          href="https://blog.did0es.me"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="SocialLink"
+        >
           Blog
         </a>
       </div>
@@ -49,6 +58,7 @@ const Social: React.FC = () => (
         <a
           href="https://soundcloud.com/user-858183512"
           target="_blank"
+          rel="noopener noreferrer"
           className="SocialLink"
         >
           SoundCloud

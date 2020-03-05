@@ -12,6 +12,7 @@ const Skills: React.FC = () => (
         href="https://www.wantedly.com/users/95976645"
         target="_blank"
         className="SkillsLink"
+        rel="noopener noreferrer"
       >
         Wantedly : https://www.wantedly.com/users/95976645
       </a>
