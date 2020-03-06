@@ -57,7 +57,7 @@ const ImageCanvas: React.FC<{ img: string; isDetails?: boolean }> = ({
     }
 
     // init scene
-    const fov = 90;
+    const fov = 75;
     let canvasWidth = window.innerWidth;
     let canvasHeight = window.innerWidth * payloadHeight;
     let shakeWidth = 0.025;
