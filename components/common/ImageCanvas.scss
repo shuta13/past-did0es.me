@@ -1,10 +1,9 @@
 .ImageCanvasClip {
+  width: 100%;
   appearance: none;
   outline: none;
   border: none;
   background: #1d1d1d;
-  width: 100vw;
-  height: 40vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,22 +22,20 @@
   cursor: pointer;
 }
 
-.ImageCanvas:hover {
+.ImageCanvasHovered {
   transform: scale(1.1, 1.1);
   opacity: 1;
   transition: all cubic-bezier(.27,.19,.44,1) .6s;
-}
-
-@media screen and (max-width: 615px) {
-  .ImageCanvas:active {
-    transform: scale(1.1, 1.1);
-    opacity: 1;
-    transition: all cubic-bezier(.27,.19,.44,1) .6s;
-  }
+  cursor: pointer;
 }
 
 .ImageCanvasImg {
   width: 360px;
   height: auto;
   cursor: pointer;
+}
+
+.ImageCanvasImgHovered {
+  width: 0px;
+  height: 0px;
 }

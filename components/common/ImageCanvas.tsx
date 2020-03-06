@@ -57,7 +57,7 @@ const ImageCanvas: React.FC<{ img: string; isDetails?: boolean }> = ({
     }
 
     // init scene
-    const fov = 75;
+    const fov = 90;
     let canvasWidth = window.innerWidth;
     let canvasHeight = window.innerWidth * payloadHeight;
     let shakeWidth = 0.025;
@@ -187,6 +187,24 @@ const ImageCanvas: React.FC<{ img: string; isDetails?: boolean }> = ({
     composer.render();
   };
 
+  // create hover state
+  const [isHovered, setIsHovered] = useState(false);
+  // handle hover event
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  // handle touch event
+  const handleTouchStart = () => {
+    setIsHovered(true);
+  };
+  const handleTouchEnd = () => {
+    setIsHovered(false);
+  };
+
   return (
     <div>
       {isDetails && (
@@ -196,8 +214,23 @@ const ImageCanvas: React.FC<{ img: string; isDetails?: boolean }> = ({
       )}
       {!isDetails && (
         <button className="ImageCanvasClip" aria-label="Works Link Button">
-          <canvas className="ImageCanvas" ref={onCanvasLoaded} />
-          <img src={img} className="ImageCanvasImg" alt="media" />
+          <canvas
+            className={isHovered ? "ImageCanvasHovered" : "ImageCanvas"}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            ref={onCanvasLoaded}
+          />
+          <img
+            src={img}
+            className={isHovered ? "ImageCanvasImgHovered" : "ImageCanvasImg"}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            alt="media"
+          />
         </button>
       )}
     </div>
