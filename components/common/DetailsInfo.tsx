@@ -15,14 +15,7 @@ const DetailsInfo: React.FC<{ info: InfoParams }> = ({ info }) => {
   return (
     <div className="DetailsInfoWrap">
       <div className="DetailsInfoWrapCommon">
-        <a
-          href={info.link}
-          target="_blank"
-          className="DetailsInfoLink DetailsInfoTitle DetailsInfoCommon"
-          rel="noopener noreferrer"
-        >
-          {info.title} : {info.link}
-        </a>
+        <div className="DetailsInfoTitle DetailsInfoCommon">{info.title}</div>
       </div>
       <div className="DetailsInfoWrapCommon">
         <div className="DetailsInfoDate DetailsInfoCommon">

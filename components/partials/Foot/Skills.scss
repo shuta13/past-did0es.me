@@ -17,18 +17,18 @@
 
 .SkillsTitle {
   font-size: 16px;
-  font-family: 'Cinzel Decorative';
+  font-family: 'Cormorant Garamond';
+  font-weight: bold;
   text-align: center;
   color: #fff;
-  margin-top: 64px;
-  margin-bottom: 32px;
 }
 
 .SkillsDescription, .SkillsLink {
-  width: 70%;
+  width: 50%;
   min-width: 240px;
   font-size: 12px;
   font-family: 'Cormorant Garamond';
   color: #fff;
-  text-align: center;
+  text-align: left;
+  word-break: break-all;
 }

@@ -5,7 +5,6 @@
   flex-direction: column;
   flex-wrap: wrap;
   color: #fff;
-  margin-top: 24px;
 }
 
 .DetailsInfoWrapCommon {
@@ -21,15 +20,15 @@
   font-family: 'Cormorant Garamond';
   font-size: 16px;
   overflow-wrap: break-word;
-  text-align: left;
+  text-align: center;
 }
 
-.DetailsInfoLink {
-  color: #fff;
-  text-decoration: none;
+.DetailsInfoTitle {
+  font-weight: bold;
 }
 
 .DetailsInfoDescription {
+  text-align: left;
   height: auto;
   font-family: "Noto Serif JP";
   font-size: 12px;

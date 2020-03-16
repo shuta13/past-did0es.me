@@ -5,7 +5,6 @@ import "./CommonContents.scss";
 
 import Profile from "../partials/Body/Profile";
 import AppTitle from "../common/AppTitle";
-import AppSubTitle from "../common/AppSubTitle";
 import AppWorks from "../partials/Body/AppWorks";
 import Skills from "../partials/Foot/Skills";
 import Social from "../partials/Foot/Social";
@@ -25,7 +24,6 @@ const CommonContents: React.FC = () => (
         <AppTitle title="- profile -" />
         <Profile />
         <AppTitle title="- Works -" />
-        <AppSubTitle subtitle="Development" />
         {development.map(params => {
           return (
             <AppWorks
@@ -37,7 +35,6 @@ const CommonContents: React.FC = () => (
             />
           );
         })}
-        <AppSubTitle subtitle="Design" />
         {design.map(params => {
           return (
             <AppWorks
@@ -49,7 +46,6 @@ const CommonContents: React.FC = () => (
             />
           );
         })}
-        <AppSubTitle subtitle="Track Making" />
         {trackMaking.map(params => {
           return (
             <AppWorks
