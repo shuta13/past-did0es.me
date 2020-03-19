@@ -10,22 +10,19 @@ const AppLoading: React.FC<{ text: string }> = ({ text }) => {
       </div>
       <div className="AppLoadingCubeFrontWrap">
         <div className="AppLoadingCubeLeft" />
-        <div className="AppLoadingCubeFront">
-          {map.call(`${text}`, (t, index) => {
-            return (
-              <div
-                className={
-                  index === 1 || index === 4
-                    ? "AppLoadingCubeTextSelected"
-                    : "AppLoadingCubeText"
-                }
-                key={index}
-              >
+        {map.call(`${text}`, (t, index) => {
+          return (
+            <div className={
+              index === 1 || index === 4
+                ? "AppLoadingCubeFrontSelected"
+                : "AppLoadingCubeFront"
+            } key={index}>
+              <div className="AppLoadingCubeText">
                 {t}
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
         <div className="AppLoadingCubeRight" />
       </div>
       <div className="AppLoadingCubeBottomWrap">

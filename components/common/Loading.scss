@@ -31,18 +31,8 @@
   transition: transform cubic-bezier(.9,.23,.48,.97) 1s, opacity ease-in-out .4s;
 }
 
-@keyframes blink{
-  0% {
-    opacity: .2;
-  }
-  100% {
-    opacity: .6;
-  }
-}
-
 .LoadingTexts {
   @extend .LoadingTextsCommon;
-  animation: blink .1s ease-in-out infinite;
 }
 
 .LoadingTextsLoaded {

@@ -38,12 +38,26 @@
   transform: translateY(30px) rotateX(90deg);
 }
 
-.AppLoadingCubeFront {
+.AppLoadingCubeFrontCommon {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #0F0F0F;
+  width: 4vw;
+  height: 4vw;
+  min-width: 32px;
+  min-height: 32px;
+  margin: 0 8px;
   transform: translateZ(100px);
+}
+
+.AppLoadingCubeFront {
+  @extend .AppLoadingCubeFrontCommon;
+  background: #1d1d1d;
+}
+
+.AppLoadingCubeFrontSelected {
+  @extend .AppLoadingCubeFrontCommon;
+  background: #db2745;
 }
 
 .AppLoadingCubeBottom {
@@ -68,26 +82,21 @@
   transform: translateX(-30px) rotateY(90deg);
 }
 
-.AppLoadingCubeTextCommon {
-  width: 4vw;
-  height: 4vw;
-  min-width: 32px;
-  min-height: 32px;
-  margin: 0 8px;
+@keyframes blink{
+  0% {
+    opacity: .2;
+  }
+  100% {
+    opacity: .6;
+  }
+}
+
+.AppLoadingCubeText {
   color: #fff;
   font-size: 1.2rem;
   font-family: "Poiret One";
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.AppLoadingCubeText {
-  @extend .AppLoadingCubeTextCommon;
-  background: #1d1d1d;
-}
-
-.AppLoadingCubeTextSelected {
-  @extend .AppLoadingCubeTextCommon;
-  background: #db2745;
+  animation: blink .1s ease-in-out infinite;
 }
