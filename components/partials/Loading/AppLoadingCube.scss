@@ -42,6 +42,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
   width: 4vw;
   height: 4vw;
   min-width: 32px;
@@ -52,11 +53,13 @@
 
 .AppLoadingCubeFront {
   @extend .AppLoadingCubeFrontCommon;
+  color: #fff;
   background: #1d1d1d;
 }
 
 .AppLoadingCubeFrontSelected {
   @extend .AppLoadingCubeFrontCommon;
+  color: #1d1d1d;
   background: #db2745;
 }
 
@@ -92,7 +95,6 @@
 }
 
 .AppLoadingCubeText {
-  color: #fff;
   font-size: 1.2rem;
   font-family: "Poiret One";
   display: flex;
