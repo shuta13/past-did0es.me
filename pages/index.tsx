@@ -3,7 +3,6 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 
 import Header from "../components/common/Header";
-import Layout from "../components/common/Layout";
 import Loading from "../components/common/Loading";
 
 // const CanvasNoSSR = dynamic(
@@ -17,7 +16,7 @@ const ContentsNoSSR = dynamic(
 );
 
 const Home: React.FC = () => (
-  <Layout>
+  <>
     <Head>
       <title>APOSTRO</title>
       <link rel="icon" href="/favicon.ico" />
@@ -48,7 +47,7 @@ const Home: React.FC = () => (
     {/* <CanvasNoSSR /> */}
     <Loading />
     <ContentsNoSSR />
-  </Layout>
+  </>
 );
 
 export default Home;

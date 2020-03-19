@@ -80,9 +80,14 @@ const ImageCanvas: React.FC<{ img: string; isDetails?: boolean }> = ({
     camera.position.z = 1;
 
     // render init
-    const renderer = new WebGLRenderer({ canvas: canvas, antialias: true });
+    const renderer = new WebGLRenderer({
+      canvas: canvas,
+      antialias: true,
+      alpha: true
+    });
+    renderer.info.reset();
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setClearColor("#1d1d1d");
+    renderer.setClearColor("#1d1d1d", 0.0);
     renderer.setSize(canvasWidth, canvasHeight);
 
     // light

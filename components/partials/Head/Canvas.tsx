@@ -52,9 +52,13 @@ const Canvas: React.FC = () => {
     camera.position.z = 1.5;
 
     // render scene
-    const renderer = new WebGLRenderer({ canvas: canvas, antialias: true });
+    const renderer = new WebGLRenderer({
+      canvas: canvas,
+      antialias: true,
+      alpha: true
+    });
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setClearColor("#1d1d1d");
+    renderer.setClearColor("#1d1d1d", 0.0);
     renderer.setSize(width, width);
 
     const vertexCount = 100 * 4;

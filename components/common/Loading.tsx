@@ -65,13 +65,7 @@ const Loading: React.FC = () => {
       }
     >
       <div className={isLoaded ? "LoadingTextsLoaded" : "LoadingTexts"}>
-        <AppLoadingCube text="L" />
-        <AppLoadingCube text="O" />
-        <AppLoadingCube text="A" />
-        <AppLoadingCube text="D" />
-        <AppLoadingCube text="I" />
-        <AppLoadingCube text="N" />
-        <AppLoadingCube text="G" />
+        <AppLoadingCube text="LOADING" />
       </div>
     </div>
   );
