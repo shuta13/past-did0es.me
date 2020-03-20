@@ -25,9 +25,6 @@ const AppWorks: React.FC<{
           </a>
         </Link>
       </div>
-      <div className="AppWorksTitleWrap">
-        <div className="AppWorksTitle">{title}</div>
-      </div>
     </div>
   );
 };

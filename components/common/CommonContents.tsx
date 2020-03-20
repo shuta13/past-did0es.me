@@ -1,7 +1,5 @@
-import React from "react";
-const Fade = require("react-reveal/Fade");
-
 import "./CommonContents.scss";
+import React from "react";
 
 import Profile from "../partials/Body/Profile";
 import AppTitle from "../common/AppTitle";
@@ -20,50 +18,48 @@ const CommonContents: React.FC = () => (
   <div className="ContentsWrap">
     <Canvas />
     <div className="ContentsClip">
-      <Fade delay={400} duration={400} effects="fadeInUp">
-        <AppTitle title="- profile -" />
-        <Profile />
-        <AppTitle title="- Works -" />
-        {development.map(params => {
-          return (
-            <AppWorks
-              key={params.img}
-              img={`/static/works/${params.img}`}
-              title={params.info.title}
-              desc={params.info.desc}
-              link={params.info.link}
-            />
-          );
-        })}
-        {design.map(params => {
-          return (
-            <AppWorks
-              key={params.img}
-              img={`/static/works/${params.img}`}
-              title={params.info.title}
-              desc={params.info.desc}
-              link={params.info.link}
-            />
-          );
-        })}
-        {trackMaking.map(params => {
-          return (
-            <AppWorks
-              key={params.img}
-              img={`/static/works/${params.img}`}
-              title={params.info.title}
-              desc={params.info.desc}
-              subDesc={params.info.subDesc}
-              link={params.info.link}
-            />
-          );
-        })}
-        <AppTitle title="- Skills -" />
-        <Skills />
-        <AppTitle title="- Social -" />
-        <Social />
-        <Copywrite person="© 2020 did0es / Hirai Shuta" />
-      </Fade>
+      <AppTitle title="- profile -" />
+      <Profile />
+      <AppTitle title="- Works -" />
+      {development.map(params => {
+        return (
+          <AppWorks
+            key={params.img}
+            img={`/static/works/${params.img}`}
+            title={params.info.title}
+            desc={params.info.desc}
+            link={params.info.link}
+          />
+        );
+      })}
+      {design.map(params => {
+        return (
+          <AppWorks
+            key={params.img}
+            img={`/static/works/${params.img}`}
+            title={params.info.title}
+            desc={params.info.desc}
+            link={params.info.link}
+          />
+        );
+      })}
+      {trackMaking.map(params => {
+        return (
+          <AppWorks
+            key={params.img}
+            img={`/static/works/${params.img}`}
+            title={params.info.title}
+            desc={params.info.desc}
+            subDesc={params.info.subDesc}
+            link={params.info.link}
+          />
+        );
+      })}
+      <AppTitle title="- Skills -" />
+      <Skills />
+      <AppTitle title="- Social -" />
+      <Social />
+      <Copywrite person="© 2020 did0es / Hirai Shuta" />
     </div>
   </div>
 );
