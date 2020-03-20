@@ -48,17 +48,16 @@
   min-height: 32px;
   margin: 0 8px;
   transform: translateZ(100px);
+  color: #fff;
 }
 
 .AppLoadingCubeFront {
   @extend .AppLoadingCubeFrontCommon;
-  color: #f84c68;
   background: #0c0c0c;
 }
 
 .AppLoadingCubeFrontSelected {
   @extend .AppLoadingCubeFrontCommon;
-  color: #fff;
   background: #db2745;
 }
 

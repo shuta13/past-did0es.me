@@ -1,6 +1,10 @@
 import "./AppLoadingCube.scss";
 import React from "react";
 
+const rand = (l: number) => {
+  return Math.floor(Math.random() * l);
+};
+
 const AppLoading: React.FC<{ text: string }> = ({ text }) => {
   const map = Array.prototype.map;
   return (
@@ -12,14 +16,15 @@ const AppLoading: React.FC<{ text: string }> = ({ text }) => {
         <div className="AppLoadingCubeLeft" />
         {map.call(`${text}`, (t, index) => {
           return (
-            <div className={
-              index === 1 || index === 4
-                ? "AppLoadingCubeFrontSelected"
-                : "AppLoadingCubeFront"
-            } key={index}>
-              <div className="AppLoadingCubeText">
-                {t}
-              </div>
+            <div
+              className={
+                index === rand(text.length)
+                  ? "AppLoadingCubeFrontSelected"
+                  : "AppLoadingCubeFront"
+              }
+              key={index}
+            >
+              <div className="AppLoadingCubeText">{t}</div>
             </div>
           );
         })}
