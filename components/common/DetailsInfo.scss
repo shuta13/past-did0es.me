@@ -1,35 +1,29 @@
 .DetailsInfoWrap {
-  width: auto;
+  max-width: 400px;
+  width: 40%;
+  height: 144px;
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  color: #fff;
-}
-
-.DetailsInfoWrapCommon {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 8px 0;
   align-items: center;
-}
-
-.DetailsInfoCommon {
-  width: 90%;
-  font-family: 'Cormorant Garamond';
-  font-size: 16px;
-  overflow-wrap: break-word;
-  text-align: center;
+  flex-wrap: wrap;
+  border-radius: 4px;
+  background: #db2745;
+  padding: 24px 0;
+  ul {
+    margin: 0;
+  }
+  li {
+    @extend .DetailsInfoText;
+  }
 }
 
 .DetailsInfoTitle {
-  font-weight: bold;
+  @extend .DetailsInfoText;
+  font-size: 16px;
 }
 
-.DetailsInfoDescription {
-  text-align: left;
-  height: auto;
-  font-family: "Noto Serif JP";
-  font-size: 12px;
+.DetailsInfoText {
+  font-size: 14px;
+  font-family: "Abel", sans-serif;
+  color: #fff;
 }

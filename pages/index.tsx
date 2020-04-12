@@ -21,15 +21,7 @@ const Home: React.FC = () => (
       <title>APOSTRO</title>
       <link rel="icon" href="/favicon.ico" />
       <link
-        href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap"
-        rel="stylesheet"
-      />
-      <link
-        href="https://fonts.googleapis.com/css?family=Cinzel+Decorative&display=swap"
-        rel="stylesheet"
-      />
-      <link
-        href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+Garamond&family=Abel&display=swap"
         rel="stylesheet"
       />
 
