@@ -33,17 +33,6 @@
     }
   },
   {
-    "img": "vue-tsx-keyframes.jpg",
-    "info": {
-      "title": "vue-tsx-keyframes",
-      "date": "2020/02/23",
-      "tags": "Vue.js, TSX, Library",
-      "desc": "Vue-TSXのCSSinJSサポートライブラリ",
-      "subDesc": "",
-      "link": "https://github.com/shuta13/vue-tsx-keyframes"
-    }
-  },
-  {
     "img": "tambourine-podcast.jpg",
     "info": {
       "title": "tambourine.inc podcast site",
@@ -52,6 +41,17 @@
       "desc": "tambourin.incの業務として制作した社内向けPodcastサイト",
       "subDesc": "",
       "link": "https://developers.tam-bourine.co.jp/entry/2019/12/19/190000"
+    }
+  },
+  {
+    "img": "vue-tsx-keyframes.jpg",
+    "info": {
+      "title": "vue-tsx-keyframes",
+      "date": "2020/02/23",
+      "tags": "OSS, Vue.js, TSX, Library",
+      "desc": "Vue-TSXのCSSinJSサポートライブラリ",
+      "subDesc": "",
+      "link": "https://github.com/shuta13/vue-tsx-keyframes"
     }
   },
   {
