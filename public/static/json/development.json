@@ -4,21 +4,21 @@
     "info": {
       "title": "GARELLY",
       "date": "2019/05/25",
-      "tags": "website, generative, web components",
-      "desc": "制作したジェネラティブアートやグラフィックデザインをまとめたWebComponents製Webサイト",
+      "tags": "website, 2D Graphics, WebComponents",
+      "desc": "2Dグラフィック作品を並べたWebComponents製Webサイト",
       "subDesc": "",
       "link": "https://garelly.did0es.me"
     }
   },
   {
-    "img": "experiments.jpg",
+    "img": "maraviglia.jpg",
     "info": {
-      "title": "EXPERIMENTS",
-      "date": "2020/02/23",
+      "title": "Maraviglia Archives",
+      "date": "2020/04/11",
       "tags": "website, webgl, three.js",
-      "desc": "個人制作として行ったWebGLとNuxt.jsを用いた2D、3Dグラフィックス表現をまとめたWebサイト",
+      "desc": "WebGLによる作品アーカイブサイト",
       "subDesc": "",
-      "link": "https://experiments.did0es.me"
+      "link": "https://maraviglia.now.sh"
     }
   },
   {
@@ -27,7 +27,7 @@
       "title": "Candy Official Blog",
       "date": "2020/02/23",
       "tags": "blog, gatsby.js",
-      "desc": "ElevenBack LLC.の受託業務として制作したブログ",
+      "desc": "ElevenBack.LLCの受託業務として制作したブログ",
       "subDesc": "",
       "link": "https://blog.candy.ac"
     }
@@ -38,20 +38,9 @@
       "title": "vue-tsx-keyframes",
       "date": "2020/02/23",
       "tags": "library of npm, vue.js, tsx",
-      "desc": "Vue-TSXにおいてkeyframesを使えるようにするTypeScript製ライブラリ",
+      "desc": "Vue-TSXのCSS in JSサポートライブラリ",
       "subDesc": "",
       "link": "https://github.com/shuta13/vue-tsx-keyframes"
-    }
-  },
-  {
-    "img": "qiita-viewer.jpg",
-    "info": {
-      "title": "Qiita Viewer",
-      "date": "2020/03/21",
-      "tags": "website, next.js, aspida",
-      "desc": "aspidaに関する記事を執筆した際に制作したデモアプリ",
-      "subDesc": "",
-      "link": "https://qiita-viewer.now.sh"
     }
   },
   {
@@ -60,7 +49,7 @@
       "title": "tambourine.inc podcast site",
       "date": "2020/02/23",
       "tags": "website, podcast, nuxt.js",
-      "desc": "tambourin.incにてインターン・アルバイト業務として制作した社内向けPodcast配信サイト",
+      "desc": "tambourin.incのインターン・アルバイト業務として制作した社内向けPodcast配信サイト",
       "subDesc": "",
       "link": "https://developers.tam-bourine.co.jp/entry/2019/12/19/190000"
     }
