@@ -4,8 +4,8 @@
     "info": {
       "title": "GARELLY",
       "date": "2019/05/25",
-      "tags": "website, 2D Graphics, WebComponents",
-      "desc": "2Dグラフィック作品を並べたWebComponents製Webサイト",
+      "tags": "WebComponents, 2D Graphics, Processing, Photoshop",
+      "desc": "2Dグラフィック作品をまとめたサイト",
       "subDesc": "",
       "link": "https://garelly.did0es.me"
     }
@@ -15,7 +15,7 @@
     "info": {
       "title": "Maraviglia Archives",
       "date": "2020/04/11",
-      "tags": "website, webgl, three.js",
+      "tags": "Next.js, WebGL, Three.js",
       "desc": "WebGLによる作品アーカイブサイト",
       "subDesc": "",
       "link": "https://maraviglia.now.sh"
@@ -26,7 +26,7 @@
     "info": {
       "title": "Candy Official Blog",
       "date": "2020/02/23",
-      "tags": "blog, gatsby.js",
+      "tags": "Gatsby.js, Blog",
       "desc": "ElevenBack.LLCの受託業務として制作したブログ",
       "subDesc": "",
       "link": "https://blog.candy.ac"
@@ -37,8 +37,8 @@
     "info": {
       "title": "vue-tsx-keyframes",
       "date": "2020/02/23",
-      "tags": "library of npm, vue.js, tsx",
-      "desc": "Vue-TSXのCSS in JSサポートライブラリ",
+      "tags": "Vue.js, TSX, Library",
+      "desc": "Vue-TSXのCSSinJSサポートライブラリ",
       "subDesc": "",
       "link": "https://github.com/shuta13/vue-tsx-keyframes"
     }
@@ -48,8 +48,8 @@
     "info": {
       "title": "tambourine.inc podcast site",
       "date": "2020/02/23",
-      "tags": "website, podcast, nuxt.js",
-      "desc": "tambourin.incのインターン・アルバイト業務として制作した社内向けPodcast配信サイト",
+      "tags": "Nuxt.js, Podcast",
+      "desc": "tambourin.incの業務として制作した社内向けPodcastサイト",
       "subDesc": "",
       "link": "https://developers.tam-bourine.co.jp/entry/2019/12/19/190000"
     }
@@ -59,8 +59,8 @@
     "info": {
       "title": "LT @Kyoto.js17",
       "date": "2020/02/23",
-      "tags": "LT",
-      "desc": "Kyoto.js第17回にて行ったvue-tsx-keyframesに関するLT",
+      "tags": "Lightning Talk",
+      "desc": "Kyoto.js第17回にて行ったLT",
       "subDesc": "",
       "link": "https://speakerdeck.com/shuta/keyframes-of-vue-and-tsx-with-css-in-js"
     }
