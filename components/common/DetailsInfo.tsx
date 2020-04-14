@@ -15,10 +15,10 @@ const DetailsInfo: React.FC<{ info: InfoParams }> = ({ info }) => {
   return (
     <div className="DetailsInfoWrap">
       <div className="DetailsInfoTitle">{info.title}</div>
-      <div>{info.date}</div>
-      <div>{info.tags}</div>
-      <div>{info.desc}</div>
-      <div>{info.subDesc}</div>
+      <div className="DetailsInfoText">{info.date}</div>
+      <div className="DetailsInfoText">{info.tags}</div>
+      <div className="DetailsInfoText">{info.desc}</div>
+      <div className="DetailsInfoText">{info.subDesc}</div>
     </div>
   );
 };

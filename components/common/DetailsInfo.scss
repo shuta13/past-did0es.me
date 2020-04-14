@@ -1,29 +1,25 @@
 .DetailsInfoWrap {
-  max-width: 400px;
-  width: 40%;
-  height: 144px;
+  max-width: 360px;
+  min-width: 160px;
+  width: 80%;
+  height: 128px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   border-radius: 4px;
   background: #db2745;
-  padding: 24px 0;
-  ul {
-    margin: 0;
-  }
-  li {
-    @extend .DetailsInfoText;
-  }
+  padding: 24px;
+}
+
+.DetailsInfoText {
+  width: 80%;
+  font-size: 12px;
+  font-family: "Abel", sans-serif;
+  color: #fff;
 }
 
 .DetailsInfoTitle {
   @extend .DetailsInfoText;
-  font-size: 16px;
-}
-
-.DetailsInfoText {
-  font-size: 14px;
-  font-family: "Abel", sans-serif;
-  color: #fff;
+  font-size: 18px;
 }
