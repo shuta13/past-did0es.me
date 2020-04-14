@@ -36,11 +36,6 @@ type HandleCameraAspectParams = {
 // let mouseY = 0.0
 
 const Canvas: React.FC = () => {
-  let width = window.innerWidth;
-  const maxObjWidth = 720;
-  const minObjWidth = 300;
-  if (width >= maxObjWidth) width = maxObjWidth;
-  else if (width <= minObjWidth) width = minObjWidth;
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
     if (!canvas) {
       return;
@@ -48,7 +43,7 @@ const Canvas: React.FC = () => {
 
     // init scene
     const scene = new Scene();
-    const camera = new PerspectiveCamera(75, width / width, 0.1, 1000);
+    const camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 1.5;
 
     // render scene
@@ -59,9 +54,9 @@ const Canvas: React.FC = () => {
     });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setClearColor("#1d1d1d", 0.0);
-    renderer.setSize(width, width);
+    renderer.setSize(window.innerWidth, window.innerHeight);
 
-    const vertexCount = 100 * 4;
+    const vertexCount = 3 * 3;
     const geometry = new BufferGeometry();
     const positions = [];
     const colors = [];
@@ -70,15 +65,15 @@ const Canvas: React.FC = () => {
       positions.push(Math.random() - 0.5);
       positions.push(Math.random() - 0.5);
       positions.push(Math.random() - 0.5);
-      positions.push(Math.random() - 0.5);
+      // positions.push(Math.random() - 0.5);
       // adding r,g,b,a
-      colors.push((Math.random() * 255) % 200);
-      colors.push((Math.random() * 255) % 100);
+      colors.push(200);
+      colors.push(10);
       colors.push(Math.random() * 255);
-      colors.push(Math.random() * 255);
+      // colors.push(Math.random() * 255);
     }
-    const positionAttribute = new Float32BufferAttribute(positions, 4);
-    const colorAttribute = new Uint8BufferAttribute(colors, 4);
+    const positionAttribute = new Float32BufferAttribute(positions, 3);
+    const colorAttribute = new Uint8BufferAttribute(colors, 3);
     colorAttribute.normalized = true;
     geometry.setAttribute("position", positionAttribute);
     geometry.setAttribute("color", colorAttribute);
@@ -116,12 +111,9 @@ const Canvas: React.FC = () => {
 
   // handle resize
   const handleResize = ({ camera, renderer }: HandleCameraAspectParams) => {
-    let width = window.innerWidth;
-    if (width >= maxObjWidth) width = maxObjWidth;
-    else if (width <= minObjWidth) width = minObjWidth;
-    camera.aspect = width / width;
+    camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
-    renderer.setSize(width, width);
+    renderer.setSize(window.innerWidth, window.innerHeight);
   };
   useEffect(() => {
     return () => window.removeEventListener("resize", () => handleResize);
@@ -141,45 +133,7 @@ const Canvas: React.FC = () => {
   const render = ({ scene, camera, renderer }: RenderParams) => {
     const time = performance.now();
     const object = scene.children[0] as any;
-    let positions = [] as any;
-    const threshold = 0.6;
-    object.geometry.attributes.position.array.map(
-      (pos: number, index: number) => {
-        if (index % 3 === 1) {
-          pos +=
-            Math.random() *
-            0.05 *
-            Math.cos(time * 0.005 * Math.sin(time)) *
-            Math.sin(time * Math.random() * Math.sin(time));
-          pos %= threshold;
-          positions.push(pos);
-        } else if (index % 3 === 2) {
-          pos +=
-            Math.random() *
-            0.04 *
-            Math.cos(time * 0.005) *
-            Math.sin(time * 0.005);
-          pos %= threshold;
-          positions.push(pos);
-        } else {
-          pos +=
-            Math.random() *
-            0.0024 *
-            Math.cos(time * 0.005) *
-            Math.sin(time * 0.005);
-          pos %= threshold;
-          positions.push(pos);
-        }
-      }
-    );
-    const positionAttribute = new Float32BufferAttribute(positions, 4);
-    object.geometry.setAttribute("position", positionAttribute);
-
-    object.material.uniforms.time.value = Math.atan(time * 0.005);
-
-    // object.rotation.y = mouseX * 0.0008
-    // object.rotation.x = mouseY * 0.0008
-
+    object.material.uniforms.time.value = Math.sin(time) * 0.001;
     renderer.render(scene, camera);
   };
   return (
