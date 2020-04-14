@@ -16,6 +16,7 @@ const Profile: React.FC = () => (
         <div className="ProfileDescription">
           <p>Web developer & Designer & Track Maker</p>
           <p>Student of Information Science @ Ritsumeikan Univ.</p>
+          <p>Web Front-end Engineer, Designer @ Akinai One</p>
           <p>Web Front-end Engineer, Designer @ ElevenBack LLC.</p>
           <p>Web Engineer @ tambourine.inc</p>
         </div>
