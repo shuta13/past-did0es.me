@@ -32,7 +32,10 @@ const Home: React.FC = () => (
       <meta property="og:title" content="APOSTRO" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="og:description" content="APOSTRO" />
-      <meta property="og:image" content="https://did0es.me/static/ogp.jpg" />
+      <meta
+        property="og:image"
+        content="https://did0es.me/static/og-image.png"
+      />
     </Head>
 
     <Header isDetails={false} />
