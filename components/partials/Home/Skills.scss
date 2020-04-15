@@ -1,21 +1,15 @@
 .SkillsWrap {
   width: 100%;
+  max-width: 360px;
   height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   flex-wrap: wrap;
-}
-
-.SkillsTitleWrap, .SkillsDescriptionWrap {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  line-height: 1.6;
 }
 
 .SkillsTitle {
+  width: 100%;
   font-size: 16px;
   font-family: "Abel", sans-serif;
   font-weight: bold;
@@ -23,12 +17,26 @@
   color: #fff;
 }
 
-.SkillsDescription, .SkillsLink {
-  width: 50%;
-  min-width: 240px;
+.SkillsDescription {
+  width: 100%;
   font-size: 12px;
   font-family: "Abel", sans-serif;
   color: #fff;
   text-align: left;
   word-break: break-all;
+}
+
+.SkillsLink {
+  width: 256px;
+  height: 48px;
+  border-radius: 4px;
+  background: #fff;
+  color: #1d1d1d;
+  font-size: 12px;
+  font-family: "Abel", sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

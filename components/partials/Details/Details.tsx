@@ -36,7 +36,7 @@ const Details: React.FC = () => {
         <title>APOSTRO - {worksTitle}</title>
       </Head>
 
-      <Loading />
+      {process.env.NODE_ENV !== "development" ? <Loading /> : null}
       <BackButton />
       <div className="DetailsContentsWrap">
         <div className="DetailsContents">
