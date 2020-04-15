@@ -1,5 +1,6 @@
 import "../assets/style/global.scss";
 import Header from "../components/common/Header";
+import Head from "next/head";
 
 const Did0esMe = ({
   Component,
@@ -10,6 +11,9 @@ const Did0esMe = ({
 }) => {
   return (
     <>
+      <Head>
+        <title>APOSTRO</title>
+      </Head>
       <Header />
       <Component {...pageProps} />
     </>
