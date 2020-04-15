@@ -8,15 +8,16 @@
   align-items: center;
   flex-wrap: wrap;
   border-radius: 4px;
-  background: rgba(219, 39, 69, 0.7);
+  background: #e4e4e4;
   padding: 24px;
+  border: solid 1px #1d1d1d;
 }
 
 .DetailsInfoText {
   width: 80%;
   font-size: 12px;
   font-family: "Abel", sans-serif;
-  color: #fff;
+  color: #1d1d1d;
   letter-spacing: 2px;
 }
 
