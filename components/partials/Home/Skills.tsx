@@ -1,5 +1,6 @@
 import React from "react";
 import "./Skills.scss";
+import { ExternalLink } from "../../common/ExternalLink";
 
 const Skills: React.FC = () => (
   <div className="SkillsWrap">
@@ -28,14 +29,10 @@ const Skills: React.FC = () => (
         Lambda, API Gateway
       </p>
     </div>
-    <a
+    <ExternalLink
       href="https://www.wantedly.com/users/95976645"
-      target="_blank"
-      className="SkillsLink"
-      rel="noopener noreferrer"
-    >
-      Detail
-    </a>
+      text="Detail"
+    />
   </div>
 );
 

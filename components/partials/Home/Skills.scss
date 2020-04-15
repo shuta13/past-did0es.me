@@ -1,6 +1,6 @@
 .SkillsWrap {
   width: 100%;
-  max-width: 360px;
+  max-width: 320px;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -12,6 +12,7 @@
   width: 100%;
   font-size: 16px;
   font-family: "Abel", sans-serif;
+  letter-spacing: 2px;
   font-weight: bold;
   text-align: center;
   color: #fff;
@@ -21,22 +22,8 @@
   width: 100%;
   font-size: 12px;
   font-family: "Abel", sans-serif;
+  letter-spacing: 2px;
   color: #fff;
   text-align: left;
   word-break: break-all;
-}
-
-.SkillsLink {
-  width: 256px;
-  height: 48px;
-  border-radius: 4px;
-  background: #fff;
-  color: #1d1d1d;
-  font-size: 12px;
-  font-family: "Abel", sans-serif;
-  font-weight: bold;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
