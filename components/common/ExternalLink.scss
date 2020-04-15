@@ -1,10 +1,17 @@
-.ExternalLinkCommon {
+.ExternalLinkWrap {
   margin-bottom: 40px;
   width: 256px;
   height: 48px;
   border-radius: 4px;
-  background: #1d1d1d;
-  color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.ExternalLinkCommon {
+  transform: translateX(-100%) translateY(-100%);
+  transition: transform cubic-bezier(.16,.67,.64,.99) .2s, color cubic-bezier(.9,.23,.48,.97) .4s;
+  width: 256px;
+  height: 48px;
   font-size: 12px;
   font-family: "Abel", sans-serif;
   font-weight: bold;
@@ -13,6 +20,8 @@
   justify-content: center;
   align-items: center;
   letter-spacing: 2px;
+  background: #fff;
+  color: #fff;
 }
 
 .ExternalLink {
@@ -21,6 +30,30 @@
 
 .ExternalLinkHovered {
   @extend .ExternalLinkCommon;
-  background: #fff;
+  transform: translateX(0%) translateY(-100%);
+  color: #1d1d1d;
+}
+
+.ExternalLinkSquareCommon {
+  transition: color cubic-bezier(.9,.23,.48,.97) .4s;
+  width: 256px;
+  height: 48px;
+  background: #1d1d1d;
+  color: #fff;
+  font-size: 12px;
+  font-family: "Abel", sans-serif;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2px;
+}
+
+.ExternalLinkSquare {
+  @extend .ExternalLinkSquareCommon;
+}
+
+.ExternalLinkSquareHovered {
+  @extend .ExternalLinkSquareCommon;
   color: #1d1d1d;
 }
