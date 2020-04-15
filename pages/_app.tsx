@@ -1,4 +1,5 @@
 import "../assets/style/global.scss";
+import Header from "../components/common/Header";
 
 const Did0esMe = ({
   Component,
@@ -7,7 +8,12 @@ const Did0esMe = ({
   Component: any;
   pageProps: any;
 }) => {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Header />
+      <Component {...pageProps} />
+    </>
+  );
 };
 
 export default Did0esMe;

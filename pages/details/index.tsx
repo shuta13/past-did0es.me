@@ -1,7 +1,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import Header from "../../components/common/Header";
 
 const DetailsNoSSR = dynamic(
   () => import("../../components/partials/Details/Details"),
@@ -17,7 +16,6 @@ const DetailsHome = () => {
           rel="stylesheet"
         />
       </Head>
-      <Header isDetails={true} />
       <DetailsNoSSR />
     </>
   );

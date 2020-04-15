@@ -4,36 +4,19 @@ import { animateScroll } from "react-scroll";
 
 import "./Header.scss";
 
-const Header: React.FC<{ isDetails: boolean }> = ({ isDetails }) => (
+const Header: React.FC = () => (
   <div className="HeaderWrap">
-    {isDetails && (
-      <Link href="/">
-        <img
-          className="HeaderImage"
-          src={require("../../public/static/apostro.svg")}
-          onClick={() =>
-            animateScroll.scrollToTop({
-              smooth: "easeInOutQuint",
-              duration: 1200
-            })
-          }
-          alt="logo"
-        />
-      </Link>
-    )}
-    {!isDetails && (
-      <img
-        className="HeaderImage"
-        src={require("../../public/static/apostro.svg")}
-        onClick={() =>
-          animateScroll.scrollToTop({
-            smooth: "easeInOutQuint",
-            duration: 1200
-          })
-        }
-        alt="logo"
-      />
-    )}
+    <img
+      className="HeaderImage"
+      src={require("../../public/static/apostro.svg")}
+      onClick={() =>
+        animateScroll.scrollToTop({
+          smooth: "easeInOutQuint",
+          duration: 1200
+        })
+      }
+      alt="logo"
+    />
   </div>
 );
 
