@@ -34,7 +34,7 @@ const Loading: React.FC = () => {
     window.addEventListener("link", () => {
       startOnLoadAnimation().then(() => finishedAnimate());
     });
-    document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
     window.addEventListener("load", () => {
       startOnLoadAnimation().then(() => finishedAnimate());
     });
