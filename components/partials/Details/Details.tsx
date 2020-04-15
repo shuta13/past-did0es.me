@@ -36,13 +36,11 @@ const Details: React.FC = () => {
         <title>APOSTRO - {worksTitle}</title>
       </Head>
 
-      {process.env.NODE_ENV !== "development" ? <Loading /> : null}
+      <Loading />
       <BackButton />
       <div className="DetailsContentsWrap">
-        <div className="DetailsContents">
-          <DetailsImage img={`/static/works/${img}`} href={info.link} />
-          <DetailsInfo info={info} />
-        </div>
+        <DetailsImage img={`/static/works/${img}`} href={info.link} />
+        <DetailsInfo info={info} />
       </div>
     </>
   );

@@ -32,10 +32,28 @@ type HandleCameraAspectParams = {
   renderer: WebGLRenderer;
 };
 
-// let mouseX = 0.0
-// let mouseY = 0.0
+const render = ({ scene, camera, renderer }: RenderParams) => {
+  const time = performance.now();
+  const object = scene.children[0] as any;
+  object.material.uniforms.time.value = Math.sin(time) * 0.001;
+  renderer.render(scene, camera);
+};
+
+const handleResize = ({ camera, renderer }: HandleCameraAspectParams) => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+};
 
 const Canvas: React.FC = () => {
+  // animate
+  const requestRef = useRef(0);
+  const animate = useCallback(({ scene, camera, renderer }: AnimateParams) => {
+    requestRef.current = window.requestAnimationFrame(() =>
+      animate({ scene, camera, renderer })
+    );
+    render({ scene, camera, renderer });
+  }, []);
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
     if (!canvas) {
       return;
@@ -101,51 +119,13 @@ const Canvas: React.FC = () => {
 
     window.addEventListener("resize", () => handleResize({ camera, renderer }));
   };
-
-  // animate
-  const requestRef = useRef(0);
-  const animate = useCallback(({ scene, camera, renderer }: AnimateParams) => {
-    requestRef.current = window.requestAnimationFrame(() =>
-      animate({ scene, camera, renderer })
-    );
-    render({ scene, camera, renderer });
-  }, []);
   useEffect(() => {
     return () => window.cancelAnimationFrame(requestRef.current);
   }, [animate]);
-
-  // handle resize
-  const handleResize = ({ camera, renderer }: HandleCameraAspectParams) => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-  };
   useEffect(() => {
     return () => window.removeEventListener("resize", () => handleResize);
   });
-
-  // track mouse pos
-  // const handleMouseMove = (event: any) => {
-  //   mouseX = event.clientX
-  //   mouseY = event.clientY
-  // }
-  // useEffect(() => {
-  //   window.addEventListener('mousemove', () => handleMouseMove(event))
-  //   return window.removeEventListener('mousemove', () => handleMouseMove)
-  // }, [])
-
-  // render
-  const render = ({ scene, camera, renderer }: RenderParams) => {
-    const time = performance.now();
-    const object = scene.children[0] as any;
-    object.material.uniforms.time.value = Math.sin(time) * 0.001;
-    renderer.render(scene, camera);
-  };
-  return (
-    <div className="CanvasWrap">
-      <canvas ref={onCanvasLoaded} />
-    </div>
-  );
+  return <canvas ref={onCanvasLoaded} />;
 };
 
 export default Canvas;

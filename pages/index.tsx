@@ -17,7 +17,7 @@ const ContentsNoSSR = dynamic(
 const Home: React.FC = () => (
   <>
     {/* <CanvasNoSSR /> */}
-    {process.env.NODE_ENV !== "development" ? <Loading /> : null}
+    <Loading />
     <ContentsNoSSR />
   </>
 );

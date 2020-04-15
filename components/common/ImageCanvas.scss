@@ -1,5 +1,4 @@
 .ImageCanvasClip {
-  width: 100%;
   appearance: none;
   outline: none;
   border: none;
@@ -7,7 +6,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2vh;
 }
 
 .ImageCanvas, .ImageCanvasDetails {
