@@ -16,10 +16,6 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link rel="icon" href="/favicon.ico" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+Garamond&family=Abel&display=swap"
-            rel="stylesheet"
-          />
 
           <meta name="description" content="APOSTRO" />
           <meta property="og:site_name" content="APOSTRO" />

@@ -8,6 +8,7 @@ import design from "../../../public/static/json/design.json";
 import trackMaking from "../../../public/static/json/trackMaking.json";
 import "./Details.scss";
 import Loading from "../../common/Loading";
+import { BackButton } from "../../common/BackButton";
 
 const Details: React.FC = () => {
   const queryTitle = new URL(window.location.href).searchParams.get("title");
@@ -30,19 +31,20 @@ const Details: React.FC = () => {
   });
 
   return (
-    <div>
+    <>
       <Head>
         <title>APOSTRO - {worksTitle}</title>
       </Head>
 
       <Loading />
+      <BackButton />
       <div className="DetailsContentsWrap">
         <div className="DetailsContents">
           <DetailsImage img={`/static/works/${img}`} href={info.link} />
           <DetailsInfo info={info} />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
