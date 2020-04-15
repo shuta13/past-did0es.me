@@ -11,7 +11,7 @@ import Loading from "../components/common/Loading";
 // )
 
 const ContentsNoSSR = dynamic(
-  () => import("../components/partials/Body/Contents"),
+  () => import("../components/partials/Home/Contents"),
   { ssr: false }
 );
 

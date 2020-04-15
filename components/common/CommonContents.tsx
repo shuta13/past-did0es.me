@@ -1,14 +1,14 @@
 import "./CommonContents.scss";
 import React from "react";
 
-import Profile from "../partials/Body/Profile";
+import Profile from "../partials/Home/Profile";
 import AppTitle from "../common/AppTitle";
-import AppWorks from "../partials/Body/AppWorks";
-import Skills from "../partials/Foot/Skills";
-import Social from "../partials/Foot/Social";
-import Copywrite from "../partials/Foot/Copyright";
+import AppWorks from "../partials/Home/AppWorks";
+import Skills from "../partials/Home/Skills";
+import Social from "../partials/Home/Social";
+import Copywrite from "../partials/Home/Copyright";
 
-import Canvas from "../partials/Head/Canvas";
+import Canvas from "../partials/Home/Canvas";
 
 import development from "../../public/static/json/development.json";
 import design from "../../public/static/json/design.json";
