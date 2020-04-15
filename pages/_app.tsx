@@ -14,7 +14,7 @@ const Did0esMe = ({
       <Head>
         <title>APOSTRO</title>
         <link
-          href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+Garamond&family=Abel&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+Garamond&family=Poiret+One&family=Abel&display=swap"
           rel="stylesheet"
         />
       </Head>
