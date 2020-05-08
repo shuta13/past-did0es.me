@@ -9,6 +9,7 @@ import trackMaking from "../../../public/json/trackMaking.json";
 import "./Details.scss";
 import Loading from "../../common/Loading";
 import { BackButton } from "../../common/BackButton";
+import Main from "../Home/Main";
 
 const Details: React.FC = () => {
   const queryTitle = new URL(window.location.href).searchParams.get("title");
@@ -37,7 +38,8 @@ const Details: React.FC = () => {
       </Head>
 
       <Loading />
-      <div className="DetailsContentsWrap">
+      <Main />
+      <div className="DetailsClip">
         <DetailsImage img={`/works/${img}`} href={info.link} />
         <DetailsInfo info={info} />
       </div>

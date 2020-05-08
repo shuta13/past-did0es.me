@@ -1,10 +1,12 @@
 import React from "react";
 
 import "./Profile.scss";
+import AppTitle from "../../common/AppTitle";
 
 const Profile: React.FC = () => (
   <div className="ProfileWrap">
-    <div className="ProfileContentsWrap">
+    <div className="ProfileClip">
+      <AppTitle title="- Profile -" />
       <div className="ProfileImageWrap">
         <img
           className="ProfileImage"

@@ -1,16 +1,25 @@
-import React, { useRef, useEffect } from "react";
+import "./Contents.scss";
+import React from "react";
 
-import ContentsForPC from "./ContentsForPC";
-import ContentsForPhone from "./ContentsForPhone";
+import Profile from "./Profile";
+import Skills from "./Skills";
+import Social from "./Social";
+import Copywrite from "./Copyright";
 
-const Contents = () => {
-  const width = window.innerWidth;
-  return (
-    <div>
-      {width > 615 && <ContentsForPC />}
-      {width <= 615 && <ContentsForPhone />}
+import Main from "./Main";
+import { Works } from "./Works";
+
+const Contents: React.FC = () => (
+  <>
+    <Main />
+    <div className="ContentsWrap">
+      <Profile />
+      <Works />
+      <Skills />
+      <Social />
+      <Copywrite />
     </div>
-  );
-};
+  </>
+);
 
 export default Contents;

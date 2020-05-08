@@ -1,15 +1,18 @@
 .SocialWrap {
-  width: 480px;
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.SocialContentsWrap {
-  width: 100%;
+.SocialClip {
+  width: 90%;
+  max-width: 320px;
+  height: 80%;
+  max-height: 560px;
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
 }

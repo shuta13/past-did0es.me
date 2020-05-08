@@ -1,131 +1,78 @@
-import React, { useRef, useCallback, useEffect } from "react";
+import "./Main.scss";
+import React from "react";
 import {
-  WebGLRenderer,
   Scene,
-  PerspectiveCamera,
-  BufferGeometry,
-  Float32BufferAttribute,
-  Uint8BufferAttribute,
+  OrthographicCamera,
+  WebGLRenderer,
+  PlaneBufferGeometry,
   RawShaderMaterial,
-  DoubleSide,
-  Mesh
+  Mesh,
+  Vector2,
+  TextureLoader,
+  Clock
 } from "three";
 
-import "./Main.scss";
+const vert = require("../../shaders/Main/index.vert");
+const frag = require("../../shaders/Main/index.frag");
 
-const fragment = require("../../shaders/Main/frag.glsl");
-const vertex = require("../../shaders/Main/vert.glsl");
-
-// types
-type RenderParams = {
-  scene: Scene;
-  camera: PerspectiveCamera;
-  renderer: WebGLRenderer;
-};
 type AnimateParams = {
   scene: Scene;
-  camera: PerspectiveCamera;
+  camera: OrthographicCamera;
   renderer: WebGLRenderer;
-};
-type HandleCameraAspectParams = {
-  camera: PerspectiveCamera;
-  renderer: WebGLRenderer;
-};
-
-const render = ({ scene, camera, renderer }: RenderParams) => {
-  const time = performance.now();
-  const object = scene.children[0] as any;
-  object.material.uniforms.time.value = Math.sin(time) * 0.001;
-  renderer.render(scene, camera);
-};
-
-const handleResize = ({ camera, renderer }: HandleCameraAspectParams) => {
-  camera.aspect = (window.innerWidth * 0.98) / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth * 0.98, window.innerHeight);
+  uniforms: any;
+  clock: Clock;
 };
 
 const Main: React.FC = () => {
-  // animate
-  const requestRef = useRef(0);
-  const animate = useCallback(({ scene, camera, renderer }: AnimateParams) => {
-    requestRef.current = window.requestAnimationFrame(() =>
-      animate({ scene, camera, renderer })
+  const animate = ({
+    scene,
+    camera,
+    renderer,
+    uniforms,
+    clock
+  }: AnimateParams) => {
+    requestAnimationFrame(() =>
+      animate({ scene, camera, renderer, uniforms, clock })
     );
-    render({ scene, camera, renderer });
-  }, []);
-  const onMainLoaded = (canvas: HTMLMainElement) => {
-    if (!canvas) {
-      return;
-    }
-
-    // init scene
+    uniforms.u_time.value = performance.now() * 0.001;
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.render(scene, camera);
+  };
+  const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
+    if (!canvas) return;
     const scene = new Scene();
-    const camera = new PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
-    camera.position.z = 1.5;
-
-    // render scene
-    const renderer = new WebGLRenderer({
-      canvas: canvas,
-      antialias: true,
-      alpha: true
-    });
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setClearColor("#1d1d1d", 0.0);
-    renderer.setSize(window.innerWidth * 0.98, window.innerHeight);
-
-    const vertexCount = 3 * 3;
-    const geometry = new BufferGeometry();
-    const positions = [];
-    const colors = [];
-    for (let i = 0; i < vertexCount; i++) {
-      // adding x,y,z
-      positions.push(Math.random() - 0.5);
-      positions.push(Math.random() - 0.5);
-      positions.push(Math.random() - 0.5);
-      // positions.push(Math.random() - 0.5);
-      // adding r,g,b,a
-      colors.push(200);
-      colors.push(10);
-      colors.push(Math.random() * 255);
-      // colors.push(Math.random() * 255);
-    }
-    const positionAttribute = new Float32BufferAttribute(positions, 3);
-    const colorAttribute = new Uint8BufferAttribute(colors, 3);
-    colorAttribute.normalized = true;
-    geometry.setAttribute("position", positionAttribute);
-    geometry.setAttribute("color", colorAttribute);
-    const material = new RawShaderMaterial({
-      uniforms: {
-        time: { value: 0.1 }
+    const camera = new OrthographicCamera(-1, 1, 1, -1, 0, -1);
+    scene.add(camera);
+    const geometry = new PlaneBufferGeometry(2, 2);
+    const uniforms = {
+      u_time: {
+        // eslint-disable-line
+        type: "f",
+        value: 0.0
       },
-      vertexShader: vertex.default,
-      fragmentShader: fragment.default,
-      side: DoubleSide,
-      transparent: true
+      u_resolution: {
+        // eslint-disable-line
+        type: "v2",
+        value: new Vector2(window.innerWidth, window.innerHeight)
+      }
+    };
+    const material = new RawShaderMaterial({
+      uniforms: uniforms,
+      vertexShader: vert.default,
+      fragmentShader: frag.default
     });
     const mesh = new Mesh(geometry, material);
     scene.add(mesh);
-
-    // start animation
-    requestRef.current = window.requestAnimationFrame(() =>
-      animate({ scene, camera, renderer })
-    );
-
-    window.addEventListener("resize", () => handleResize({ camera, renderer }));
+    const renderer = new WebGLRenderer({ canvas: canvas, antialias: false });
+    renderer.setClearColor("#1d1d1d");
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.render(scene, camera);
+    const clock = new Clock();
+    clock.start();
+    animate({ scene, camera, renderer, uniforms, clock });
   };
-  useEffect(() => {
-    return () => window.cancelAnimationFrame(requestRef.current);
-  }, [animate]);
-  useEffect(() => {
-    return () => window.removeEventListener("resize", () => handleResize);
-  });
-  return <canvas ref={onMainLoaded} />;
+  return <canvas ref={onCanvasLoaded} className="Main" />;
 };
 
 export default Main;

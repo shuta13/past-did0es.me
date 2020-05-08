@@ -51,7 +51,7 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
   isDetails
 }) => {
   // set canvas
-  const onMainLoaded = (canvas: HTMLMainElement) => {
+  const onMainLoaded = (canvas: HTMLCanvasElement) => {
     if (!canvas) {
       return;
     }

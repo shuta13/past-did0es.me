@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import "./AppWorks.scss";
 
-import ImagePostProcess from "../../common/ImagePostProcess";
+import ImagePostProcess from "./ImagePostProcess";
 
 const AppWorks: React.FC<{
   img: string;

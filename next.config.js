@@ -10,7 +10,7 @@ module.exports = withSass(withImages({
   },
   webpack: (config, options) => {
     config.module.rules.push({
-      test: /\.glsl$/,
+      test: /\.(glsl|frag|vert)$/,
       use: [
         "raw-loader"
       ]
