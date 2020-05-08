@@ -89,7 +89,7 @@ void main() {
   st += snoise(st * .5) * t;
 
   // ベースのグラデーション
-  color += vec3(mix(st.y, st.y, snoise(st * .2)) * .4, .05, .05);
+  color += vec3(mix(st.y, st.y, snoise(st * .2)) * .2, .0, .0);
 
   // 光沢
   color += smoothstep(.3, .9, snoise(st + u_time * .2));
