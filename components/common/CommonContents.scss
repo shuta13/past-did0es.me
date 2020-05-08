@@ -1,14 +1,11 @@
 .ContentsWrap {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   background: linear-gradient(to top, #db2745,#1d1d1d);
 }
 
 .ContentsClip {
-  width: 40%;
+  width: 100%;
   height: auto;
   min-width: 200px;
   display: flex;
