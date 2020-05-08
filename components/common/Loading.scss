@@ -1,7 +1,7 @@
 .LoadingWrapCommon {
   position: fixed;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,6 @@
 
 .LoadingWrap {
   @extend .LoadingWrapCommon;
-  position: relative;
   transform: translateX(0%) rotate(0deg) translateY(0%);
 }
 
