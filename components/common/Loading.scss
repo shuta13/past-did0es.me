@@ -41,9 +41,8 @@
 }
 
 .LoadingWrapFinished {
-  width: 0px;
-  height: 0px;
+  position: absolute;
   opacity: 0;
-  z-index: 0;
-  top: 0;
+  z-index: -10000;
+  transform: translateX(-100%) rotate(0deg) translateY(0%);
 }
