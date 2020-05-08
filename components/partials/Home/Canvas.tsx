@@ -40,9 +40,9 @@ const render = ({ scene, camera, renderer }: RenderParams) => {
 };
 
 const handleResize = ({ camera, renderer }: HandleCameraAspectParams) => {
-  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.aspect = (window.innerWidth * 0.98) / window.innerHeight;
   camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(window.innerWidth * 0.98, window.innerHeight);
 };
 
 const Canvas: React.FC = () => {
@@ -77,7 +77,7 @@ const Canvas: React.FC = () => {
     });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setClearColor("#1d1d1d", 0.0);
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth * 0.98, window.innerHeight);
 
     const vertexCount = 3 * 3;
     const geometry = new BufferGeometry();
