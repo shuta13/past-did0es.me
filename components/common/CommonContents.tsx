@@ -18,7 +18,7 @@ const CommonContents: React.FC = () => (
   <div className="ContentsWrap">
     <Canvas />
     <div className="ContentsClip">
-      <AppTitle title="- profile -" />
+      <AppTitle title="- Profile -" />
       <Profile />
       <AppTitle title="- Works -" />
       {development.map(params => {

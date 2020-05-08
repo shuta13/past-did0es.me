@@ -1,10 +1,9 @@
 .AppWorksWrap {
   width: 480px;
-  height: 420px;
+  height: 300px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 40px 0;
 }
 
 .AppWorksImageWrap {
@@ -15,8 +14,6 @@
 }
 
 .AppWorksImageClip {
-  width: 400px;
-  height: 240px;
   display: flex;
   justify-content: center;
   align-items: center;
