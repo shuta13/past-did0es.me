@@ -20,8 +20,8 @@
   justify-content: center;
   align-items: center;
   letter-spacing: 2px;
-  background: #fff;
-  color: #fff;
+  background: #1d1d1d;
+  color: #1d1d1d;
   border-radius: 4px;
 }
 
@@ -32,15 +32,15 @@
 .ExternalLinkHovered {
   @extend .ExternalLinkCommon;
   transform: translateX(0%) translateY(-100%);
-  color: #1d1d1d;
+  color: #fff;
 }
 
 .ExternalLinkSquareCommon {
   transition: color cubic-bezier(.9,.23,.48,.97) .4s;
   width: 256px;
   height: 48px;
-  background: #1d1d1d;
-  color: #fff;
+  background: #fff;
+  color: #1d1d1d;
   font-size: 12px;
   font-family: "Abel", sans-serif;
   font-weight: bold;
@@ -57,5 +57,5 @@
 
 .ExternalLinkSquareHovered {
   @extend .ExternalLinkSquareCommon;
-  color: #1d1d1d;
+  color: #fff;
 }

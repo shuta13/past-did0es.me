@@ -61,8 +61,8 @@ const Main: React.FC = () => {
     });
     const mesh = new Mesh(geometry, material);
     scene.add(mesh);
-    const renderer = new WebGLRenderer({ canvas: canvas, antialias: false });
-    renderer.setClearColor("#1d1d1d");
+    const renderer = new WebGLRenderer({ canvas: canvas, antialias: false, alpha: true });
+    renderer.setClearColor(0x1d1d1d, 0);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.render(scene, camera);

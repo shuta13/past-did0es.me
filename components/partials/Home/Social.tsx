@@ -14,7 +14,7 @@ const Social: React.FC = () => (
           text="Facebook"
         />
         <ExternalLink
-          href="https://www.instagram.com/did0es13"
+          href="https://www.instagram.com/_did0es"
           text="Instagram"
         />
         <ExternalLink href="https://github.com/shuta13" text="GitHub" />
