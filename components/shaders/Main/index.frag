@@ -89,9 +89,12 @@ void main() {
   st += snoise(st * .5) * t;
 
   // ベースのグラデーション
-  color += vec3(mix(st.y, st.y, snoise(st * .2)) * .2, .0, .0);
+  highp float baseSn = snoise(st * .2);
+  highp float m = mix(st.y, st.y, baseSn) * .2;
+  color += vec3(m, .0, .0);
 
   // 光沢
-  color += smoothstep(.3, .9, snoise(st + u_time * .2));
+  highp float glossSn = snoise(st + u_time * .2);
+  color += smoothstep(.3, .9, glossSn);
   gl_FragColor = vec4(color, 1.0);
 }
