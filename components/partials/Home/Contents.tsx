@@ -12,13 +12,13 @@ import { Works } from "./Works";
 const Contents: React.FC = () => (
   <>
     <Main />
-    <div className="ContentsWrap">
+    {/* <div className="ContentsWrap">
       <Profile />
       <Works />
       <Skills />
       <Social />
       <Copywrite />
-    </div>
+    </div> */}
   </>
 );
 
