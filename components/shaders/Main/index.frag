@@ -84,12 +84,12 @@ float snoise(vec2 v) {
 void main() {
   vec2 st = gl_FragCoord.xy/u_resolution.xy;
   st.x *= u_resolution.x/u_resolution.y;
-  vec3 color = vec3(0.0);
+  vec3 color = vec3(0.4);
   float t = 1.;
   st += snoise(st * .5) * t;
 
   // ベースのグラデーション
-  color += vec3(.15, mix(st.y, st.y, snoise(st * .2)) * .4, .15);
+  color += vec3(mix(st.y, st.y, snoise(st * .2)) * .4, .05, .05);
 
   // 光沢
   color += smoothstep(.3, .9, snoise(st + u_time * .2));
