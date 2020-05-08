@@ -44,14 +44,14 @@ type HandleCameraAspectParams = {
 
 let time = 0.0;
 const payloadHeight = 0.7;
-const maxCanvasWidth = 960;
+const maxMainWidth = 960;
 
 const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
   img,
   isDetails
 }) => {
   // set canvas
-  const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
+  const onMainLoaded = (canvas: HTMLMainElement) => {
     if (!canvas) {
       return;
     }
@@ -67,9 +67,9 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
       canvasWidth = 400;
       canvasHeight = 300;
     }
-    if (canvasWidth >= maxCanvasWidth) {
-      canvasWidth = maxCanvasWidth;
-      canvasHeight = maxCanvasWidth * payloadHeight;
+    if (canvasWidth >= maxMainWidth) {
+      canvasWidth = maxMainWidth;
+      canvasHeight = maxMainWidth * payloadHeight;
     }
     const camera = new PerspectiveCamera(
       fov,
@@ -169,9 +169,9 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
   const handleResize = ({ camera, renderer }: HandleCameraAspectParams) => {
     let width = window.innerWidth;
     let height = width * payloadHeight;
-    if (width >= maxCanvasWidth) {
-      width = maxCanvasWidth;
-      height = maxCanvasWidth * payloadHeight;
+    if (width >= maxMainWidth) {
+      width = maxMainWidth;
+      height = maxMainWidth * payloadHeight;
     }
     camera.aspect = height / width;
     camera.updateProjectionMatrix();
@@ -214,7 +214,7 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
     <div>
       {isDetails && (
         <button className="ImagePostProcessClip" aria-label="Works Link Button">
-          <canvas className="ImagePostProcessDetails" ref={onCanvasLoaded} />
+          <canvas className="ImagePostProcessDetails" ref={onMainLoaded} />
         </button>
       )}
       {!isDetails && (
@@ -227,7 +227,7 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
             onMouseLeave={handleMouseLeave}
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
-            ref={onCanvasLoaded}
+            ref={onMainLoaded}
           />
           <img
             src={img}

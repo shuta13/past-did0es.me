@@ -4,8 +4,8 @@ import dynamic from "next/dynamic";
 
 import Loading from "../components/common/Loading";
 
-// const CanvasNoSSR = dynamic(
-//   () => import('../components/partials/Head/Canvas'),
+// const MainNoSSR = dynamic(
+//   () => import('../components/partials/Head/Main'),
 //   { ssr: false }
 // )
 
@@ -16,7 +16,7 @@ const ContentsNoSSR = dynamic(
 
 const Home: React.FC = () => (
   <>
-    {/* <CanvasNoSSR /> */}
+    {/* <MainNoSSR /> */}
     <Loading />
     <ContentsNoSSR />
   </>

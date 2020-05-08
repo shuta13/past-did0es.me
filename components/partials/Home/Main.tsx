@@ -11,10 +11,10 @@ import {
   Mesh
 } from "three";
 
-import "./Canvas.scss";
+import "./Main.scss";
 
-const fragment = require("../../shaders/Canvas/frag.glsl");
-const vertex = require("../../shaders/Canvas/vert.glsl");
+const fragment = require("../../shaders/Main/frag.glsl");
+const vertex = require("../../shaders/Main/vert.glsl");
 
 // types
 type RenderParams = {
@@ -45,7 +45,7 @@ const handleResize = ({ camera, renderer }: HandleCameraAspectParams) => {
   renderer.setSize(window.innerWidth * 0.98, window.innerHeight);
 };
 
-const Canvas: React.FC = () => {
+const Main: React.FC = () => {
   // animate
   const requestRef = useRef(0);
   const animate = useCallback(({ scene, camera, renderer }: AnimateParams) => {
@@ -54,7 +54,7 @@ const Canvas: React.FC = () => {
     );
     render({ scene, camera, renderer });
   }, []);
-  const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
+  const onMainLoaded = (canvas: HTMLMainElement) => {
     if (!canvas) {
       return;
     }
@@ -125,7 +125,7 @@ const Canvas: React.FC = () => {
   useEffect(() => {
     return () => window.removeEventListener("resize", () => handleResize);
   });
-  return <canvas ref={onCanvasLoaded} />;
+  return <canvas ref={onMainLoaded} />;
 };
 
-export default Canvas;
+export default Main;

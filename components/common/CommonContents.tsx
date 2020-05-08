@@ -8,7 +8,7 @@ import Skills from "../partials/Home/Skills";
 import Social from "../partials/Home/Social";
 import Copywrite from "../partials/Home/Copyright";
 
-import Canvas from "../partials/Home/Canvas";
+import Main from "../partials/Home/Main";
 
 import development from "../../public/json/development.json";
 import design from "../../public/json/design.json";
@@ -16,7 +16,7 @@ import trackMaking from "../../public/json/trackMaking.json";
 
 const CommonContents: React.FC = () => (
   <div className="ContentsWrap">
-    <Canvas />
+    <Main />
     <div className="ContentsClip">
       <AppTitle title="- Profile -" />
       <Profile />
