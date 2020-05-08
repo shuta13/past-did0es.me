@@ -30,6 +30,7 @@ type AnimateParams = {
 type HandleCameraAspectParams = {
   camera: PerspectiveCamera;
   renderer: WebGLRenderer;
+  canvas: HTMLCanvasElement;
 };
 
 const render = ({ scene, camera, renderer }: RenderParams) => {
@@ -39,10 +40,14 @@ const render = ({ scene, camera, renderer }: RenderParams) => {
   renderer.render(scene, camera);
 };
 
-const handleResize = ({ camera, renderer }: HandleCameraAspectParams) => {
-  camera.aspect = window.innerWidth / window.innerHeight;
+const handleResize = ({
+  camera,
+  renderer,
+  canvas
+}: HandleCameraAspectParams) => {
+  camera.aspect = canvas.clientWidth / canvas.clientHeight;
   camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(canvas.clientWidth, canvas.clientHeight);
 };
 
 const Canvas: React.FC = () => {
@@ -63,7 +68,7 @@ const Canvas: React.FC = () => {
     const scene = new Scene();
     const camera = new PerspectiveCamera(
       75,
-      window.innerWidth / window.innerHeight,
+      canvas.clientWidth / canvas.clientHeight,
       0.1,
       1000
     );
@@ -77,7 +82,7 @@ const Canvas: React.FC = () => {
     });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setClearColor("#1d1d1d", 0.0);
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(canvas.clientWidth, canvas.clientHeight);
 
     const vertexCount = 3 * 3;
     const geometry = new BufferGeometry();
@@ -117,7 +122,9 @@ const Canvas: React.FC = () => {
       animate({ scene, camera, renderer })
     );
 
-    window.addEventListener("resize", () => handleResize({ camera, renderer }));
+    window.addEventListener("resize", () =>
+      handleResize({ camera, renderer, canvas })
+    );
   };
   useEffect(() => {
     return () => window.cancelAnimationFrame(requestRef.current);
@@ -125,7 +132,7 @@ const Canvas: React.FC = () => {
   useEffect(() => {
     return () => window.removeEventListener("resize", () => handleResize);
   });
-  return <canvas ref={onCanvasLoaded} />;
+  return <canvas ref={onCanvasLoaded} className="Main" />;
 };
 
 export default Canvas;
