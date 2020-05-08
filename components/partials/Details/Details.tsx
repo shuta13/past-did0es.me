@@ -37,11 +37,11 @@ const Details: React.FC = () => {
       </Head>
 
       <Loading />
-      <BackButton />
       <div className="DetailsContentsWrap">
         <DetailsImage img={`/works/${img}`} href={info.link} />
         <DetailsInfo info={info} />
       </div>
+      <BackButton />
     </>
   );
 };
