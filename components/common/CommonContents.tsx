@@ -10,9 +10,9 @@ import Copywrite from "../partials/Home/Copyright";
 
 import Canvas from "../partials/Home/Canvas";
 
-import development from "../../public/static/json/development.json";
-import design from "../../public/static/json/design.json";
-import trackMaking from "../../public/static/json/trackMaking.json";
+import development from "../../public/json/development.json";
+import design from "../../public/json/design.json";
+import trackMaking from "../../public/json/trackMaking.json";
 
 const CommonContents: React.FC = () => (
   <div className="ContentsWrap">
@@ -25,7 +25,7 @@ const CommonContents: React.FC = () => (
         return (
           <AppWorks
             key={params.img}
-            img={`/static/works/${params.img}`}
+            img={`/works/${params.img}`}
             title={params.info.title}
             desc={params.info.desc}
             link={params.info.link}
@@ -36,7 +36,7 @@ const CommonContents: React.FC = () => (
         return (
           <AppWorks
             key={params.img}
-            img={`/static/works/${params.img}`}
+            img={`/works/${params.img}`}
             title={params.info.title}
             desc={params.info.desc}
             link={params.info.link}
@@ -47,7 +47,7 @@ const CommonContents: React.FC = () => (
         return (
           <AppWorks
             key={params.img}
-            img={`/static/works/${params.img}`}
+            img={`/works/${params.img}`}
             title={params.info.title}
             desc={params.info.desc}
             subDesc={params.info.subDesc}

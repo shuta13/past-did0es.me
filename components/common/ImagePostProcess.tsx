@@ -15,10 +15,10 @@ import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass";
 
-import "./ImageCanvas.scss";
+import "./ImagePostProcess.scss";
 
-const fragment = require("../shaders/ImageCanvas/frag.glsl");
-const vertex = require("../shaders/ImageCanvas/vert.glsl");
+const fragment = require("../shaders/ImagePostProcess/frag.glsl");
+const vertex = require("../shaders/ImagePostProcess/vert.glsl");
 
 // ----------
 // types
@@ -46,7 +46,7 @@ let time = 0.0;
 const payloadHeight = 0.7;
 const maxCanvasWidth = 960;
 
-const ImageCanvas: React.FC<{ img: string; isDetails?: boolean }> = ({
+const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
   img,
   isDetails
 }) => {
@@ -213,14 +213,16 @@ const ImageCanvas: React.FC<{ img: string; isDetails?: boolean }> = ({
   return (
     <div>
       {isDetails && (
-        <button className="ImageCanvasClip" aria-label="Works Link Button">
-          <canvas className="ImageCanvasDetails" ref={onCanvasLoaded} />
+        <button className="ImagePostProcessClip" aria-label="Works Link Button">
+          <canvas className="ImagePostProcessDetails" ref={onCanvasLoaded} />
         </button>
       )}
       {!isDetails && (
-        <button className="ImageCanvasClip" aria-label="Works Link Button">
+        <button className="ImagePostProcessClip" aria-label="Works Link Button">
           <canvas
-            className={isHovered ? "ImageCanvasHovered" : "ImageCanvas"}
+            className={
+              isHovered ? "ImagePostProcessHovered" : "ImagePostProcess"
+            }
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onTouchStart={handleTouchStart}
@@ -229,7 +231,9 @@ const ImageCanvas: React.FC<{ img: string; isDetails?: boolean }> = ({
           />
           <img
             src={img}
-            className={isHovered ? "ImageCanvasImgHovered" : "ImageCanvasImg"}
+            className={
+              isHovered ? "ImagePostProcessImgHovered" : "ImagePostProcessImg"
+            }
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onTouchStart={handleTouchStart}
@@ -242,4 +246,4 @@ const ImageCanvas: React.FC<{ img: string; isDetails?: boolean }> = ({
   );
 };
 
-export default ImageCanvas;
+export default ImagePostProcess;

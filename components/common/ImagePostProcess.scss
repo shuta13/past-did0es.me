@@ -1,4 +1,4 @@
-.ImageCanvasClip {
+.ImagePostProcessClip {
   appearance: none;
   outline: none;
   border: none;
@@ -8,32 +8,32 @@
   align-items: center;
 }
 
-.ImageCanvas, .ImageCanvasDetails {
+.ImagePostProcess, .ImagePostProcessDetails {
   transform: scale(1, 1);
   transition: all cubic-bezier(.27,.19,.44,1) .6s;
   cursor: pointer;
 }
 
-.ImageCanvas {
+.ImagePostProcess {
   position: absolute;
   opacity: 0;
   cursor: pointer;
 }
 
-.ImageCanvasHovered {
+.ImagePostProcessHovered {
   transform: scale(1.1, 1.1);
   opacity: 1;
   transition: all cubic-bezier(.27,.19,.44,1) .6s;
   cursor: pointer;
 }
 
-.ImageCanvasImg {
+.ImagePostProcessImg {
   width: 360px;
   height: auto;
   cursor: pointer;
 }
 
-.ImageCanvasImgHovered {
+.ImagePostProcessImgHovered {
   width: 0px;
   height: 0px;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import "./AppWorks.scss";
 
-import ImageCanvas from "../../common/ImageCanvas";
+import ImagePostProcess from "../../common/ImagePostProcess";
 
 const AppWorks: React.FC<{
   img: string;
@@ -12,13 +12,13 @@ const AppWorks: React.FC<{
   subDesc?: string;
 }> = ({ img, title, desc, link, subDesc }) => {
   const width = window.innerWidth;
-  const query = img.split(".")[0].split("/static/works/")[1];
+  const query = img.split(".")[0].split("/works/")[1];
   return (
     <div className="AppWorksWrap">
       <div className="AppWorksImageWrap">
         <Link href={{ pathname: "/details", query: { title: `${query}` } }}>
           <a className="AppWorksImageClip">
-            {width > 615 && <ImageCanvas img={img} />}
+            {width > 615 && <ImagePostProcess img={img} />}
             {width <= 615 && (
               <img src={img} className="AppWorksImage" alt="media" />
             )}

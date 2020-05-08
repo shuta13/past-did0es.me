@@ -1,5 +1,5 @@
 import React from "react";
-import ImageCanvas from "./ImageCanvas";
+import ImagePostProcess from "./ImagePostProcess";
 
 import "./DetailsImage.scss";
 
@@ -14,7 +14,7 @@ const DetailsImage: React.FC<{ img: string; href: string }> = ({
       target="_blank"
       rel="noopener noreferrer"
     >
-      <ImageCanvas img={img} isDetails={true} />
+      <ImagePostProcess img={img} isDetails={true} />
     </a>
   );
 };

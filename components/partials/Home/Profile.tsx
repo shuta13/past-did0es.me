@@ -8,7 +8,7 @@ const Profile: React.FC = () => (
       <div className="ProfileImageWrap">
         <img
           className="ProfileImage"
-          src={require("../../../public/static/icon.jpg")}
+          src={require("../../../public/icon.jpg")}
           alt="logo"
         />
       </div>
