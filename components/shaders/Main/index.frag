@@ -1,6 +1,7 @@
-#ifdef GL_ES
-precision mediump float;
-#endif
+// #ifdef GL_ES
+// precision mediump float;
+// #endif
+precision highp float;
 
 #define PI 3.14159265359
 #define TWO_PI 6.28318530718
@@ -89,12 +90,9 @@ void main() {
   st += snoise(st * .5) * t;
 
   // ベースのグラデーション
-  highp float baseSn = snoise(st * .2);
-  highp float m = mix(st.y, st.y, baseSn) * .2;
-  color += vec3(m, .0, .0);
+  color += vec3(mix(st.y, st.y, snoise(st * .2)) * .2, .0, .0);
 
   // 光沢
-  highp float glossSn = snoise(st + u_time * .2);
-  color += smoothstep(.3, .9, glossSn);
+  color += smoothstep(.3, .9, snoise(st + u_time * .2));
   gl_FragColor = vec4(color, 1.0);
 }
