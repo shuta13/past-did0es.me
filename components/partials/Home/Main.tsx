@@ -43,15 +43,13 @@ const Main: React.FC = () => {
     const scene = new Scene();
     const camera = new OrthographicCamera(-1, 1, 1, -1, 0, -1);
     scene.add(camera);
-    const geometry = new PlaneBufferGeometry(2, 2);
+    const geometry = new PlaneBufferGeometry(1, 1);
     const uniforms = {
       u_time: {
-        // eslint-disable-line
         type: "f",
         value: 0.0
       },
       u_resolution: {
-        // eslint-disable-line
         type: "v2",
         value: new Vector2(window.innerWidth, window.innerHeight)
       }
