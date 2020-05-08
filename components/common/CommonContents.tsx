@@ -59,7 +59,7 @@ const CommonContents: React.FC = () => (
       <Skills />
       <AppTitle title="- Social -" />
       <Social />
-      <Copywrite person="© 2020 did0es / Hirai Shuta" />
+      <Copywrite person="© 2020 did0es(shuta13)" />
     </div>
   </div>
 );
