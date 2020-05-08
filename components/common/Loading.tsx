@@ -13,7 +13,6 @@ const Loading: React.FC = () => {
     const startOnLoadAnimation = () => {
       return new Promise(resolve => {
         setIsLoaded(true);
-        document.body.style.overflowY = "scroll";
         resolve();
       });
     };
@@ -34,7 +33,6 @@ const Loading: React.FC = () => {
     window.addEventListener("link", () => {
       startOnLoadAnimation().then(() => finishedAnimate());
     });
-    document.body.style.overflow = "hidden";
     window.addEventListener("load", () => {
       startOnLoadAnimation().then(() => finishedAnimate());
     });
@@ -47,7 +45,6 @@ const Loading: React.FC = () => {
       return new Promise(resolve => {
         setTimeout(() => {
           setIsLoaded(true);
-          document.body.style.overflowY = "scroll";
           resolve();
         }, 5000);
       });
