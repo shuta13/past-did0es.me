@@ -51,7 +51,7 @@ const Main: React.FC = () => {
     camera.position.set(0, 0, 100);
     camera.lookAt(scene.position);
     scene.add(camera);
-    const geometry = new PlaneBufferGeometry(1, 1);
+    const geometry = new PlaneBufferGeometry(2, 2);
     const uniforms = {
       time: {
         type: "f",
