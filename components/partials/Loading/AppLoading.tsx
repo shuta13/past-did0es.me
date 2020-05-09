@@ -55,7 +55,9 @@ const AppLoading = () => {
       },
       resolution: {
         type: "v2",
-        value: new Vector2(width, height)
+        value: window.devicePixelRatio > 1
+          ? new Vector2(width * window.devicePixelRatio, height * window.devicePixelRatio)
+          : new Vector2(width, height)
         // value: new Vector2(window.innerWidth, window.innerHeight)
       },
       texture: {
