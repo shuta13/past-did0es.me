@@ -18,7 +18,7 @@ const DetailsInfo: React.FC<{ info: InfoParams }> = ({ info }) => {
       <div className="DetailsInfoTitle">{info.title}</div>
       <div className="DetailsInfoText">{info.date}</div>
       <div className="DetailsInfoText">{info.tags}</div>
-      <div className="DetailsInfoText">{info.desc}</div>
+      <div className="DetailsInfoDescription">{info.desc}</div>
       {info.subDesc ? (
         <div className="DetailsInfoText">{info.subDesc}</div>
       ) : null}

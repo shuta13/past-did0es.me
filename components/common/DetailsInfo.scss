@@ -26,8 +26,13 @@
   font-family: "Abel", sans-serif;
   color: #ffffff;
   letter-spacing: 2px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   line-height: 1.5;
+}
+
+.DetailsInfoDescription {
+  @extend .DetailsInfoText;
+  line-height: 1.8;
 }
 
 .DetailsInfoTitle {
