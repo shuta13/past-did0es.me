@@ -108,16 +108,16 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
     camera.position.set(0, 0, 100);
     camera.lookAt(scene.position);
     const geometry = new PlaneBufferGeometry(2, 2);
-    const image = new Image();
-    const imageSize = {
-      width: 0,
-      height: 0
-    };
-    image.src = img;
-    image.onload = () => {
-      imageSize.width = image.naturalWidth;
-      imageSize.height = image.naturalHeight;
-    };
+    // const image = new Image();
+    // const imageSize = {
+    //   width: 0,
+    //   height: 0
+    // };
+    // image.src = img;
+    // image.onload = () => {
+    //   imageSize.width = image.naturalWidth;
+    //   imageSize.height = image.naturalHeight;
+    // };
     const uniforms = {
       time: {
         type: "f",
@@ -131,10 +131,10 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
         type: "t",
         value: new TextureLoader().load(img)
       },
-      textureSize: {
-        type: "v2",
-        value: new Vector2(imageSize.width, imageSize.height)
-      }
+      // textureSize: {
+      //   type: "v2",
+      //   value: new Vector2(imageSize.width, imageSize.height)
+      // }
     };
     const material = new RawShaderMaterial({
       uniforms: uniforms,
