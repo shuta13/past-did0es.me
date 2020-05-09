@@ -16,7 +16,7 @@
       "title": "Maraviglia Archives",
       "date": "2020/04/11",
       "tags": "Next.js, WebGL, Three.js",
-      "desc": "WebGLによる作品をまとめたWebサイトです。 Webサイトの実装を個人で行いました。 Next.jsとWebGLを組み合わせて実装しています。 WebGLでの作品制作・公開のためのWebサイトとして現在も開発中です。",
+      "desc": "WebGLによる作品をまとめたWebサイトです。 Webサイトの実装を個人で行いました。 Next.jsとWebGLを組み合わせて実装しています。  WebGLでの作品制作・公開のためのWebサイトとして現在も開発中です。",
       "subDesc": "",
       "link": "https://maraviglia.now.sh"
     }
@@ -27,7 +27,7 @@
       "title": "Candy Official Blog",
       "date": "2020/02/23",
       "tags": "Blog",
-      "desc": "ElevenBackLLC.の受託業務として制作したブログです。 デザインラフの実装・フロントエンドの実装を担当しました。 短い工数での開発でしたが、最低限の機能を持ちつつ今後のスケーリングも可能なように技術の選定や実装を行いました。",
+      "desc": "ElevenBackLLC.の受託業務として制作したブログです。 デザインラフの実装・フロントエンドの実装を担当しました。　　工数内で最低限の機能を持ちつつ、今後のスケーリングも可能なように技術の選定や実装を行いました。",
       "subDesc": "",
       "link": "https://blog.candy.ac"
     }
