@@ -40,6 +40,8 @@ const AppLoading = () => {
   };
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
     if (!canvas) return;
+    const width = 320;
+    const height = 320;
     const scene = new Scene();
     const camera = new OrthographicCamera(-1, 1, 1, -1, 1, 1000);
     camera.position.set(0, 0, 100);
@@ -53,7 +55,7 @@ const AppLoading = () => {
       },
       resolution: {
         type: "v2",
-        value: new Vector2(400, 400)
+        value: new Vector2(width, height)
         // value: new Vector2(window.innerWidth, window.innerHeight)
       },
       texture: {
@@ -75,7 +77,7 @@ const AppLoading = () => {
     });
     renderer.setClearColor(0x1d1d1d);
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(400, 400);
+    renderer.setSize(width, height);
     // renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.render(scene, camera);
     window.addEventListener("resize", () => handleResize({ geometry, renderer }));
