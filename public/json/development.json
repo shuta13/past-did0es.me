@@ -5,7 +5,7 @@
       "title": "GARELLY",
       "date": "2019/05/25",
       "tags": "WebComponents, 2D Graphics, Processing, Photoshop",
-      "desc": "過去に習作として制作した2Dグラフィックス作品をまとめたWebサイトです。 Webサイトのデザインから実装までを個人で行いました。  デザインはSketchを用いて実装しつつ、過去に制作したWebサイトのUIも参考にしました また、実装にはReactやVue.jsなどのライブラリ・フレームワークは用いず、試験的にWeb Componentsを使用しました。 合わせてTypeScriptの環境もWebpackを用いて準備し、実装しました。  Webサイトに載せたグラフィックス作品はProcessingやPhotoshopを用いて制作したものです。",
+      "desc": "過去に習作として制作した2Dグラフィックス作品をまとめたWebサイトです。 Webサイトのデザインから実装までを個人で行いました。  デザインはSketchを用いて実装しつつ、過去に制作したWebサイトのUIも参考にしました また、実装にはReactやVue.jsなどのライブラリ・フレームワークは用いず、試験的にWebComponentsを使用しました。 合わせてTypeScriptの環境もWebpackを用いて準備し、実装しました。  Webサイトに載せたグラフィックス作品はProcessingやPhotoshopを用いて制作したものです。",
       "subDesc": "",
       "link": "https://garelly.did0es.me"
     }
