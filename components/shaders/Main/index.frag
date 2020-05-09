@@ -90,9 +90,11 @@ void main() {
   uv += snoise(uv * .5) * t;
 
   // ベースのグラデーション
-  color += vec3(mix(uv.y, uv.y, snoise(uv * .2)) * .2, .0, .0);
+  color.r += vec3(mix(uv.y, uv.y, snoise(vec2(uv.x + time, uv.y + time)))).r * .2;
+  color.g += vec3(mix(uv.y, uv.y, snoise(vec2(uv.x + time, uv.y + time)))).g * .2;
+  color.b += vec3(mix(uv.y, uv.y, snoise(vec2(uv.x + time, uv.y + time)))).b * .2;
 
   // 光沢
-  color += smoothstep(.3, .7, snoise(uv + time * .1));
+  color += smoothstep(.6, .8, snoise(uv + time * .1));
   gl_FragColor = vec4(color, 1.0);
 }
