@@ -97,32 +97,30 @@ vec3 saturateColor(vec3 x) {
   return vec3(clamp(x, 0., 1.));
 }
 
-float noise1(in vec2 _uv, in float _time, float payload) {
-  return abs(snoise(vec3(_uv.x - .9, _uv.y - .9, _time * payload))) * .3;
+float noise1(in vec2 _uv, in float _time, float speed) {
+  return abs(snoise(vec3(_uv.x * .4, _uv.y * .4, _time * speed))) * .25;
 }
-
-// refer : https://www.shadertoy.com/view/XlXcz4
 
 void main() {
   vec2 uv = gl_FragCoord.xy / resolution;
   vec3 color = vec3(1.);
 
-  // mosaic
+  // mosaic(y)
   // float tileNumber = max(snoise(vec3(uv.x, uv.y, time * .2)) * 1024., 516.);
   // uv.y = floor(uv.y * tileNumber) / tileNumber;
 
   // rgb shift
-  color.r = texture2D(texture, vec2(uv.x + .0005, uv.y)).r;
-  color.g = texture2D(texture, vec2(uv.x, uv.y + .00015)).g;
-  color.b = texture2D(texture, vec2(uv.x - .0005, uv.y)).b;
+  color.r = texture2D(texture, vec2(uv.x + .0015, uv.y)).r;
+  color.g = texture2D(texture, vec2(uv.x, uv.y + .0001)).g;
+  color.b = texture2D(texture, vec2(uv.x - .0015, uv.y)).b;
 
-  // like tv noise
-  float rowNumber = 516.;
+  // refer : https://www.shadertoy.com/view/XlXcz4
+  float rowNumber = 1024.;
   color = saturateColor(color * .5 + color * color * .6);
-  // color *= .5 + 8. * uv.x * uv.y * (1. - uv.x) * (1. - uv.y);
-  color *= max(sin(time + uv.y * rowNumber) * snoise(vec3(uv.x, uv.y, time * .2)), .4) + .6;
-  color *= vec3(noise1(uv, time, .8)) + .5;
-
-  // vec3 color = texture2D(texture, uv).rgb;
+  // make row
+  color *= max(sin(time + (uv.y + time * .8) * rowNumber), .6) + 1.;
+  // overlay noise
+  color *= vec3(abs(noise1(uv, time, .3))) + .45;
+  color += vec3(abs(noise1(uv, time, .3))) - .02;
   gl_FragColor = vec4(color, 1.);
 }

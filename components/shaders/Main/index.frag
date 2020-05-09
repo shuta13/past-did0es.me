@@ -87,8 +87,9 @@ void main() {
   uv.x *= resolution.x/resolution.y;
   vec3 color = vec3(0.15);
   uv += snoise(uv * .5);
+  float sync = time * .07;
 
-  if (snoise(uv + time * .1) > .2) {
+  if (snoise(uv + sync) > .2) {
     // ベースのグラデーション
     // color.r += vec3(mix(uv.y, uv.y, snoise(vec2(uv.x + time, uv.y + time)))).r * .1;
     color.g += vec3(mix(uv.x, uv.x, snoise(vec2(uv.x + time, uv.y + time)))).g * .15;
@@ -96,6 +97,6 @@ void main() {
   }
 
   // 光沢
-  color += smoothstep(.2, .55, snoise(uv + time * .1) * .4);
+  color += smoothstep(.2, .55, snoise(uv + sync) * .4);
   gl_FragColor = vec4(color, 1.0);
 }
