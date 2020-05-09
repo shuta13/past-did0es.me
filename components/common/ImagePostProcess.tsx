@@ -130,7 +130,7 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
       texture: {
         type: "t",
         value: new TextureLoader().load(img)
-      },
+      }
       // textureSize: {
       //   type: "v2",
       //   value: new Vector2(imageSize.width, imageSize.height)

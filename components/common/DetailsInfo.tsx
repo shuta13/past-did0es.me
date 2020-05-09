@@ -18,7 +18,13 @@ const DetailsInfo: React.FC<{ info: InfoParams }> = ({ info }) => {
       <div className="DetailsInfoTitle">{info.title}</div>
       <div className="DetailsInfoText">{info.date}</div>
       <div className="DetailsInfoText">{info.tags}</div>
-      <div className="DetailsInfoDescription">{info.desc}</div>
+      <div className="DetailsInfoDescription">
+        <div
+          dangerouslySetInnerHTML={{
+            __html: info.desc.replace(/\s/g, "<br />")
+          }}
+        />
+      </div>
       {info.subDesc ? (
         <div className="DetailsInfoText">{info.subDesc}</div>
       ) : null}
