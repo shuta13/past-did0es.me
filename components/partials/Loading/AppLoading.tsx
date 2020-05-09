@@ -26,14 +26,14 @@ type HandleResizeParams = {
 };
 
 const AppLoading = () => {
-  let isNeedsStopUpdate = false;
-  const handleResize = ({ geometry, renderer }: HandleResizeParams) => {
-    isNeedsStopUpdate = true;
-    // renderer.setSize(window.innerWidth, window.innerHeight);
-    isNeedsStopUpdate = false;
-  };
+  // let isNeedsStopUpdate = false;
+  // const handleResize = ({ geometry, renderer }: HandleResizeParams) => {
+  //   isNeedsStopUpdate = true;
+  //   // renderer.setSize(window.innerWidth, window.innerHeight);
+  //   isNeedsStopUpdate = false;
+  // };
   const animate = ({ scene, camera, renderer, uniforms }: AnimateParams) => {
-    if (isNeedsStopUpdate) return;
+    // if (isNeedsStopUpdate) return;
     requestAnimationFrame(() => animate({ scene, camera, renderer, uniforms }));
     uniforms.time.value = performance.now() * 0.001;
     renderer.render(scene, camera);
@@ -86,13 +86,13 @@ const AppLoading = () => {
     renderer.setSize(width, height);
     // renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.render(scene, camera);
-    window.addEventListener("resize", () =>
-      handleResize({ geometry, renderer })
-    );
+    // window.addEventListener("resize", () =>
+    //   handleResize({ geometry, renderer })
+    // );
     animate({ scene, camera, renderer, uniforms });
   };
   useEffect(() => {
-    return () => window.removeEventListener("resize", () => handleResize);
+    // return () => window.removeEventListener("resize", () => handleResize);
   });
   return <canvas ref={onCanvasLoaded} className="AppLoading" />;
 };

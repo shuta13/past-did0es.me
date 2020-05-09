@@ -1,4 +1,4 @@
-.LoadingWrapCommon {
+.LoadingCommon {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -11,18 +11,25 @@
   transition: transform cubic-bezier(.9,.23,.48,.97) 1s;
 }
 
-.LoadingWrap {
-  @extend .LoadingWrapCommon;
+.Loading {
+  @extend .LoadingCommon;
   transform: translateX(0%) rotate(0deg) translateY(0%);
 }
 
-.LoadingWrapLoaded {
-  @extend .LoadingWrapCommon;
+.LoadingLoaded {
+  @extend .LoadingCommon;
   transform: translateX(116%) scale(1.2) rotate(-4deg) translateY(-4%);
   transition-delay: .6s;
 }
 
-.LoadingTextsCommon {
+.LoadingFinished {
+  position: absolute;
+  opacity: 0;
+  z-index: -10000;
+  transform: translateX(-100%) rotate(0deg) translateY(0%);
+}
+
+.LoadingImageCommon {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -30,18 +37,11 @@
   transition: transform cubic-bezier(.9,.23,.48,.97) 1s, opacity ease-in-out .4s;
 }
 
-.LoadingTexts {
-  @extend .LoadingTextsCommon;
+.LoadingImage {
+  @extend .LoadingImageCommon;
 }
 
-.LoadingTextsLoaded {
-  @extend .LoadingTextsCommon;
+.LoadingImageLoaded {
+  @extend .LoadingImageCommon;
   opacity: 0;
-}
-
-.LoadingWrapFinished {
-  position: absolute;
-  opacity: 0;
-  z-index: -10000;
-  transform: translateX(-100%) rotate(0deg) translateY(0%);
 }

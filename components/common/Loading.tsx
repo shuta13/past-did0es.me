@@ -56,12 +56,12 @@ const Loading: React.FC = () => {
       className={
         isLoaded
           ? isFinished
-            ? "LoadingWrapFinished"
-            : "LoadingWrapLoaded"
-          : "LoadingWrap"
+            ? "LoadingFinished"
+            : "LoadingLoaded"
+          : "Loading"
       }
     >
-      <div className={isLoaded ? "LoadingTextsLoaded" : "LoadingTexts"}>
+      <div className={isLoaded ? "LoadingImageLoaded" : "LoadingImage"}>
         <AppLoading />
       </div>
     </div>
