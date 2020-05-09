@@ -112,12 +112,12 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
     const imageSize = {
       width: 0,
       height: 0
-    }
+    };
     image.src = img;
     image.onload = () => {
       imageSize.width = image.naturalWidth;
       imageSize.height = image.naturalHeight;
-    }
+    };
     const uniforms = {
       time: {
         type: "f",
