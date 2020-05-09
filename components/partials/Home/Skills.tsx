@@ -29,7 +29,7 @@ const Skills: React.FC = () => (
         </p>
         <p>GitHub Actions, CircleCI, TravisCI, AWS Codepipeline/Codebuild</p>
         <p>
-          Netlify, Zeit Now, Google App Engine, Firebase Hosting, Heroku, AWS
+          Netlify, Vercel Now, Google App Engine, Firebase Hosting, Heroku, AWS
           Lambda, API Gateway
         </p>
       </div>
