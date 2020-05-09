@@ -42,6 +42,10 @@ type AnimateParams = {
 //   camera: PerspectiveCamera;
 //   renderer: WebGLRenderer;
 // };
+type HandleResizeParams = {
+  camera: OrthographicCamera;
+  renderer: WebGLRenderer;
+}
 // ----------
 
 // let time = 0.0;
@@ -52,20 +56,53 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
   img,
   isDetails
 }) => {
+  const parentRef = useRef<HTMLDivElement>(null);
+  const config = {
+    width: 0,
+    height: 0
+  }
   let isNeedsStopAnimate = false;
-  const handleResize = (renderer: WebGLRenderer) => {
+  const handleResize = ({ camera, renderer }: HandleResizeParams) => {
     isNeedsStopAnimate = true;
-    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    const refRect = parentRef.current?.getBoundingClientRect();
+    config.width = refRect !== undefined ? refRect?.right - refRect.left : 0;
+    config.height = refRect !== undefined ? refRect?.bottom - refRect.top : 0;
+    // const halfWidth = width / 2;
+    // const halfHeight = height / 2;
+    const aspectRatio = config.width / config.height;
+    const scene = {
+      width: 0,
+      height: 0
+    }
+    if (config.width >= config.height) {
+      scene.width = 2.0;
+      scene.height = scene.width / aspectRatio;
+    } else {
+      scene.height = 2.0;
+      scene.width = scene.height / aspectRatio;
+    }
+    camera.left = -scene.width / 2;
+    camera.right = scene.width / 2;
+    camera.top = scene.height / 2;
+    camera.bottom = scene.height / 2;
+    camera.updateProjectionMatrix();
+    renderer.setSize(config.width, config.height);
+
+    // renderer.setSize(window.innerWidth, window.innerHeight);
     isNeedsStopAnimate = false;
   };
   const animate = ({ scene, camera, renderer, uniforms }: AnimateParams) => {
     if (isNeedsStopAnimate) return;
     requestAnimationFrame(() => animate({ scene, camera, renderer, uniforms }));
     uniforms.time.value = performance.now() * 0.001;
+    uniforms.resolution.value = new Vector2(config.width, config.height)
     renderer.render(scene, camera);
   };
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
     if (!canvas) return;
+    config.width = window.innerWidth;
+    config.height = window.innerHeight;
     const scene = new Scene();
     const camera = new OrthographicCamera(-1, 1, 1, -1, 1, 1000);
     camera.position.set(0, 0, 100);
@@ -78,7 +115,7 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
       },
       resolution: {
         type: "v2",
-        value: new Vector2(window.innerWidth, window.innerHeight)
+        value: new Vector2(config.width, config.height)
       },
       texture: {
         type: "t",
@@ -94,9 +131,9 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
     scene.add(mesh);
     const renderer = new WebGLRenderer({ canvas: canvas, antialias: false });
     renderer.setClearColor(0x1d1d1d);
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.render(scene, camera);
-    window.addEventListener("resize", () => handleResize(renderer));
+    renderer.setSize(config.width, config.height);
+    // renderer.render(scene, camera);
+    window.addEventListener("resize", () => handleResize({ camera, renderer }));
     animate({ scene, camera, renderer, uniforms });
   };
   useEffect(() => {
@@ -264,7 +301,7 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
   };
 
   return (
-    <>
+    <div className="ImagePostProcessWrap" ref={parentRef}>
       <canvas className="ImagePostProcessDetails" ref={onCanvasLoaded} />
       {/* {isDetails && (
         <button className="ImagePostProcessClip" aria-label="Works Link Button">
@@ -296,7 +333,7 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
           />
         </button>
       )} */}
-    </>
+    </div>
   );
 };
 
