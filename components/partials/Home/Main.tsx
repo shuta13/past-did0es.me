@@ -1,5 +1,5 @@
 import "./Main.scss";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Scene,
   OrthographicCamera,
@@ -24,6 +24,12 @@ type AnimateParams = {
 };
 
 const Main: React.FC = () => {
+  let isNeedsStopAnimate = false;
+  const handleResize = (renderer: WebGLRenderer) => {
+    isNeedsStopAnimate = true;
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    isNeedsStopAnimate = false;
+  };
   const animate = ({
     scene,
     camera,
@@ -34,22 +40,24 @@ const Main: React.FC = () => {
     requestAnimationFrame(() =>
       animate({ scene, camera, renderer, uniforms, clock })
     );
-    uniforms.u_time.value = performance.now() * 0.001;
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    if (isNeedsStopAnimate) return;
+    uniforms.time.value = performance.now() * 0.001;
     renderer.render(scene, camera);
   };
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
     if (!canvas) return;
     const scene = new Scene();
-    const camera = new OrthographicCamera(-1, 1, 1, -1, 0, -1);
+    const camera = new OrthographicCamera(-1, 1, 1, -1, 1, 1000);
+    camera.position.set(0, 0, 100);
+    camera.lookAt(scene.position);
     scene.add(camera);
     const geometry = new PlaneBufferGeometry(1, 1);
     const uniforms = {
-      u_time: {
+      time: {
         type: "f",
         value: 0.0
       },
-      u_resolution: {
+      resolution: {
         type: "v2",
         value: new Vector2(window.innerWidth, window.innerHeight)
       }
@@ -61,15 +69,25 @@ const Main: React.FC = () => {
     });
     const mesh = new Mesh(geometry, material);
     scene.add(mesh);
-    const renderer = new WebGLRenderer({ canvas: canvas, antialias: false, alpha: true });
-    renderer.setClearColor(0x1d1d1d, 0);
+    const renderer = new WebGLRenderer({
+      canvas: canvas,
+      antialias: false,
+      alpha: false,
+      stencil: false,
+      depth: false
+    });
+    renderer.setClearColor(0x1d1d1d);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.render(scene, camera);
     const clock = new Clock();
     clock.start();
+    window.addEventListener("resize", () => handleResize(renderer));
     animate({ scene, camera, renderer, uniforms, clock });
   };
+  useEffect(() => {
+    return () => window.removeEventListener("resize", () => handleResize);
+  });
   return <canvas ref={onCanvasLoaded} className="Main" />;
 };
 

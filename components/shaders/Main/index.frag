@@ -6,8 +6,8 @@ precision highp float;
 #define PI 3.14159265359
 #define TWO_PI 6.28318530718
 
-uniform vec2 u_resolution;
-uniform float u_time;
+uniform vec2 resolution;
+uniform float time;
 
 // Some useful functions
 vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
@@ -83,8 +83,8 @@ float snoise(vec2 v) {
 }
 
 void main() {
-  vec2 st = gl_FragCoord.xy/u_resolution.xy;
-  st.x *= u_resolution.x/u_resolution.y;
+  vec2 st = gl_FragCoord.xy/resolution.xy;
+  st.x *= resolution.x/resolution.y;
   vec3 color = vec3(0.2);
   float t = 1.;
   st += snoise(st * .5) * t;
@@ -93,6 +93,6 @@ void main() {
   color += vec3(mix(st.y, st.y, snoise(st * .2)) * .2, .0, .0);
 
   // 光沢
-  color += smoothstep(.3, .9, snoise(st + u_time * .2));
+  color += smoothstep(.3, .9, snoise(st + time * .2));
   gl_FragColor = vec4(color, 1.0);
 }
