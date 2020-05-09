@@ -297,22 +297,22 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
   // };
 
   // create hover state
-  const [isHovered, setIsHovered] = useState(false);
-  // handle hover event
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
+  // const [isHovered, setIsHovered] = useState(false);
+  // // handle hover event
+  // const handleMouseEnter = () => {
+  //   setIsHovered(true);
+  // };
+  // const handleMouseLeave = () => {
+  //   setIsHovered(false);
+  // };
 
-  // handle touch event
-  const handleTouchStart = () => {
-    setIsHovered(true);
-  };
-  const handleTouchEnd = () => {
-    setIsHovered(false);
-  };
+  // // handle touch event
+  // const handleTouchStart = () => {
+  //   setIsHovered(true);
+  // };
+  // const handleTouchEnd = () => {
+  //   setIsHovered(false);
+  // };
 
   return (
     <div className="ImagePostProcessWrap" ref={parentRef}>

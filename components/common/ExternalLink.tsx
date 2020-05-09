@@ -16,18 +16,21 @@ export const ExternalLink: React.FC<{ href: string; text: string }> = ({
       onTouchEndCapture={() => setIsHovered(false)}
       onTouchEnd={() => setIsHovered(false)}
     >
-      <div
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
         className={
           isHovered ? "ExternalLinkSquareHovered" : "ExternalLinkSquare"
         }
       >
         {!isHovered ? text : null}
-      </div>
+      </a>
       <a
         href={href}
         target="_blank"
-        className={isHovered ? "ExternalLinkHovered" : "ExternalLink"}
         rel="noopener noreferrer"
+        className={isHovered ? "ExternalLinkHovered" : "ExternalLink"}
       >
         {isHovered ? text : null}
       </a>
