@@ -1,6 +1,7 @@
 import "../assets/style/global.scss";
 import Header from "../components/common/Header";
 import Head from "next/head";
+import Main from "../components/partials/Home/Main";
 
 const Did0esMe = ({
   Component,

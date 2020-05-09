@@ -1,26 +1,26 @@
 import "./DetailsImage.scss";
 import React, { useEffect } from "react";
 import ImagePostProcess from "./ImagePostProcess";
-import {
-  Scene,
-  OrthographicCamera,
-  WebGLRenderer,
-  PlaneBufferGeometry,
-  RawShaderMaterial,
-  Mesh,
-  Vector2,
-  TextureLoader
-} from "three";
+// import {
+//   Scene,
+//   OrthographicCamera,
+//   WebGLRenderer,
+//   PlaneBufferGeometry,
+//   RawShaderMaterial,
+//   Mesh,
+//   Vector2,
+//   TextureLoader
+// } from "three";
 
-const vert = require("../shaders/DetailsImage/index.vert");
-const frag = require("../shaders/DetailsImage/index.frag");
+// const vert = require("../shaders/DetailsImage/index.vert");
+// const frag = require("../shaders/DetailsImage/index.frag");
 
-type AnimateParams = {
-  scene: Scene;
-  camera: OrthographicCamera;
-  renderer: WebGLRenderer;
-  uniforms: any;
-};
+// type AnimateParams = {
+//   scene: Scene;
+//   camera: OrthographicCamera;
+//   renderer: WebGLRenderer;
+//   uniforms: any;
+// };
 
 const DetailsImage: React.FC<{ img: string; href: string }> = ({
   img,

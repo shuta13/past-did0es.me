@@ -85,16 +85,17 @@ float snoise(vec2 v) {
 void main() {
   vec2 uv = gl_FragCoord.xy/resolution.xy;
   uv.x *= resolution.x/resolution.y;
-  vec3 color = vec3(0.2);
-  float t = 1.;
-  uv += snoise(uv * .5) * t;
+  vec3 color = vec3(0.15);
+  uv += snoise(uv * .5);
 
-  // ベースのグラデーション
-  color.r += vec3(mix(uv.y, uv.y, snoise(vec2(uv.x + time, uv.y + time)))).r * .2;
-  color.g += vec3(mix(uv.y, uv.y, snoise(vec2(uv.x + time, uv.y + time)))).g * .2;
-  color.b += vec3(mix(uv.y, uv.y, snoise(vec2(uv.x + time, uv.y + time)))).b * .2;
+  if (snoise(uv + time * .1) > .2) {
+    // ベースのグラデーション
+    // color.r += vec3(mix(uv.y, uv.y, snoise(vec2(uv.x + time, uv.y + time)))).r * .1;
+    color.g += vec3(mix(uv.x, uv.x, snoise(vec2(uv.x + time, uv.y + time)))).g * .15;
+    color.b += vec3(mix(uv.y, uv.y, snoise(vec2(uv.x + time, uv.y + time)))).b * .1;
+  }
 
   // 光沢
-  color += smoothstep(.6, .8, snoise(uv + time * .1));
+  color += smoothstep(.2, .55, snoise(uv + time * .1) * .4);
   gl_FragColor = vec4(color, 1.0);
 }
