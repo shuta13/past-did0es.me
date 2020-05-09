@@ -5,10 +5,7 @@ precision highp float;
 uniform vec2 resolution;
 uniform float time;
 uniform sampler2D texture;
-
-float random(vec2 p) {
-  return fract(sin(dot(p, vec2(12.9898,78.233))) * 43758.5453);
-}
+uniform vec2 textureSize;
 
 // // Description : Array and textureless GLSL 2D/3D/4D simplex noise functions.
 //      Author : Ian McEwan, Ashima Arts.
@@ -93,8 +90,19 @@ float snoise(vec3 v) {
                                 dot(p2,x2), dot(p3,x3) ) );
 }
 
+mat2 scale(vec2 _scale){
+  return mat2(_scale.x, 0.0, 0.0, _scale.y);
+}
+
 void main() {
   vec2 uv = gl_FragCoord.xy / resolution;
+  uv -= vec2(.5);
+  uv = scale(vec2(1.2)) * uv;
+  uv += vec2(.5);
   vec3 color = texture2D(texture, uv).rgb;
+  vec2 bl = step(vec2(snoise(vec3(uv.x, uv.y, time * .2)) * .02), uv - .1);
+  vec2 tr = step(vec2(snoise(vec3(uv.x, uv.y, time * .2)) * .02), 1. - uv - .1);
+  color -= 1. - vec3(bl.x * bl.y * tr.x * tr.y);
+  color -= (1. - vec3(bl.x * bl.y * tr.x * tr.y)) * .2;
   gl_FragColor = vec4(color, 1.);
 }

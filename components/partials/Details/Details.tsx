@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import DetailsImage from "../../common/DetailsImage";
 import DetailsInfo from "../../common/DetailsInfo";
 
 import development from "../../../public/json/development.json";
@@ -9,6 +8,7 @@ import trackMaking from "../../../public/json/trackMaking.json";
 import "./Details.scss";
 import Loading from "../../common/Loading";
 import { BackButton } from "../../common/BackButton";
+import ImagePostProcess from "../../common/ImagePostProcess";
 
 const Details: React.FC = () => {
   const queryTitle = new URL(window.location.href).searchParams.get("title");
@@ -38,7 +38,7 @@ const Details: React.FC = () => {
 
       <Loading />
       <div className="DetailsClip">
-        <DetailsImage img={`/works/${img}`} href={info.link} />
+        <ImagePostProcess img={`/works/${img}`} isDetails={true} />
         <DetailsInfo info={info} />
       </div>
       <BackButton />

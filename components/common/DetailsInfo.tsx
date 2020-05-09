@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./DetailsInfo.scss";
+import { ExternalLink } from "./ExternalLink";
 
 type InfoParams = {
   title: string;
@@ -21,6 +22,7 @@ const DetailsInfo: React.FC<{ info: InfoParams }> = ({ info }) => {
       {info.subDesc ? (
         <div className="DetailsInfoText">{info.subDesc}</div>
       ) : null}
+      <ExternalLink href={info.link} text="visit" />
     </div>
   );
 };

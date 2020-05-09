@@ -17,26 +17,26 @@
 .ImagePostProcess, .ImagePostProcessDetails {
   transform: scale(1, 1);
   transition: all cubic-bezier(.27,.19,.44,1) .6s;
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 .ImagePostProcess {
   position: absolute;
   opacity: 0;
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 .ImagePostProcessHovered {
   transform: scale(1.1, 1.1);
   opacity: 1;
   transition: all cubic-bezier(.27,.19,.44,1) .6s;
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 .ImagePostProcessImg {
   width: 360px;
   height: auto;
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 .ImagePostProcessImgHovered {
