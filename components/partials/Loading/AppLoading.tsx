@@ -40,8 +40,8 @@ const AppLoading = () => {
   };
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
     if (!canvas) return;
-    const width = 320;
-    const height = 320;
+    const width = 208;
+    const height = 208;
     const scene = new Scene();
     const camera = new OrthographicCamera(-1, 1, 1, -1, 1, 1000);
     camera.position.set(0, 0, 100);
