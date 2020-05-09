@@ -12,13 +12,13 @@ const Skills: React.FC = () => (
       </div>
       <AppTitle title="Language / Library / FrameWork" />
       <div className="SkillsDescription">
-        <p>HTML, CSS, JavaScript, TypeScript, Ruby, GLSL, C/C++</p>
+        <p>HTML, CSS, JavaScript, TypeScript, Ruby, GLSL</p>
         <p>
           React.js, Vue.js, Three.js, Node.js, pug, sass, Jest, ESLint, Webpack
         </p>
         <p>
-          Next.js, Gatsby.js, Nuxt.js, Rails, Serverless Framework, Web
-          Components
+          Next.js, Gatsby.js, Nuxt.js, Serverless Framework, Web Components,
+          Ruby on Rails
         </p>
       </div>
       <AppTitle title="Others" />

@@ -23,7 +23,7 @@ type AnimateParams = {
 type HandleResizeParams = {
   geometry: PlaneBufferGeometry;
   renderer: WebGLRenderer;
-}
+};
 
 const AppLoading = () => {
   let isNeedsStopUpdate = false;
@@ -55,9 +55,13 @@ const AppLoading = () => {
       },
       resolution: {
         type: "v2",
-        value: window.devicePixelRatio > 1
-          ? new Vector2(width * window.devicePixelRatio, height * window.devicePixelRatio)
-          : new Vector2(width, height)
+        value:
+          window.devicePixelRatio > 1
+            ? new Vector2(
+                width * window.devicePixelRatio,
+                height * window.devicePixelRatio
+              )
+            : new Vector2(width, height)
         // value: new Vector2(window.innerWidth, window.innerHeight)
       },
       texture: {
@@ -82,7 +86,9 @@ const AppLoading = () => {
     renderer.setSize(width, height);
     // renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.render(scene, camera);
-    window.addEventListener("resize", () => handleResize({ geometry, renderer }));
+    window.addEventListener("resize", () =>
+      handleResize({ geometry, renderer })
+    );
     animate({ scene, camera, renderer, uniforms });
   };
   useEffect(() => {
