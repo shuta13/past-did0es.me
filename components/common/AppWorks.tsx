@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import "./AppWorks.scss";
 
-import ImagePostProcess from "./ImagePostProcess";
+// import ImagePostProcess from "./ImagePostProcess";
 
 const AppWorks: React.FC<{
   img: string;
@@ -18,10 +18,10 @@ const AppWorks: React.FC<{
       <div className="AppWorksImageWrap">
         <Link href={{ pathname: "/details", query: { title: `${query}` } }}>
           <a className="AppWorksImageClip">
-            {width > 615 && <ImagePostProcess img={img} />}
-            {width <= 615 && (
-              <img src={img} className="AppWorksImage" alt="media" />
-            )}
+            {/* {width > 615 && <ImagePostProcess img={img} />}
+            {width <= 615 && ( */}
+            <img src={img} className="AppWorksImage" alt="media" />
+            {/* )} */}
           </a>
         </Link>
       </div>

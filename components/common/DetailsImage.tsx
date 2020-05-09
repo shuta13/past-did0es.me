@@ -85,14 +85,14 @@ const DetailsImage: React.FC<{ img: string; href: string }> = ({
   // });
   return (
     // <canvas ref={onCanvasLoaded} />
-    <a
-      className="DetailsImageWrap"
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <ImagePostProcess img={img} isDetails={true} />
-    </a>
+    // <a
+    //   className="DetailsImageWrap"
+    //   href={href}
+    //   target="_blank"
+    //   rel="noopener noreferrer"
+    // >
+    <ImagePostProcess img={img} isDetails={true} />
+    // </a>
   );
 };
 
