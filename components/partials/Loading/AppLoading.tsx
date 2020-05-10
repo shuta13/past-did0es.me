@@ -8,7 +8,8 @@ import {
   RawShaderMaterial,
   Mesh,
   Vector2,
-  TextureLoader
+  TextureLoader,
+  Clock
 } from "three";
 
 const vert = require("../../shaders/Loading/index.vert");
@@ -19,6 +20,7 @@ type AnimateParams = {
   camera: OrthographicCamera;
   renderer: WebGLRenderer;
   uniforms: any;
+  clock: Clock;
 };
 type HandleResizeParams = {
   geometry: PlaneBufferGeometry;
@@ -32,10 +34,18 @@ const AppLoading = () => {
   //   // renderer.setSize(window.innerWidth, window.innerHeight);
   //   isNeedsStopUpdate = false;
   // };
-  const animate = ({ scene, camera, renderer, uniforms }: AnimateParams) => {
+  const animate = ({
+    scene,
+    camera,
+    renderer,
+    uniforms,
+    clock
+  }: AnimateParams) => {
     // if (isNeedsStopUpdate) return;
-    requestAnimationFrame(() => animate({ scene, camera, renderer, uniforms }));
-    uniforms.time.value = performance.now() * 0.001;
+    requestAnimationFrame(() =>
+      animate({ scene, camera, renderer, uniforms, clock })
+    );
+    uniforms.time.value += clock.getDelta();
     renderer.render(scene, camera);
   };
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
@@ -55,14 +65,10 @@ const AppLoading = () => {
       },
       resolution: {
         type: "v2",
-        value:
-          window.devicePixelRatio > 1
-            ? new Vector2(
-                width * window.devicePixelRatio,
-                height * window.devicePixelRatio
-              )
-            : new Vector2(width, height)
-        // value: new Vector2(window.innerWidth, window.innerHeight)
+        value: new Vector2(
+          width * window.devicePixelRatio,
+          height * window.devicePixelRatio
+        )
       },
       texture: {
         type: "t",
@@ -76,6 +82,8 @@ const AppLoading = () => {
     });
     const mesh = new Mesh(geometry, material);
     scene.add(mesh);
+    const clock = new Clock();
+    clock.start();
     const renderer = new WebGLRenderer({
       canvas: canvas,
       antialias: false,
@@ -89,7 +97,7 @@ const AppLoading = () => {
     // window.addEventListener("resize", () =>
     //   handleResize({ geometry, renderer })
     // );
-    animate({ scene, camera, renderer, uniforms });
+    animate({ scene, camera, renderer, uniforms, clock });
   };
   useEffect(() => {
     // return () => window.removeEventListener("resize", () => handleResize);

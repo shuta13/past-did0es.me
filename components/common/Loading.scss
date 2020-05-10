@@ -22,12 +22,12 @@
   transition-delay: .6s;
 }
 
-.LoadingFinished {
-  position: absolute;
-  opacity: 0;
-  z-index: -10000;
-  transform: translateX(-100%) rotate(0deg) translateY(0%);
-}
+// .LoadingFinished {
+//   position: absolute;
+//   opacity: 0;
+//   z-index: -10000;
+//   transform: translateX(-100%) rotate(0deg) translateY(0%);
+// }
 
 .LoadingImageCommon {
   width: 100%;

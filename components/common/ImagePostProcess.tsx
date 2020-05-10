@@ -8,7 +8,8 @@ import {
   RawShaderMaterial,
   Mesh,
   Vector2,
-  TextureLoader
+  TextureLoader,
+  Clock
   // PerspectiveCamera,
   // PlaneBufferGeometry,
   // TextureLoader,
@@ -37,6 +38,7 @@ type AnimateParams = {
   camera: OrthographicCamera;
   renderer: WebGLRenderer;
   uniforms: any;
+  clock: Clock;
 };
 // type HandleCameraAspectParams = {
 //   camera: PerspectiveCamera;
@@ -92,10 +94,18 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
     // renderer.setSize(window.innerWidth, window.innerHeight);
     isNeedsStopAnimate = false;
   };
-  const animate = ({ scene, camera, renderer, uniforms }: AnimateParams) => {
+  const animate = ({
+    scene,
+    camera,
+    renderer,
+    uniforms,
+    clock
+  }: AnimateParams) => {
     if (isNeedsStopAnimate) return;
-    requestAnimationFrame(() => animate({ scene, camera, renderer, uniforms }));
-    uniforms.time.value = performance.now() * 0.001;
+    requestAnimationFrame(() =>
+      animate({ scene, camera, renderer, uniforms, clock })
+    );
+    uniforms.time.value += clock.getDelta();
     uniforms.resolution.value = new Vector2(config.width, config.height);
     renderer.render(scene, camera);
   };
@@ -143,12 +153,14 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
     });
     const mesh = new Mesh(geometry, material);
     scene.add(mesh);
+    const clock = new Clock();
+    clock.start();
     const renderer = new WebGLRenderer({ canvas: canvas, antialias: false });
     renderer.setClearColor(0x1d1d1d);
     renderer.setSize(config.width, config.height);
     // renderer.render(scene, camera);
     window.addEventListener("resize", () => handleResize({ camera, renderer }));
-    animate({ scene, camera, renderer, uniforms });
+    animate({ scene, camera, renderer, uniforms, clock });
   };
   useEffect(() => {
     return () => window.removeEventListener("resize", () => handleResize);

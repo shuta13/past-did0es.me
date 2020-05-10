@@ -50,22 +50,19 @@ const Loading: React.FC = () => {
     // });
     notSupportedAnimation();
   };
-  useEffect(() => {
-    return () => {
-      // window.removeEventListener("link", () => startOnLoadAnimation);
-      // window.removeEventListener("load", () => startOnLoadAnimation);
-      // window.removeEventListener(
-      //   "routeChangeStart",
-      //   () => startOnChangeAnimation
-      // );
-    };
-  });
+  // useEffect(() => {
+  //   return () => {
+  //     window.removeEventListener("link", () => startOnLoadAnimation);
+  //     window.removeEventListener("load", () => startOnLoadAnimation);
+  //     window.removeEventListener(
+  //       "routeChangeStart",
+  //       () => startOnChangeAnimation
+  //     );
+  //   };
+  // });
   return (
-    <div className={isLoaded ? "LoadingLoaded" : "Loading"}>
-      <div
-        className={isLoaded ? "LoadingImageLoaded" : "LoadingImage"}
-        ref={onDomLoaded}
-      >
+    <div className={isLoaded ? "LoadingLoaded" : "Loading"} ref={onDomLoaded}>
+      <div className={isLoaded ? "LoadingImageLoaded" : "LoadingImage"}>
         <AppLoading />
       </div>
     </div>

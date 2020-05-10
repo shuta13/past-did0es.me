@@ -8,7 +8,8 @@ import {
   RawShaderMaterial,
   Mesh,
   Vector2,
-  TextureLoader
+  TextureLoader,
+  Clock
 } from "three";
 
 const vert = require("../../shaders/Main/index.vert");
@@ -19,6 +20,7 @@ type AnimateParams = {
   camera: OrthographicCamera;
   renderer: WebGLRenderer;
   uniforms: any;
+  clock: Clock;
 };
 
 const Main: React.FC = () => {
@@ -28,10 +30,18 @@ const Main: React.FC = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     isNeedsStopAnimate = false;
   };
-  const animate = ({ scene, camera, renderer, uniforms }: AnimateParams) => {
-    requestAnimationFrame(() => animate({ scene, camera, renderer, uniforms }));
+  const animate = ({
+    scene,
+    camera,
+    renderer,
+    uniforms,
+    clock
+  }: AnimateParams) => {
+    requestAnimationFrame(() =>
+      animate({ scene, camera, renderer, uniforms, clock })
+    );
     if (isNeedsStopAnimate) return;
-    uniforms.time.value = performance.now() * 0.001;
+    uniforms.time.value += clock.getDelta();
     renderer.render(scene, camera);
   };
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
@@ -59,6 +69,8 @@ const Main: React.FC = () => {
     });
     const mesh = new Mesh(geometry, material);
     scene.add(mesh);
+    const clock = new Clock();
+    clock.start();
     const renderer = new WebGLRenderer({
       canvas: canvas,
       antialias: false,
@@ -71,7 +83,7 @@ const Main: React.FC = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.render(scene, camera);
     window.addEventListener("resize", () => handleResize(renderer));
-    animate({ scene, camera, renderer, uniforms });
+    animate({ scene, camera, renderer, uniforms, clock });
   };
   useEffect(() => {
     return () => window.removeEventListener("resize", () => handleResize);
