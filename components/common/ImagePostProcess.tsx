@@ -1,5 +1,6 @@
 import "./ImagePostProcess.scss";
 import React, { useRef, useCallback, useEffect, useState } from "react";
+import Router from "next/router"
 import {
   Scene,
   OrthographicCamera,
@@ -122,6 +123,8 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
     };
     renderer.render(scene, camera);
   };
+  // emit的なのでボタン押した時にcancelを実行する
+  // Router.events.on("routeChangeComplete", () => cancelAnimationFrame(animationFrameId))
   cancelAnimationFrame(animationFrameId);
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
     if (!canvas) return;
