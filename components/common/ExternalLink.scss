@@ -10,7 +10,7 @@
 
 .ExternalLinkCommon {
   transform: translateX(-100%) translateY(-100%);
-  transition: transform cubic-bezier(.16,.67,.64,.99) .2s, color cubic-bezier(.9,.23,.48,.97) .4s;
+  transition: transform cubic-bezier(.16,.67,.64,.99) .2s, color cubic-bezier(.9,.23,.48,.97) .4s, border cubic-bezier(.9,.23,.48,.97) .6s;
   width: 100%;
   // width: 256px;
   height: 48px;
@@ -25,6 +25,7 @@
   background: #1d1d1d;
   color: #1d1d1d;
   border-radius: 4px;
+  border: solid 1px #fff;
 }
 
 .ExternalLink {
