@@ -16,11 +16,14 @@ const Profile: React.FC = () => (
       </div>
       <div className="ProfileDescriptionWrap">
         <div className="ProfileDescription">
-          <p>Web developer & Designer & Track Maker</p>
-          <p>Student of Information Science @ Ritsumeikan Univ.</p>
-          <p>Web Front-end Engineer, Designer @ Akinai One</p>
-          <p>Web Front-end Engineer, Designer @ ElevenBack LLC.</p>
-          <p>Web Engineer @ tambourine.inc</p>
+          <p>Web developer & Designer</p>
+          <p>
+            Student of Audio & Visual Media Technology Course, College of
+            Information Science and Engineering, Ritsumeikan Univ.
+          </p>
+          <p>Entrusted FrontEnd Engineer, Designer @AkinaiOne</p>
+          <p>Entrusted FrontEnd Engineer, Designer @ElevenBack LLC.</p>
+          <p>Contracted Web Developer @tambourine.inc</p>
         </div>
       </div>
     </div>
