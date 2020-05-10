@@ -99,9 +99,9 @@ void main() {
   // uv.y += snoise(vec3(uv.x, uv.y, time * .1)) * .02;
   // rgb shift
   vec3 color = vec3(.085);
-  color.r += texture2D(texture, vec2(uv.x - .02 * snoise(vec3(uv.x + time)), uv.y)).r * .8;
-  color.g += texture2D(texture, vec2(uv.x - .03 * snoise(vec3(uv.x + time)), uv.y)).g * .8;
-  color.b += texture2D(texture, vec2(uv.x, uv.y - .02 * snoise(vec3(uv.y + time)))).b;
+  color.r += texture2D(texture, vec2(uv.x - .02 * snoise(vec3(uv.x + time * .5)), uv.y)).r * .8;
+  color.g += texture2D(texture, vec2(uv.x - .03 * snoise(vec3(uv.x + time * .5)), uv.y)).g * .8;
+  color.b += texture2D(texture, vec2(uv.x, uv.y - .02 * snoise(vec3(uv.y + time * .5)))).b;
   // color.r += texture2D(texture, vec2(uv.x - snoise(vec3(uv.x * time * .4)) * .01, uv.y - .01 * snoise(vec3(uv.y * time)))).r * .8;
   // color.g += texture2D(texture, vec2(uv.x - snoise(vec3(uv.x * time * .4)) * .005, uv.y)).g * .2;
   // color.b += texture2D(texture, vec2(uv.x - snoise(vec3(uv.x * time * .4)) * .4, uv.y)).b * .2;
