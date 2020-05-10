@@ -58,6 +58,7 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
   img,
   isDetails
 }) => {
+  let isNeedsStopAnimate = false;
   const parentRef = useRef<HTMLDivElement>(null);
   const config = {
     width: 0,
@@ -65,7 +66,6 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
     imageWidth: 0,
     imageHeight: 0
   };
-  let isNeedsStopAnimate = false;
   const handleResize = ({ camera, renderer }: HandleResizeParams) => {
     isNeedsStopAnimate = true;
 
@@ -96,6 +96,7 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
     // renderer.setSize(window.innerWidth, window.innerHeight);
     isNeedsStopAnimate = false;
   };
+  let animationFrameId = 0;
   const animate = ({
     scene,
     camera,
@@ -104,7 +105,7 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
     clock
   }: AnimateParams) => {
     if (isNeedsStopAnimate) return;
-    requestAnimationFrame(() =>
+    animationFrameId = requestAnimationFrame(() =>
       animate({ scene, camera, renderer, uniforms, clock })
     );
     uniforms.time.value += clock.getDelta();
@@ -121,6 +122,7 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
     };
     renderer.render(scene, camera);
   };
+  cancelAnimationFrame(animationFrameId);
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
     if (!canvas) return;
     config.width = window.innerWidth;

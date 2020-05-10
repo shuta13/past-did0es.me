@@ -34,6 +34,7 @@ const AppLoading = () => {
   //   // renderer.setSize(window.innerWidth, window.innerHeight);
   //   isNeedsStopUpdate = false;
   // };
+  let animationFrameId = 0;
   const animate = ({
     scene,
     camera,
@@ -42,7 +43,7 @@ const AppLoading = () => {
     clock
   }: AnimateParams) => {
     // if (isNeedsStopUpdate) return;
-    requestAnimationFrame(() =>
+    animationFrameId = requestAnimationFrame(() =>
       animate({ scene, camera, renderer, uniforms, clock })
     );
     uniforms.time.value += clock.getDelta();

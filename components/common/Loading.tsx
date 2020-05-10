@@ -38,6 +38,7 @@ const Loading: React.FC = () => {
     });
   };
   const onDomLoaded = () => {
+    notSupportedAnimation();
     // const linkEvent = new Event("link");
     // window.addEventListener("link", () => {
     //   startOnLoadAnimation().then(() => finishedAnimate());
@@ -48,7 +49,6 @@ const Loading: React.FC = () => {
     // Router.events.on("routeChangeStart", () => {
     //   startOnChangeAnimation(linkEvent).then(() => finishedAnimate());
     // });
-    notSupportedAnimation();
   };
   // useEffect(() => {
   //   return () => {
