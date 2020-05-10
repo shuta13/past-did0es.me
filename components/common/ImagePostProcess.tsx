@@ -61,7 +61,9 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
   const parentRef = useRef<HTMLDivElement>(null);
   const config = {
     width: 0,
-    height: 0
+    height: 0,
+    imageWidth: 0,
+    imageHeight: 0
   };
   let isNeedsStopAnimate = false;
   const handleResize = ({ camera, renderer }: HandleResizeParams) => {
@@ -107,6 +109,16 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
     );
     uniforms.time.value += clock.getDelta();
     uniforms.resolution.value = new Vector2(config.width, config.height);
+    const image = new Image();
+    image.src = img;
+    image.onload = () => {
+      config.imageWidth = image.naturalWidth;
+      config.imageHeight = image.naturalHeight;
+      uniforms.textureSize.value = new Vector2(
+        config.imageWidth,
+        config.imageHeight
+      );
+    };
     renderer.render(scene, camera);
   };
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
@@ -118,16 +130,12 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
     camera.position.set(0, 0, 100);
     camera.lookAt(scene.position);
     const geometry = new PlaneBufferGeometry(2, 2);
-    // const image = new Image();
-    // const imageSize = {
-    //   width: 0,
-    //   height: 0
-    // };
-    // image.src = img;
-    // image.onload = () => {
-    //   imageSize.width = image.naturalWidth;
-    //   imageSize.height = image.naturalHeight;
-    // };
+    const image = new Image();
+    image.src = img;
+    image.onload = () => {
+      config.imageWidth = image.naturalWidth;
+      config.imageHeight = image.naturalHeight;
+    };
     const uniforms = {
       time: {
         type: "f",
@@ -140,11 +148,11 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
       texture: {
         type: "t",
         value: new TextureLoader().load(img)
+      },
+      textureSize: {
+        type: "v2",
+        value: new Vector2(config.imageWidth, config.imageHeight)
       }
-      // textureSize: {
-      //   type: "v2",
-      //   value: new Vector2(imageSize.width, imageSize.height)
-      // }
     };
     const material = new RawShaderMaterial({
       uniforms: uniforms,

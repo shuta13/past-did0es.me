@@ -5,6 +5,7 @@ precision highp float;
 uniform vec2 resolution;
 uniform float time;
 uniform sampler2D texture;
+uniform vec2 textureSize;
 
 // // Description : Array and textureless GLSL 2D/3D/4D simplex noise functions.
 //      Author : Ian McEwan, Ashima Arts.
@@ -105,22 +106,33 @@ void main() {
   vec2 uv = gl_FragCoord.xy / resolution;
   vec3 color = vec3(1.);
 
+  // 画像の中央寄せ
+  // refer : https://codepen.io/ykob/pen/BQmLeK/
+  vec2 ratio = vec2(
+    min((resolution.x / resolution.y) / (textureSize.x / textureSize.y), 1.),
+    min((resolution.y / resolution.x) / (textureSize.y / textureSize.x), 1.)
+  );
+  vec2 _uv = vec2(
+    uv.x * ratio.x + (1. - ratio.x) * .5,
+    uv.y * ratio.y + (1. - ratio.y) * .5
+  );
+
   // mosaic(y)
   // float tileNumber = max(snoise(vec3(uv.x, uv.y, time * .2)) * 1024., 516.);
   // uv.y = floor(uv.y * tileNumber) / tileNumber;
 
   // rgb shift
-  color.r = texture2D(texture, vec2(uv.x + .0015, uv.y)).r;
-  color.g = texture2D(texture, vec2(uv.x, uv.y + .0001)).g;
-  color.b = texture2D(texture, vec2(uv.x - .0015, uv.y)).b;
+  color.r = texture2D(texture, vec2(_uv.x + .0015, _uv.y)).r;
+  color.g = texture2D(texture, vec2(_uv.x, _uv.y + .0001)).g;
+  color.b = texture2D(texture, vec2(_uv.x - .0015, _uv.y)).b;
 
   // refer : https://www.shadertoy.com/view/XlXcz4
   float rowNumber = 1024.;
   color = saturateColor(color * .5 + color * color * .6);
   // make row
-  color *= max(sin(time + (uv.y + time * .8) * rowNumber), .6) + 1.;
+  color *= max(sin(time + (_uv.y + time * .8) * rowNumber), .6) + 1.;
   // overlay noise
-  color *= vec3(abs(noise1(uv, time, .3))) + .45;
-  color += vec3(abs(noise1(uv, time, .3))) - .02;
+  color *= vec3(abs(noise1(_uv, time, .3))) + .45;
+  color += vec3(abs(noise1(_uv, time, .3))) - .02;
   gl_FragColor = vec4(color, 1.);
 }
