@@ -1,12 +1,12 @@
 import "./Loading.scss";
 import React, { useState, useEffect } from "react";
-import Router from "next/router";
+// import Router from "next/router";
 
 import AppLoading from "../partials/Loading/AppLoading";
 
 const Loading: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isFinished, setIsFinished] = useState(false);
+  // const [isFinished, setIsFinished] = useState(false);
   // for on load
   // const startOnLoadAnimation = () => {
   //   return new Promise(resolve => {
@@ -48,7 +48,7 @@ const Loading: React.FC = () => {
     // Router.events.on("routeChangeStart", () => {
     //   startOnChangeAnimation(linkEvent).then(() => finishedAnimate());
     // });
-    notSupportedAnimation()
+    notSupportedAnimation();
   };
   useEffect(() => {
     return () => {
@@ -61,17 +61,11 @@ const Loading: React.FC = () => {
     };
   });
   return (
-    <div
-      className={
-        isLoaded
-          ? isFinished
-            ? "LoadingFinished"
-            : "LoadingLoaded"
-          : "Loading"
-      }
-      ref={onDomLoaded}
-    >
-      <div className={isLoaded ? "LoadingImageLoaded" : "LoadingImage"}>
+    <div className={isLoaded ? "LoadingLoaded" : "Loading"}>
+      <div
+        className={isLoaded ? "LoadingImageLoaded" : "LoadingImage"}
+        ref={onDomLoaded}
+      >
         <AppLoading />
       </div>
     </div>
