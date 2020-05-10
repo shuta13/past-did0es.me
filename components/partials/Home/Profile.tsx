@@ -16,7 +16,9 @@ const Profile: React.FC = () => (
       </div>
       <div className="ProfileDescriptionWrap">
         <div className="ProfileDescription">
-          <div style={{ textAlign: "center", fontSize: "16px" }}>Hirai Shuta / did0es</div>
+          <div style={{ textAlign: "center", fontSize: "16px" }}>
+            Hirai Shuta / did0es
+          </div>
           <div style={{ textAlign: "center" }}>Web Developer, Designer</div>
           <div>
             Student of Audio & Visual Media Technology Course, College of

@@ -23,6 +23,12 @@
 .AppWorksImage {
   width: 100%;
   height: auto;
+  transition: transform cubic-bezier(.16,.67,.64,.99) .4s;
+}
+
+.AppWorksImageHovered {
+  @extend .AppWorksImage;
+  transform: scale(1.2, 1.2);
 }
 
 .AppWorksTitleWrap {
