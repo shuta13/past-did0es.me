@@ -50,6 +50,14 @@ const Loading: React.FC = () => {
       });
     };
     notSupportedAnimation().then(() => finishedAnimate());
+    return () => {
+      window.removeEventListener("link", () => startOnLoadAnimation);
+      window.removeEventListener("load", () => startOnLoadAnimation);
+      window.removeEventListener(
+        "routeChangeStart",
+        () => startOnChangeAnimation
+      );
+    };
   }, []);
   return (
     <div

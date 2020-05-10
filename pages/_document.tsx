@@ -23,7 +23,10 @@ class MyDocument extends Document {
           <meta property="og:url" content="https://did0es.me" />
           <meta property="og:title" content="did0es.me" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta property="og:description" content="did0es(shuta13)'s Portfolio" />
+          <meta
+            property="og:description"
+            content="did0es(shuta13)'s Portfolio"
+          />
           <meta property="og:image" content="https://did0es.me/og-image.png" />
         </Head>
         <body>
