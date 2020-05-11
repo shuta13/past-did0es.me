@@ -13,7 +13,7 @@ const Loading: React.FC = () => {
       setTimeout(() => {
         setIsLoaded(true);
         resolve();
-      }, 4000)
+      }, 4000);
     });
   };
 
@@ -34,12 +34,11 @@ const Loading: React.FC = () => {
     window.addEventListener("load", () => {
       startOnLoadAnimation().then(() => setIsFinished(true));
     });
-    Router.events.on("routeChangeStart", () => {
-      console.log("hoge")
-      startOnLoadAnimation().then(() => setIsFinished(true));
-    });
     checkIsFinished();
   };
+  Router.events.on("routeChangeComplete", () => {
+    startOnLoadAnimation().then(() => setIsFinished(true));
+  });
 
   return (
     <div className={isLoaded ? "LoadingLoaded" : "Loading"} ref={onDomLoaded}>

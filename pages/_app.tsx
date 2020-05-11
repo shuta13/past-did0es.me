@@ -1,7 +1,6 @@
 import "../assets/style/global.scss";
 // import Header from "../components/common/Header";
 import Head from "next/head";
-import Loading from "../components/common/Loading";
 
 const Did0esMe = ({
   Component,
@@ -21,7 +20,6 @@ const Did0esMe = ({
       </Head>
       {/* <Header /> */}
       <Component {...pageProps} />
-      <Loading />
     </>
   );
 };

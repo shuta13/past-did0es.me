@@ -72,6 +72,7 @@ const Details: React.FC = () => {
         <DetailsInfo info={details.info} />
       </div>
       <BackButton isClicked={isClicked} setIsClicked={setIsClicked} />
+      <Loading />
     </>
   );
 };
