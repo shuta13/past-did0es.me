@@ -15,7 +15,7 @@ const Details: React.FC = () => {
   const [details, setDetails] = useState({
     title: "",
     name: "",
-    img: "",
+    img: "default.png",
     info: {
       title: "",
       date: "",
