@@ -12,8 +12,6 @@ import {
   TextureLoader,
   Clock
 } from "three";
-import individual from "../../public/json/individual.json";
-import joint from "../../public/json/joint.json";
 
 const vert = require("../shaders/ImagePostProcess/index.vert");
 const frag = require("../shaders/ImagePostProcess/index.frag");
