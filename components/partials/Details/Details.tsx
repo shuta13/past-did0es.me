@@ -13,7 +13,7 @@ import { useRouter } from "next/router";
 const Details: React.FC = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [details, setDetails] = useState({
-    title: "",
+    name: "",
     img: "",
     info: {
       title: "",
@@ -30,13 +30,10 @@ const Details: React.FC = () => {
       works.map(work => {
         if (work.img.split(".")[0] === query.name) {
           setDetails({
-            title: work.info.title,
+            name: work.info.title,
             img: work.img,
             info: work.info
           });
-          // details.title = work.info.title;
-          // details.img = work.img;
-          // details.info = work.info;
         }
       });
     }
@@ -45,21 +42,18 @@ const Details: React.FC = () => {
   return (
     <>
       <Head>
-        <title>did0es.me - {details.title}</title>
+        <title>did0es.me - {details.name}</title>
         <meta
           name="description"
-          content={`did0es.me ${details.title} - ${details.info.desc}`}
+          content={`did0es.me ${details.name} - ${details.info.desc}`}
         />
-        <meta
-          property="og:site_name"
-          content={`did0es.me - ${details.title}`}
-        />
+        <meta property="og:site_name" content={`did0es.me - ${details.name}`} />
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content={`https://did0es.me/details?title=${details.title}`}
+          content={`https://did0es.me/details/${details.name}`}
         />
-        <meta property="og:title" content={`did0es.me - ${details.title}`} />
+        <meta property="og:title" content={`did0es.me - ${details.name}`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="og:description"
