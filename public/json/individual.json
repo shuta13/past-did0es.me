@@ -27,8 +27,7 @@
       "title": "vue-tsx-keyframes",
       "date": "2020/02/23",
       "tags": "OSS, Vue.js, TSX, Library",
-      "desc": "Vue-TSXというライブラリでCSSinJSでCSSを使用する際に、keyframesを使えるようにするためのライブラリです OSSとして何かライブラリを作りたいと思い制作しました。 　実装にはVue.jsとTypeScriptを用いて、WebAPIを叩く形で実装しています。  また、
-      ライブラリのロゴも自身で制作しました keyframesの線形補間をイメージした曲線にTypeScriptを表す青とVue.jsを表す緑を合わせ、ライブラリを表現するようなロゴをデザインしました。",
+      "desc": "Vue-TSXというライブラリでCSSinJSでCSSを使用する際に、keyframesを使えるようにするためのライブラリです OSSとして何かライブラリを作りたいと思い制作しました。 　実装にはVue.jsとTypeScriptを用いて、WebAPIを叩く形で実装しています。  また、ライブラリのロゴも自身で制作しました keyframesの線形補間をイメージした曲線にTypeScriptを表す青とVue.jsを表す緑を合わせ、ライブラリを表現するようなロゴをデザインしました。",
       "subDesc": "",
       "link": "https://github.com/shuta13/vue-tsx-keyframes"
     }
