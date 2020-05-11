@@ -17,7 +17,6 @@ const Did0esMe = ({
           rel="stylesheet"
         />
       </Head>
-      {/* <Header /> */}
       <Component {...pageProps} />
     </>
   );
