@@ -1,6 +1,6 @@
 import "./ImagePostProcess.scss";
 import React, { useRef, useCallback, useEffect, useState } from "react";
-import Router from "next/router"
+import Router from "next/router";
 import {
   Scene,
   OrthographicCamera,
@@ -55,10 +55,11 @@ type HandleResizeParams = {
 // const payloadHeight = 0.7;
 // const maxMainWidth = 960;
 
-const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
-  img,
-  isDetails
-}) => {
+const ImagePostProcess: React.FC<{
+  img: string;
+  isDetails?: boolean;
+  isBackButtonClicked: boolean;
+}> = ({ img, isDetails, isBackButtonClicked }) => {
   let isNeedsStopAnimate = false;
   const parentRef = useRef<HTMLDivElement>(null);
   const config = {
@@ -109,6 +110,10 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
     animationFrameId = requestAnimationFrame(() =>
       animate({ scene, camera, renderer, uniforms, clock })
     );
+    if (isBackButtonClicked) {
+      cancelAnimationFrame(animationFrameId);
+      return;
+    }
     uniforms.time.value += clock.getDelta();
     uniforms.resolution.value = new Vector2(config.width, config.height);
     const image = new Image();
@@ -124,7 +129,12 @@ const ImagePostProcess: React.FC<{ img: string; isDetails?: boolean }> = ({
     renderer.render(scene, camera);
   };
   // emit的なのでボタン押した時にcancelを実行する
-  // Router.events.on("routeChangeComplete", () => cancelAnimationFrame(animationFrameId))
+  Router.events.on("routeChangeComplete", () =>
+    cancelAnimationFrame(animationFrameId)
+  );
+  // if (isBackButtonClicked) {
+  //   Router.events.on("routeChangeComplete", () => cancelAnimationFrame(animationFrameId))
+  // }
   cancelAnimationFrame(animationFrameId);
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
     if (!canvas) return;

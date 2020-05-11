@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import DetailsInfo from "../../common/DetailsInfo";
 
@@ -11,6 +11,7 @@ import { BackButton } from "../../common/BackButton";
 import ImagePostProcess from "../../common/ImagePostProcess";
 
 const Details: React.FC = () => {
+  const [isClicked, setIsClicked] = useState(false);
   const queryTitle = new URL(window.location.href).searchParams.get("title");
   const worksAll = development.concat(design, trackMaking);
   let worksTitle = "";
@@ -38,10 +39,14 @@ const Details: React.FC = () => {
 
       <Loading />
       <div className="DetailsClip">
-        <ImagePostProcess img={`/works/${img}`} isDetails={true} />
+        <ImagePostProcess
+          img={`/works/${img}`}
+          isDetails={true}
+          isBackButtonClicked={isClicked}
+        />
         <DetailsInfo info={info} />
       </div>
-      <BackButton />
+      <BackButton isClicked={isClicked} setIsClicked={setIsClicked} />
     </>
   );
 };

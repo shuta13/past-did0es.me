@@ -49,6 +49,9 @@ const AppLoading = () => {
     uniforms.time.value += clock.getDelta();
     renderer.render(scene, camera);
   };
+  useEffect(() => {
+    return () => cancelAnimationFrame(animationFrameId);
+  });
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
     if (!canvas) return;
     const width = 208;

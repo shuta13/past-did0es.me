@@ -11,6 +11,7 @@ import {
   TextureLoader,
   Clock
 } from "three";
+import Router from "next/router"
 
 const vert = require("../../shaders/Main/index.vert");
 const frag = require("../../shaders/Main/index.frag");
@@ -25,6 +26,7 @@ type AnimateParams = {
 
 const Main: React.FC = () => {
   let isNeedsStopAnimate = false;
+  let animationFrameId = 0;
   const handleResize = (renderer: WebGLRenderer) => {
     isNeedsStopAnimate = true;
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -37,13 +39,16 @@ const Main: React.FC = () => {
     uniforms,
     clock
   }: AnimateParams) => {
-    requestAnimationFrame(() =>
+    animationFrameId = requestAnimationFrame(() =>
       animate({ scene, camera, renderer, uniforms, clock })
     );
     if (isNeedsStopAnimate) return;
     uniforms.time.value += clock.getDelta();
     renderer.render(scene, camera);
   };
+  useEffect(() => {
+    return () => cancelAnimationFrame(animationFrameId);
+  });
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
     if (!canvas) return;
     const scene = new Scene();
