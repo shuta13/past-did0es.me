@@ -23,7 +23,7 @@ const Details: React.FC = () => {
       desc: "",
       link: ""
     }
-  }
+  };
   works.map(work => {
     if (work.img.split(".")[0] === queryTitle) {
       details.title = work.info.title;
@@ -36,6 +36,29 @@ const Details: React.FC = () => {
     <>
       <Head>
         <title>did0es.me - {details.title}</title>
+        <meta
+          name="description"
+          content={`did0es.me ${details.title} - ${details.info.desc}`}
+        />
+        <meta
+          property="og:site_name"
+          content={`did0es.me - ${details.title}`}
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={`https://did0es.me/details?title=${details.title}`}
+        />
+        <meta property="og:title" content={`did0es.me - ${details.title}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          property="og:description"
+          content={`did0es.me - ${details.info.desc}`}
+        />
+        <meta
+          property="og:image"
+          content={`https://did0es.me/works/${details.img}`}
+        />
       </Head>
 
       <Loading />
