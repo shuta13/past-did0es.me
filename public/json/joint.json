@@ -1,19 +1,19 @@
 [
   {
-    "img": "tambourine-podcast.png",
+    "img": "tambourine-podcast-site.png",
     "info": {
-      "title": "tambourine.inc podcast site",
+      "title": "tambourine podcast site",
       "date": "2020/02/23",
       "tags": "Nuxt.js, Podcast",
-      "desc": "tambourin.incのインターン・アルバイト業務として制作した社内向けPodcastサイトです インターン生数人でチームを組んで開発を行いました。  主に実装の状態管理やGoogleDriveのAPIとの連携部分の実装を担当しました 実装にはNuxt.jsを用いており、フレームワーク上でWebAudioAPIの機能を利用してラジオ音源の操作を行っています。  ラジオのプレイヤー部分のUIはSoundCloudやSpotifyを参考に実装しました。",
+      "desc": "tambourin.incのインターン・アルバイト業務として制作した社内向けPodcastサイトです インターン生数人でチームを組んで開発を行いました。  主に実装の状態管理やGoogleDriveのAPIとの連携部分の実装を担当しました 実装にはNuxt.jsを用いており、フレームワーク上でWebAudioAPIの機能を利用してラジオ音源の操作を行っています。  ラジオのプレイヤー部分のUIはSoundCloudやSpotifyを参考に実装しました。  また、podcastの実装についての記事をJAMstack Advent Calendar 2019の19日目で公開しました",
       "subDesc": "",
       "link": "https://developers.tam-bourine.co.jp/entry/2019/12/19/190000"
     }
   },
   {
-    "img": "fc2019-flyer.png",
+    "img": "elevenback-fc2019-flyer.png",
     "info": {
-      "title": "Flyer for FC2019",
+      "title": "ElevenBack FC2019 Flyer",
       "date": "2019/11/30",
       "tags": "Figma, Flyer",
       "desc": "ElevenBackLLC.の受託業務として制作したフロントエンドカンファレンス2019頒布用企業フライヤーです デザインのラフを担当しました また、このフライヤーが頒布された当日は、スタッフとしてカンファレンス運営のお手伝いをしました。",
@@ -33,7 +33,7 @@
     }
   },
   {
-    "img": "design-2020.png",
+    "img": "design-works-2020.png",
     "info": {
       "title": "Design Works 2020",
       "date": "2020/01/10",
