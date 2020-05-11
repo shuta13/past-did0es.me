@@ -2,10 +2,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 
-const DetailsNoSSR = dynamic(
-  () => import("../../components/partials/Details/Details"),
-  { ssr: false }
-);
+import Details from "../../components/partials/Details/Details";
 
 const DetailsHome = () => {
   return (
@@ -16,7 +13,7 @@ const DetailsHome = () => {
           rel="stylesheet"
         />
       </Head>
-      <DetailsNoSSR />
+      <Details />
     </>
   );
 };

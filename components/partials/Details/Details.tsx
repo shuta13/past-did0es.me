@@ -8,10 +8,12 @@ import "./Details.scss";
 import Loading from "../../common/Loading";
 import { BackButton } from "../../common/BackButton";
 import ImagePostProcess from "../../common/ImagePostProcess";
+import { useRouter } from "next/router";
 
 const Details: React.FC = () => {
   const [isClicked, setIsClicked] = useState(false);
-  const queryTitle = new URL(window.location.href).searchParams.get("title");
+  const { query } = useRouter();
+  const queryTitle = query.name;
   const works = individual.concat(joint);
   const details = {
     title: "",

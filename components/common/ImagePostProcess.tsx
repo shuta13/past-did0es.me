@@ -105,7 +105,7 @@ const ImagePostProcess: React.FC<{
   Router.events.on("routeChangeComplete", () =>
     cancelAnimationFrame(animationFrameId)
   );
-  cancelAnimationFrame(animationFrameId);
+  // cancelAnimationFrame(animationFrameId);
   const onCanvasLoaded = (canvas: HTMLCanvasElement) => {
     if (!canvas) return;
     config.width = window.innerWidth;

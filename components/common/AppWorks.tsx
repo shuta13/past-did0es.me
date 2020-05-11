@@ -9,12 +9,12 @@ const AppWorks: React.FC<{
   link: string;
   subDesc?: string;
 }> = ({ img, title, desc, link, subDesc }) => {
-  const query = img.split(".")[0].split("/works/")[1];
+  const name = img.split(".")[0].split("/works/")[1];
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div className="AppWorksWrap">
       <div className="AppWorksImageWrap">
-        <Link href={{ pathname: "/details", query: { title: `${query}` } }}>
+        <Link href="/details/[name]" as={`/details/${name}`}>
           <a className="AppWorksImageClip">
             <img
               src={img}
