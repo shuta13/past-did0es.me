@@ -45,10 +45,7 @@ const Details: React.FC = () => {
     <>
       <Head>
         <title>did0es.me - {details.title}</title>
-        <meta
-          name="description"
-          content={`${details.title}`}
-        />
+        <meta name="description" content={`${details.title}`} />
         <meta
           property="og:site_name"
           content={`did0es.me - ${details.title}`}
@@ -60,10 +57,7 @@ const Details: React.FC = () => {
         />
         <meta property="og:title" content={`did0es.me - ${details.title}`} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          property="og:description"
-          content={`${details.title}`}
-        />
+        <meta property="og:description" content={`${details.title}`} />
         <meta
           property="og:image"
           content={`https://did0es.me/works/${details.img}`}
