@@ -3,12 +3,11 @@ import React from "react";
 import AppTitle from "../../common/AppTitle";
 import AppWorks from "../../common/AppWorks";
 
-import development from "../../../public/json/development.json";
-import design from "../../../public/json/design.json";
-import trackMaking from "../../../public/json/trackMaking.json";
+import individual from "../../../public/json/individual.json";
+import joint from "../../../public/json/joint.json";
 
 export const Works: React.FC = () => {
-  const works = development.concat(design).concat(trackMaking);
+  const works = individual.concat(joint);
   return (
     <div className="WorksWrap">
       <div className="WorksClip">

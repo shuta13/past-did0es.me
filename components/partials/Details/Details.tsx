@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import Head from "next/head";
 import DetailsInfo from "../../common/DetailsInfo";
 
-import development from "../../../public/json/development.json";
-import design from "../../../public/json/design.json";
-import trackMaking from "../../../public/json/trackMaking.json";
+import individual from "../../../public/json/individual.json";
+import joint from "../../../public/json/joint.json";
 import "./Details.scss";
 import Loading from "../../common/Loading";
 import { BackButton } from "../../common/BackButton";
@@ -13,38 +12,40 @@ import ImagePostProcess from "../../common/ImagePostProcess";
 const Details: React.FC = () => {
   const [isClicked, setIsClicked] = useState(false);
   const queryTitle = new URL(window.location.href).searchParams.get("title");
-  const worksAll = development.concat(design, trackMaking);
-  let worksTitle = "";
-  let img = "";
-  let info = {
+  const works = individual.concat(joint);
+  const details = {
     title: "",
-    date: "",
-    tags: "",
-    desc: "",
-    link: ""
-  };
-  worksAll.map(works => {
-    if (works.img.split(".")[0] === queryTitle) {
-      worksTitle = works.info.title;
-      img = works.img;
-      info = works.info;
+    img: "",
+    info: {
+      title: "",
+      date: "",
+      tags: "",
+      desc: "",
+      link: ""
+    }
+  }
+  works.map(work => {
+    if (work.img.split(".")[0] === queryTitle) {
+      details.title = work.info.title;
+      details.img = work.img;
+      details.info = work.info;
     }
   });
 
   return (
     <>
       <Head>
-        <title>did0es.me - {worksTitle}</title>
+        <title>did0es.me - {details.title}</title>
       </Head>
 
       <Loading />
       <div className="DetailsClip">
         <ImagePostProcess
-          img={`/works/${img}`}
+          img={`/works/${details.img}`}
           isDetails={true}
           isBackButtonClicked={isClicked}
         />
-        <DetailsInfo info={info} />
+        <DetailsInfo info={details.info} />
       </div>
       <BackButton isClicked={isClicked} setIsClicked={setIsClicked} />
     </>

@@ -22,28 +22,6 @@
     }
   },
   {
-    "img": "candy-official-blog.jpg",
-    "info": {
-      "title": "Candy Official Blog",
-      "date": "2020/02/23",
-      "tags": "Blog",
-      "desc": "ElevenBackLLC.の受託業務として制作したブログです デザインラフの実装・フロントエンドの実装を担当しました。　　工数内で最低限の機能を持ちつつ、今後のスケーリングも可能なように技術の選定や実装を行いました。",
-      "subDesc": "",
-      "link": "https://blog.candy.ac"
-    }
-  },
-  {
-    "img": "tambourine-podcast.jpg",
-    "info": {
-      "title": "tambourine.inc podcast site",
-      "date": "2020/02/23",
-      "tags": "Nuxt.js, Podcast",
-      "desc": "tambourin.incのインターン・アルバイト業務として制作した社内向けPodcastサイトです インターン生数人でチームを組んで開発を行いました。  主に実装の状態管理やGoogleDriveのAPIとの連携部分の実装を担当しました 実装にはNuxt.jsを用いており、フレームワーク上でWebAudioAPIの機能を利用してラジオ音源の操作を行っています。  ラジオのプレイヤー部分のUIはSoundCloudやSpotifyを参考に実装しました。",
-      "subDesc": "",
-      "link": "https://developers.tam-bourine.co.jp/entry/2019/12/19/190000"
-    }
-  },
-  {
     "img": "vue-tsx-keyframes.jpg",
     "info": {
       "title": "vue-tsx-keyframes",
@@ -52,17 +30,6 @@
       "desc": "Vue-TSXというライブラリでCSSinJSでCSSを使用する際に、keyframesを使えるようにするためのライブラリです OSSとして何かライブラリを作りたいと思い制作しました。 　実装にはVue.jsとTypeScriptを用いて、WebAPIを叩く形で実装しています。",
       "subDesc": "",
       "link": "https://github.com/shuta13/vue-tsx-keyframes"
-    }
-  },
-  {
-    "img": "lt-kyotojs17.jpg",
-    "info": {
-      "title": "LT @Kyoto.js17",
-      "date": "2020/02/23",
-      "tags": "Lightning Talk",
-      "desc": "Kyoto.js第17回にて行ったLTです　個人開発したOSSの紹介も兼ねて飛び入りLT枠として発表しました。  Kyoto.js自体、2回目の参加でしたが、とてもアットホームなコミュニティで様々な方と交流することができ、非常に有意義な時間を過ごせました。",
-      "subDesc": "",
-      "link": "https://speakerdeck.com/shuta/keyframes-of-vue-and-tsx-with-css-in-js"
     }
   }
 ]
