@@ -5,7 +5,6 @@ import Contents from "../components/partials/Home/Contents";
 
 const Home: React.FC = () => (
   <>
-    <Loading />
     <Contents />
   </>
 );

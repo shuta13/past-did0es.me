@@ -64,7 +64,6 @@ const Details: React.FC = () => {
         />
       </Head>
 
-      <Loading />
       <div className="DetailsClip">
         <ImagePostProcess
           img={`/works/${details.img}`}

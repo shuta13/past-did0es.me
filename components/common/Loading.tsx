@@ -1,65 +1,46 @@
 import "./Loading.scss";
 import React, { useState, useEffect } from "react";
-// import Router from "next/router";
+import Router from "next/router";
 
 import AppLoading from "../partials/Loading/AppLoading";
 
 const Loading: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  // const [isFinished, setIsFinished] = useState(false);
-  // for on load
-  // const startOnLoadAnimation = () => {
-  //   return new Promise(resolve => {
-  //     setIsLoaded(true);
-  //     resolve();
-  //   });
-  // };
-  // // delay for webkit...
-  // const startOnChangeAnimation = (e: Event) => {
-  //   return new Promise(resolve => {
-  //     setTimeout(() => {
-  //       window.dispatchEvent(e);
-  //       resolve();
-  //     }, 5000);
-  //   });
-  // };
-  // const finishedAnimate = () => {
-  //   setTimeout(() => {
-  //     setIsFinished(true);
-  //   }, 3000);
-  // };
-  // Safari... (; ;)
-  const notSupportedAnimation = () => {
+  const [isFinished, setIsFinished] = useState(false);
+
+  const startOnLoadAnimation = () => {
     return new Promise(resolve => {
       setTimeout(() => {
         setIsLoaded(true);
         resolve();
-      }, 5000);
+      }, 4000)
     });
   };
-  const onDomLoaded = () => {
-    notSupportedAnimation();
-    // const linkEvent = new Event("link");
-    // window.addEventListener("link", () => {
-    //   startOnLoadAnimation().then(() => finishedAnimate());
-    // });
-    // window.addEventListener("load", () => {
-    //   startOnLoadAnimation().then(() => finishedAnimate());
-    // });
-    // Router.events.on("routeChangeStart", () => {
-    //   startOnChangeAnimation(linkEvent).then(() => finishedAnimate());
-    // });
+
+  const checkIsFinished = () => {
+    return new Promise(resolve => {
+      if (!isFinished) {
+        setTimeout(() => {
+          setIsLoaded(true);
+          resolve();
+        }, 5000);
+      } else {
+        resolve();
+      }
+    });
   };
-  // useEffect(() => {
-  //   return () => {
-  //     window.removeEventListener("link", () => startOnLoadAnimation);
-  //     window.removeEventListener("load", () => startOnLoadAnimation);
-  //     window.removeEventListener(
-  //       "routeChangeStart",
-  //       () => startOnChangeAnimation
-  //     );
-  //   };
-  // });
+
+  const onDomLoaded = () => {
+    window.addEventListener("load", () => {
+      startOnLoadAnimation().then(() => setIsFinished(true));
+    });
+    Router.events.on("routeChangeStart", () => {
+      console.log("hoge")
+      startOnLoadAnimation().then(() => setIsFinished(true));
+    });
+    checkIsFinished();
+  };
+
   return (
     <div className={isLoaded ? "LoadingLoaded" : "Loading"} ref={onDomLoaded}>
       <div className={isLoaded ? "LoadingImageLoaded" : "LoadingImage"}>
