@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 import "./AppWorks.scss";
 
-// import ImagePostProcess from "./ImagePostProcess";
-
 const AppWorks: React.FC<{
   img: string;
   title: string;
@@ -29,7 +27,6 @@ const AppWorks: React.FC<{
               onTouchEnd={() => setIsHovered(false)}
               onTouchEndCapture={() => setIsHovered(false)}
             />
-            {/* )} */}
           </a>
         </Link>
       </div>
