@@ -1,6 +1,6 @@
 [
   {
-    "img": "garelly.jpg",
+    "img": "garelly.png",
     "info": {
       "title": "GARELLY",
       "date": "2019/05/25",
@@ -11,7 +11,7 @@
     }
   },
   {
-    "img": "maraviglia.jpg",
+    "img": "maraviglia.png",
     "info": {
       "title": "Maraviglia Archives",
       "date": "2020/04/11",
@@ -22,7 +22,7 @@
     }
   },
   {
-    "img": "vue-tsx-keyframes.jpg",
+    "img": "vue-tsx-keyframes.png",
     "info": {
       "title": "vue-tsx-keyframes",
       "date": "2020/02/23",

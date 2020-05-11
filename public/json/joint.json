@@ -1,6 +1,6 @@
 [
   {
-    "img": "tambourine-podcast.jpg",
+    "img": "tambourine-podcast.png",
     "info": {
       "title": "tambourine.inc podcast site",
       "date": "2020/02/23",
@@ -11,7 +11,7 @@
     }
   },
   {
-    "img": "fc2019-flyer.jpg",
+    "img": "fc2019-flyer.png",
     "info": {
       "title": "Flyer for FC2019",
       "date": "2019/11/30",
@@ -22,7 +22,7 @@
     }
   },
   {
-    "img": "candy-official-blog.jpg",
+    "img": "candy-official-blog.png",
     "info": {
       "title": "Candy Official Blog",
       "date": "2020/02/23",
@@ -33,7 +33,7 @@
     }
   },
   {
-    "img": "design-works-2020.jpg",
+    "img": "design-2020.png",
     "info": {
       "title": "Design Works 2020",
       "date": "2020/01/10",
@@ -44,7 +44,7 @@
     }
   },
   {
-    "img": "veginning.jpg",
+    "img": "veginning.png",
     "info": {
       "title": "Veginning",
       "date": "2020/01/10",
