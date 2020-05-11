@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import DetailsInfo from "../../common/DetailsInfo";
 
@@ -12,10 +12,7 @@ import { useRouter } from "next/router";
 
 const Details: React.FC = () => {
   const [isClicked, setIsClicked] = useState(false);
-  const { query } = useRouter();
-  const queryTitle = query.name;
-  const works = individual.concat(joint);
-  const details = {
+  const [details, setDetails] = useState({
     title: "",
     img: "",
     info: {
@@ -25,14 +22,25 @@ const Details: React.FC = () => {
       desc: "",
       link: ""
     }
-  };
-  works.map(work => {
-    if (work.img.split(".")[0] === queryTitle) {
-      details.title = work.info.title;
-      details.img = work.img;
-      details.info = work.info;
-    }
   });
+  const { query } = useRouter();
+  const works = individual.concat(joint);
+  useEffect(() => {
+    if (query.name !== undefined) {
+      works.map(work => {
+        if (work.img.split(".")[0] === query.name) {
+          setDetails({
+            title: work.info.title,
+            img: work.img,
+            info: work.info
+          });
+          // details.title = work.info.title;
+          // details.img = work.img;
+          // details.info = work.info;
+        }
+      });
+    }
+  }, [query.name]);
 
   return (
     <>
