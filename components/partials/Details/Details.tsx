@@ -65,7 +65,6 @@ const Details: React.FC = () => {
       <div className="DetailsClip">
         <ImagePostProcess
           img={`/works/${details.img}`}
-          isDetails={true}
           isBackButtonClicked={isClicked}
         />
         <DetailsInfo info={details.info} />
