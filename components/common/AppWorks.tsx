@@ -18,8 +18,6 @@ const AppWorks: React.FC<{
       <div className="AppWorksImageWrap">
         <Link href={{ pathname: "/details", query: { title: `${query}` } }}>
           <a className="AppWorksImageClip">
-            {/* {width > 615 && <ImagePostProcess img={img} />}
-            {width <= 615 && ( */}
             <img
               src={img}
               className={isHovered ? "AppWorksImageHovered" : "AppWorksImage"}
