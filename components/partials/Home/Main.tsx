@@ -11,7 +11,7 @@ import {
   TextureLoader,
   Clock
 } from "three";
-import Router from "next/router"
+import Router from "next/router";
 
 const vert = require("../../shaders/Main/index.vert");
 const frag = require("../../shaders/Main/index.frag");

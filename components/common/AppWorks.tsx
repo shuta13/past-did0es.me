@@ -11,7 +11,6 @@ const AppWorks: React.FC<{
   link: string;
   subDesc?: string;
 }> = ({ img, title, desc, link, subDesc }) => {
-  const width = window.innerWidth;
   const query = img.split(".")[0].split("/works/")[1];
   const [isHovered, setIsHovered] = useState(false);
   return (
