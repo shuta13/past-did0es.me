@@ -13,7 +13,7 @@ const Loading: React.FC = () => {
       setTimeout(() => {
         setIsLoaded(true);
         resolve();
-      }, 4000);
+      }, 2000);
     });
   };
 
