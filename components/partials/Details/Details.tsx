@@ -21,7 +21,7 @@ const Details: React.FC<{ name: string | string[] }> = ({ name }) => {
             <>
               <Head>
                 <title>did0es.me - {work.info.title}</title>
-                <meta name="description" content={`${work.info.title}`} />
+                {/* <meta name="description" content={`${work.info.title}`} />
                 <meta
                   property="og:site_name"
                   content={`did0es.me - ${work.info.title}`}
@@ -45,7 +45,7 @@ const Details: React.FC<{ name: string | string[] }> = ({ name }) => {
                 <meta
                   property="og:image"
                   content={`https://did0es.me/works/${work.img}`}
-                />
+                /> */}
               </Head>
 
               <div className="DetailsClip">
