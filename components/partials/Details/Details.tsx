@@ -8,71 +8,59 @@ import "./Details.scss";
 import Loading from "../../common/Loading";
 import { BackButton } from "../../common/BackButton";
 import ImagePostProcess from "../../common/ImagePostProcess";
-import { useRouter } from "next/router";
 
-const Details: React.FC = () => {
+const Details: React.FC<{ name: string | string[] }> = ({ name }) => {
   const [isClicked, setIsClicked] = useState(false);
-  const [details, setDetails] = useState({
-    title: "",
-    name: "",
-    img: "default.png",
-    info: {
-      title: "",
-      date: "",
-      tags: "",
-      desc: "",
-      link: ""
-    }
-  });
-  const { query } = useRouter();
   const works = individual.concat(joint);
-  useEffect(() => {
-    if (query.name !== undefined) {
-      works.map(work => {
-        if (work.img.split(".")[0] === query.name) {
-          setDetails({
-            title: work.info.title,
-            name: work.img.split(".")[0],
-            img: work.img,
-            info: work.info
-          });
-        }
-      });
-    }
-  }, [query.name]);
 
   return (
     <>
-      <Head>
-        <title>did0es.me - {details.title}</title>
-        <meta name="description" content={`${details.title}`} />
-        <meta
-          property="og:site_name"
-          content={`did0es.me - ${details.title}`}
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content={`https://did0es.me/details/${details.name}`}
-        />
-        <meta property="og:title" content={`did0es.me - ${details.title}`} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="og:description" content={`${details.title}`} />
-        <meta
-          property="og:image"
-          content={`https://did0es.me/works/${details.img}`}
-        />
-      </Head>
+      {works.map(work => (
+        <div key={work.img}>
+          {work.img.split(".")[0] === name ? (
+            <>
+              <Head>
+                <title>did0es.me - {work.info.title}</title>
+                <meta name="description" content={`${work.info.title}`} />
+                <meta
+                  property="og:site_name"
+                  content={`did0es.me - ${work.info.title}`}
+                />
+                <meta property="og:type" content="website" />
+                <meta
+                  property="og:url"
+                  content={`https://did0es.me/details/${
+                    work.img.split(".")[0]
+                  }`}
+                />
+                <meta
+                  property="og:title"
+                  content={`did0es.me - ${work.info.title}`}
+                />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta
+                  property="og:description"
+                  content={`${work.info.title}`}
+                />
+                <meta
+                  property="og:image"
+                  content={`https://did0es.me/works/${work.img}`}
+                />
+              </Head>
 
-      <div className="DetailsClip">
-        <ImagePostProcess
-          img={`/works/${details.img}`}
-          isBackButtonClicked={isClicked}
-        />
-        <DetailsInfo info={details.info} />
-      </div>
-      <BackButton isClicked={isClicked} setIsClicked={setIsClicked} />
-      <Loading />
+              <div className="DetailsClip">
+                <ImagePostProcess
+                  img={`/works/${work.img}`}
+                  isBackButtonClicked={isClicked}
+                />
+                <DetailsInfo info={work.info} />
+              </div>
+              <BackButton isClicked={isClicked} setIsClicked={setIsClicked} />
+              <Loading />
+            </>
+          ) : null}
+        </div>
+      ))}
     </>
   );
 };

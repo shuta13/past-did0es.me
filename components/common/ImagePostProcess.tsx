@@ -33,12 +33,15 @@ const ImagePostProcess: React.FC<{
   img: string;
   isBackButtonClicked: boolean;
 }> = ({ img, isBackButtonClicked }) => {
+  const [textureImage, setTextureImage] = useState("");
+  useEffect(() => {
+    setTextureImage(img);
+  }, [img]);
   const config = {
     width: 0,
     height: 0,
     imageWidth: 0,
-    imageHeight: 0,
-    textureImage: img
+    imageHeight: 0
   };
   let isNeedsStopAnimate = false;
   const parentRef = useRef<HTMLDivElement>(null);
@@ -116,7 +119,7 @@ const ImagePostProcess: React.FC<{
     camera.lookAt(scene.position);
     const geometry = new PlaneBufferGeometry(2, 2);
     const image = new Image();
-    image.src = config.textureImage;
+    image.src = textureImage;
     image.onload = () => {
       config.imageWidth = image.naturalWidth;
       config.imageHeight = image.naturalHeight;
@@ -132,7 +135,7 @@ const ImagePostProcess: React.FC<{
       },
       texture: {
         type: "t",
-        value: new TextureLoader().load(config.textureImage)
+        value: new TextureLoader().load(textureImage)
       },
       textureSize: {
         type: "v2",

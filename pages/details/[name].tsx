@@ -2,8 +2,11 @@ import React from "react";
 import Head from "next/head";
 
 import Details from "../../components/partials/Details/Details";
+import { useRouter } from "next/router";
 
 const DetailsHome = () => {
+  const router = useRouter();
+  const { name } = router.query;
   return (
     <>
       <Head>
@@ -12,7 +15,7 @@ const DetailsHome = () => {
           rel="stylesheet"
         />
       </Head>
-      <Details />
+      {name !== undefined ? <Details name={name} /> : null}
     </>
   );
 };
