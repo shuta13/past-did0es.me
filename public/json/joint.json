@@ -5,7 +5,7 @@
       "title": "tambourine podcast site",
       "date": "2020/02/23",
       "tags": "Nuxt.js, Podcast",
-      "desc": "tambourin.incのインターン・アルバイト業務として制作した社内向けPodcastサイトです インターン生数人でチームを組んで開発を行いました。  主に実装の状態管理やGoogleDriveのAPIとの連携部分の実装を担当しました 実装にはNuxt.jsを用いており、フレームワーク上でWebAudioAPIの機能を利用してラジオ音源の操作を行っています。  ラジオのプレイヤー部分のUIはSoundCloudやSpotifyを参考に実装しました。  また、podcastの実装についての記事をJAMstack Advent Calendar 2019の19日目で公開しました",
+      "desc": "tambourin.incのインターン・アルバイト業務として制作した社内向けPodcastサイトです インターン生数人でチームを組んで開発を行いました。  主に実装の状態管理やGoogleDriveのAPIとの連携部分の実装を担当しました 実装にはNuxt.jsを用いており、フレームワーク上でWebAudioAPIの機能を利用してラジオ音源の操作を行っています。  ラジオのプレイヤー部分のUIはSoundCloudやSpotifyを参考に実装しました。  また、podcastの実装についての記事をJAMstack-Advent-Calendar-2019の19日目で公開しました",
       "subDesc": "",
       "link": "https://developers.tam-bourine.co.jp/entry/2019/12/19/190000"
     }
