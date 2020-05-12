@@ -8,37 +8,37 @@ const Loading: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
 
-  const startOnLoadAnimation = () => {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        setIsLoaded(true);
-        resolve();
-      }, 2000);
-    });
-  };
-
   const checkIsFinished = () => {
     return new Promise(resolve => {
       if (!isFinished) {
         setTimeout(() => {
           setIsLoaded(true);
           resolve();
-        }, 5000);
+        }, 3000);
       } else {
         resolve();
       }
     });
   };
 
+  // const handleRouteChange = () => {
+  //   setIsLoaded(true)
+  //   setIsFinished(true)
+  // }
+
   const onDomLoaded = () => {
     window.addEventListener("load", () => {
-      startOnLoadAnimation().then(() => setIsFinished(true));
+      setIsLoaded(true)
+      setIsFinished(true)
     });
     checkIsFinished();
   };
-  Router.events.on("routeChangeComplete", () => {
-    startOnLoadAnimation().then(() => setIsFinished(true));
-  });
+  // useEffect(() => {
+  //   Router.events.on("routeChangeComplete", handleRouteChange)
+  //   return () => {
+  //     Router.events.on("routeChangeComplete", handleRouteChange)
+  //   }
+  // }, [])
 
   return (
     <div className={isLoaded ? "LoadingLoaded" : "Loading"} ref={onDomLoaded}>
