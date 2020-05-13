@@ -28,8 +28,10 @@ const Loading: React.FC = () => {
 
   const onDomLoaded = () => {
     window.addEventListener("load", () => {
-      setIsLoaded(true)
-      setIsFinished(true)
+      setTimeout(() => {
+        setIsLoaded(true)
+        setIsFinished(true)
+      }, 1000)
     });
     checkIsFinished();
   };
