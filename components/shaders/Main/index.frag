@@ -83,22 +83,35 @@ float snoise(vec2 v) {
 }
 
 void main() {
-  vec2 uv = gl_FragCoord.xy/resolution.xy;
-  float size = 40.;
-  uv.y = floor(uv.y * size) / size;
-  uv.x *= resolution.x/resolution.y;
+  vec2 uv = gl_FragCoord.xy/resolution.xy -.5;
   vec3 color = vec3(0.15);
-  uv += snoise(uv * .5);
-  float sync = time * .07;
 
-  if (snoise(uv + sync) > .2) {
-    // ベースのグラデーション
-    // color.r += vec3(mix(uv.y, uv.y, snoise(vec2(uv.x + time, uv.y + time)))).r * .1;
-    color.g += vec3(mix(uv.x, uv.x, snoise(vec2(uv.x + time, uv.y + time)))).g * .15;
-    color.b += vec3(mix(uv.y, uv.y, snoise(vec2(uv.x + time, uv.y + time)))).b * .1;
+  float size = 200. * sin(uv.y);
+  uv.y = floor(uv.y * size) / size;
+
+  // uv.x *= resolution.x/resolution.y;
+
+  uv.x += snoise(uv * .5);
+  float sync = time * .07;
+  uv += .5;
+
+  if (mod(uv.y * 10., 1.5) < 1. || snoise(vec2(uv.x + sync, uv.x + sync)) < 0.) {
+    color.r = .01;
+    color.g += vec3(mix(uv.x, uv.x, snoise(vec2(uv.x + time, uv.y + time)))).g * .25;
+    color.b += vec3(mix(uv.y, uv.y, snoise(vec2(uv.x + time, uv.y + time)))).b * .05;
+    // 光沢
+    color += smoothstep(.2, .55, snoise(uv + sync) * .4);
   }
 
-  // 光沢
-  color += smoothstep(.2, .55, snoise(uv + sync) * .4);
+  // if (snoise(uv + sync) > .2) {
+  //   // ベースのグラデーション
+  //   color.r = .01;
+  //   color.g += vec3(mix(uv.x, uv.x, snoise(vec2(uv.x + time, uv.y + time)))).g * .25;
+  //   color.b += vec3(mix(uv.y, uv.y, snoise(vec2(uv.x + time, uv.y + time)))).b * .05;
+  // }
+
+  // // 光沢
+  // color += smoothstep(.2, .55, snoise(uv + sync) * .4);
+
   gl_FragColor = vec4(color, 1.0);
 }

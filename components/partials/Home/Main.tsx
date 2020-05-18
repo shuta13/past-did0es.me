@@ -64,7 +64,7 @@ const Main: React.FC = () => {
       },
       resolution: {
         type: "v2",
-        value: new Vector2(window.innerWidth, window.innerHeight)
+        value: new Vector2(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio)
       }
     };
     const material = new RawShaderMaterial({
