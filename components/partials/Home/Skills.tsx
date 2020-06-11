@@ -8,11 +8,11 @@ const Skills: React.FC = () => (
     <div className="SkillsClip">
       <AppTitle title="- Skills -" />
       <div className="SkillsDescription" style={{ textAlign: "center" }}>
-        <p>Web Development, Design, Track Making, DJ</p>
+        <p>Web Development, Design, DJ</p>
       </div>
       <AppTitle title="Language / Library / FrameWork" />
       <div className="SkillsDescription">
-        <p>HTML, CSS, JavaScript, TypeScript, Ruby, PHP, GLSL</p>
+        <p>HTML, CSS, JavaScript, TypeScript, Ruby, PHP, C, GLSL</p>
         <p>
           React.js, Vue.js, Three.js, Node.js, pug, sass, Jest, ESLint, Webpack
         </p>
