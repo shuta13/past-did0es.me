@@ -24,7 +24,8 @@ const Profile: React.FC = () => (
             Student of Audio & Visual Media Technology Course, College of
             Information Science and Engineering, Ritsumeikan Univ.
           </div>
-          <div>Entrusted FrontEnd Engineer, Designer @AkinaiOne</div>
+          <div>Entrusted Engineer @Tech Design, inc</div>
+          <div>Entrusted FrontEnd Engineer, Designer @AkinaiOne, inc</div>
           <div>Entrusted FrontEnd Engineer, Designer @ElevenBack LLC.</div>
           <div>Contracted Web Developer @tambourine.inc</div>
         </div>
