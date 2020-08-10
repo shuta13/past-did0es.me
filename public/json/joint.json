@@ -4,7 +4,7 @@
     "info": {
       "title": "Candy",
       "date": "2020/02/23",
-      "tags": "Blog",
+      "tags": "WebSite",
       "desc": "ElevenBackLLC.の受託業務としてCandyの一部・オフィシャルブログの実装をしました．　　主に担当したブログの方では工数内で最低限の機能を持ちつつ，今後のスケーリングも可能なように技術の選定や実装を行いました．",
       "subDesc": "",
       "link": "https://candy.ac"
