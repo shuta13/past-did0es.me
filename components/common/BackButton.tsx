@@ -6,7 +6,7 @@ export const BackButton: React.FC<{
   isClicked: boolean;
   setIsClicked: (isClicked: boolean) => void;
 }> = ({ isClicked, setIsClicked }) => {
-  const [isHovered, setIsHovered] = useState(false)
+  const [isHovered, setIsHovered] = useState(false);
   const text = "< BACK";
   return (
     <div
@@ -18,19 +18,17 @@ export const BackButton: React.FC<{
       onTouchEndCapture={() => setIsHovered(false)}
       onTouchEnd={() => setIsHovered(false)}
     >
-        <a 
-          className={
-            isHovered ? "BackButtonSquareHovered" : "BackButtonSquare"
-          }
-          onClick={() => setIsClicked(!isClicked)}>
-          {text}
-        </a>
+      <a
+        className={isHovered ? "BackButtonSquareHovered" : "BackButtonSquare"}
+        onClick={() => setIsClicked(!isClicked)}
+      >
+        {text}
+      </a>
       <Link href="/">
-        <a 
-          className={
-            isHovered ? "BackButtonHovered" : "BackButton"
-          }
-          onClick={() => setIsClicked(!isClicked)}>
+        <a
+          className={isHovered ? "BackButtonHovered" : "BackButton"}
+          onClick={() => setIsClicked(!isClicked)}
+        >
           {text}
         </a>
       </Link>
