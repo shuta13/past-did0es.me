@@ -18,12 +18,12 @@ export const BackButton: React.FC<{
       onTouchEndCapture={() => setIsHovered(false)}
       onTouchEnd={() => setIsHovered(false)}
     >
-      <a
+      <div
         className={isHovered ? "BackButtonSquareHovered" : "BackButtonSquare"}
         onClick={() => setIsClicked(!isClicked)}
       >
         {text}
-      </a>
+      </div>
       <Link href="/">
         <a
           className={isHovered ? "BackButtonHovered" : "BackButton"}
