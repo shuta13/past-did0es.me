@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./DetailsInfo.scss";
-import { ExternalLink } from "./ExternalLink";
+import { ExternalLink } from "../../common/ExternalLink";
 
 type InfoParams = {
   title: string;

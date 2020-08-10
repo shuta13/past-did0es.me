@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
-import DetailsInfo from "../../common/DetailsInfo";
+import DetailsInfo from "./DetailsInfo";
 
 import individual from "../../../public/json/individual.json";
 import joint from "../../../public/json/joint.json";

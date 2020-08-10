@@ -5,7 +5,7 @@
       "title": "tambourine podcast site",
       "date": "2020/02/23",
       "tags": "Nuxt.js, Podcast",
-      "desc": "tambourin.incのインターン・アルバイト業務として制作した社内向けPodcastサイトです インターン生数人でチームを組んで開発を行いました。  主に実装の状態管理やGoogleDriveのAPIとの連携部分の実装を担当しました 実装にはNuxt.jsを用いており、フレームワーク上でWebAudioAPIの機能を利用してラジオ音源の操作を行っています。  ラジオのプレイヤー部分のUIはSoundCloudやSpotifyを参考に実装しました。  また、podcastの実装についての記事をJAMstack-Advent-Calendar-2019の19日目で公開しました",
+      "desc": "tambourin.incのインターン・アルバイト業務として制作した社内向けPodcastサイトです インターン生数人でチームを組んで開発を行いました．  主に実装の状態管理やGoogleDriveのAPIとの連携部分の実装を担当しました 実装にはNuxt.jsを用いており，フレームワーク上でWebAudioAPIの機能を利用してラジオ音源の操作を行っています．  ラジオのプレイヤー部分のUIはSoundCloudやSpotifyを参考に実装しました．  また，podcastの実装についての記事をJAMstack-Advent-Calendar-2019の19日目で公開しました",
       "subDesc": "",
       "link": "https://developers.tam-bourine.co.jp/entry/2019/12/19/190000"
     }
@@ -16,7 +16,7 @@
       "title": "ElevenBack FC2019 Flyer",
       "date": "2019/11/30",
       "tags": "Figma, Flyer",
-      "desc": "ElevenBackLLC.の受託業務として制作したフロントエンドカンファレンス2019頒布用企業フライヤーです デザインのラフを担当しました また、このフライヤーが頒布された当日は、スタッフとしてカンファレンス運営のお手伝いをしました。",
+      "desc": "ElevenBackLLC.の受託業務として制作したフロントエンドカンファレンス2019頒布用企業フライヤーです デザインのラフを担当しました また，このフライヤーが頒布された当日は，スタッフとしてカンファレンス運営のお手伝いをしました．",
       "subDesc": "",
       "link": "https://techblog.elevenback.co.jp/entry/2019/11/08/145616"
     }
@@ -27,7 +27,7 @@
       "title": "Candy Official Blog",
       "date": "2020/02/23",
       "tags": "Blog",
-      "desc": "ElevenBackLLC.の受託業務として制作したブログです デザインラフの実装・フロントエンドの実装を担当しました。　　工数内で最低限の機能を持ちつつ、今後のスケーリングも可能なように技術の選定や実装を行いました。",
+      "desc": "ElevenBackLLC.の受託業務として制作したブログです デザインラフの実装・フロントエンドの実装を担当しました．　　工数内で最低限の機能を持ちつつ，今後のスケーリングも可能なように技術の選定や実装を行いました．",
       "subDesc": "",
       "link": "https://blog.candy.ac"
     }
@@ -38,7 +38,7 @@
       "title": "Design Works 2020",
       "date": "2020/01/10",
       "tags": "Sketch, Flyer, Postcard",
-      "desc": "2020年に請けたデザイン案件の制作物をまとめたブログです。",
+      "desc": "2020年に請けたデザイン案件の制作物をまとめたブログです．",
       "subDesc": "",
       "link": "https://did0es.hatenablog.jp/entry/2020/02/05/225419"
     }
@@ -49,7 +49,7 @@
       "title": "Veginning",
       "date": "2020/01/10",
       "tags": "Future Bass, VHackPremium",
-      "desc": "VTuberHackPremiumにて制作し、提供したテーマソングです ラフ音源の制作・歌手の方の音声のミックス・提出用音源のミックスとマスタリングを担当しました。  制作にはCubaseを用いています 主に使用したプラグインはSerum(リード/ベースシンセ)・Ozone8-Advanced(ミックス・マスタリング用)・Cubase内蔵音源・初音ミクv4(仮歌の制作用)などです また、主に使用したサンプル音源はVeangeanceやSpliceのドラム・FX音源です。  Vtuberの3Dモデルや歌手の方の歌声と合うようなFutureBassを制作しました。  ハッカソンの結果として、チーム全体で審査員特別賞を頂きました。",
+      "desc": "VTuberHackPremiumにて制作し，提供したテーマソングです ラフ音源の制作・歌手の方の音声のミックス・提出用音源のミックスとマスタリングを担当しました．  制作にはCubaseを用いています 主に使用したプラグインはSerum(リード/ベースシンセ)・Ozone8-Advanced(ミックス・マスタリング用)・Cubase内蔵音源・初音ミクv4(仮歌の制作用)などです また，主に使用したサンプル音源はVeangeanceやSpliceのドラム・FX音源です．  Vtuberの3Dモデルや歌手の方の歌声と合うようなFutureBassを制作しました．  ハッカソンの結果として，チーム全体で審査員特別賞を頂きました．",
       "subDesc": "",
       "link": "https://youtu.be/J_CrAM6PEwQ"
     }
