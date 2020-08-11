@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import "./AppWorks.scss";
-import { maxHeaderSize } from "http";
+import LoadingBlinder from "./LoadingBlinder";
+import { useRouter } from "next/router";
 
 const AppWorks: React.FC<{
   img: string;
@@ -10,10 +11,20 @@ const AppWorks: React.FC<{
 }> = ({ img, title, date }) => {
   const name = img.split(".")[0].split("/works/")[1];
   const [isHovered, setIsHovered] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+  const router = useRouter();
+  useEffect(() => {
+    if (isClicked) {
+      setTimeout(() => {
+        router.push(`/details/${name}`);
+      }, 1000);
+    }
+  }, [isClicked]);
   return (
-    <div className="AppWorksWrap">
-      <div className="AppWorksImageWrap">
-        <Link href="/details/[name]" as={`/details/${name}`}>
+    <>
+      <div className="AppWorksWrap">
+        <div className="AppWorksImageWrap">
+          {/* <Link href="/details/[name]" as={`/details/${name}`}> */}
           <a
             className="AppWorksImageClip"
             onMouseEnter={() => setIsHovered(true)}
@@ -22,6 +33,7 @@ const AppWorks: React.FC<{
             onTouchStartCapture={() => setIsHovered(true)}
             onTouchEnd={() => setIsHovered(false)}
             onTouchEndCapture={() => setIsHovered(false)}
+            onClick={() => setIsClicked(true)}
           >
             <img src={img} className="AppWorksImage" alt="Works Image" />
             <div
@@ -53,9 +65,11 @@ const AppWorks: React.FC<{
               </div>
             </div>
           </a>
-        </Link>
+          {/* </Link> */}
+        </div>
       </div>
-    </div>
+      <LoadingBlinder isClicked={isClicked} />
+    </>
   );
 };
 
