@@ -15,35 +15,69 @@
 }
 
 .AppWorksImageClip {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  width: 320px;
+  height: 160px;
+  overflow: hidden;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 }
 
 .AppWorksImage {
-  width: 100%;
+  position: absolute;
+  width: 320px;
   height: auto;
-  transition: transform cubic-bezier(.16,.67,.64,.99) .4s;
 }
 
-.AppWorksImageHovered {
-  @extend .AppWorksImage;
-  transform: scale(1.2, 1.2);
-}
-
-.AppWorksTitleWrap {
-  width: 100%;
-  height: auto;
+.AppWorksSquareCommon {
+  position: absolute;
+  width: 320px;
+  height: 160px;
+  transition: transform cubic-bezier(.98,.01,.83,1) .4s;
+  background: #00000090;
+  transform: translateX(-100%) translateY(0%);
+  padding: 16px;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  align-content: flex-end;
+}
+
+.AppWorksSquare {
+  @extend .AppWorksSquareCommon;
+  transition-duration: .6s;
+}
+
+.AppWorksSquareHovered {
+  @extend .AppWorksSquareCommon;
+  transform: translateX(0%) translateY(0%);
+}
+
+.AppWorksTextWrap {
+  width: 100%;
+  height: 24px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
 }
 
-.AppWorksTitle {
-  height: auto;
-  text-align: center;
-  font-size: 15px;
+.AppWorksTextCommon {
+  font-size: 16px;
   font-family: "Abel", sans-serif;
-  font-weight: bold;
-  color: #fff;
+  color: #ffffff;
+  letter-spacing: 2px;
+  transform: translateX(0%) translateY(100%);
+  transition: transform cubic-bezier(.16,.67,.64,.99) .4s;
+  transition-delay: .5s;
+}
+
+.AppWorksText {
+  @extend .AppWorksTextCommon;
+  transition-delay: .0s;
+}
+
+.AppWorksTextHovered {
+  @extend .AppWorksTextCommon;
+  transform: translateX(0%) translateY(0%);
 }

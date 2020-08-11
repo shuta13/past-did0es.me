@@ -17,8 +17,7 @@ export const Works: React.FC = () => {
             key={work.img}
             img={`/works/${work.img}`}
             title={work.info.title}
-            desc={work.info.desc}
-            link={work.info.link}
+            date={work.info.date}
           />
         ))}
       </div>
