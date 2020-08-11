@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import "./AppWorks.scss";
+import { maxHeaderSize } from "http";
 
 const AppWorks: React.FC<{
   img: string;
@@ -36,6 +37,9 @@ const AppWorks: React.FC<{
               <div className="AppWorksTextWrap">
                 <div
                   className={isHovered ? "AppWorksTextHovered" : "AppWorksText"}
+                  style={{
+                    fontSize: "14px"
+                  }}
                 >
                   {date}
                 </div>

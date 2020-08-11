@@ -32,9 +32,9 @@
 .BackButtonHovered {
   @extend .BackButtonCommon;
   transform: translateX(0%) translateY(-100%);
-  color: #00000070;
+  color: #1d1d1d;
   background: #fff;
-  border: solid 1px #00000070;
+  border: solid 1px #1d1d1d;
 }
 
 .BackButtonSquareCommon {
