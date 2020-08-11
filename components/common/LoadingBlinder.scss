@@ -4,8 +4,9 @@
   width: 100%;
   height: 100%;
   background: #1d1d1d;
-  transform: translateX(-116%) rotate(-4deg);
-  transition: transform cubic-bezier(.9,.23,.48,.97) 1.2s;
+  transform: translateX(-116%) translateY(4%) rotate(-4deg);
+  transition: transform cubic-bezier(.98,.01,.83,1) 1s;
+  z-index: 999999;
 }
 
 .LoadingBlinder {
@@ -14,5 +15,5 @@
 
 .LoadingBlinderOn {
   @extend .LoadingBlinderCommon;
-  transform: translateX(0%) scale(1.2);
+  transform: translateX(0%) translateY(0%) scale(1.2);
 }
