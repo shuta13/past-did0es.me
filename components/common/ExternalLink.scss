@@ -32,6 +32,7 @@ $height: 40px;
 
 .ExternalLink {
   @extend .ExternalLinkCommon;
+  transition-duration: .4s;
 }
 
 .ExternalLinkHovered {
