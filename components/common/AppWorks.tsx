@@ -29,10 +29,10 @@ const AppWorks: React.FC<{
             className="AppWorksImageClip"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            // onTouchStart={() => setIsHovered(true)}
-            // onTouchStartCapture={() => setIsHovered(true)}
-            // onTouchEnd={() => setIsHovered(false)}
-            // onTouchEndCapture={() => setIsHovered(false)}
+            onTouchStart={() => setIsHovered(true)}
+            onTouchStartCapture={() => setIsHovered(true)}
+            onTouchEnd={() => setIsHovered(false)}
+            onTouchEndCapture={() => setIsHovered(false)}
             onClick={() => setIsClicked(true)}
           >
             <img src={img} className="AppWorksImage" alt="Works Image" />
