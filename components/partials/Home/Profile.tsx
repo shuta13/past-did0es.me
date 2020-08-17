@@ -21,13 +21,14 @@ const Profile: React.FC = () => (
           </div>
           <div style={{ textAlign: "center" }}>Web Developer, Designer</div>
           <div>
-            Student of Audio & Visual Media Technology Course, College of
+            Student @ Audio & Visual Media Technology Course, College of
             Information Science and Engineering, Ritsumeikan Univ.
           </div>
-          <div>Entrusted Engineer @Tech Design, inc</div>
-          <div>Entrusted FrontEnd Engineer, Designer @AkinaiOne, inc</div>
-          <div>Entrusted FrontEnd Engineer, Designer @ElevenBack LLC.</div>
-          <div>Contracted Web Developer @tambourine.inc</div>
+          <div>FrontEnd Engineer @ Relie, inc</div>
+          <div>FrontEnd Engineer・Designer @ AkinaiOne, inc</div>
+          <div>FrontEnd Engineer・Designer @ ElevenBack LLC.</div>
+          <div>Web Developer @ tambourine.inc</div>
+          <div>ex Engineer @ Tech Design, inc</div>
         </div>
       </div>
     </div>
