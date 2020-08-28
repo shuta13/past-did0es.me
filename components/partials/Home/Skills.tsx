@@ -18,7 +18,7 @@ const Skills: React.FC = () => (
         </p>
         <p>
           Next.js, Gatsby.js, Nuxt.js, Serverless Framework, Web Components,
-          Ruby on Rails
+          React Native
         </p>
       </div>
       <AppTitle title="Others" />
@@ -35,7 +35,7 @@ const Skills: React.FC = () => (
       </div>
       <ExternalLink
         href="https://www.wantedly.com/users/95976645"
-        text="Detail"
+        text="More"
       />
     </div>
   </div>
