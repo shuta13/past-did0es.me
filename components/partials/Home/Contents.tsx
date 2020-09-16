@@ -16,7 +16,7 @@ const Contents: React.FC = () => {
       <div className="ContentsWrap">
         <Profile />
         <Works />
-        <Skills />
+        {/* <Skills /> */}
         <Social />
         <Copywrite />
       </div>
