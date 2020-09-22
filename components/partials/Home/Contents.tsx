@@ -1,8 +1,8 @@
 import "./Contents.scss";
-import React, { useState } from "react";
+import React from "react";
 
 import Profile from "./Profile";
-import Skills from "./Skills";
+
 import Social from "./Social";
 import Copywrite from "./Copyright";
 
