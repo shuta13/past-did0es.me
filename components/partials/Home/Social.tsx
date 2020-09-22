@@ -14,7 +14,7 @@ const Social: React.FC = () => (
       />
       <ExternalLink href="https://www.instagram.com/_did0es" text="Instagram" />
       <ExternalLink href="https://github.com/shuta13" text="GitHub" />
-      <ExternalLink href="https://did0es.hatenablog.jp/" text="Blog" />
+      <ExternalLink href="https://scrapbox.io/did0es/" text="Scrapbox" />
     </div>
   </div>
 );
