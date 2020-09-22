@@ -12,7 +12,9 @@ import {
   Clock
 } from "three";
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const vert = require("../../shaders/Loading/index.vert");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const frag = require("../../shaders/Loading/index.frag");
 
 type AnimateParams = {

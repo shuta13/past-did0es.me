@@ -8,12 +8,12 @@ import {
   RawShaderMaterial,
   Mesh,
   Vector2,
-  TextureLoader,
   Clock
 } from "three";
-import Router from "next/router";
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const vert = require("../../shaders/Main/index.vert");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const frag = require("../../shaders/Main/index.frag");
 
 type AnimateParams = {

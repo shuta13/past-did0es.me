@@ -1,5 +1,5 @@
 import "./ImagePostProcess.scss";
-import React, { useRef, useCallback, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Router from "next/router";
 import {
   Scene,
@@ -13,7 +13,9 @@ import {
   Clock
 } from "three";
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const vert = require("../shaders/ImagePostProcess/index.vert");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const frag = require("../shaders/ImagePostProcess/index.frag");
 
 type AnimateParams = {
