@@ -96,9 +96,9 @@ void main() {
   uv += .5;
 
   if (snoise(vec2(uv.x + sync, uv.x + sync)) < 1.0) {
-    color.r = .005;
-    color.g += vec3(mix(uv.x, uv.x, snoise(vec2(uv.x + time, uv.y + time)))).g * .20;
-    color.b += vec3(mix(uv.y, uv.y, snoise(vec2(uv.x + time, uv.y + time)))).b * .10;
+    color.r = vec3(mix(uv.x, uv.x, snoise(vec2(uv.x + time, uv.y + time)))).g * .10;
+    color.g += vec3(mix(uv.x, uv.x, snoise(vec2(uv.x + time, uv.y + time)))).g * .50;
+    color.b += vec3(mix(uv.y, uv.y, snoise(vec2(uv.x + time, uv.y + time)))).b * .40;
     // 光沢
     color += smoothstep(.2, .45, snoise(uv + sync) * .4);
   }

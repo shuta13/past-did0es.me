@@ -49,7 +49,7 @@ const AppWorks: React.FC<{
                 <div
                   className={isHovered ? "AppWorksTextHovered" : "AppWorksText"}
                   style={{
-                    fontSize: "14px"
+                    fontSize: "14px",
                   }}
                 >
                   {date}

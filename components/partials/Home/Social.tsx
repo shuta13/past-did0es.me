@@ -6,7 +6,9 @@ import AppTitle from "../../common/AppTitle";
 const Social: React.FC = () => (
   <div className="SocialWrap">
     <div className="SocialClip">
-      <AppTitle title="- Social -" />
+      <div className="SocialWrapTitle">
+        <AppTitle title="- Social -" />
+      </div>
       <ExternalLink href="https://twitter.com/did0es" text="Twitter" />
       <ExternalLink href="https://www.instagram.com/_did0es" text="Instagram" />
       <ExternalLink href="https://github.com/shuta13" text="GitHub" />
