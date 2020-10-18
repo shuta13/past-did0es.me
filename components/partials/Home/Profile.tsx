@@ -28,7 +28,6 @@ const Profile: React.FC = () => (
           <div>FrontEnd Engineer・Designer @ AkinaiOne, inc</div>
           <div>FrontEnd Engineer・Designer @ ElevenBack LLC.</div>
           <div>Web Developer @ tambourine.inc</div>
-          <div>ex Engineer @ Tech Design, inc</div>
         </div>
       </div>
     </div>
