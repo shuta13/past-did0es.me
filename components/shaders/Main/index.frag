@@ -82,15 +82,24 @@ float snoise(vec2 v) {
   return 130.0 * dot(m, g);
 }
 
+vec2 random2( vec2 p ) {
+  return fract(sin(vec2(dot(p,vec2(127.1,311.7)),dot(p,vec2(269.5,183.3))))*43758.5453);
+}
+
 void main() {
   vec2 uv = gl_FragCoord.xy/resolution.xy -.5;
   vec3 color = vec3(0.15);
 
-  float size = 16.;
+  uv *= 4.;
+
+  vec2 fUv = floor(uv);
+  vec2 iUv = fract(uv);
+
+  float size = 2.;
   uv = floor(uv * size + snoise(vec2(uv.y + time * .2, uv.x + time * .2) * .4)) / size;
+  // uv = floor(uv * size) / size;
 
-  // uv.x *= resolution.x/resolution.y;
-
+  // background
   uv.x += snoise(uv * .5);
   float sync = time * .2;
   uv += .5;
@@ -103,23 +112,26 @@ void main() {
     color += smoothstep(.2, .45, snoise(uv + sync) * .4);
   }
 
-  // if (mod(uv.y * 10., 1.5) < 1. || snoise(vec2(uv.x + sync, uv.x + sync)) < 0.) {
-  //   color.r = .01;
-  //   color.g += vec3(mix(uv.x, uv.x, snoise(vec2(uv.x + time, uv.y + time)))).g * .25;
-  //   color.b += vec3(mix(uv.y, uv.y, snoise(vec2(uv.x + time, uv.y + time)))).b * .05;
-  //   // 光沢
-  //   color += smoothstep(.2, .55, snoise(uv + sync) * .4);
-  // }
+  /// voronoi : https://thebookofshaders.com/edit.php#12/vorono-01.frag
+  float minDist = 10.;
+  vec2 minPoint;
 
-  // if (snoise(uv + sync) > .2) {
-  //   // ベースのグラデーション
-  //   color.r = .01;
-  //   color.g += vec3(mix(uv.x, uv.x, snoise(vec2(uv.x + time, uv.y + time)))).g * .25;
-  //   color.b += vec3(mix(uv.y, uv.y, snoise(vec2(uv.x + time, uv.y + time)))).b * .05;
-  // }
+  for (int j = -1; j < 1; j++) {
+    for (int i = -1; i < 1; i++) {
+      vec2 neighbor = vec2(float(i), float(j));
+      vec2 point = random2(fUv + neighbor);
+      point = .5 + .5 * sin(time * .2 + 6.2831 * point);
+      vec2 diff = neighbor + point - iUv;
+      float dist = length(diff);
 
-  // // 光沢
-  // color += smoothstep(.2, .55, snoise(uv + sync) * .4);
+      if (dist < minDist) {
+        minDist = dist;
+        minPoint = point;
+      }
+    }
+  }
+
+  color *= dot(minPoint, vec2(.3, .6));
 
   gl_FragColor = vec4(color, 1.0);
 }
