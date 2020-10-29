@@ -4,21 +4,23 @@ import React from "react";
 import Profile from "./Profile";
 
 import Social from "./Social";
-import Copywrite from "./Copyright";
+import Copyright from "./Copyright";
 
 import Main from "./Main";
 import { Works } from "./Works";
+import { Carousel } from "../../molecules/Carousel";
 
 const Contents: React.FC = () => {
   return (
     <>
       <Main />
       <div className="ContentsWrap">
-        <Profile />
-        <Works />
+        <Carousel />
+        {/* <Profile /> */}
+        {/* <Works /> */}
         {/* <Skills /> */}
-        <Social />
-        <Copywrite />
+        {/* <Social /> */}
+        <Copyright />
       </div>
     </>
   );
