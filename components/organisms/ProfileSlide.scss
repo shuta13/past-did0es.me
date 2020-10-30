@@ -7,7 +7,7 @@
 
 .ProfileSlideContent {
   position: relative;
-  max-width: 1024px;
+  max-width: 768px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -16,12 +16,12 @@
 
 .ProfileSlideIcon {
   max-width: 320px;
-  width: 70vw;
-  margin-top: 32px;
+  width: 50vw;
+  margin-top: 64px;
 }
 
 .ProfileSlideTextWrap {
-  margin: 32px;
+  margin: 48px;
 }
 
 .ProfileSlideTextCommon {

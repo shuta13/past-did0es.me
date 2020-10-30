@@ -1,11 +1,16 @@
 import "./Menu.scss";
 import React from "react";
+import Link from "next/link";
 
 export const Menu: React.FC = () => {
   return (
     <div className="MenuWrap">
-      <div className="MenuPageName">Work</div>
-      <div className="MenuPageName">Contact</div>
+      <Link href="/contact">
+        <a className="MenuPageName">Contact</a>
+      </Link>
+      <Link href="/work">
+        <a className="MenuPageName">Work</a>
+      </Link>
     </div>
   )
 }

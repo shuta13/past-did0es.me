@@ -22,9 +22,9 @@ const Did0esMe = ({
         />
       </Head>
       <Main />
-      {/* <Header /> */}
-      <Menu />
       <Component {...pageProps} />
+      <Header />
+      <Menu />
       <Loading />
     </>
   );
