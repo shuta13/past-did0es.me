@@ -17,34 +17,35 @@
 .ProfileSlideIcon {
   max-width: 320px;
   width: 50vw;
-  margin-top: 64px;
+  margin-top: 12em;
+  margin-bottom: 3em;
 }
 
 .ProfileSlideTextWrap {
-  margin: 48px;
+  margin: 3em;
 }
 
 .ProfileSlideTextCommon {
   color: #ffffff;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Abel", sans-serif;
   font-weight: bold;
   letter-spacing: 2px;
 }
 
 .ProfileSlideTitle {
   @extend .ProfileSlideTextCommon;
-  font-size: 5rem;
+  font-size: 6rem;
   margin-bottom: 8px;
 }
 
 .ProfileSlideSubTitle {
   @extend .ProfileSlideTextCommon;
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 16px;
 }
 
 .ProfileSlideText {
   @extend .ProfileSlideTextCommon;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 8px;
 }

@@ -9,5 +9,5 @@ export const Header: React.FC = () => {
         <a className="HeaderText">did0es</a>
       </Link>
     </div>
-  )
-}
+  );
+};

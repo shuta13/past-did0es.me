@@ -23,7 +23,7 @@ export const ProfileSlide: React.FC = () => {
           </div>
           <div className="ProfileSlideText">Web Developer @ tambourine.inc</div>
           <div className="ProfileSlideText">
-            Ex FrontEnd Engineer @ Tech Design, inc
+            Ex. FrontEnd Engineer @ Tech Design, inc
           </div>
         </div>
       </div>
