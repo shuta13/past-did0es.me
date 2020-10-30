@@ -36,8 +36,11 @@ export const Slide: React.FC<Props> = props => {
         </div>
       ) : (
         <div className="SlideContent">
-          <div className="SlideWorkTitle">{work?.info.title}</div>
-          <div className="SlideWorkDate">{work?.info.title}</div>
+          <div className="SlideWorkOverlay" />
+          <div className="SlideWorkInfo">
+            <div className="SlideWorkTitle">{work?.info.title}</div>
+            <div className="SlideWorkDate">{work?.info.date}</div>
+          </div>
           <img
             className="SlideImage"
             src={require(`../../public/works/${work?.img}`)}

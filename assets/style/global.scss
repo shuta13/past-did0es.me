@@ -6,6 +6,20 @@ body {
   width: 100%;
   min-height: 100%;
   background: #1d1d1d;
+  font-size: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    letter-spacing: 1px;
+    width: 100%;
+    min-height: 100%;
+    background: #1d1d1d;
+    font-size: 4px;
+  }
 }
 
 * {
