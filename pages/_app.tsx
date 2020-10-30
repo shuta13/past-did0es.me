@@ -1,5 +1,9 @@
 import "../assets/style/global.scss";
 import Head from "next/head";
+import Main from "../components/partials/Home/Main";
+import Loading from "../components/common/Loading";
+import { Menu } from "../components/molecules/Menu";
+import { Header } from "../components/molecules/Header";
 
 const Did0esMe = ({
   Component,
@@ -17,7 +21,11 @@ const Did0esMe = ({
           rel="stylesheet"
         />
       </Head>
+      <Main />
+      {/* <Header /> */}
+      <Menu />
       <Component {...pageProps} />
+      <Loading />
     </>
   );
 };

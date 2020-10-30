@@ -1,12 +1,17 @@
 import React from "react";
 
-import Loading from "../components/common/Loading";
-import Contents from "../components/partials/Home/Contents";
+import { ProfileSlide } from "../components/organisms/ProfileSlide";
 
 const Home: React.FC = () => (
   <>
-    <Contents />
-    <Loading />
+    <div className="container">
+      <ProfileSlide />
+      {/* <Profile /> */}
+      {/* <Works /> */}
+      {/* <Skills /> */}
+      {/* <Social /> */}
+      {/* <Copyright /> */}
+    </div>
   </>
 );
 

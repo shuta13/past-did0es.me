@@ -7,22 +7,17 @@ import joint from "../../public/json/joint.json";
 const works = individual.concat(joint);
 
 export const Carousel: React.FC = () => {
-  const [currentSlideName] = useState("profile");
-  // const [currentSlideName] = useState("Candy");
+  const [currentSlideName] = useState("Candy");
 
   return (
     <div className="CarouselWrap">
-      {currentSlideName === "profile" ? (
-        <Slide isProfileSlide={true} work={null} />
-      ) : (
-        <>
-          {works.map((work, index) =>
-            work.info.title === currentSlideName ? (
-              <Slide isProfileSlide={false} work={work} key={index} />
-            ) : null
-          )}
-        </>
-      )}
+      <>
+        {works.map((work, index) =>
+          work.info.title === currentSlideName ? (
+            <Slide work={work} key={index} />
+          ) : null
+        )}
+      </>
     </div>
   );
 };

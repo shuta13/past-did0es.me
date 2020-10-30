@@ -11,7 +11,7 @@ export const ProfileSlide: React.FC = () => {
           alt="icon"
         />
         <div className="ProfileSlideTextWrap">
-          <div className="ProfileSlideTitle">did0es - Shuta HIRAI</div>
+          <div className="ProfileSlideTitle">Shuta HIRAI</div>
           <div className="ProfileSlideSubTitle">Web Developer, Designer</div>
           <div className="ProfileSlideText">Student @ Ritsumeikan Univ</div>
           <div className="ProfileSlideText">FrontEnd Engineer @ Relie, inc</div>

@@ -1,0 +1,17 @@
+.MenuWrap {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 100%;
+  transform-origin: left top;
+  transform: rotate(90deg);
+}
+
+.MenuPageName {
+  color: #ffffff;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 1rem;
+  font-weight: normal;
+}
