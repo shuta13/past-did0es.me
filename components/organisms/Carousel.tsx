@@ -11,14 +11,24 @@ const AppSlide: React.FC<{
   work: typeof works[0];
   slideStyle: React.CSSProperties;
   setSlideWidth: (slideNumber: number) => void;
+  setIsSwipeSlideToLeft: (isSwipeSlideToLeft: boolean) => void;
+  setIsSwipeSlideToRight: (isSwipeSlideToRight: boolean) => void;
 }> = props => {
-  const { work, slideStyle, setSlideWidth } = props;
+  const {
+    work,
+    slideStyle,
+    setSlideWidth,
+    setIsSwipeSlideToLeft,
+    setIsSwipeSlideToRight
+  } = props;
   return (
     <Slide
       work={work}
       key={work.id}
       style={slideStyle}
       setSlideWidth={setSlideWidth}
+      setIsSwipeSlideToLeft={setIsSwipeSlideToLeft}
+      setIsSwipeSlideToRight={setIsSwipeSlideToRight}
     />
   );
 };
@@ -27,6 +37,8 @@ export const Carousel: React.FC = () => {
   const [currentSlideNumber, setCurrentSlideNumber] = useState(1);
   const [translateXValue, setTranslateXValue] = useState(0);
   const [slideWidth, setSlideWidth] = useState(0);
+  const [isSwipeSlideToLeft, setIsSwipeSlideToLeft] = useState(false);
+  const [isSwipeSlideToRight, setIsSwipeSlideToRight] = useState(false);
 
   const handleOnClickPrev = () => {
     works.map(work => {
@@ -50,6 +62,20 @@ export const Carousel: React.FC = () => {
     });
   };
 
+  useEffect(() => {
+    if (isSwipeSlideToLeft) {
+      handleOnClickNext();
+      setIsSwipeSlideToLeft(false);
+    }
+  }, [isSwipeSlideToLeft]);
+
+  useEffect(() => {
+    if (isSwipeSlideToRight) {
+      handleOnClickPrev();
+      setIsSwipeSlideToRight(false);
+    }
+  }, [isSwipeSlideToRight]);
+
   return (
     <>
       <div
@@ -60,8 +86,9 @@ export const Carousel: React.FC = () => {
           <AppSlide
             work={work}
             slideStyle={{
-              transform: `translateX(${100 *
-                (work.id - 1)}%) scale3d(${work.id === currentSlideNumber ? 1 : 0.9}, ${work.id === currentSlideNumber ? 1 : 0.9}, 1)`,
+              transform: `translateX(${100 * (work.id - 1)}%) scale3d(${
+                work.id === currentSlideNumber ? 1 : 0.9
+              }, ${work.id === currentSlideNumber ? 1 : 0.9}, 1)`,
               filter:
                 work.id === currentSlideNumber
                   ? "brightness(1)"
@@ -69,6 +96,8 @@ export const Carousel: React.FC = () => {
             }}
             key={work.id}
             setSlideWidth={setSlideWidth}
+            setIsSwipeSlideToLeft={setIsSwipeSlideToLeft}
+            setIsSwipeSlideToRight={setIsSwipeSlideToRight}
           />
         ))}
       </div>
