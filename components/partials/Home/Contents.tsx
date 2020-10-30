@@ -9,13 +9,15 @@ import Copyright from "./Copyright";
 import Main from "./Main";
 import { Works } from "./Works";
 import { Carousel } from "../../molecules/Carousel";
+import { ProfileSlide } from "../../organisms/ProfileSlide";
 
 const Contents: React.FC = () => {
   return (
     <>
       <Main />
       <div className="ContentsWrap">
-        <Carousel />
+        <ProfileSlide />
+        {/* <Carousel /> */}
         {/* <Profile /> */}
         {/* <Works /> */}
         {/* <Skills /> */}

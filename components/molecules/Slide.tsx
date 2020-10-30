@@ -13,7 +13,7 @@ export const Slide: React.FC<Props> = props => {
   const { isProfileSlide, work } = props;
   return (
     <div className="SlideWrap">
-      {isProfileSlide ? (
+      {/* {isProfileSlide ? (
         <div className="SlideContent">
           <img
             className="SlideProfileIcon"
@@ -34,20 +34,20 @@ export const Slide: React.FC<Props> = props => {
             <div className="SlideText">Web Developer @ tambourine.inc</div>
           </div>
         </div>
-      ) : (
-        <div className="SlideContent">
-          <div className="SlideWorkOverlay" />
-          <div className="SlideWorkInfo">
-            <div className="SlideWorkDate">{work?.info.date}</div>
-            <div className="SlideWorkTitle">{work?.info.title}</div>
-          </div>
-          <img
-            className="SlideImage"
-            src={require(`../../public/works/${work?.img}`)}
-            alt="Works Image"
-          />
+      ) : ( */}
+      <div className="SlideContent">
+        <div className="SlideWorkOverlay" />
+        <div className="SlideWorkInfo">
+          <div className="SlideWorkDate">{work?.info.date}</div>
+          <div className="SlideWorkTitle">{work?.info.title}</div>
         </div>
-      )}
+        <img
+          className="SlideImage"
+          src={require(`../../public/works/${work?.img}`)}
+          alt="Works Image"
+        />
+      </div>
+      {/* )} */}
     </div>
   );
 };

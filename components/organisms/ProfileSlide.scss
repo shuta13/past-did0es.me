@@ -1,0 +1,50 @@
+.ProfileSlideWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ProfileSlideContent {
+  position: relative;
+  max-width: 1024px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.ProfileSlideIcon {
+  max-width: 320px;
+  width: 70vw;
+  margin-top: 32px;
+}
+
+.ProfileSlideTextWrap {
+  margin: 32px;
+}
+
+.ProfileSlideTextCommon {
+  color: #ffffff;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.ProfileSlideTitle {
+  @extend .ProfileSlideTextCommon;
+  font-size: 5rem;
+  margin-bottom: 8px;
+}
+
+.ProfileSlideSubTitle {
+  @extend .ProfileSlideTextCommon;
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.ProfileSlideText {
+  @extend .ProfileSlideTextCommon;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
