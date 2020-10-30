@@ -12,11 +12,11 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .SlideTextWrap {
-  width: 100%;
-  margin-left: 32px;
+  margin: 32px;
 }
 
 .SlideTextCommon {
@@ -46,6 +46,8 @@
 
 .SlideProfileIcon {
   max-width: 320px;
+  width: 90vw;
+  margin: 32px 0;
 }
 
 .SlideImageWrap {

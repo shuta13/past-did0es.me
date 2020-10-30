@@ -20,7 +20,7 @@ const Contents: React.FC = () => {
         {/* <Works /> */}
         {/* <Skills /> */}
         {/* <Social /> */}
-        <Copyright />
+        {/* <Copyright /> */}
       </div>
     </>
   );
