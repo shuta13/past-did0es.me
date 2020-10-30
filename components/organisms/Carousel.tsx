@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Carousel.scss";
 import { Slide } from "../molecules/Slide";
 import works from "../../public/json/works.json";
@@ -10,22 +10,29 @@ works.map(work => workNames.push(work.info.title));
 const AppSlide: React.FC<{
   work: typeof works[0];
   slideStyle: React.CSSProperties;
+  setSlideWidth: (slideNumber: number) => void;
 }> = props => {
-  const { work, slideStyle } = props;
-  return <Slide work={work} key={work.id} style={slideStyle} />;
+  const { work, slideStyle, setSlideWidth } = props;
+  return (
+    <Slide
+      work={work}
+      key={work.id}
+      style={slideStyle}
+      setSlideWidth={setSlideWidth}
+    />
+  );
 };
 
 export const Carousel: React.FC = () => {
   const [currentSlideNumber, setCurrentSlideNumber] = useState(1);
   const [translateXValue, setTranslateXValue] = useState(0);
-
-  // Slide の 幅 + 3em 分動かしたい
+  const [slideWidth, setSlideWidth] = useState(0);
 
   const handleOnClickPrev = () => {
     works.map(work => {
       if (work.id === currentSlideNumber - 1) {
         setCurrentSlideNumber(work.id);
-        setTranslateXValue((1024 + 16 * 3) * (work.id - 1));
+        slideWidth !== 0 && setTranslateXValue(slideWidth * (work.id - 1));
       }
     });
   };
@@ -34,11 +41,10 @@ export const Carousel: React.FC = () => {
     works.map(work => {
       if (work.id === currentSlideNumber + 1) {
         setCurrentSlideNumber(work.id);
-        console.log(window.innerWidth * 0.046 * work.id);
         setTranslateXValue(
-          translateXValue === 0
-            ? 1024 + 16 * 3
-            : (1024 + 16 * 3) * (work.id - 1)
+          translateXValue === 0 && slideWidth !== 0
+            ? slideWidth
+            : slideWidth * (work.id - 1)
         );
       }
     });
@@ -54,10 +60,15 @@ export const Carousel: React.FC = () => {
           <AppSlide
             work={work}
             slideStyle={{
-              transform: `translateX(${100 * (work.id - 1)}%)`,
-              filter: "brightness(0.9)"
+              transform: `translateX(${100 *
+                (work.id - 1)}%) scale3d(${work.id === currentSlideNumber ? 1 : 0.9}, ${work.id === currentSlideNumber ? 1 : 0.9}, 1)`,
+              filter:
+                work.id === currentSlideNumber
+                  ? "brightness(1)"
+                  : "brightness(0.3)"
             }}
             key={work.id}
+            setSlideWidth={setSlideWidth}
           />
         ))}
       </div>

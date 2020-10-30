@@ -1,19 +1,29 @@
 import "./Slide.scss";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import works from "../../public/json/works.json";
 
 interface Props {
   work: typeof works[0];
   style: React.CSSProperties;
+  setSlideWidth: (slideWidth: number) => void;
 }
 
 export const Slide: React.FC<Props> = props => {
-  const { work, style } = props;
+  const { work, style, setSlideWidth } = props;
   const name = work?.img.split(".")[0];
+
+  const slideRef = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    slideRef != null &&
+      slideRef.current?.clientWidth != null &&
+      setSlideWidth(slideRef.current?.clientWidth);
+  }, [slideRef]);
+
   return (
     <Link href={`works/details/${name}`}>
-      <a className="SlideWrap" style={style}>
+      <a className="SlideWrap" style={style} ref={slideRef}>
         <div className="SlideContent">
           <div className="SlideWorkOverlay" />
           <div className="SlideWorkInfo">
