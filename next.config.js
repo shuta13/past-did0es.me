@@ -33,7 +33,7 @@ module.exports = withSass(withImages({
     }
     works.map(work => {
       const name = work.img.split(".")[0]
-      paths[`works/details/${name}`] = { page: "/details/[name]" }
+      paths[`works/details/${name}`] = { page: "works/details/[name]" }
     })
     return paths
   }
