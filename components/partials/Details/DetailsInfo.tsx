@@ -16,8 +16,8 @@ const DetailsInfo: React.FC<{ info: InfoParams }> = ({ info }) => {
   return (
     <div className="DetailsInfoWrap">
       <div className="DetailsInfoTitle">{info.title}</div>
-      <div className="DetailsInfoText">{info.date}</div>
-      <div className="DetailsInfoText">{info.tags}</div>
+      <div className="DetailsInfoDate">{info.date}</div>
+      <div className="DetailsInfoTags">{info.tags}</div>
       <div className="DetailsInfoDescription">
         <div
           dangerouslySetInnerHTML={{

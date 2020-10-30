@@ -1,5 +1,54 @@
 [
   {
+    "id": 1,
+    "img": "vue-tsx-keyframes.png",
+    "info": {
+      "title": "vue-tsx-keyframes",
+      "date": "Feb. 23, 2020",
+      "tags": "OSS, Vue.js, TSX, Library",
+      "desc": "vue-tsx-supportというライブラリでCSSinJSでCSSを使用する際に，keyframesを扱えるようにするためのライブラリです OSSとして何かライブラリを作りたいと思い制作しました． 　実装にはVue.jsとTypeScriptを用いて，WebAPIを叩く形で実装しています．  また，ライブラリのロゴもFigmaを用いて制作しました keyframesの線形補間をイメージした曲線にTypeScriptを表す青とVue.jsを表す緑を合わせ，ライブラリを表現するようなロゴをデザインしました．",
+      "subDesc": "",
+      "link": "https://github.com/shuta13/vue-tsx-keyframes"
+    }
+  },
+  {
+    "id": 2,
+    "img": "rev.png",
+    "info": {
+      "title": "Re:V",
+      "date": "July 29, 2020",
+      "tags": "Next.js, WebGL, Three.js",
+      "desc": "VJパフォーマンス向けWebアプリのプロトタイプとして制作したオーディオビジュアライザーです．  Three.js内のAudio機能によって音源のスペクトルを計算し，GLSL側にテクスチャとして読み込ませることでシェーダーに動きを反映させました．  Next.jsと組み合わせて実装しています．",
+      "subDesc": "",
+      "link": "https://re-v.vercel.app"
+    }
+  },
+  {
+    "id": 3,
+    "img": "maraviglia-archives.png",
+    "info": {
+      "title": "Maraviglia Archives",
+      "date": "Apr. 11, 2020",
+      "tags": "Next.js, WebGL, Three.js",
+      "desc": "WebGLによる作品をまとめたWebサイトです Webサイトの実装を個人で行いました Next.jsとWebGLを組み合わせて実装しています．  WebGLでの作品制作・公開のためのWebサイトとして現在も開発中です．",
+      "subDesc": "",
+      "link": "https://maraviglia.now.sh"
+    }
+  },
+  {
+    "id": 4,
+    "img": "garelly.png",
+    "info": {
+      "title": "GARELLY",
+      "date": "May 25, 2019",
+      "tags": "WebComponents, 2D Graphics, Processing, Photoshop",
+      "desc": "過去に習作として制作した2Dグラフィックス作品をまとめたWebサイトです Webサイトのデザインから実装までを個人で行いました．  デザインはSketchを用いて実装しつつ，過去に制作したWebサイトのUIも参考にしました また，実装にはReactやVue.jsなどのライブラリ・フレームワークは用いず，試験的にWebComponentsを使用しました 合わせてTypeScriptの環境もWebpackで構築しました．  Webサイトに載せたグラフィックス作品はProcessingやPhotoshopを用いて制作したものです．",
+      "subDesc": "",
+      "link": "https://garelly.did0es.me"
+    }
+  },
+  {
+    "id": 5,
     "img": "candy.png",
     "info": {
       "title": "Candy",
@@ -11,6 +60,7 @@
     }
   },
   {
+    "id": 6,
     "img": "elevenback-fc2019-flyer.png",
     "info": {
       "title": "ElevenBack FC2019 Flyer",
@@ -22,6 +72,7 @@
     }
   },
   {
+    "id": 7,
     "img": "tambourine-podcast-site.png",
     "info": {
       "title": "tambourine podcast site",
@@ -33,6 +84,7 @@
     }
   },
   {
+    "id": 8,
     "img": "veginning.png",
     "info": {
       "title": "Veginning",

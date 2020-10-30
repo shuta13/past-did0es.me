@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import DetailsInfo from "./DetailsInfo";
 
-import individual from "../../../public/json/individual.json";
-import joint from "../../../public/json/joint.json";
+import works from "../../../public/json/works.json";
 import "./Details.scss";
 import Loading from "../../common/Loading";
 import { BackButton } from "../../common/BackButton";
@@ -11,7 +10,6 @@ import ImagePostProcess from "../../common/ImagePostProcess";
 
 const Details: React.FC<{ name: string | string[] }> = ({ name }) => {
   const [isClicked, setIsClicked] = useState(false);
-  const works = individual.concat(joint);
 
   return (
     <>
@@ -55,8 +53,8 @@ const Details: React.FC<{ name: string | string[] }> = ({ name }) => {
                 />
                 <DetailsInfo info={work.info} />
               </div>
-              <BackButton isClicked={isClicked} setIsClicked={setIsClicked} />
-              <Loading />
+              {/* <BackButton isClicked={isClicked} setIsClicked={setIsClicked} /> */}
+              {/* <Loading /> */}
             </>
           ) : null}
         </div>

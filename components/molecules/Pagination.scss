@@ -1,0 +1,27 @@
+.PaginationWrap {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 12em;
+}
+
+.PaginationButton {
+  outline: none;
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-family: "Abel", sans-serif;
+  font-size: 3rem;
+  cursor: pointer;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.PaginationNumber {
+  color: #ffffff;
+  font-family: "Abel", sans-serif;
+  font-size: 3rem;
+  margin: 0 0.5em;
+}

@@ -3,11 +3,9 @@ import React from "react";
 import AppTitle from "../../common/AppTitle";
 import AppWorks from "../../common/AppWorks";
 
-import individual from "../../../public/json/individual.json";
-import joint from "../../../public/json/joint.json";
+import works from "../../../public/json/works.json";
 
 export const Works: React.FC = () => {
-  const works = individual.concat(joint);
   return (
     <div className="WorksWrap">
       <div className="WorksClip">

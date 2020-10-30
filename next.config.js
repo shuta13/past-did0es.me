@@ -35,7 +35,7 @@ module.exports = withSass(withImages({
     const works = individual.concat(joint)
     works.map(work => {
       const name = work.img.split(".")[0]
-      paths[`/details/${name}`] = { page: "/details/[name]" }
+      paths[`works/details/${name}`] = { page: "/details/[name]" }
     })
     return paths
   }

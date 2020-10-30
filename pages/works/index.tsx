@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel } from "../../components/molecules/Carousel";
+import { Carousel } from "../../components/organisms/Carousel";
 
 const Work: React.FC = () => {
   return (
