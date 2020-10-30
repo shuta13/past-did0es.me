@@ -1,7 +1,6 @@
 const withSass = require('@zeit/next-sass')
 const withImages = require('next-images')
-const individual = require("./public/json/individual.json")
-const joint = require("./public/json/joint.json")
+const works = require("./public/json/works.json")
 
 module.exports = withSass(withImages({
   env: {
@@ -32,7 +31,6 @@ module.exports = withSass(withImages({
     const paths = {
       "/": { page: "/" }
     }
-    const works = individual.concat(joint)
     works.map(work => {
       const name = work.img.split(".")[0]
       paths[`works/details/${name}`] = { page: "/details/[name]" }

@@ -1,21 +1,20 @@
 import "./Slide.scss";
 import React from "react";
 import Link from "next/link";
+import works from "../../public/json/works.json";
 
 interface Props {
-  work: {
-    img: string;
-    info: { [key: string]: string };
-  } | null;
+  work: typeof works[0];
+  style: React.CSSProperties;
 }
 
 export const Slide: React.FC<Props> = props => {
-  const { work } = props;
-  const name = work?.img.split(".")[0]
+  const { work, style } = props;
+  const name = work?.img.split(".")[0];
   return (
-    <div className="SlideWrap">
-      <Link href={`works/details/${name}`}>
-        <a className="SlideContent">
+    <Link href={`works/details/${name}`}>
+      <a className="SlideWrap" style={style}>
+        <div className="SlideContent">
           <div className="SlideWorkOverlay" />
           <div className="SlideWorkInfo">
             <div className="SlideWorkDate">{work?.info.date}</div>
@@ -26,8 +25,8 @@ export const Slide: React.FC<Props> = props => {
             src={require(`../../public/works/${work?.img}`)}
             alt="Works Image"
           />
-        </a>
-      </Link>
-    </div>
+        </div>
+      </a>
+    </Link>
   );
 };
