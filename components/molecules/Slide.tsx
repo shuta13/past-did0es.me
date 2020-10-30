@@ -38,8 +38,8 @@ export const Slide: React.FC<Props> = props => {
         <div className="SlideContent">
           <div className="SlideWorkOverlay" />
           <div className="SlideWorkInfo">
-            <div className="SlideWorkTitle">{work?.info.title}</div>
             <div className="SlideWorkDate">{work?.info.date}</div>
+            <div className="SlideWorkTitle">{work?.info.title}</div>
           </div>
           <img
             className="SlideImage"

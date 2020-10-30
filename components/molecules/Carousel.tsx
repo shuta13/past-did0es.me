@@ -8,6 +8,7 @@ const works = individual.concat(joint);
 
 export const Carousel: React.FC = () => {
   const [currentSlideName] = useState("profile");
+  // const [currentSlideName] = useState("Candy");
 
   return (
     <div className="CarouselWrap">
