@@ -22,7 +22,6 @@ export const Slide: React.FC<Props> = props => {
   const name = work?.img.split(".")[0];
   const [startMousePosition, setStartMousePosition] = useState(0);
   const [isFirstDragCaptured, setIsFirstDragCaptured] = useState(false);
-  const [isImgLoaded, setIsImgLoaded] = useState(false);
 
   const slideRef = useRef<HTMLAnchorElement>(null);
 
@@ -30,13 +29,6 @@ export const Slide: React.FC<Props> = props => {
     slideRef.current?.clientWidth != null &&
       setSlideWidth(slideRef.current?.clientWidth);
   }, [slideRef]);
-
-  const handleImgLoaded = () => {
-    slideRef.current?.clientWidth != null &&
-      setSlideWidth(slideRef.current?.clientWidth);
-    setIsImgLoaded(true);
-    console.log(slideRef.current?.clientWidth);
-  };
 
   const handleOnDragStart = (e: React.MouseEvent) => {
     setIsFirstDragCaptured(true);
@@ -72,7 +64,6 @@ export const Slide: React.FC<Props> = props => {
             className="SlideImage"
             src={require(`../../public/works/${work?.img}`)}
             alt="Works Image"
-            ref={handleImgLoaded}
           />
         </div>
       </a>
