@@ -7,7 +7,7 @@ const Loading: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <div className={isLoaded ? "LoadingLoaded" : "Loading"}>
+    <div className={isLoaded ? "LoadingOverlayLoaded" : "LoadingOverlay"}>
       <div className={isLoaded ? "LoadingImageLoaded" : "LoadingImage"}>
         <LoadingCanvas setIsLoaded={setIsLoaded} />
       </div>

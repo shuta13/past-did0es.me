@@ -81,32 +81,34 @@ const LoadingCanvas: React.FC<{
       },
       texture: {
         type: "t",
-        value: new TextureLoader().load("/loading.jpg", () => setIsLoaded(true))
+        value: new TextureLoader().load("/loading.jpg", () => {
+          const material = new RawShaderMaterial({
+            uniforms: uniforms,
+            vertexShader: vert.default,
+            fragmentShader: frag.default
+          });
+          const mesh = new Mesh(geometry, material);
+          scene.add(mesh);
+          const clock = new Clock();
+          clock.start();
+          const renderer = new WebGLRenderer({
+            canvas: canvas,
+            antialias: false,
+            alpha: false
+          });
+          renderer.setClearColor(0x1d1d1d);
+          renderer.setPixelRatio(window.devicePixelRatio);
+          renderer.setSize(width, height);
+          // renderer.setSize(window.innerWidth, window.innerHeight);
+          renderer.render(scene, camera);
+          // window.addEventListener("resize", () =>
+          //   handleResize({ geometry, renderer })
+          // );
+          animate({ scene, camera, renderer, uniforms, clock });
+          setIsLoaded(true);
+        })
       }
     };
-    const material = new RawShaderMaterial({
-      uniforms: uniforms,
-      vertexShader: vert.default,
-      fragmentShader: frag.default
-    });
-    const mesh = new Mesh(geometry, material);
-    scene.add(mesh);
-    const clock = new Clock();
-    clock.start();
-    const renderer = new WebGLRenderer({
-      canvas: canvas,
-      antialias: false,
-      alpha: false
-    });
-    renderer.setClearColor(0x1d1d1d);
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(width, height);
-    // renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.render(scene, camera);
-    // window.addEventListener("resize", () =>
-    //   handleResize({ geometry, renderer })
-    // );
-    animate({ scene, camera, renderer, uniforms, clock });
   };
   useEffect(() => {
     // return () => window.removeEventListener("resize", () => handleResize);
