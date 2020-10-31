@@ -29,13 +29,16 @@ type HandleResizeParams = {
   renderer: WebGLRenderer;
 };
 
-const LoadingCanvas = () => {
+const LoadingCanvas: React.FC<{
+  setIsLoaded: (isLoaded: boolean) => void;
+}> = props => {
   // let isNeedsStopUpdate = false;
   // const handleResize = ({ geometry, renderer }: HandleResizeParams) => {
   //   isNeedsStopUpdate = true;
   //   // renderer.setSize(window.innerWidth, window.innerHeight);
   //   isNeedsStopUpdate = false;
   // };
+  const { setIsLoaded } = props;
   let animationFrameId = 0;
   const animate = ({
     scene,
@@ -78,7 +81,7 @@ const LoadingCanvas = () => {
       },
       texture: {
         type: "t",
-        value: new TextureLoader().load("/loading.jpg")
+        value: new TextureLoader().load("/loading.jpg", () => setIsLoaded(true))
       }
     };
     const material = new RawShaderMaterial({
