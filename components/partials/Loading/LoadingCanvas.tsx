@@ -78,7 +78,7 @@ const LoadingCanvas = () => {
       },
       texture: {
         type: "t",
-        value: new TextureLoader().load("/loading.png")
+        value: new TextureLoader().load("/loading.jpg")
       }
     };
     const material = new RawShaderMaterial({
