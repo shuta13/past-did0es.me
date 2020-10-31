@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 
-import Details from "../../../components/partials/Details/Details";
+import Details from "../../components/partials/Details/Details";
 import { useRouter } from "next/router";
 
 const DetailsHome = () => {
