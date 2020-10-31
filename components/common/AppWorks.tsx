@@ -67,7 +67,7 @@ const AppWorks: React.FC<{
           {/* </Link> */}
         </div>
       </div>
-      <LoadingBlinder isClicked={isClicked} />
+      {/* <LoadingBlinder isClicked={isClicked} /> */}
     </>
   );
 };

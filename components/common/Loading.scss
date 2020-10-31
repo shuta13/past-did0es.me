@@ -8,7 +8,8 @@
   background: #161616;
   z-index: 999999;
   transform: translateX(0%);
-  transition: transform cubic-bezier(.9,.23,.48,.97) 1s;
+  transition: transform cubic-bezier(0.9, 0.23, 0.48, 0.97) 1s,
+    opacity cubic-bezier(0.55, 0.04, 0.47, 0.98) 0.2s;
 }
 
 .Loading {
@@ -19,7 +20,8 @@
 .LoadingLoaded {
   @extend .LoadingCommon;
   transform: translateX(116%) scale(1.2) rotate(-4deg) translateY(-4%);
-  transition-delay: .6s;
+  opacity: 0;
+  transition-delay: 0.6s;
 }
 
 // .LoadingFinished {
@@ -34,7 +36,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform cubic-bezier(.9,.23,.48,.97) 1s, opacity ease-in-out .4s;
+  transition: transform cubic-bezier(0.9, 0.23, 0.48, 0.97) 1s,
+    opacity cubic-bezier(0.55, 0.04, 0.47, 0.98) 0.2s;
 }
 
 .LoadingImage {

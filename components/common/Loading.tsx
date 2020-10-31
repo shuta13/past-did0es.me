@@ -1,8 +1,7 @@
 import "./Loading.scss";
 import React, { useState, useEffect } from "react";
-import Router from "next/router";
 
-import AppLoading from "../partials/Loading/AppLoading";
+import LoadingCanvas from "../partials/Loading/LoadingCanvas";
 
 const Loading: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -27,7 +26,7 @@ const Loading: React.FC = () => {
   // }
 
   const onDomLoaded = () => {
-    window.addEventListener("load", () => {
+    window.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         setIsLoaded(true);
         setIsFinished(true);
@@ -45,7 +44,7 @@ const Loading: React.FC = () => {
   return (
     <div className={isLoaded ? "LoadingLoaded" : "Loading"} ref={onDomLoaded}>
       <div className={isLoaded ? "LoadingImageLoaded" : "LoadingImage"}>
-        <AppLoading />
+        <LoadingCanvas />
       </div>
     </div>
   );

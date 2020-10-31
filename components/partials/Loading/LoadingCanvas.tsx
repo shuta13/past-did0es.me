@@ -1,4 +1,4 @@
-import "./AppLoading.scss";
+import "./LoadingCanvas.scss";
 import React, { useEffect } from "react";
 import {
   Scene,
@@ -29,7 +29,7 @@ type HandleResizeParams = {
   renderer: WebGLRenderer;
 };
 
-const AppLoading = () => {
+const LoadingCanvas = () => {
   // let isNeedsStopUpdate = false;
   // const handleResize = ({ geometry, renderer }: HandleResizeParams) => {
   //   isNeedsStopUpdate = true;
@@ -111,4 +111,4 @@ const AppLoading = () => {
   return <canvas ref={onCanvasLoaded} className="AppLoading" />;
 };
 
-export default AppLoading;
+export default LoadingCanvas;
