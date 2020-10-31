@@ -89,6 +89,7 @@ export const Slide: React.FC<Props> = props => {
             className="SlideImage"
             src={require(`../../public/works/${work?.img}`)}
             alt="Works Image"
+            onLoad={() => console.log("loaded")}
           />
         </div>
       </a>

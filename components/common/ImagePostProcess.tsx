@@ -119,45 +119,51 @@ const ImagePostProcess: React.FC<{
     const camera = new OrthographicCamera(-1, 1, 1, -1, 1, 1000);
     camera.position.set(0, 0, 100);
     camera.lookAt(scene.position);
-    const geometry = new PlaneBufferGeometry(2, 2);
     const image = new Image();
     image.src = textureImage;
     image.onload = () => {
       config.imageWidth = image.naturalWidth;
       config.imageHeight = image.naturalHeight;
+
+      const uniforms = {
+        time: {
+          type: "f",
+          value: 0.0
+        },
+        resolution: {
+          type: "v2",
+          value: new Vector2(config.width, config.height)
+        },
+        texture: {
+          type: "t",
+          value: new TextureLoader().load(textureImage)
+        },
+        textureSize: {
+          type: "v2",
+          value: new Vector2(config.imageWidth, config.imageHeight)
+        }
+      };
+      const geometry = new PlaneBufferGeometry(2, 2);
+      const material = new RawShaderMaterial({
+        uniforms: uniforms,
+        vertexShader: vert.default,
+        fragmentShader: frag.default
+      });
+      const mesh = new Mesh(geometry, material);
+      scene.add(mesh);
+
+      const clock = new Clock();
+      clock.start();
+
+      const renderer = new WebGLRenderer({ canvas: canvas, antialias: false });
+      renderer.setClearColor(0x1d1d1d);
+      renderer.setSize(config.width, config.height);
+
+      window.addEventListener("resize", () =>
+        handleResize({ camera, renderer })
+      );
+      animate({ scene, camera, renderer, uniforms, clock, image });
     };
-    const uniforms = {
-      time: {
-        type: "f",
-        value: 0.0
-      },
-      resolution: {
-        type: "v2",
-        value: new Vector2(config.width, config.height)
-      },
-      texture: {
-        type: "t",
-        value: new TextureLoader().load(textureImage)
-      },
-      textureSize: {
-        type: "v2",
-        value: new Vector2(config.imageWidth, config.imageHeight)
-      }
-    };
-    const material = new RawShaderMaterial({
-      uniforms: uniforms,
-      vertexShader: vert.default,
-      fragmentShader: frag.default
-    });
-    const mesh = new Mesh(geometry, material);
-    scene.add(mesh);
-    const clock = new Clock();
-    clock.start();
-    const renderer = new WebGLRenderer({ canvas: canvas, antialias: false });
-    renderer.setClearColor(0x1d1d1d);
-    renderer.setSize(config.width, config.height);
-    window.addEventListener("resize", () => handleResize({ camera, renderer }));
-    animate({ scene, camera, renderer, uniforms, clock, image });
   };
   useEffect(() => {
     return () => window.removeEventListener("resize", () => handleResize);
