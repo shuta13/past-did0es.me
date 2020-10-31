@@ -30,16 +30,34 @@ export const Slide: React.FC<Props> = props => {
       setSlideWidth(slideRef.current?.clientWidth);
   }, [slideRef]);
 
-  const handleOnDragStart = (e: React.MouseEvent) => {
+  const handleOnDragStart = (e: React.MouseEvent<HTMLAnchorElement>) => {
     setIsFirstDragCaptured(true);
     setStartMousePosition(e.clientX);
   };
 
-  const handleOnDragCapture = (e: React.MouseEvent) => {
-    if (startMousePosition - e.clientX > 100 && isFirstDragCaptured) {
+  const handleOnDragCapture = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (startMousePosition - e.clientX > 60 && isFirstDragCaptured) {
       setIsSwipeSlideToLeft(true);
       setIsFirstDragCaptured(false);
-    } else if (startMousePosition - e.clientX < -100 && isFirstDragCaptured) {
+    } else if (startMousePosition - e.clientX < -60 && isFirstDragCaptured) {
+      setIsSwipeSlideToRight(true);
+      setIsFirstDragCaptured(false);
+    }
+  };
+
+  const handleOnTouchStart = (e: React.TouchEvent<HTMLAnchorElement>) => {
+    setIsFirstDragCaptured(true);
+    setStartMousePosition(e.touches[0].clientX);
+  };
+
+  const handleOnTouchMove = (e: React.TouchEvent<HTMLAnchorElement>) => {
+    if (startMousePosition - e.touches[0].clientX > 60 && isFirstDragCaptured) {
+      setIsSwipeSlideToLeft(true);
+      setIsFirstDragCaptured(false);
+    } else if (
+      startMousePosition - e.touches[0].clientX < -60 &&
+      isFirstDragCaptured
+    ) {
       setIsSwipeSlideToRight(true);
       setIsFirstDragCaptured(false);
     }
@@ -53,6 +71,8 @@ export const Slide: React.FC<Props> = props => {
         ref={slideRef}
         onDragCapture={handleOnDragCapture}
         onDragStart={handleOnDragStart}
+        onTouchMove={handleOnTouchMove}
+        onTouchStart={handleOnTouchStart}
       >
         <div className="SlideContent">
           <div className="SlideWorkOverlay" />
