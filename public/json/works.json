@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "img": "vue-tsx-keyframes.png",
+    "img": "vue-tsx-keyframes.jpg",
     "pathname": "vue-tsx-keyframes",
     "info": {
       "title": "vue-tsx-keyframes",
@@ -14,7 +14,7 @@
   },
   {
     "id": 2,
-    "img": "rev.png",
+    "img": "rev.jpg",
     "pathname": "rev",
     "info": {
       "title": "Re:V",
@@ -27,7 +27,7 @@
   },
   {
     "id": 3,
-    "img": "maraviglia-archives.png",
+    "img": "maraviglia-archives.jpg",
     "pathname": "maraviglia-archives",
     "info": {
       "title": "Maraviglia Archives",
@@ -40,7 +40,7 @@
   },
   {
     "id": 4,
-    "img": "garelly.png",
+    "img": "garelly.jpg",
     "pathname": "garelly",
     "info": {
       "title": "GARELLY",
@@ -53,7 +53,7 @@
   },
   {
     "id": 5,
-    "img": "candy.png",
+    "img": "candy.jpg",
     "pathname": "candy",
     "info": {
       "title": "Candy",
@@ -66,7 +66,7 @@
   },
   {
     "id": 6,
-    "img": "elevenback-fc2019-flyer.png",
+    "img": "elevenback-fc2019-flyer.jpg",
     "pathname": "elevenback-fc2019-flyer",
     "info": {
       "title": "ElevenBack FC2019 Flyer",
@@ -79,7 +79,7 @@
   },
   {
     "id": 7,
-    "img": "tambourine-podcast-site.png",
+    "img": "tambourine-podcast-site.jpg",
     "pathname": "tambourine-podcast-site",
     "info": {
       "title": "tambourine podcast site",
@@ -92,7 +92,7 @@
   },
   {
     "id": 8,
-    "img": "veginning.png",
+    "img": "veginning.jpg",
     "pathname": "veginning",
     "info": {
       "title": "Veginning",
