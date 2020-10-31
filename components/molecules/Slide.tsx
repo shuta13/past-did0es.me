@@ -1,14 +1,17 @@
 import "./Slide.scss";
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import works from "../../public/json/works.json";
+import { Work } from "../organisms/Carousel";
+import { Modal } from "./Modal";
 
 interface Props {
-  work: typeof works[0];
+  work: Work;
   style: React.CSSProperties;
   setSlideWidth: (slideWidth: number) => void;
   setIsSwipeSlideToLeft: (isSwipeSlideToLeft: boolean) => void;
   setIsSwipeSlideToRight: (isSwipeSlideToRight: boolean) => void;
+  setIsShowModal: (isShowModal: boolean) => void;
+  isShowModal: boolean;
 }
 
 export const Slide: React.FC<Props> = props => {
@@ -17,9 +20,10 @@ export const Slide: React.FC<Props> = props => {
     style,
     setSlideWidth,
     setIsSwipeSlideToLeft,
-    setIsSwipeSlideToRight
+    setIsSwipeSlideToRight,
+    setIsShowModal,
+    isShowModal
   } = props;
-  const name = work?.img.split(".")[0];
   const [startMousePosition, setStartMousePosition] = useState(0);
   const [isFirstDragCaptured, setIsFirstDragCaptured] = useState(false);
 
@@ -64,7 +68,7 @@ export const Slide: React.FC<Props> = props => {
   };
 
   return (
-    <Link href={`works/details/${name}`}>
+    <Link href={`/works/details/${work.pathname}`}>
       <a
         className="SlideWrap"
         style={style}
@@ -73,6 +77,7 @@ export const Slide: React.FC<Props> = props => {
         onDragStart={handleOnDragStart}
         onTouchMove={handleOnTouchMove}
         onTouchStart={handleOnTouchStart}
+        onClick={() => setIsShowModal(true)}
       >
         <div className="SlideContent">
           <div className="SlideWorkOverlay" />
@@ -87,6 +92,9 @@ export const Slide: React.FC<Props> = props => {
           />
         </div>
       </a>
+      {/* {isShowModal && (
+        <Modal work={work} style={style} setIsShowModal={setIsShowModal} />
+      )} */}
     </Link>
   );
 };

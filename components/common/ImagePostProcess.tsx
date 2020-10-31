@@ -33,7 +33,7 @@ type HandleResizeParams = {
 
 const ImagePostProcess: React.FC<{
   img: string;
-  isBackButtonClicked: boolean;
+  isBackButtonClicked?: boolean;
 }> = ({ img, isBackButtonClicked }) => {
   const [textureImage, setTextureImage] = useState("");
   useEffect(() => {

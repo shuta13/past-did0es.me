@@ -3,23 +3,30 @@ import "./Carousel.scss";
 import { Slide } from "../molecules/Slide";
 import works from "../../public/json/works.json";
 import { Pagination } from "../molecules/Pagination";
+import { Modal } from "../molecules/Modal";
 
 const workNames = [];
 works.map(work => workNames.push(work.info.title));
 
+export type Work = typeof works[0];
+
 const AppSlide: React.FC<{
-  work: typeof works[0];
+  work: Work;
   slideStyle: React.CSSProperties;
   setSlideWidth: (slideNumber: number) => void;
   setIsSwipeSlideToLeft: (isSwipeSlideToLeft: boolean) => void;
   setIsSwipeSlideToRight: (isSwipeSlideToRight: boolean) => void;
+  setIsShowModal: (isShowModal: boolean) => void;
+  isShowModal: boolean;
 }> = props => {
   const {
     work,
     slideStyle,
     setSlideWidth,
     setIsSwipeSlideToLeft,
-    setIsSwipeSlideToRight
+    setIsSwipeSlideToRight,
+    setIsShowModal,
+    isShowModal
   } = props;
   return (
     <Slide
@@ -29,6 +36,8 @@ const AppSlide: React.FC<{
       setSlideWidth={setSlideWidth}
       setIsSwipeSlideToLeft={setIsSwipeSlideToLeft}
       setIsSwipeSlideToRight={setIsSwipeSlideToRight}
+      setIsShowModal={setIsShowModal}
+      isShowModal={isShowModal}
     />
   );
 };
@@ -39,6 +48,7 @@ export const Carousel: React.FC = () => {
   const [slideWidth, setSlideWidth] = useState(0);
   const [isSwipeSlideToLeft, setIsSwipeSlideToLeft] = useState(false);
   const [isSwipeSlideToRight, setIsSwipeSlideToRight] = useState(false);
+  const [isShowModal, setIsShowModal] = useState(false);
 
   const handleOnClickPrev = () => {
     works.map(work => {
@@ -98,6 +108,8 @@ export const Carousel: React.FC = () => {
             setSlideWidth={setSlideWidth}
             setIsSwipeSlideToLeft={setIsSwipeSlideToLeft}
             setIsSwipeSlideToRight={setIsSwipeSlideToRight}
+            setIsShowModal={setIsShowModal}
+            isShowModal={isShowModal}
           />
         ))}
       </div>

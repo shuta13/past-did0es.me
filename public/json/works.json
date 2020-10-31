@@ -2,6 +2,7 @@
   {
     "id": 1,
     "img": "vue-tsx-keyframes.png",
+    "pathname": "vue-tsx-keyframes",
     "info": {
       "title": "vue-tsx-keyframes",
       "date": "Feb. 23, 2020",
@@ -14,6 +15,7 @@
   {
     "id": 2,
     "img": "rev.png",
+    "pathname": "rev",
     "info": {
       "title": "Re:V",
       "date": "July 29, 2020",
@@ -26,6 +28,7 @@
   {
     "id": 3,
     "img": "maraviglia-archives.png",
+    "pathname": "maraviglia-archives",
     "info": {
       "title": "Maraviglia Archives",
       "date": "Apr. 11, 2020",
@@ -38,6 +41,7 @@
   {
     "id": 4,
     "img": "garelly.png",
+    "pathname": "garelly",
     "info": {
       "title": "GARELLY",
       "date": "May 25, 2019",
@@ -50,6 +54,7 @@
   {
     "id": 5,
     "img": "candy.png",
+    "pathname": "candy",
     "info": {
       "title": "Candy",
       "date": "Feb. 23, 2020",
@@ -62,6 +67,7 @@
   {
     "id": 6,
     "img": "elevenback-fc2019-flyer.png",
+    "pathname": "elevenback-fc2019-flyer",
     "info": {
       "title": "ElevenBack FC2019 Flyer",
       "date": "Nov. 30, 2019",
@@ -74,6 +80,7 @@
   {
     "id": 7,
     "img": "tambourine-podcast-site.png",
+    "pathname": "tambourine-podcast-site",
     "info": {
       "title": "tambourine podcast site",
       "date": "Feb. 23, 2020",
@@ -86,6 +93,7 @@
   {
     "id": 8,
     "img": "veginning.png",
+    "pathname": "veginning",
     "info": {
       "title": "Veginning",
       "date": "Jan. 10, 2020",
