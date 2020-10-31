@@ -15,7 +15,7 @@ const DetailsHome = () => {
           rel="stylesheet"
         />
       </Head>
-      {name !== undefined ? <Details name={name} /> : null}
+      {name !== undefined && <Details name={name} />}
     </>
   );
 };

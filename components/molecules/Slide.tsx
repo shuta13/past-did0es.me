@@ -68,7 +68,7 @@ export const Slide: React.FC<Props> = props => {
   };
 
   return (
-    <Link href={`/works/details/${work.pathname}`}>
+    <Link href="/works/details/[name]" as={`/works/details/${work.pathname}`}>
       <a
         className="SlideWrap"
         style={style}
