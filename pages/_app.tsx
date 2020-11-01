@@ -13,6 +13,7 @@ const Did0esMe = ({
   Component: any;
   pageProps: any;
 }) => {
+  const [isHeaderClicked, setIsHeaderClicked] = useState(false);
   const [isMenuClicked, setIsMenuClicked] = useState(false);
   return (
     <>
@@ -24,10 +25,10 @@ const Did0esMe = ({
         />
       </Head>
       <Main />
-      <div className={isMenuClicked ? "FadeOut" : "FadeIn"}>
+      <div className={isHeaderClicked || isMenuClicked ? "FadeOut" : "FadeIn"}>
         <Component {...pageProps} />
       </div>
-      <Header />
+      <Header setIsHeaderClicked={setIsHeaderClicked} />
       <Menu setIsMenuClicked={setIsMenuClicked} />
       <Loading />
     </>

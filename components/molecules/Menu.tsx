@@ -5,6 +5,14 @@ import { useRouter } from "next/router";
 
 const pageNames = ["works", "contact"];
 
+export const sleep = () => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve();
+    }, 1200);
+  });
+};
+
 export const Menu: React.FC<{
   setIsMenuClicked: (isMenuClicked: boolean) => void;
 }> = props => {
@@ -12,14 +20,6 @@ export const Menu: React.FC<{
   const router = useRouter();
 
   const _setIsMenuClicked = () => setIsMenuClicked(false);
-
-  const sleep = () => {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        resolve();
-      }, 1200);
-    });
-  };
 
   const handleOnClick = (pageName: string) => {
     setIsMenuClicked(true);
