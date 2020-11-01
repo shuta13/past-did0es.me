@@ -3,6 +3,8 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+const pageNames = ["works", "contact"];
+
 export const Menu: React.FC<{
   setIsMenuClicked: (isMenuClicked: boolean) => void;
 }> = props => {
@@ -19,10 +21,10 @@ export const Menu: React.FC<{
     });
   };
 
-  const handleOnClick = () => {
+  const handleOnClick = (pageName: string) => {
     setIsMenuClicked(true);
     sleep().then(() => {
-      router.push("/works");
+      router.push(`/${pageName}`);
     });
   };
 
@@ -33,12 +35,21 @@ export const Menu: React.FC<{
 
   return (
     <div className="MenuWrap">
-      <a className="MenuPageName" onClick={handleOnClick}>
+      {pageNames.map(pageName => (
+        <a
+          className="MenuPageName"
+          onClick={() => handleOnClick(pageName)}
+          key={pageName}
+        >
+          {`${pageName}`.toUpperCase()}
+        </a>
+      ))}
+      {/* <a className="MenuPageName" onClick={handleOnClick}>
         Works
       </a>
       <Link href="/contact">
         <a className="MenuPageName">Contact</a>
-      </Link>
+      </Link> */}
     </div>
   );
 };
