@@ -12,10 +12,10 @@ const Details: React.FC<{ name: string | string[] }> = ({ name }) => {
   const [isClicked, setIsClicked] = useState(false);
 
   return (
-    <>
+    <div className="container">
       {works.map(work => (
-        <div key={work.img}>
-          {work.img.split(".")[0] === name ? (
+        <React.Fragment key={work.img}>
+          {work.img.split(".")[0] === name && (
             <>
               <Head>
                 <title>did0es.me - {work.info.title}</title>
@@ -46,20 +46,18 @@ const Details: React.FC<{ name: string | string[] }> = ({ name }) => {
                 /> */}
               </Head>
 
-              <div className="DetailsClip">
-                <ImagePostProcess
-                  img={`/works/${work.img}`}
-                  isBackButtonClicked={isClicked}
-                />
-                <DetailsInfo info={work.info} />
-              </div>
+              <ImagePostProcess
+                img={`/works/${work.img}`}
+                isBackButtonClicked={isClicked}
+              />
+              <DetailsInfo info={work.info} />
               {/* <BackButton isClicked={isClicked} setIsClicked={setIsClicked} /> */}
               {/* <Loading /> */}
             </>
-          ) : null}
-        </div>
+          )}
+        </React.Fragment>
       ))}
-    </>
+    </div>
   );
 };
 
