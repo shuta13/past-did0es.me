@@ -1,4 +1,5 @@
 import "../assets/style/global.scss";
+import React, { useState } from "react";
 import Head from "next/head";
 import Main from "../components/partials/Home/Main";
 import Loading from "../components/common/Loading";
@@ -12,6 +13,7 @@ const Did0esMe = ({
   Component: any;
   pageProps: any;
 }) => {
+  const [isMenuClicked, setIsMenuClicked] = useState(false);
   return (
     <>
       <Head>
@@ -22,9 +24,11 @@ const Did0esMe = ({
         />
       </Head>
       <Main />
-      <Component {...pageProps} />
+      <div className={isMenuClicked ? "FadeOut" : "FadeIn"}>
+        <Component {...pageProps} />
+      </div>
       <Header />
-      <Menu />
+      <Menu setIsMenuClicked={setIsMenuClicked} />
       <Loading />
     </>
   );

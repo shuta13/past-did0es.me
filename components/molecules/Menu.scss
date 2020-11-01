@@ -1,5 +1,5 @@
 .MenuWrap {
-  position: absolute;
+  position: fixed;
   display: flex;
   top: 2.5em;
   right: 3em;
@@ -18,4 +18,5 @@
   font-weight: normal;
   margin-left: 1em;
   text-decoration: none;
+  cursor: pointer;
 }
