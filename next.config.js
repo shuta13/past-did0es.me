@@ -37,8 +37,7 @@ module.exports = withImages({
       "/contact": { page: "/contact" },
     }
     works.map(work => {
-      const name = work.img.split(".")[0]
-      paths[`works/${name}`] = { page: "works/[name]" }
+      paths[`/works/${work.pathname}`] = { page: "/works/[name]" }
     })
     return paths
   }
