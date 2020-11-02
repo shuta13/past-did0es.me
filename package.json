@@ -9,7 +9,8 @@
     "export": "next export",
     "deploy": "yarn build && yarn export",
     "lint": "eslint --fix './{components,pages}/**/*.{ts,tsx}'",
-    "format": "prettier --write './{index.tsx,components,pages}/**/*.{ts,tsx}'"
+    "format": "prettier --write './{index.tsx,components,pages}/**/*.{ts,tsx}'",
+    "tcm": "tcm -p 'components/**/*.module.scss'"
   },
   "dependencies": {
     "@now/next": "2.3.12",
