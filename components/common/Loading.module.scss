@@ -1,4 +1,4 @@
-.LoadingOverlayCommon {
+.overlay_common {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -12,27 +12,27 @@
     opacity cubic-bezier(0.55, 0.04, 0.47, 0.98) 0.8s;
 }
 
-.LoadingOverlay {
-  @extend .LoadingOverlayCommon;
+.overlay {
+  @extend .overlay_common;
   transform: translateX(0%) rotate(0deg) translateY(0%);
 }
 
-.LoadingOverlayLoaded {
-  @extend .LoadingOverlayCommon;
+.overlay_loaded {
+  @extend .overlay_common;
   transform: translateX(116%) scale(1.2) rotate(-4deg) translateY(-4%);
   opacity: 0;
   transition-delay: 1s;
 }
 
-.LoadingImageCommon {
+.image_common {
   transition: opacity cubic-bezier(0.55, 0.04, 0.47, 0.98) 0.8s;
 }
 
-.LoadingImage {
-  @extend .LoadingImageCommon;
+.image {
+  @extend .image_common;
 }
 
-.LoadingImageLoaded {
-  @extend .LoadingImageCommon;
+.image_loaded {
+  @extend .image_common;
   opacity: 0;
 }

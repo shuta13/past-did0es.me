@@ -1,4 +1,4 @@
-import "./ProfileSlide.scss";
+import styles from "./ProfileSlide.module.scss";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
@@ -26,27 +26,27 @@ export const ProfileSlide: React.FC = () => {
   // });
 
   return (
-    <div className="ProfileSlideWrap">
-      <div className="ProfileSlideContent">
+    <div className={styles.wrap}>
+      <div className={styles.content}>
         {/* <div className="ProfileSlideContent" style={routeChangedStyle}> */}
         <img
-          className="ProfileSlideIcon"
+          className={styles.icon}
           src={require("../../public/icon.jpg")}
           alt="icon"
         />
-        <div className="ProfileSlideTextWrap">
-          <div className="ProfileSlideTitle">Shuta HIRAI</div>
-          <div className="ProfileSlideSubTitle">Web Developer, Designer</div>
-          <div className="ProfileSlideText">Student @ Ritsumeikan Univ</div>
-          <div className="ProfileSlideText">FrontEnd Engineer @ Relie, inc</div>
-          <div className="ProfileSlideText">
+        <div className={styles.text_wrap}>
+          <div className={styles.title}>Shuta HIRAI</div>
+          <div className={styles.sub_title}>Web Developer, Designer</div>
+          <div className={styles.text}>Student @ Ritsumeikan Univ</div>
+          <div className={styles.text}>FrontEnd Engineer @ Relie, inc</div>
+          <div className={styles.text}>
             FrontEnd Engineer・Designer @ AkinaiOne, inc
           </div>
-          <div className="ProfileSlideText">
+          <div className={styles.text}>
             FrontEnd Engineer・Designer @ ElevenBack LLC.
           </div>
-          <div className="ProfileSlideText">Web Developer @ tambourine.inc</div>
-          <div className="ProfileSlideText">
+          <div className={styles.text}>Web Developer @ tambourine.inc</div>
+          <div className={styles.text}>
             Ex. FrontEnd Engineer @ Tech Design, inc
           </div>
         </div>

@@ -1,4 +1,4 @@
-import "./Main.scss";
+import styles from "./Main.module.scss";
 import React, { useState, useEffect } from "react";
 import {
   Scene,
@@ -96,7 +96,7 @@ const Main: React.FC = () => {
   useEffect(() => {
     return () => window.removeEventListener("resize", () => handleResize);
   });
-  return <canvas ref={onCanvasLoaded} className="Main" />;
+  return <canvas ref={onCanvasLoaded} className={styles.wrap} />;
 };
 
 export default Main;

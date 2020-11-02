@@ -1,15 +1,17 @@
-const withSass = require('@zeit/next-sass')
+const path = require('path')
 const withImages = require('next-images')
 const works = require("./public/json/works.json")
 
-module.exports = withSass(withImages({
+module.exports = withImages({
   env: {
     ENV: process.env.ENV
   },
   devIndicators: {
     autoPrerender: false,
   },
-  cssModules: true,
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'assets/style')],
+  },
   webpack: (config, options) => {
     config.module.rules.push({
       test: /\.(glsl|frag|vert)$/,
@@ -40,4 +42,4 @@ module.exports = withSass(withImages({
     })
     return paths
   }
-}))
+})

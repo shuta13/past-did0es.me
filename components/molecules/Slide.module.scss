@@ -1,4 +1,4 @@
-.SlideWrap {
+.wrap {
   position: absolute;
   display: flex;
   width: 100%;
@@ -10,7 +10,7 @@
   cursor: grab;
 }
 
-.SlideContent {
+.content {
   position: relative;
   max-width: 1024px;
   display: flex;
@@ -19,25 +19,25 @@
   flex-wrap: wrap;
 }
 
-.SlideTextCommon {
+.text_common {
   color: #ffffff;
   font-family: "Abel", sans-serif;
   font-weight: bold;
   letter-spacing: 2px;
 }
 
-.SlideImageWrap {
+.image_wrap {
   max-width: 1024px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
-.SlideImage {
+.image {
   width: 100%;
 }
 
-.SlideWorkOverlay {
+.overlay {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -46,7 +46,7 @@
   left: 0;
 }
 
-.SlideWorkInfo {
+.info {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -54,14 +54,14 @@
   margin-right: 8px;
 }
 
-.SlideWorkTitle {
-  @extend .SlideTextCommon;
+.title {
+  @extend .text_common;
   font-size: 4.5rem;
   text-align: right;
 }
 
-.SlideWorkDate {
-  @extend .SlideTextCommon;
+.date {
+  @extend .text_common;
   font-weight: normal;
   font-size: 2rem;
   text-align: right;

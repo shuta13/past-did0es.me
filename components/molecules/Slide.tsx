@@ -1,4 +1,4 @@
-import "./Slide.scss";
+import styles from "./Slide.module.scss";
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Work } from "../organisms/Carousel";
@@ -70,7 +70,7 @@ export const Slide: React.FC<Props> = props => {
   return (
     <Link href="/works/[name]" as={`/works/${work.pathname}`}>
       <a
-        className="SlideWrap"
+        className={styles.wrap}
         style={style}
         ref={slideRef}
         onDragCapture={handleOnDragCapture}
@@ -79,14 +79,14 @@ export const Slide: React.FC<Props> = props => {
         onTouchStart={handleOnTouchStart}
         onClick={() => setIsShowModal(true)}
       >
-        <div className="SlideContent">
-          <div className="SlideWorkOverlay" />
-          <div className="SlideWorkInfo">
-            <div className="SlideWorkDate">{work?.info.date}</div>
-            <div className="SlideWorkTitle">{work?.info.title}</div>
+        <div className={styles.content}>
+          <div className={styles.overlay} />
+          <div className={styles.info}>
+            <div className={styles.date}>{work?.info.date}</div>
+            <div className={styles.title}>{work?.info.title}</div>
           </div>
           <img
-            className="SlideImage"
+            className={styles.image}
             src={require(`../../public/works/${work?.img}`)}
             alt="Works Image"
             onLoad={() => console.log("loaded")}

@@ -1,11 +1,11 @@
-.PaginationWrap {
+.wrap {
   position: absolute;
   display: flex;
   justify-content: center;
   bottom: 12em;
 }
 
-.PaginationButton {
+.button {
   outline: none;
   appearance: none;
   border: none;
@@ -19,7 +19,7 @@
   justify-content: center;
 }
 
-.PaginationNumber {
+.text {
   color: #ffffff;
   font-family: "Abel", sans-serif;
   font-size: 3rem;

@@ -1,4 +1,4 @@
-import "./Pagination.scss";
+import styles from "./Pagination.module.scss";
 import React from "react";
 
 interface Props {
@@ -16,29 +16,25 @@ export const Pagination: React.FC<Props> = props => {
     handleOnClickNext
   } = props;
   return (
-    <div className="PaginationWrap">
+    <div className={styles.wrap}>
       {currentSlideNumber !== 1 ? (
         <button
-          className="PaginationButton"
+          className={styles.button}
           onClick={handleOnClickPrev}
         >{`<`}</button>
       ) : (
-        <button
-          className="PaginationButton"
-          style={{ pointerEvents: "none" }}
-        />
+        <button className={styles.button} style={{ pointerEvents: "none" }} />
       )}
-      <div className="PaginationNumber">{`${currentSlideNumber} / ${totalNumber}`}</div>
+      <div
+        className={styles.text}
+      >{`${currentSlideNumber} / ${totalNumber}`}</div>
       {currentSlideNumber !== totalNumber ? (
         <button
-          className="PaginationButton"
+          className={styles.button}
           onClick={handleOnClickNext}
         >{`>`}</button>
       ) : (
-        <button
-          className="PaginationButton"
-          style={{ pointerEvents: "none" }}
-        />
+        <button className={styles.button} style={{ pointerEvents: "none" }} />
       )}
     </div>
   );

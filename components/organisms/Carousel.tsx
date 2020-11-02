@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./Carousel.scss";
+import styles from "./Carousel.module.scss";
 import { Slide } from "../molecules/Slide";
 import works from "../../public/json/works.json";
 import { Pagination } from "../molecules/Pagination";
@@ -89,7 +89,7 @@ export const Carousel: React.FC = () => {
   return (
     <>
       <div
-        className="CarouselWrap"
+        className={styles.wrap}
         style={{ transform: `translateX(-${translateXValue}px)` }}
       >
         {works.map(work => (

@@ -1,4 +1,4 @@
-import "./LoadingCanvas.scss";
+import styles from "./LoadingCanvas.module.scss";
 import React, { useEffect } from "react";
 import {
   Scene,
@@ -113,7 +113,7 @@ const LoadingCanvas: React.FC<{
   useEffect(() => {
     // return () => window.removeEventListener("resize", () => handleResize);
   });
-  return <canvas ref={onCanvasLoaded} className="AppLoading" />;
+  return <canvas ref={onCanvasLoaded} className={styles.wrap} />;
 };
 
 export default LoadingCanvas;

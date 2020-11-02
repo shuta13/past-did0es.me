@@ -1,11 +1,11 @@
-.ProfileSlideWrap {
+.wrap {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.ProfileSlideContent {
+.content {
   position: relative;
   max-width: 768px;
   display: flex;
@@ -14,38 +14,38 @@
   flex-wrap: wrap;
 }
 
-.ProfileSlideIcon {
+.icon {
   max-width: 320px;
   width: 50vw;
   margin-top: 12em;
   margin-bottom: 3em;
 }
 
-.ProfileSlideTextWrap {
+.text_wrap {
   margin: 3em;
 }
 
-.ProfileSlideTextCommon {
+.text_common {
   color: #ffffff;
   font-family: "Abel", sans-serif;
   font-weight: bold;
   letter-spacing: 2px;
 }
 
-.ProfileSlideTitle {
-  @extend .ProfileSlideTextCommon;
+.title {
+  @extend .text_common;
   font-size: 4.5rem;
   margin-bottom: 8px;
 }
 
-.ProfileSlideSubTitle {
-  @extend .ProfileSlideTextCommon;
+.sub_title {
+  @extend .text_common;
   font-size: 3rem;
   margin-bottom: 16px;
 }
 
-.ProfileSlideText {
-  @extend .ProfileSlideTextCommon;
+.text {
+  @extend .text_common;
   font-size: 2.5rem;
   margin-bottom: 8px;
   font-weight: normal;

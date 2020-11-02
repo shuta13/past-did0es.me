@@ -1,4 +1,4 @@
-import "./Modal.scss";
+import styles from "./Modal.module.scss";
 import React from "react";
 import { Work } from "../organisms/Carousel";
 import ImagePostProcess from "../common/ImagePostProcess";
@@ -11,10 +11,10 @@ export const Modal: React.FC<{
 }> = props => {
   const { work, style, setIsShowModal } = props;
   return (
-    <div className="ModalWrap" style={style}>
+    <div className={styles.wrap} style={style}>
       <ImagePostProcess img={`/works/${work.img}`} />
       <DetailsInfo info={work.info} />
-      <button className="ModalClose" onClick={() => setIsShowModal(false)}>
+      <button className={styles.button} onClick={() => setIsShowModal(false)}>
         Close
       </button>
     </div>
