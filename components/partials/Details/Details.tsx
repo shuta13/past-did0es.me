@@ -4,8 +4,6 @@ import DetailsInfo from "./DetailsInfo";
 
 import works from "../../../public/json/works.json";
 import "./Details.scss";
-import Loading from "../../common/Loading";
-import { BackButton } from "../../common/BackButton";
 import ImagePostProcess from "../../common/ImagePostProcess";
 
 const Details: React.FC<{ name: string | string[] }> = ({ name }) => {

@@ -1,4 +1,4 @@
-.MenuWrap {
+.wrap {
   position: fixed;
   display: flex;
   top: 2.5em;
@@ -9,7 +9,7 @@
   // transform: rotate(-90deg);
 }
 
-.MenuPageName {
+.text {
   color: #ffffff;
   font-family: "Abel", sans-serif;
   font-weight: bold;

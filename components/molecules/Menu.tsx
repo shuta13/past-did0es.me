@@ -1,4 +1,4 @@
-import "./Menu.scss";
+import styles from "./Menu.module.scss";
 import React, { useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -34,10 +34,10 @@ export const Menu: React.FC<{
   }, []);
 
   return (
-    <div className="MenuWrap">
+    <div className={styles.wrap}>
       {pageNames.map(pageName => (
         <a
-          className="MenuPageName"
+          className={styles.text}
           onClick={() => handleOnClick(pageName)}
           key={pageName}
         >

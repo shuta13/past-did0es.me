@@ -1,4 +1,4 @@
-import "./Header.scss";
+import styles from "./Header.module.scss";
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { sleep } from "./Menu";
@@ -24,8 +24,8 @@ export const Header: React.FC<{
   }, []);
 
   return (
-    <div className="HeaderWrap">
-      <a className="HeaderText" onClick={() => handleOnClick()}>
+    <div className={styles.wrap}>
+      <a className={styles.text} onClick={() => handleOnClick()}>
         did0es
       </a>
     </div>

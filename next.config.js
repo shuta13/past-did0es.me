@@ -9,6 +9,7 @@ module.exports = withSass(withImages({
   devIndicators: {
     autoPrerender: false,
   },
+  cssModules: true,
   webpack: (config, options) => {
     config.module.rules.push({
       test: /\.(glsl|frag|vert)$/,
