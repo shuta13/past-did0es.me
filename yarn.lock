@@ -1107,10 +1107,10 @@
   resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-9.5.4.tgz#3bfe067f0cfc717f079482d956211708c9e81126"
   integrity sha512-TPhEiYxK5YlEuzVuTzgZiDN7SDh4drvUAqsO9Yccd8WLcfYqOLRN2fCALremW5mNLAZQZW3iFgW8PW8Gckq4EQ==
 
-"@now/next@2.3.12":
-  version "2.3.12"
-  resolved "https://registry.yarnpkg.com/@now/next/-/next-2.3.12.tgz#67aefbe25fe10be9c79ac76f10da4d960e4fd6c6"
-  integrity sha512-1aX5z8aqzvkncX2md3Tars5JHk+O9Xc+TrZJkanfvquOKdE45AEyvDD/HoANzTUD/QnmsYP4Q5vFiOfeWLwMYA==
+"@now/next@2.6.34":
+  version "2.6.34"
+  resolved "https://registry.yarnpkg.com/@now/next/-/next-2.6.34.tgz#a33811b6131c32e516b5dbb5a5b09df523463002"
+  integrity sha512-msCXYQ+uBWiWaAZI4IbThcQ6CQLZKCRIPsRClt7+pIf5jQXdIpphIrsqRyfgoHXuhCsCy7BChAQXv3rxuNsvHg==
 
 "@npmcli/move-file@^1.0.1":
   version "1.0.1"
