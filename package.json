@@ -33,6 +33,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.3",
     "prettier": "^1.19.1",
+    "typed-css-modules": "^0.6.4",
     "typescript": "3.7.5"
   }
 }
