@@ -1,6 +1,6 @@
 $height: 40px;
 
-.ExternalLinkWrap {
+.wrap {
   margin-bottom: 32px;
   // width: 256px;
   width: 100%;
@@ -10,7 +10,7 @@ $height: 40px;
   cursor: pointer;
 }
 
-.ExternalLinkCommon {
+.common {
   transform: translateX(-100%) translateY(-100%);
   transition: transform cubic-bezier(0.16, 0.67, 0.64, 0.99) 0.2s,
     color cubic-bezier(0.9, 0.23, 0.48, 0.97) 0.4s,
@@ -32,18 +32,18 @@ $height: 40px;
   border: solid 1px #fff;
 }
 
-.ExternalLink {
-  @extend .ExternalLinkCommon;
+.link {
+  @extend .common;
   transition-duration: 0.4s;
 }
 
-.ExternalLinkHovered {
-  @extend .ExternalLinkCommon;
+.link_hovered {
+  @extend .common;
   transform: translateX(0%) translateY(-100%);
   color: #fff;
 }
 
-.ExternalLinkSquareCommon {
+.square_common {
   transition: color cubic-bezier(0.9, 0.23, 0.48, 0.97) 0.4s;
   width: 100%;
   // width: 256px;
@@ -61,11 +61,11 @@ $height: 40px;
   text-decoration: none;
 }
 
-.ExternalLinkSquare {
-  @extend .ExternalLinkSquareCommon;
+.square {
+  @extend .square_common;
 }
 
-.ExternalLinkSquareHovered {
-  @extend .ExternalLinkSquareCommon;
+.square_hovered {
+  @extend .square_common;
   color: #fff;
 }

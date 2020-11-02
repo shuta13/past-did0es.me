@@ -1,4 +1,4 @@
-import "./ExternalLink.scss";
+import styles from "./ExternalLink.module.scss";
 import React, { useState } from "react";
 
 export const ExternalLink: React.FC<{ href: string; text: string }> = ({
@@ -8,7 +8,7 @@ export const ExternalLink: React.FC<{ href: string; text: string }> = ({
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div
-      className="ExternalLinkWrap"
+      className={styles.wrap}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStartCapture={() => setIsHovered(true)}
@@ -20,9 +20,7 @@ export const ExternalLink: React.FC<{ href: string; text: string }> = ({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={
-          isHovered ? "ExternalLinkSquareHovered" : "ExternalLinkSquare"
-        }
+        className={isHovered ? styles.square_hovered : styles.square}
       >
         {!isHovered ? text : null}
       </a>
@@ -30,7 +28,7 @@ export const ExternalLink: React.FC<{ href: string; text: string }> = ({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={isHovered ? "ExternalLinkHovered" : "ExternalLink"}
+        className={isHovered ? styles.link_hovered : styles.link}
       >
         {isHovered ? text : null}
       </a>

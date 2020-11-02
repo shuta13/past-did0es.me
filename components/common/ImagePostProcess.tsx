@@ -1,4 +1,4 @@
-import "./ImagePostProcess.scss";
+import styles from "./ImagePostProcess.module.scss";
 import React, { useRef, useEffect, useState } from "react";
 import Router from "next/router";
 import {
@@ -170,8 +170,8 @@ const ImagePostProcess: React.FC<{
   });
 
   return (
-    <div className="ImagePostProcessWrap" ref={parentRef}>
-      <canvas className="ImagePostProcessDetails" ref={onCanvasLoaded} />
+    <div className={styles.wrap} ref={parentRef}>
+      <canvas className={styles.canvas} ref={onCanvasLoaded} />
     </div>
   );
 };

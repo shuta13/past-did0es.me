@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./DetailsInfo.scss";
+import styles from "./DetailsInfo.module.scss";
 import { ExternalLink } from "../../common/ExternalLink";
 
 type InfoParams = {
@@ -14,20 +14,18 @@ type InfoParams = {
 
 const DetailsInfo: React.FC<{ info: InfoParams }> = ({ info }) => {
   return (
-    <div className="DetailsInfoWrap">
-      <div className="DetailsInfoTitle">{info.title}</div>
-      <div className="DetailsInfoDate">{info.date}</div>
-      <div className="DetailsInfoTags">{info.tags}</div>
-      <div className="DetailsInfoDescription">
+    <div className={styles.wrap}>
+      <div className={styles.title}>{info.title}</div>
+      <div className={styles.date}>{info.date}</div>
+      <div className={styles.tags}>{info.tags}</div>
+      <div className={styles.description}>
         <div
           dangerouslySetInnerHTML={{
             __html: info.desc.replace(/\s/g, "<br />")
           }}
         />
       </div>
-      {info.subDesc ? (
-        <div className="DetailsInfoText">{info.subDesc}</div>
-      ) : null}
+      {info.subDesc ? <div className={styles.text}>{info.subDesc}</div> : null}
       <ExternalLink href={info.link} text="visit" />
     </div>
   );

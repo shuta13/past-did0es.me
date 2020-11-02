@@ -1,4 +1,4 @@
-.DetailsInfoWrap {
+.wrap {
   position: fixed;
   right: 0;
   top: 0;
@@ -13,14 +13,14 @@
 }
 
 @media screen and (max-width: 615px) {
-  .DetailsInfoWrap {
+  .wrap {
     top: 0;
     left: 0;
     width: 100%;
   }
 }
 
-.DetailsInfoText {
+.text {
   width: 100%;
   font-size: 12px;
   font-family: "Abel", sans-serif;
@@ -29,24 +29,24 @@
   margin-bottom: 16px;
 }
 
-.DetailsInfoDescription {
-  @extend .DetailsInfoText;
+.description {
+  @extend .text;
   line-height: 1.8;
 }
 
-.DetailsInfoTitle {
-  @extend .DetailsInfoText;
+.title {
+  @extend .text;
   font-size: 18px;
   text-align: right;
   font-weight: bold;
 }
 
-.DetailsInfoDate {
-  @extend .DetailsInfoText;
+.date {
+  @extend .text;
   text-align: right;
 }
 
-.DetailsInfoTags {
-  @extend .DetailsInfoText;
+.tags {
+  @extend .text;
   text-align: right;
 }

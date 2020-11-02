@@ -3,7 +3,7 @@ import Head from "next/head";
 import DetailsInfo from "./DetailsInfo";
 
 import works from "../../../public/json/works.json";
-import "./Details.scss";
+import styles from "./Details.module.scss";
 import ImagePostProcess from "../../common/ImagePostProcess";
 
 const Details: React.FC<{ name: string | string[] }> = ({ name }) => {
