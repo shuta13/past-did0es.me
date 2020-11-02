@@ -8,8 +8,8 @@
     "start": "next start",
     "export": "next export",
     "deploy": "yarn build && yarn export",
-    "lint": "eslint --fix './{components,pages}/**/*.{ts,tsx}'",
-    "format": "prettier --write './{index.tsx,components,pages}/**/*.{ts,tsx}'",
+    "lint": "eslint --fix './{components,pages,store}/**/*.{ts,tsx}'",
+    "format": "prettier --write './{index.tsx,components,pages,store}/**/*.{ts,tsx}'",
     "tcm": "tcm -p 'components/**/*.module.scss'"
   },
   "dependencies": {
