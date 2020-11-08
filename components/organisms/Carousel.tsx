@@ -97,8 +97,8 @@ export const Carousel: React.FC = () => {
             work={work}
             slideStyle={{
               transform: `translateX(${100 * (work.id - 1)}%) scale3d(${
-                work.id === currentSlideNumber ? 1 : 0.9
-              }, ${work.id === currentSlideNumber ? 1 : 0.9}, 1)`,
+                work.id === currentSlideNumber ? 1.1 : 0.9
+              }, ${work.id === currentSlideNumber ? 1.1 : 0.9}, 1)`,
               filter:
                 work.id === currentSlideNumber
                   ? "brightness(1)"
