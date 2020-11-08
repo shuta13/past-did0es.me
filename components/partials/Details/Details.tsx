@@ -9,14 +9,8 @@ import { useRouter } from "next/router";
 
 const Details: React.FC<{
   name: string | string[];
-  isHeaderClicked: boolean;
-  isMenuClicked: boolean;
-  setIsClicked: (isClicked: boolean) => void;
-}> = ({ name, isHeaderClicked, isMenuClicked, setIsClicked }) => {
-  useEffect(() => {
-    setIsClicked(false);
-  }, []);
-
+  isRouteChange: boolean;
+}> = ({ name, isRouteChange }) => {
   return (
     <div className="container">
       {works.map(work => (
@@ -52,7 +46,7 @@ const Details: React.FC<{
                 /> */}
               </Head>
 
-              {!isHeaderClicked && !isMenuClicked && (
+              {!isRouteChange && (
                 <ImagePostProcess img={`/works/${work.img}`} />
               )}
               <DetailsInfo info={work.info} />

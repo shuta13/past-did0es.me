@@ -14,7 +14,6 @@ interface Props {
   setIsSwipeSlideToRight: (isSwipeSlideToRight: boolean) => void;
   setIsShowModal: (isShowModal: boolean) => void;
   isShowModal: boolean;
-  setIsClicked: (isClicked: boolean) => void;
 }
 
 export const Slide: React.FC<Props> = props => {
@@ -25,15 +24,12 @@ export const Slide: React.FC<Props> = props => {
     setIsSwipeSlideToLeft,
     setIsSwipeSlideToRight,
     setIsShowModal,
-    isShowModal,
-    setIsClicked
+    isShowModal
   } = props;
   const [startMousePosition, setStartMousePosition] = useState(0);
   const [isFirstDragCaptured, setIsFirstDragCaptured] = useState(false);
 
   const slideRef = useRef<HTMLAnchorElement>(null);
-
-  const router = useRouter();
 
   useEffect(() => {
     slideRef.current?.clientWidth != null &&
@@ -74,34 +70,27 @@ export const Slide: React.FC<Props> = props => {
   };
 
   return (
-    <a
-      href={`/works/${work.pathname}`}
-      className={styles.wrap}
-      style={style}
-      ref={slideRef}
-      onDragCapture={handleOnDragCapture}
-      onDragStart={handleOnDragStart}
-      onTouchMove={handleOnTouchMove}
-      onTouchStart={handleOnTouchStart}
-      onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
-        e.preventDefault();
-        setIsShowModal(true);
-        setIsClicked(true);
-        sleep().then(() => {
-          router.push(`/works/${work.pathname}`);
-        });
-      }}
-    >
-      <div className={styles.content}>
-        <div className={styles.overlay} />
-        <img
-          className={styles.image}
-          src={require(`../../public/works/${work?.img}`)}
-          alt="Works Image"
-        />
-      </div>
-      <div className={styles.date}>{work?.info.date}</div>
-      <div className={styles.title}>{work?.info.title}</div>
-    </a>
+    <Link href="/works/[name]" as={`/works/${work.pathname}`}>
+      <a
+        className={styles.wrap}
+        style={style}
+        ref={slideRef}
+        onDragCapture={handleOnDragCapture}
+        onDragStart={handleOnDragStart}
+        onTouchMove={handleOnTouchMove}
+        onTouchStart={handleOnTouchStart}
+      >
+        <div className={styles.content}>
+          <div className={styles.overlay} />
+          <img
+            className={styles.image}
+            src={require(`../../public/works/${work?.img}`)}
+            alt="Works Image"
+          />
+        </div>
+        <div className={styles.date}>{work?.info.date}</div>
+        <div className={styles.title}>{work?.info.title}</div>
+      </a>
+    </Link>
   );
 };

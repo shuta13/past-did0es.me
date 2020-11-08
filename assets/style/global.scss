@@ -43,13 +43,13 @@ body {
   transition: opacity cubic-bezier(0.55, 0.04, 0.47, 0.98) 0.9s;
 }
 
-.FadeOutToLeft {
+.FadeOut {
   @extend .FadeCommon;
   // transform: translateX(-30%);
   opacity: 0;
 }
 
-.FadeInToRight {
+.FadeIn {
   @extend .FadeCommon;
   // transform: translateX(0%);
   opacity: 1;

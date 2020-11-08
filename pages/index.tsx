@@ -4,13 +4,12 @@ import React from "react";
 import { ProfileSlide } from "../components/organisms/ProfileSlide";
 
 const Home: React.FC<{
-  isHeaderClicked: boolean;
-  isMenuClicked: boolean;
+  isRouteChange: boolean;
 }> = props => {
-  const { isHeaderClicked, isMenuClicked } = props;
+  const { isRouteChange } = props;
   return (
     <div className="container">
-      {!isHeaderClicked && !isMenuClicked && <Main />}
+      {!isRouteChange && <Main />}
       <ProfileSlide />
       {/* <Profile /> */}
       {/* <Works /> */}

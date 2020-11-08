@@ -1,53 +1,19 @@
 import styles from "./Header.module.scss";
-import React, { useEffect } from "react";
-import { useRouter } from "next/router";
+import React from "react";
+import Router from "next/router";
 import { sleep } from "./Menu";
 import Link from "next/link";
 
 export const Header: React.FC<{
-  isClicked: boolean;
-  isHeaderClicked: boolean;
-  isMenuClicked: boolean;
-  setIsHeaderClicked: (isHeaderClicked: boolean) => void;
+  isRouteChange: boolean;
 }> = props => {
-  const {
-    isClicked,
-    isHeaderClicked,
-    isMenuClicked,
-    setIsHeaderClicked
-  } = props;
-  const router = useRouter();
-
-  const _setIsHeaderClicked = () => setIsHeaderClicked(false);
-
-  const handleOnClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    setIsHeaderClicked(true);
-    sleep().then(() => {
-      router.push("/");
-    });
-  };
-
-  useEffect(() => {
-    router.events.on("routeChangeComplete", _setIsHeaderClicked);
-    return () => router.events.off("routeChangeComplete", _setIsHeaderClicked);
-  }, []);
+  const { isRouteChange } = props;
 
   return (
-    <div
-      className={
-        isHeaderClicked || isMenuClicked || isClicked
-          ? styles.clicked
-          : styles.wrap
-      }
-    >
-      <a
-        href="/"
-        className={styles.text}
-        onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleOnClick(e)}
-      >
-        did0es
-      </a>
+    <div className={isRouteChange ? styles.clicked : styles.wrap}>
+      <Link href="/">
+        <a className={styles.text}>did0es</a>
+      </Link>
     </div>
   );
 };

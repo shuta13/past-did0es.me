@@ -2,14 +2,19 @@ import "../assets/style/global.scss";
 import React, { useState } from "react";
 import Head from "next/head";
 import Loading from "../components/common/Loading";
-import { Menu } from "../components/molecules/Menu";
+import { Menu, sleep } from "../components/molecules/Menu";
 import { Header } from "../components/molecules/Header";
 import { AppProps } from "next/app";
+import { Router } from "next/router";
 
 const Did0esMe = ({ Component, pageProps }: AppProps) => {
-  const [isHeaderClicked, setIsHeaderClicked] = useState(false);
-  const [isMenuClicked, setIsMenuClicked] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
+  const [isRouteChange, setIsRouteChange] = useState(false);
+
+  Router.events.on("routeChangeStart", () => setIsRouteChange(true));
+  Router.events.on("routeChangeComplete", () => {
+    sleep().then(() => setIsRouteChange(false));
+  });
+
   return (
     <>
       <Head>
@@ -19,32 +24,11 @@ const Did0esMe = ({ Component, pageProps }: AppProps) => {
           rel="stylesheet"
         />
       </Head>
-      <div
-        className={
-          isHeaderClicked || isMenuClicked || isClicked
-            ? "FadeOutToLeft"
-            : "FadeInToRight"
-        }
-      >
-        <Component
-          {...pageProps}
-          isHeaderClicked={isHeaderClicked}
-          isMenuClicked={isMenuClicked}
-          setIsClicked={setIsClicked}
-        />
+      <div className={isRouteChange ? "FadeOut" : "FadeIn"}>
+        <Component {...pageProps} isRouteChange={isRouteChange} />
       </div>
-      <Header
-        isClicked={isClicked}
-        isHeaderClicked={isHeaderClicked}
-        isMenuClicked={isMenuClicked}
-        setIsHeaderClicked={setIsHeaderClicked}
-      />
-      <Menu
-        isClicked={isClicked}
-        isHeaderClicked={isHeaderClicked}
-        isMenuClicked={isMenuClicked}
-        setIsMenuClicked={setIsMenuClicked}
-      />
+      <Header isRouteChange={isRouteChange} />
+      <Menu isRouteChange={isRouteChange} />
       <Loading />
     </>
   );

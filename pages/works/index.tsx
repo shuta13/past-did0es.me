@@ -1,13 +1,10 @@
 import React from "react";
 import { Carousel } from "../../components/organisms/Carousel";
 
-const Work: React.FC<{
-  setIsClicked: (isClicked: boolean) => void;
-}> = props => {
-  const { setIsClicked } = props;
+const Work: React.FC = () => {
   return (
     <div className="container" style={{ overflow: "hidden" }}>
-      <Carousel setIsClicked={setIsClicked} />
+      <Carousel />
     </div>
   );
 };
