@@ -14,7 +14,7 @@
 
 .text {
   width: 100%;
-  font-size: 2rem;
+  font-size: 1.3rem;
   font-family: "Montserrat", sans-serif;
   color: #ffffff;
   letter-spacing: 2px;
@@ -23,7 +23,7 @@
 
 .title {
   @extend .text;
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: right;
 }
 
@@ -47,5 +47,14 @@
     top: 0;
     left: 0;
     width: 100%;
+  }
+
+  .text {
+    width: 100%;
+    font-size: 2rem;
+    font-family: "Montserrat", sans-serif;
+    color: #ffffff;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
   }
 }

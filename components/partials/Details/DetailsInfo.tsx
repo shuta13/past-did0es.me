@@ -18,13 +18,13 @@ const DetailsInfo: React.FC<{ info: InfoParams }> = ({ info }) => {
       <div className={styles.title}>{info.title}</div>
       <div className={styles.date}>{info.date}</div>
       <div className={styles.tags}>{info.tags}</div>
-      <div className={styles.description}>
+      {/* <div className={styles.description}>
         <div
           dangerouslySetInnerHTML={{
             __html: info.desc.replace(/\s/g, "<br />")
           }}
         />
-      </div>
+      </div> */}
       {info.subDesc ? <div className={styles.text}>{info.subDesc}</div> : null}
       <ExternalLink href={info.link} text="visit" />
     </div>
