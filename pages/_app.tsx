@@ -9,6 +9,7 @@ import { Router } from "next/router";
 
 const Did0esMe = ({ Component, pageProps }: AppProps) => {
   const [isRouteChange, setIsRouteChange] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   Router.events.on("routeChangeStart", () => setIsRouteChange(true));
   Router.events.on("routeChangeComplete", () => {
@@ -26,12 +27,16 @@ const Did0esMe = ({ Component, pageProps }: AppProps) => {
       </Head>
       <div className={isRouteChange ? "FadeOut" : "FadeIn"}>
         {!isRouteChange && (
-          <Component {...pageProps} isRouteChange={isRouteChange} />
+          <Component
+            {...pageProps}
+            isRouteChange={isRouteChange}
+            isLoaded={isLoaded}
+          />
         )}
       </div>
       <Header isRouteChange={isRouteChange} />
       <Menu isRouteChange={isRouteChange} />
-      <Loading />
+      <Loading isLoaded={isLoaded} setIsLoaded={setIsLoaded} />
     </>
   );
 };

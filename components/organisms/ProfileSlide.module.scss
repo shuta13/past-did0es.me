@@ -1,5 +1,5 @@
 .wrap {
-  width: 100%;
+  // width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,23 +25,26 @@
   margin: 3em;
 }
 
-.text_common {
+.text_animation {
+  width: 100%;
+  height: 4em;
+  position: relative;
+  overflow: hidden;
+  margin: 0.8em 0;
+}
+
+.text {
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
   letter-spacing: 2px;
   font-size: 3rem;
   margin-bottom: 8px;
+  transition: transform cubic-bezier(0.9, 0.23, 0.48, 0.97) 1.4s;
+  transition-delay: 0.6s;
+  transform: translateY(100%);
 }
 
-.title {
-  @extend .text_common;
-}
-
-.sub_title {
-  @extend .text_common;
-}
-
-.text {
-  @extend .text_common;
-  font-weight: normal;
+.text_moved {
+  @extend .text;
+  transform: translateY(0%);
 }

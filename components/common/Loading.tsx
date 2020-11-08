@@ -3,8 +3,11 @@ import React, { useEffect, useRef, useState } from "react";
 
 import LoadingCanvas from "../partials/Loading/LoadingCanvas";
 
-const Loading: React.FC = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
+const Loading: React.FC<{
+  isLoaded: boolean;
+  setIsLoaded: (isLoaded: boolean) => void;
+}> = props => {
+  const { isLoaded, setIsLoaded } = props;
   const [isShowLoading, setIsShowLoading] = useState(true);
   const mountRef = useRef<HTMLDivElement>(null);
 

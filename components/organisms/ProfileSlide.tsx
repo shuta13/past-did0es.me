@@ -1,29 +1,33 @@
 import styles from "./ProfileSlide.module.scss";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { sleep } from "../molecules/Menu";
 
-export const ProfileSlide: React.FC = () => {
-  // const router = useRouter();
+const TextAnimation: React.FC<{
+  isMoveOverlay: boolean;
+  text: string;
+}> = props => {
+  const { isMoveOverlay, text } = props;
+  return (
+    <div className={styles.text_animation}>
+      {/* <div className={isMoveOverlay ? styles.overlay_moved : styles.overlay} /> */}
+      <div className={isMoveOverlay ? styles.text_moved : styles.text}>
+        {text}
+      </div>
+    </div>
+  );
+};
 
-  // const [routeChangedStyle, setRouteChangedStyle] = useState<React.CSSProperties>({ opacity: 1 })
+export const ProfileSlide: React.FC<{ isLoaded: boolean }> = props => {
+  const { isLoaded } = props;
+  const [isMoveOverlay, setIsMoveOverlay] = useState(false);
 
-  // useEffect(() => {
-  //   const handleRouteChange = (url: string) => {
-  //     console.log("changed", url);
-  //     if (url === "/work") {
-  //       setRouteChangedStyle({
-  //         transform: "translateY(-100%)",
-  //         opacity: 0
-  //       })
-  //     }
-  //   };
-
-  //   router.events.on("routeChangeStart", handleRouteChange);
-
-  //   return () => {
-  //     router.events.off("routeChangeStart", handleRouteChange);
-  //   };
-  // });
+  useEffect(() => {
+    isLoaded &&
+      sleep(200).then(() => {
+        setIsMoveOverlay(true);
+      });
+  }, [isLoaded]);
 
   return (
     <div className={styles.wrap}>
@@ -35,20 +39,35 @@ export const ProfileSlide: React.FC = () => {
           alt="icon"
         /> */}
         <div className={styles.text_wrap}>
-          <div className={styles.title}>Shuta HIRAI</div>
-          <div className={styles.sub_title}>Web Developer, Designer</div>
-          <div className={styles.text}>Student @ Ritsumeikan Univ</div>
-          <div className={styles.text}>FrontEnd Engineer @ Relie, inc</div>
-          <div className={styles.text}>
-            FrontEnd Engineer・Designer @ AkinaiOne, inc
-          </div>
-          <div className={styles.text}>
-            FrontEnd Engineer・Designer @ ElevenBack LLC.
-          </div>
-          <div className={styles.text}>Web Developer @ tambourine.inc</div>
-          <div className={styles.text}>
-            Ex. FrontEnd Engineer @ Tech Design, inc
-          </div>
+          <TextAnimation isMoveOverlay={isMoveOverlay} text="Shuta HIRAI" />
+          <TextAnimation
+            isMoveOverlay={isMoveOverlay}
+            text="Web Developer, Designer"
+          />
+          <TextAnimation
+            isMoveOverlay={isMoveOverlay}
+            text="Student @ Ritsumeikan Univ"
+          />
+          <TextAnimation
+            isMoveOverlay={isMoveOverlay}
+            text="FrontEnd Engineer @ Relie, inc"
+          />
+          <TextAnimation
+            isMoveOverlay={isMoveOverlay}
+            text="FrontEnd Engineer・Designer @ AkinaiOne, inc"
+          />
+          <TextAnimation
+            isMoveOverlay={isMoveOverlay}
+            text="FrontEnd Engineer・Designer @ ElevenBack LLC."
+          />
+          <TextAnimation
+            isMoveOverlay={isMoveOverlay}
+            text="Web Developer @ tambourine.inc"
+          />
+          <TextAnimation
+            isMoveOverlay={isMoveOverlay}
+            text="Ex. FrontEnd Engineer @ Tech Design, inc"
+          />
         </div>
       </div>
     </div>

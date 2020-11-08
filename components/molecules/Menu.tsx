@@ -2,11 +2,11 @@ import styles from "./Menu.module.scss";
 import React from "react";
 import Link from "next/link";
 
-export const sleep = () => {
+export const sleep = (duration?: number) => {
   return new Promise(resolve => {
     setTimeout(() => {
       resolve();
-    }, 1200);
+    }, duration ?? 1200);
   });
 };
 
