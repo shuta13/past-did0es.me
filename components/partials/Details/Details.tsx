@@ -52,7 +52,7 @@ const Details: React.FC<{
                 /> */}
               </Head>
 
-              {(!isHeaderClicked && !isMenuClicked) && (
+              {!isHeaderClicked && !isMenuClicked && (
                 <ImagePostProcess img={`/works/${work.img}`} />
               )}
               <DetailsInfo info={work.info} />
