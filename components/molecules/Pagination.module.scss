@@ -1,27 +1,29 @@
-.wrap {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  bottom: 12em;
-}
-
-.button {
+.button_common {
   outline: none;
   appearance: none;
   border: none;
   background: transparent;
-  color: #ffffff;
   font-family: "Montserrat", sans-serif;
-  font-size: 2.5rem;
   cursor: pointer;
   width: 3rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 4em;
+  height: 4em;
+  background: #0f0f0f;
+  // border-radius: 50%;
+  bottom: 1.5em;
+  color: #ffffff;
 }
 
-.text {
-  color: #ffffff;
-  font-family: "Montserrat", sans-serif;
-  font-size: 2.5rem;
-  margin: 0 0.5em;
+.button_left {
+  @extend .button_common;
+  left: 1.5em;
+}
+
+.button_right {
+  @extend .button_common;
+  right: 1.5em;
 }

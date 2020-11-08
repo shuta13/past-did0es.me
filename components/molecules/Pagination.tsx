@@ -1,5 +1,7 @@
 import styles from "./Pagination.module.scss";
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
   currentSlideNumber: number;
@@ -16,26 +18,20 @@ export const Pagination: React.FC<Props> = props => {
     handleOnClickNext
   } = props;
   return (
-    <div className={styles.wrap}>
-      {currentSlideNumber !== 1 ? (
-        <button
-          className={styles.button}
-          onClick={handleOnClickPrev}
-        >{`<`}</button>
-      ) : (
-        <button className={styles.button} style={{ pointerEvents: "none" }} />
+    <>
+      {currentSlideNumber !== 1 && (
+        <button className={styles.button_left} onClick={handleOnClickPrev}>
+          <FontAwesomeIcon icon={faAngleLeft} size="lg" color="#ffffff" />
+        </button>
       )}
-      <div
+      {/* <div
         className={styles.text}
-      >{`${currentSlideNumber} / ${totalNumber}`}</div>
-      {currentSlideNumber !== totalNumber ? (
-        <button
-          className={styles.button}
-          onClick={handleOnClickNext}
-        >{`>`}</button>
-      ) : (
-        <button className={styles.button} style={{ pointerEvents: "none" }} />
+      >{`${currentSlideNumber} / ${totalNumber}`}</div> */}
+      {currentSlideNumber !== totalNumber && (
+        <button className={styles.button_right} onClick={handleOnClickNext}>
+          <FontAwesomeIcon icon={faAngleRight} size="lg" color="#ffffff" />
+        </button>
       )}
-    </div>
+    </>
   );
 };

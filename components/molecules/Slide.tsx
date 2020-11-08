@@ -81,16 +81,14 @@ export const Slide: React.FC<Props> = props => {
       >
         <div className={styles.content}>
           <div className={styles.overlay} />
-          <div className={styles.info}>
-            <div className={styles.date}>{work?.info.date}</div>
-            <div className={styles.title}>{work?.info.title}</div>
-          </div>
           <img
             className={styles.image}
             src={require(`../../public/works/${work?.img}`)}
             alt="Works Image"
           />
         </div>
+        <div className={styles.date}>{work?.info.date}</div>
+        <div className={styles.title}>{work?.info.title}</div>
       </a>
       {/* {isShowModal && (
         <Modal work={work} style={style} setIsShowModal={setIsShowModal} />
