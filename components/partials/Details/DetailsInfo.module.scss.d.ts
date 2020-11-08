@@ -5,5 +5,7 @@ declare const styles: {
   readonly date: string;
   readonly tags: string;
   readonly description: string;
+  readonly link_wrap: string;
+  readonly link: string;
 };
 export = styles;

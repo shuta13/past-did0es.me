@@ -26,7 +26,17 @@ const DetailsInfo: React.FC<{ info: InfoParams }> = ({ info }) => {
         />
       </div> */}
       {info.subDesc ? <div className={styles.text}>{info.subDesc}</div> : null}
-      <ExternalLink href={info.link} text="visit" />
+      {/* <ExternalLink href={info.link} text="visit" /> */}
+      <div className={styles.link_wrap}>
+        <a
+          href={info.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.link}
+        >
+          VISIT
+        </a>
+      </div>
     </div>
   );
 };
