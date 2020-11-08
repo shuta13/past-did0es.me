@@ -33,8 +33,7 @@ type HandleResizeParams = {
 
 const ImagePostProcess: React.FC<{
   img: string;
-  isBackButtonClicked?: boolean;
-}> = ({ img, isBackButtonClicked }) => {
+}> = ({ img }) => {
   const [textureImage, setTextureImage] = useState("");
   useEffect(() => {
     setTextureImage(img);
@@ -90,10 +89,6 @@ const ImagePostProcess: React.FC<{
     animationFrameId = requestAnimationFrame(() =>
       animate({ scene, camera, renderer, uniforms, clock, image })
     );
-    if (isBackButtonClicked) {
-      cancelAnimationFrame(animationFrameId);
-      return;
-    }
     uniforms.time.value += clock.getDelta();
     uniforms.resolution.value = new Vector2(config.width, config.height);
     image.onload = () => {
@@ -107,7 +102,7 @@ const ImagePostProcess: React.FC<{
     renderer.render(scene, camera);
   };
   // emit的なのでボタン押した時にcancelを実行する
-  Router.events.on("routeChangeComplete", () =>
+  Router.events.on("routeChangeStart", () =>
     cancelAnimationFrame(animationFrameId)
   );
   // cancelAnimationFrame(animationFrameId);

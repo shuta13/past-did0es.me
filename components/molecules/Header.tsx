@@ -2,6 +2,7 @@ import styles from "./Header.module.scss";
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { sleep } from "./Menu";
+import Link from "next/link";
 
 export const Header: React.FC<{
   setIsHeaderClicked: (isHeaderClicked: boolean) => void;
@@ -11,7 +12,8 @@ export const Header: React.FC<{
 
   const _setIsHeaderClicked = () => setIsHeaderClicked(false);
 
-  const handleOnClick = () => {
+  const handleOnClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
     setIsHeaderClicked(true);
     sleep().then(() => {
       router.push("/");
@@ -25,7 +27,11 @@ export const Header: React.FC<{
 
   return (
     <div className={styles.wrap}>
-      <a className={styles.text} onClick={() => handleOnClick()}>
+      <a
+        href="/"
+        className={styles.text}
+        onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleOnClick(e)}
+      >
         did0es
       </a>
     </div>

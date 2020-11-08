@@ -5,9 +5,17 @@ import DetailsInfo from "./DetailsInfo";
 import works from "../../../public/json/works.json";
 import styles from "./Details.module.scss";
 import ImagePostProcess from "../../common/ImagePostProcess";
+import { useRouter } from "next/router";
 
-const Details: React.FC<{ name: string | string[] }> = ({ name }) => {
-  const [isClicked, setIsClicked] = useState(false);
+const Details: React.FC<{
+  name: string | string[];
+  isHeaderClicked: boolean;
+  isMenuClicked: boolean;
+  setIsClicked: (isClicked: boolean) => void;
+}> = ({ name, isHeaderClicked, isMenuClicked, setIsClicked }) => {
+  useEffect(() => {
+    setIsClicked(false);
+  }, []);
 
   return (
     <div className="container">
@@ -44,10 +52,9 @@ const Details: React.FC<{ name: string | string[] }> = ({ name }) => {
                 /> */}
               </Head>
 
-              <ImagePostProcess
-                img={`/works/${work.img}`}
-                isBackButtonClicked={isClicked}
-              />
+              {(!isHeaderClicked && !isMenuClicked) && (
+                <ImagePostProcess img={`/works/${work.img}`} />
+              )}
               <DetailsInfo info={work.info} />
               {/* <BackButton isClicked={isClicked} setIsClicked={setIsClicked} /> */}
               {/* <Loading /> */}

@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Work } from "../organisms/Carousel";
 import { Modal } from "./Modal";
+import { useRouter } from "next/router";
+import { sleep } from "./Menu";
 
 interface Props {
   work: Work;
@@ -12,6 +14,7 @@ interface Props {
   setIsSwipeSlideToRight: (isSwipeSlideToRight: boolean) => void;
   setIsShowModal: (isShowModal: boolean) => void;
   isShowModal: boolean;
+  setIsClicked: (isClicked: boolean) => void;
 }
 
 export const Slide: React.FC<Props> = props => {
@@ -22,12 +25,15 @@ export const Slide: React.FC<Props> = props => {
     setIsSwipeSlideToLeft,
     setIsSwipeSlideToRight,
     setIsShowModal,
-    isShowModal
+    isShowModal,
+    setIsClicked
   } = props;
   const [startMousePosition, setStartMousePosition] = useState(0);
   const [isFirstDragCaptured, setIsFirstDragCaptured] = useState(false);
 
   const slideRef = useRef<HTMLAnchorElement>(null);
+
+  const router = useRouter();
 
   useEffect(() => {
     slideRef.current?.clientWidth != null &&
@@ -68,31 +74,34 @@ export const Slide: React.FC<Props> = props => {
   };
 
   return (
-    <Link href="/works/[name]" as={`/works/${work.pathname}`}>
-      <a
-        className={styles.wrap}
-        style={style}
-        ref={slideRef}
-        onDragCapture={handleOnDragCapture}
-        onDragStart={handleOnDragStart}
-        onTouchMove={handleOnTouchMove}
-        onTouchStart={handleOnTouchStart}
-        onClick={() => setIsShowModal(true)}
-      >
-        <div className={styles.content}>
-          <div className={styles.overlay} />
-          <img
-            className={styles.image}
-            src={require(`../../public/works/${work?.img}`)}
-            alt="Works Image"
-          />
-        </div>
-        <div className={styles.date}>{work?.info.date}</div>
-        <div className={styles.title}>{work?.info.title}</div>
-      </a>
-      {/* {isShowModal && (
-        <Modal work={work} style={style} setIsShowModal={setIsShowModal} />
-      )} */}
-    </Link>
+    <a
+      href={`/works/${work.pathname}`}
+      className={styles.wrap}
+      style={style}
+      ref={slideRef}
+      onDragCapture={handleOnDragCapture}
+      onDragStart={handleOnDragStart}
+      onTouchMove={handleOnTouchMove}
+      onTouchStart={handleOnTouchStart}
+      onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault();
+        setIsShowModal(true);
+        setIsClicked(true);
+        sleep().then(() => {
+          router.push(`/works/${work.pathname}`);
+        });
+      }}
+    >
+      <div className={styles.content}>
+        <div className={styles.overlay} />
+        <img
+          className={styles.image}
+          src={require(`../../public/works/${work?.img}`)}
+          alt="Works Image"
+        />
+      </div>
+      <div className={styles.date}>{work?.info.date}</div>
+      <div className={styles.title}>{work?.info.title}</div>
+    </a>
   );
 };

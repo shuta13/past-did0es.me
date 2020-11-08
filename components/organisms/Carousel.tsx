@@ -18,6 +18,7 @@ const AppSlide: React.FC<{
   setIsSwipeSlideToRight: (isSwipeSlideToRight: boolean) => void;
   setIsShowModal: (isShowModal: boolean) => void;
   isShowModal: boolean;
+  setIsClicked: (isClicked: boolean) => void;
 }> = props => {
   const {
     work,
@@ -26,7 +27,8 @@ const AppSlide: React.FC<{
     setIsSwipeSlideToLeft,
     setIsSwipeSlideToRight,
     setIsShowModal,
-    isShowModal
+    isShowModal,
+    setIsClicked
   } = props;
   return (
     <Slide
@@ -38,11 +40,16 @@ const AppSlide: React.FC<{
       setIsSwipeSlideToRight={setIsSwipeSlideToRight}
       setIsShowModal={setIsShowModal}
       isShowModal={isShowModal}
+      setIsClicked={setIsClicked}
     />
   );
 };
 
-export const Carousel: React.FC = () => {
+export const Carousel: React.FC<{
+  setIsClicked: (isClicked: boolean) => void;
+}> = props => {
+  const { setIsClicked } = props;
+
   const [currentSlideNumber, setCurrentSlideNumber] = useState(1);
   const [translateXValue, setTranslateXValue] = useState(0);
   const [slideWidth, setSlideWidth] = useState(0);
@@ -111,6 +118,7 @@ export const Carousel: React.FC = () => {
             setIsSwipeSlideToRight={setIsSwipeSlideToRight}
             setIsShowModal={setIsShowModal}
             isShowModal={isShowModal}
+            setIsClicked={setIsClicked}
           />
         ))}
       </div>

@@ -21,7 +21,11 @@ export const Menu: React.FC<{
 
   const _setIsMenuClicked = () => setIsMenuClicked(false);
 
-  const handleOnClick = (pageName: string) => {
+  const handleOnClick = (
+    pageName: string,
+    e: React.MouseEvent<HTMLAnchorElement>
+  ) => {
+    e.preventDefault();
     setIsMenuClicked(true);
     sleep().then(() => {
       router.push(`/${pageName}`);
@@ -38,8 +42,11 @@ export const Menu: React.FC<{
       {pageNames.map(pageName => (
         <a
           className={styles.text}
-          onClick={() => handleOnClick(pageName)}
+          onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
+            handleOnClick(pageName, e)
+          }
           key={pageName}
+          href={pageName}
         >
           {`${pageName}`.toUpperCase()}
         </a>

@@ -4,16 +4,12 @@ import Head from "next/head";
 import Loading from "../components/common/Loading";
 import { Menu } from "../components/molecules/Menu";
 import { Header } from "../components/molecules/Header";
+import { AppProps } from "next/app";
 
-const Did0esMe = ({
-  Component,
-  pageProps
-}: {
-  Component: any;
-  pageProps: any;
-}) => {
+const Did0esMe = ({ Component, pageProps }: AppProps) => {
   const [isHeaderClicked, setIsHeaderClicked] = useState(false);
   const [isMenuClicked, setIsMenuClicked] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
   return (
     <>
       <Head>
@@ -23,8 +19,17 @@ const Did0esMe = ({
           rel="stylesheet"
         />
       </Head>
-      <div className={isHeaderClicked || isMenuClicked ? "FadeOut" : "FadeIn"}>
-        <Component {...pageProps} />
+      <div
+        className={
+          isHeaderClicked || isMenuClicked || isClicked ? "FadeOut" : "FadeIn"
+        }
+      >
+        <Component
+          {...pageProps}
+          isHeaderClicked={isHeaderClicked}
+          isMenuClicked={isMenuClicked}
+          setIsClicked={setIsClicked}
+        />
       </div>
       <Header setIsHeaderClicked={setIsHeaderClicked} />
       <Menu setIsMenuClicked={setIsMenuClicked} />
