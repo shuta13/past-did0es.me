@@ -7,7 +7,7 @@
 
 .content {
   position: relative;
-  max-width: 768px;
+  max-width: 1024px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -29,23 +29,19 @@
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
   letter-spacing: 2px;
-}
-
-.title {
-  @extend .text_common;
   font-size: 4rem;
   margin-bottom: 8px;
 }
 
+.title {
+  @extend .text_common;
+}
+
 .sub_title {
   @extend .text_common;
-  font-size: 3rem;
-  margin-bottom: 16px;
 }
 
 .text {
   @extend .text_common;
-  font-size: 2.5rem;
-  margin-bottom: 8px;
   font-weight: normal;
 }

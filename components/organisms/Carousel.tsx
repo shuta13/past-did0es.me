@@ -102,7 +102,8 @@ export const Carousel: React.FC = () => {
               filter:
                 work.id === currentSlideNumber
                   ? "brightness(1)"
-                  : "brightness(0.3)"
+                  : "brightness(0.3)",
+              pointerEvents: work.id === currentSlideNumber ? "auto" : "none"
             }}
             key={work.id}
             setSlideWidth={setSlideWidth}
