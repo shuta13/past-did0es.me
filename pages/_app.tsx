@@ -25,7 +25,9 @@ const Did0esMe = ({ Component, pageProps }: AppProps) => {
         />
       </Head>
       <div className={isRouteChange ? "FadeOut" : "FadeIn"}>
-        <Component {...pageProps} isRouteChange={isRouteChange} />
+        {
+          !isRouteChange && <Component {...pageProps} isRouteChange={isRouteChange} />
+        }
       </div>
       <Header isRouteChange={isRouteChange} />
       <Menu isRouteChange={isRouteChange} />
