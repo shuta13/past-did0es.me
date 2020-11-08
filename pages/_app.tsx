@@ -20,7 +20,7 @@ const Did0esMe = ({
       <Head>
         <title>did0es.me</title>
         <link
-          href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+Garamond&family=Poiret+One&family=Abel&?family=Ubuntu:wght@500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+Garamond&family=Poiret+One&family=Abel&?family=Ubuntu:wght@500&family=Montserrat&display=swap"
           rel="stylesheet"
         />
       </Head>

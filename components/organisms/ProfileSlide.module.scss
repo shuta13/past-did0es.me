@@ -27,14 +27,13 @@
 
 .text_common {
   color: #ffffff;
-  font-family: "Abel", sans-serif;
-  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
   letter-spacing: 2px;
 }
 
 .title {
   @extend .text_common;
-  font-size: 4.5rem;
+  font-size: 4rem;
   margin-bottom: 8px;
 }
 

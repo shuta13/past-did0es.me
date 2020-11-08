@@ -22,8 +22,8 @@
 
 .text {
   width: 100%;
-  font-size: 12px;
-  font-family: "Abel", sans-serif;
+  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
   color: #ffffff;
   letter-spacing: 2px;
   margin-bottom: 16px;
@@ -36,7 +36,7 @@
 
 .title {
   @extend .text;
-  font-size: 18px;
+  font-size: 2.5rem;
   text-align: right;
   font-weight: bold;
 }
