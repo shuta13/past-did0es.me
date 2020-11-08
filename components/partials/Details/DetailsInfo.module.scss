@@ -23,7 +23,7 @@
 
 .title {
   @extend .text;
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: right;
 }
 
@@ -35,6 +35,7 @@
 .tags {
   @extend .text;
   text-align: right;
+  line-height: 1.5em;
 }
 
 .description {
