@@ -21,7 +21,9 @@ const Did0esMe = ({ Component, pageProps }: AppProps) => {
       </Head>
       <div
         className={
-          isHeaderClicked || isMenuClicked || isClicked ? "FadeOut" : "FadeIn"
+          isHeaderClicked || isMenuClicked || isClicked
+            ? "FadeOutToLeft"
+            : "FadeInToRight"
         }
       >
         <Component
@@ -31,8 +33,18 @@ const Did0esMe = ({ Component, pageProps }: AppProps) => {
           setIsClicked={setIsClicked}
         />
       </div>
-      <Header setIsHeaderClicked={setIsHeaderClicked} />
-      <Menu setIsMenuClicked={setIsMenuClicked} />
+      <Header
+        isClicked={isClicked}
+        isHeaderClicked={isHeaderClicked}
+        isMenuClicked={isMenuClicked}
+        setIsHeaderClicked={setIsHeaderClicked}
+      />
+      <Menu
+        isClicked={isClicked}
+        isHeaderClicked={isHeaderClicked}
+        isMenuClicked={isMenuClicked}
+        setIsMenuClicked={setIsMenuClicked}
+      />
       <Loading />
     </>
   );

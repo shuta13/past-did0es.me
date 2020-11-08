@@ -10,15 +10,16 @@
   max-width: 1024px;
   display: flex;
   justify-content: center;
+  align-items: center;
   align-items: flex-start;
   flex-wrap: wrap;
+  margin: 10em 0;
 }
 
 .icon {
-  max-width: 320px;
+  max-width: 32em;
   width: 50vw;
-  margin-top: 12em;
-  margin-bottom: 3em;
+  margin: auto 0;
 }
 
 .text_wrap {

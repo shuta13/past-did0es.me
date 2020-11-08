@@ -29,11 +29,11 @@ export const ProfileSlide: React.FC = () => {
     <div className={styles.wrap}>
       <div className={styles.content}>
         {/* <div className="ProfileSlideContent" style={routeChangedStyle}> */}
-        {/* <img
+        <img
           className={styles.icon}
           src={require("../../public/icon.jpg")}
           alt="icon"
-        /> */}
+        />
         <div className={styles.text_wrap}>
           <div className={styles.title}>Shuta HIRAI</div>
           <div className={styles.sub_title}>Web Developer, Designer</div>

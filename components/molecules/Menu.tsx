@@ -14,9 +14,12 @@ export const sleep = () => {
 };
 
 export const Menu: React.FC<{
+  isClicked: boolean;
+  isMenuClicked: boolean;
+  isHeaderClicked: boolean;
   setIsMenuClicked: (isMenuClicked: boolean) => void;
 }> = props => {
-  const { setIsMenuClicked } = props;
+  const { isClicked, isHeaderClicked, isMenuClicked, setIsMenuClicked } = props;
   const router = useRouter();
 
   const _setIsMenuClicked = () => setIsMenuClicked(false);
@@ -38,7 +41,13 @@ export const Menu: React.FC<{
   }, []);
 
   return (
-    <div className={styles.wrap}>
+    <div
+      className={
+        isClicked || isHeaderClicked || isMenuClicked
+          ? styles.clicked
+          : styles.wrap
+      }
+    >
       {pageNames.map(pageName => (
         <a
           className={styles.text}

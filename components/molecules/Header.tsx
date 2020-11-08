@@ -5,9 +5,17 @@ import { sleep } from "./Menu";
 import Link from "next/link";
 
 export const Header: React.FC<{
+  isClicked: boolean;
+  isHeaderClicked: boolean;
+  isMenuClicked: boolean;
   setIsHeaderClicked: (isHeaderClicked: boolean) => void;
 }> = props => {
-  const { setIsHeaderClicked } = props;
+  const {
+    isClicked,
+    isHeaderClicked,
+    isMenuClicked,
+    setIsHeaderClicked
+  } = props;
   const router = useRouter();
 
   const _setIsHeaderClicked = () => setIsHeaderClicked(false);
@@ -26,7 +34,13 @@ export const Header: React.FC<{
   }, []);
 
   return (
-    <div className={styles.wrap}>
+    <div
+      className={
+        isHeaderClicked || isMenuClicked || isClicked
+          ? styles.clicked
+          : styles.wrap
+      }
+    >
       <a
         href="/"
         className={styles.text}
