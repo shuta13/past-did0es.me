@@ -13,16 +13,16 @@
   width: 5em;
   height: 5em;
   background: #ffffff80;
-  bottom: 1.5em;
+  bottom: 2.5em;
   border-radius: 50%;
 }
 
 .button_left {
   @extend .button_common;
-  left: 1.5em;
+  left: 3em;
 }
 
 .button_right {
   @extend .button_common;
-  right: 1.5em;
+  right: 3em;
 }

@@ -11,15 +11,29 @@ type InfoParams = {
   desc: string;
   subDesc?: string;
   link: string;
+  isRouteChange: boolean;
 };
 
-const DetailsInfo: React.FC<{ info: InfoParams }> = ({ info }) => {
+const DetailsInfo: React.FC<InfoParams> = props => {
+  const { title, date, tags, desc, subDesc, link, isRouteChange } = props;
   return (
     <>
       <div className={styles.wrap}>
-        <TextAnimation isMoveOverlay={true} text={info.title} fontSize={3} />
-        <TextAnimation isMoveOverlay={true} text={info.date} fontSize={1.8} />
-        <TextAnimation isMoveOverlay={true} text={info.tags} fontSize={1.8} />
+        <TextAnimation
+          isMoveOverlay={!isRouteChange}
+          text={title}
+          fontSize={3}
+        />
+        <TextAnimation
+          isMoveOverlay={!isRouteChange}
+          text={date}
+          fontSize={1.8}
+        />
+        <TextAnimation
+          isMoveOverlay={!isRouteChange}
+          text={tags}
+          fontSize={1.8}
+        />
         {/* <div className={styles.title}>{info.title}</div>
       <div className={styles.date}>{info.date}</div>
       <div className={styles.tags}>{info.tags}</div> */}
@@ -37,7 +51,7 @@ const DetailsInfo: React.FC<{ info: InfoParams }> = ({ info }) => {
           isMoveOverlay={true}
           text="VISIT"
           fontSize={3}
-          href={info.link}
+          href={link}
         />
       </div>
     </>

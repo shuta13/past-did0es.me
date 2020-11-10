@@ -19,39 +19,20 @@ const Details: React.FC<{
             <>
               <Head>
                 <title>did0es.me - {work.info.title}</title>
-                {/* <meta name="description" content={`${work.info.title}`} />
-                <meta
-                  property="og:site_name"
-                  content={`did0es.me - ${work.info.title}`}
-                />
-                <meta property="og:type" content="website" />
-                <meta
-                  property="og:url"
-                  content={`https://did0es.me/details/${
-                    work.img.split(".")[0]
-                  }`}
-                />
-                <meta
-                  property="og:title"
-                  content={`did0es.me - ${work.info.title}`}
-                />
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta
-                  property="og:description"
-                  content={`${work.info.title}`}
-                />
-                <meta
-                  property="og:image"
-                  content={`https://did0es.me/works/${work.img}`}
-                /> */}
               </Head>
 
               {!isRouteChange && (
                 <ImagePostProcess img={`/works/${work.img}`} />
               )}
-              <DetailsInfo info={work.info} />
-              {/* <BackButton isClicked={isClicked} setIsClicked={setIsClicked} /> */}
-              {/* <Loading /> */}
+              <DetailsInfo
+                title={work.info.title}
+                date={work.info.date}
+                tags={work.info.tags}
+                desc={work.info.desc}
+                subDesc={work.info.subDesc}
+                link={work.info.link}
+                isRouteChange={isRouteChange}
+              />
             </>
           )}
         </React.Fragment>
