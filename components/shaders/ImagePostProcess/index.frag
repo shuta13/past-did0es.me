@@ -134,5 +134,8 @@ void main() {
   // overlay noise
   color *= vec3(abs(noise1(_uv, time, .3))) + .45;
   color += vec3(abs(noise1(_uv, time, .3))) - .02;
+
+  color *= 0.6;
+
   gl_FragColor = vec4(color, 1.);
 }
