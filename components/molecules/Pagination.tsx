@@ -21,7 +21,7 @@ export const Pagination: React.FC<Props> = props => {
     <>
       {currentSlideNumber !== 1 && (
         <button className={styles.button_left} onClick={handleOnClickPrev}>
-          <FontAwesomeIcon icon={faAngleLeft} size="lg" color="#1d1d1d" />
+          <FontAwesomeIcon icon={faAngleLeft} size="2x" color="#1d1d1d" />
         </button>
       )}
       {/* <div
@@ -29,7 +29,7 @@ export const Pagination: React.FC<Props> = props => {
       >{`${currentSlideNumber} / ${totalNumber}`}</div> */}
       {currentSlideNumber !== totalNumber && (
         <button className={styles.button_right} onClick={handleOnClickNext}>
-          <FontAwesomeIcon icon={faAngleRight} size="lg" color="1d1d1d" />
+          <FontAwesomeIcon icon={faAngleRight} size="2x" color="1d1d1d" />
         </button>
       )}
     </>
