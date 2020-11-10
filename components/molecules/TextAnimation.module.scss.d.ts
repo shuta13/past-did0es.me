@@ -1,7 +1,7 @@
 declare const styles: {
-  readonly "wrap": string;
-  readonly "clicked": string;
+  readonly "text_animation": string;
   readonly "text": string;
+  readonly "text_moved": string;
 };
 export = styles;
 

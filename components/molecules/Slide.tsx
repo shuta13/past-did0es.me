@@ -2,9 +2,7 @@ import styles from "./Slide.module.scss";
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Work } from "../organisms/Carousel";
-import { Modal } from "./Modal";
-import { useRouter } from "next/router";
-import { sleep } from "./Menu";
+import { TextAnimation } from "./TextAnimation";
 
 interface Props {
   work: Work;
@@ -12,8 +10,7 @@ interface Props {
   setSlideWidth: (slideWidth: number) => void;
   setIsSwipeSlideToLeft: (isSwipeSlideToLeft: boolean) => void;
   setIsSwipeSlideToRight: (isSwipeSlideToRight: boolean) => void;
-  setIsShowModal: (isShowModal: boolean) => void;
-  isShowModal: boolean;
+  currentSlideNumber: number;
 }
 
 export const Slide: React.FC<Props> = props => {
@@ -23,13 +20,24 @@ export const Slide: React.FC<Props> = props => {
     setSlideWidth,
     setIsSwipeSlideToLeft,
     setIsSwipeSlideToRight,
-    setIsShowModal,
-    isShowModal
+    currentSlideNumber
   } = props;
   const [startMousePosition, setStartMousePosition] = useState(0);
   const [isFirstDragCaptured, setIsFirstDragCaptured] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   const slideRef = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", () => {
+      setWindowWidth(window.innerWidth);
+    });
+    return () =>
+      window.removeEventListener("resize", () => {
+        setWindowWidth(window.innerWidth);
+      });
+  }, []);
 
   useEffect(() => {
     slideRef.current?.clientWidth != null &&
@@ -88,8 +96,22 @@ export const Slide: React.FC<Props> = props => {
             alt="Works Image"
           />
         </div>
-        <div className={styles.date}>{work?.info.date}</div>
-        <div className={styles.title}>{work?.info.title}</div>
+        <div className={styles.date_wrap}>
+          <TextAnimation
+            isMoveOverlay={work.id === currentSlideNumber}
+            text={work?.info.date}
+            fontSize={3}
+          />
+        </div>
+        <div className={styles.title_wrap}>
+          <TextAnimation
+            isMoveOverlay={work.id === currentSlideNumber}
+            text={work?.info.title}
+            fontSize={windowWidth > 768 ? 8 : windowWidth * 0.015}
+          />
+        </div>
+        {/* <div className={styles.date}>{work?.info.date}</div>
+        <div className={styles.title}>{work?.info.title}</div> */}
       </a>
     </Link>
   );

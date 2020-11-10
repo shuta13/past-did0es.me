@@ -15,8 +15,7 @@ const AppSlide: React.FC<{
   setSlideWidth: (slideNumber: number) => void;
   setIsSwipeSlideToLeft: (isSwipeSlideToLeft: boolean) => void;
   setIsSwipeSlideToRight: (isSwipeSlideToRight: boolean) => void;
-  setIsShowModal: (isShowModal: boolean) => void;
-  isShowModal: boolean;
+  currentSlideNumber: number;
 }> = props => {
   const {
     work,
@@ -24,8 +23,7 @@ const AppSlide: React.FC<{
     setSlideWidth,
     setIsSwipeSlideToLeft,
     setIsSwipeSlideToRight,
-    setIsShowModal,
-    isShowModal
+    currentSlideNumber
   } = props;
   return (
     <Slide
@@ -35,8 +33,7 @@ const AppSlide: React.FC<{
       setSlideWidth={setSlideWidth}
       setIsSwipeSlideToLeft={setIsSwipeSlideToLeft}
       setIsSwipeSlideToRight={setIsSwipeSlideToRight}
-      setIsShowModal={setIsShowModal}
-      isShowModal={isShowModal}
+      currentSlideNumber={currentSlideNumber}
     />
   );
 };
@@ -47,7 +44,6 @@ export const Carousel: React.FC = () => {
   const [slideWidth, setSlideWidth] = useState(0);
   const [isSwipeSlideToLeft, setIsSwipeSlideToLeft] = useState(false);
   const [isSwipeSlideToRight, setIsSwipeSlideToRight] = useState(false);
-  const [isShowModal, setIsShowModal] = useState(false);
 
   const handleOnClickPrev = () => {
     works.map(work => {
@@ -108,8 +104,7 @@ export const Carousel: React.FC = () => {
             setSlideWidth={setSlideWidth}
             setIsSwipeSlideToLeft={setIsSwipeSlideToLeft}
             setIsSwipeSlideToRight={setIsSwipeSlideToRight}
-            setIsShowModal={setIsShowModal}
-            isShowModal={isShowModal}
+            currentSlideNumber={currentSlideNumber}
           />
         ))}
       </div>

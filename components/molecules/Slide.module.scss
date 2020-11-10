@@ -8,6 +8,7 @@
   transition: transform cubic-bezier(0.53, 0.01, 0.49, 0.99) 0.4s,
     filter cubic-bezier(0.53, 0.01, 0.49, 0.99) 0.4s;
   cursor: grab;
+  text-decoration: none;
 }
 
 .content {
@@ -39,45 +40,32 @@
   left: 0;
 }
 
-.text_common {
-  color: #ffffff;
-  font-family: "Montserrat", sans-serif;
-  letter-spacing: 2px;
+.title_wrap {
   position: absolute;
-}
-
-.title {
-  @extend .text_common;
-  font-size: 8rem;
   text-align: left;
   bottom: 0;
   left: 0;
 }
 
-.date {
-  @extend .text_common;
-  font-weight: normal;
-  font-size: 3rem;
+.date_wrap {
+  position: absolute;
   text-align: right;
   top: 0;
   right: 0;
 }
 
 @media screen and (max-width: 768px) {
-  .title {
-    @extend .text_common;
-    font-size: 6rem;
+  .title_wrap {
+    position: absolute;
     text-align: left;
-    bottom: -1em;
+    bottom: -3em;
     left: 0;
   }
 
-  .date {
-    @extend .text_common;
-    font-weight: normal;
-    font-size: 3rem;
+  .date_wrap {
+    position: absolute;
     text-align: right;
-    top: -1em;
+    top: -2em;
     right: 0;
   }
 }
