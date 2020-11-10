@@ -1,15 +1,13 @@
 .wrap {
   position: fixed;
-  right: 0;
-  top: 0;
-  // width: 400px;
-  height: 100%;
+  bottom: 8.5em;
   display: flex;
   justify-content: center;
   align-content: flex-end;
   flex-wrap: wrap;
   background: transparent;
   padding: 0 3em;
+  margin: auto 0;
 }
 
 .text {
@@ -44,21 +42,13 @@
 }
 
 .link_wrap {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
+  position: absolute;
+  right: 3em;
+  bottom: 2.5em;
 }
 
 .link {
   @extend .text;
   text-decoration: none;
   width: auto;
-}
-
-@media screen and (max-width: 768px) {
-  .wrap {
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
 }
