@@ -6,13 +6,23 @@ import { TextAnimation } from "../molecules/TextAnimation";
 export const ProfileSlide: React.FC<{ isLoaded: boolean }> = props => {
   const { isLoaded } = props;
   const [isMoveOverlay, setIsMoveOverlay] = useState(false);
+  const [isInitialLoad, setIsInitialLoad] = useState(false);
 
   useEffect(() => {
-    isLoaded &&
+    if (isLoaded && isInitialLoad) {
+      sleep(1200).then(() => {
+        setIsMoveOverlay(true);
+      });
+    } else if (isLoaded) {
       sleep(200).then(() => {
         setIsMoveOverlay(true);
       });
+    }
   }, [isLoaded]);
+
+  useEffect(() => {
+    setIsInitialLoad(true);
+  }, []);
 
   return (
     <div className={styles.wrap}>
