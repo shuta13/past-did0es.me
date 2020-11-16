@@ -10,11 +10,10 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  width: 5em;
-  height: 5em;
-  background: #ffffff80;
   bottom: 2.5em;
   border-radius: 50%;
+  transition: opacity cubic-bezier(0.55, 0.04, 0.47, 0.98) 0.8s;
+  opacity: 1;
 }
 
 .button_left {
@@ -25,4 +24,16 @@
 .button_right {
   @extend .button_common;
   right: 3em;
+}
+
+.button_left_disable {
+  @extend .button_left;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.button_right_disable {
+  @extend .button_right;
+  opacity: 0;
+  pointer-events: none;
 }
