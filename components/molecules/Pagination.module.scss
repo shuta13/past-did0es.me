@@ -10,20 +10,24 @@
   justify-content: center;
   align-items: center;
   position: absolute;
+  width: 5em;
+  height: 5em;
+  border: 1px solid #ffffff;
   bottom: 2.5em;
-  border-radius: 50%;
+  border-radius: 1.5em;
   transition: opacity cubic-bezier(0.55, 0.04, 0.47, 0.98) 0.8s;
+  background: #1d1d1d;
   opacity: 1;
 }
 
 .button_left {
   @extend .button_common;
-  left: 3em;
+  left: 2em;
 }
 
 .button_right {
   @extend .button_common;
-  right: 3em;
+  right: 2em;
 }
 
 .button_left_disable {

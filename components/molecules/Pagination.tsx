@@ -32,7 +32,7 @@ export const Pagination: React.FC<Props> = props => {
         }
         onClick={handleOnClickPrev}
       >
-        <FontAwesomeIcon icon={faCaretLeft} size="4x" color="#ffffff" />
+        <FontAwesomeIcon icon={faCaretLeft} size="3x" color="#ffffff" />
       </button>
       <button
         className={
@@ -42,7 +42,7 @@ export const Pagination: React.FC<Props> = props => {
         }
         onClick={handleOnClickNext}
       >
-        <FontAwesomeIcon icon={faCaretRight} size="4x" color="#ffffff" />
+        <FontAwesomeIcon icon={faCaretRight} size="3x" color="#ffffff" />
       </button>
     </>
   );
