@@ -6,9 +6,9 @@ import Link from "next/link";
 
 export const Header: React.FC<{
   isRouteChange: boolean;
-  setIsMenuReset: (isMenuReset: boolean) => void;
+  resetActiveMenu: () => void;
 }> = props => {
-  const { isRouteChange, setIsMenuReset } = props;
+  const { isRouteChange, resetActiveMenu } = props;
 
   return (
     <div className={isRouteChange ? styles.clicked : styles.wrap}>
@@ -19,7 +19,7 @@ export const Header: React.FC<{
           alt="Icon"
           width={56}
           height={56}
-          onClick={() => setIsMenuReset(true)}
+          onClick={resetActiveMenu}
         />
       </Link>
     </div>

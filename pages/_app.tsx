@@ -19,12 +19,10 @@ const Did0esMe = ({ Component, pageProps }: AppProps) => {
     sleep().then(() => setIsRouteChange(false));
   });
 
-  useEffect(() => {
-    if (isMenuReset) {
-      setIsWorksActive(false);
-      setIsContactActive(false);
-    }
-  }, [isMenuReset]);
+  const resetActiveMenu = () => {
+    setIsWorksActive(false);
+    setIsContactActive(false);
+  };
 
   return (
     <>
@@ -47,7 +45,7 @@ const Did0esMe = ({ Component, pageProps }: AppProps) => {
           />
         )}
       </div>
-      <Header isRouteChange={isRouteChange} setIsMenuReset={setIsMenuReset} />
+      <Header isRouteChange={isRouteChange} resetActiveMenu={resetActiveMenu} />
       <Menu
         isRouteChange={isRouteChange}
         isWorksActive={isWorksActive}
