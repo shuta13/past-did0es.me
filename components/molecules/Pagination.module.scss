@@ -3,18 +3,16 @@
   appearance: none;
   border: none;
   background: transparent;
-  font-family: "Montserrat", sans-serif;
   cursor: pointer;
-  width: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  width: 5em;
-  height: 5em;
+  width: 64px;
+  height: 64px;
   border: 1px solid #ffffff;
   bottom: 2.5em;
-  border-radius: 1.5em;
+  border-radius: 50%;
   transition: opacity cubic-bezier(0.55, 0.04, 0.47, 0.98) 0.8s;
   background: #1d1d1d;
   opacity: 1;
@@ -22,12 +20,12 @@
 
 .button_left {
   @extend .button_common;
-  left: 2em;
+  left: 2.5em;
 }
 
 .button_right {
   @extend .button_common;
-  right: 2em;
+  right: 2.5em;
 }
 
 .button_left_disable {

@@ -12,7 +12,13 @@ export const Header: React.FC<{
   return (
     <div className={isRouteChange ? styles.clicked : styles.wrap}>
       <Link href="/">
-        <a className={styles.text}>did0es</a>
+        <img
+          className={styles.icon}
+          src="/icon.jpg"
+          alt="Icon"
+          width={56}
+          height={56}
+        />
       </Link>
     </div>
   );

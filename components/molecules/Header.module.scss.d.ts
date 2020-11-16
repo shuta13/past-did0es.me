@@ -1,7 +1,7 @@
 declare const styles: {
   readonly "wrap": string;
   readonly "clicked": string;
-  readonly "text": string;
+  readonly "icon": string;
 };
 export = styles;
 
