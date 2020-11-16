@@ -11,6 +11,7 @@ interface Props {
   setIsSwipeSlideToLeft: (isSwipeSlideToLeft: boolean) => void;
   setIsSwipeSlideToRight: (isSwipeSlideToRight: boolean) => void;
   currentSlideNumber: number;
+  setIsMenuReset: (isMenuReset: boolean) => void;
 }
 
 export const Slide: React.FC<Props> = props => {
@@ -20,7 +21,8 @@ export const Slide: React.FC<Props> = props => {
     setSlideWidth,
     setIsSwipeSlideToLeft,
     setIsSwipeSlideToRight,
-    currentSlideNumber
+    currentSlideNumber,
+    setIsMenuReset
   } = props;
   const [startMousePosition, setStartMousePosition] = useState(0);
   const [isFirstDragCaptured, setIsFirstDragCaptured] = useState(false);
@@ -87,6 +89,7 @@ export const Slide: React.FC<Props> = props => {
         onDragStart={handleOnDragStart}
         onTouchMove={handleOnTouchMove}
         onTouchStart={handleOnTouchStart}
+        onClick={() => setIsMenuReset(true)}
       >
         <div className={styles.content}>
           <div className={styles.overlay} />

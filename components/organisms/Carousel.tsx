@@ -9,36 +9,10 @@ works.map(work => workNames.push(work.info.title));
 
 export type Work = typeof works[0];
 
-const AppSlide: React.FC<{
-  work: Work;
-  slideStyle: React.CSSProperties;
-  setSlideWidth: (slideNumber: number) => void;
-  setIsSwipeSlideToLeft: (isSwipeSlideToLeft: boolean) => void;
-  setIsSwipeSlideToRight: (isSwipeSlideToRight: boolean) => void;
-  currentSlideNumber: number;
+export const Carousel: React.FC<{
+  setIsMenuReset: (setIsMenuReset: boolean) => void;
 }> = props => {
-  const {
-    work,
-    slideStyle,
-    setSlideWidth,
-    setIsSwipeSlideToLeft,
-    setIsSwipeSlideToRight,
-    currentSlideNumber
-  } = props;
-  return (
-    <Slide
-      work={work}
-      key={work.id}
-      style={slideStyle}
-      setSlideWidth={setSlideWidth}
-      setIsSwipeSlideToLeft={setIsSwipeSlideToLeft}
-      setIsSwipeSlideToRight={setIsSwipeSlideToRight}
-      currentSlideNumber={currentSlideNumber}
-    />
-  );
-};
-
-export const Carousel: React.FC = () => {
+  const { setIsMenuReset } = props;
   const [currentSlideNumber, setCurrentSlideNumber] = useState(1);
   const [translateXValue, setTranslateXValue] = useState(0);
   const [slideWidth, setSlideWidth] = useState(0);
@@ -88,9 +62,10 @@ export const Carousel: React.FC = () => {
         style={{ transform: `translateX(-${translateXValue}px)` }}
       >
         {works.map(work => (
-          <AppSlide
+          <Slide
             work={work}
-            slideStyle={{
+            key={work.id}
+            style={{
               transform: `translateX(${100 * (work.id - 1)}%) scale3d(${
                 work.id === currentSlideNumber ? 1.1 : 0.9
               }, ${work.id === currentSlideNumber ? 1.1 : 0.9}, 1)`,
@@ -100,11 +75,11 @@ export const Carousel: React.FC = () => {
                   : "brightness(0.3)",
               pointerEvents: work.id === currentSlideNumber ? "auto" : "none"
             }}
-            key={work.id}
             setSlideWidth={setSlideWidth}
             setIsSwipeSlideToLeft={setIsSwipeSlideToLeft}
             setIsSwipeSlideToRight={setIsSwipeSlideToRight}
             currentSlideNumber={currentSlideNumber}
+            setIsMenuReset={setIsMenuReset}
           />
         ))}
       </div>
