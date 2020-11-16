@@ -3,12 +3,14 @@ import { Carousel } from "../../components/organisms/Carousel";
 
 const Work: React.FC<{
   setIsMenuReset: (isMenuReset: boolean) => void;
-  setIsWorksClicked: (isWorksClicked: boolean) => void;
+  setIsWorksActive: (isWorksActive: boolean) => void;
+  setIsContactActive: (isContactActive: boolean) => void;
 }> = props => {
-  const { setIsMenuReset, setIsWorksClicked } = props;
+  const { setIsMenuReset, setIsWorksActive, setIsContactActive } = props;
 
   useEffect(() => {
-    setIsWorksClicked(true);
+    setIsWorksActive(true);
+    setIsContactActive(false);
   }, []);
 
   return (

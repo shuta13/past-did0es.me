@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 
 const Contact: React.FC<{
-  setIsContactClicked: (isContactClicked: boolean) => void;
+  setIsWorksActive: (isWorksActive: boolean) => void;
+  setIsContactActive: (isContactActive: boolean) => void;
 }> = props => {
-  const { setIsContactClicked } = props;
+  const { setIsContactActive, setIsWorksActive } = props;
   useEffect(() => {
-    setIsContactClicked(true);
+    setIsContactActive(true);
+    setIsWorksActive(false);
   }, []);
   return <></>;
 };
