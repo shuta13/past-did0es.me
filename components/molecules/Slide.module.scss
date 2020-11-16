@@ -43,29 +43,13 @@
 .title_wrap {
   position: absolute;
   text-align: left;
-  bottom: 0;
-  left: 0;
+  bottom: 0em;
+  left: 0em;
 }
 
 .date_wrap {
   position: absolute;
   text-align: right;
-  top: 0;
+  top: 1.2em;
   right: 0;
-}
-
-@media screen and (max-width: 768px) {
-  .title_wrap {
-    position: absolute;
-    text-align: left;
-    bottom: -3em;
-    left: 0;
-  }
-
-  .date_wrap {
-    position: absolute;
-    text-align: right;
-    top: -2em;
-    right: 0;
-  }
 }
