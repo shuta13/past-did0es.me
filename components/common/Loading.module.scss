@@ -7,7 +7,7 @@
   align-items: center;
   background: #161616;
   z-index: 999999;
-  transform: translateX(0%);
+  transform: translateY(0%);
   transition: transform cubic-bezier(0.9, 0.23, 0.48, 0.97) 1s,
     opacity cubic-bezier(0.55, 0.04, 0.47, 0.98) 0.8s;
 }
@@ -19,7 +19,7 @@
 
 .overlay_loaded {
   @extend .overlay_common;
-  transform: translateX(116%) scale(1.2) rotate(-4deg) translateY(-4%);
+  transform: translateY(116%);
   opacity: 0;
   transition-delay: 1s;
 }
