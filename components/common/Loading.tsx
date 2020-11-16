@@ -2,6 +2,7 @@ import styles from "./Loading.module.scss";
 import React, { useEffect, useRef, useState } from "react";
 
 import LoadingCanvas from "../partials/Loading/LoadingCanvas";
+import { sleep } from "../molecules/Menu";
 
 const Loading: React.FC<{
   isLoaded: boolean;
@@ -12,10 +13,7 @@ const Loading: React.FC<{
   const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    isLoaded &&
-      setTimeout(() => {
-        setIsShowLoading(false);
-      }, 2000);
+    isLoaded && sleep(2000).then(() => setIsShowLoading(false));
   }, [isLoaded]);
 
   return (
