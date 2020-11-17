@@ -110,7 +110,7 @@ export const Slide: React.FC<Props> = props => {
           <TextAnimation
             isMoveOverlay={work.id === currentSlideNumber}
             text={work?.info.title}
-            fontSize={windowWidth > 768 ? 8 : windowWidth * 0.015}
+            fontSize={windowWidth > 768 ? 8 : windowWidth * 0.012}
           />
         </div>
         {/* <div className={styles.date}>{work?.info.date}</div>
