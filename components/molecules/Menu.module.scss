@@ -1,43 +1,79 @@
 .wrap {
-  position: absolute;
-  display: flex;
-  top: 2.5em;
-  right: 3em;
-  transition: transform cubic-bezier(0.62, 0.03, 0.42, 0.96) 1.2s,
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  transition: transform cubic-bezier(0.62, 0.03, 0.42, 0.96) 1.6s,
     opacity cubic-bezier(0.55, 0.04, 0.47, 0.98) 1.4s;
   transform: translateY(0%);
   opacity: 1;
-  // top: 30em;
-  // left: 0.5em;
-  // transform-origin: left top;
-  // transform: rotate(-90deg);
+  width: 56px;
+  height: 56px;
+  z-index: 1;
 }
 
 .clicked {
   @extend .wrap;
-  transition: transform cubic-bezier(0.62, 0.03, 0.42, 0.96) 1.2s,
+  transition: transform cubic-bezier(0.62, 0.03, 0.42, 0.96) 2s,
     opacity cubic-bezier(0.55, 0.04, 0.47, 0.98) 0.6s;
-  transform: translateY(-60%);
+  transform: translateY(-40%);
   opacity: 0;
 }
 
-.text {
-  color: #ffffff;
-  font-family: "Montserrat", sans-serif;
-  letter-spacing: 2px;
-  font-size: 3rem;
-  font-weight: normal;
-  margin-left: 0.5em;
-  text-decoration: none;
+.button {
+  appearance: none;
+  border: none;
+  background: transparent;
+  outline: none;
   cursor: pointer;
-  transition: color cubic-bezier(0.55, 0.04, 0.47, 0.98) 0.6s;
+  width: 56px;
+  height: 56px;
 }
 
-.text:hover {
-  color: #5ef045;
+.line_base {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #ffffff;
+  height: 2px;
+  width: 40px;
+  transition: transform cubic-bezier(0.62, 0.03, 0.42, 0.96) 1.2s,
+    width cubic-bezier(0.62, 0.03, 0.42, 0.96) 1.2s;
 }
 
-.text_active {
-  @extend .text;
-  color: #5ef045;
+.line {
+  display: block;
+  position: absolute;
+  background: #ffffff;
+  height: 2px;
+  width: 24px;
+  top: calc(50% - 1px);
+  transition: transform cubic-bezier(0.62, 0.03, 0.42, 0.96) 1.2s,
+    background cubic-bezier(0.62, 0.03, 0.42, 0.96) 1.2s;
+}
+
+.line::before {
+  @extend .line_base;
+  top: 8px;
+}
+
+.line::after {
+  @extend .line_base;
+  width: 32px;
+  top: -8px;
+}
+
+.line_clicked {
+  @extend .line;
+  background: transparent;
+}
+
+.line_clicked::before {
+  @extend .line_base;
+  transform: rotate(45deg) translate(-6px, 4px);
+}
+
+.line_clicked::after {
+  @extend .line_base;
+  width: 40px;
+  transform: rotate(-45deg) translate(-14px, 4px);
 }

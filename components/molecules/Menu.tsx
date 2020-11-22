@@ -1,6 +1,7 @@
 import styles from "./Menu.module.scss";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { Modal } from "./Modal";
 
 export const sleep = (duration?: number) => {
   return new Promise(resolve => {
@@ -16,19 +17,19 @@ export const Menu: React.FC<{
   isContactActive: boolean;
 }> = props => {
   const { isRouteChange, isWorksActive, isContactActive } = props;
+  const [isClicked, setIsClicked] = useState(false);
 
   return (
-    <div className={isRouteChange ? styles.clicked : styles.wrap}>
-      <Link href="/works">
-        <a className={isWorksActive ? styles.text_active : styles.text}>
-          WORKS
-        </a>
-      </Link>
-      <Link href="/contact">
-        <a className={isContactActive ? styles.text_active : styles.text}>
-          CONTACT
-        </a>
-      </Link>
-    </div>
+    <>
+      <div className={isRouteChange ? styles.clicked : styles.wrap}>
+        <button
+          className={styles.button}
+          onClick={() => setIsClicked(prevState => !prevState)}
+        >
+          <span className={isClicked ? styles.line_clicked : styles.line} />
+        </button>
+      </div>
+      <Modal isClicked={isClicked} setIsClicked={setIsClicked} />
+    </>
   );
 };

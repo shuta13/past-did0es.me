@@ -36,43 +36,28 @@ export const ProfileSlide: React.FC<{ isLoaded: boolean }> = props => {
         <div className={styles.text_wrap}>
           <TextAnimation
             isMoveOverlay={isMoveOverlay}
-            text="Shuta HIRAI"
-            fontSize={3}
+            text="Shuta HIRAI / did0es"
+            fontSize={4}
           />
           <TextAnimation
             isMoveOverlay={isMoveOverlay}
-            text="Web Developer, Designer"
-            fontSize={3}
+            text="Software Engineer(Web, iOS) & UI/UX Designer in Kyoto"
+            fontSize={4}
           />
           <TextAnimation
             isMoveOverlay={isMoveOverlay}
-            text="Student @ Ritsumeikan Univ"
-            fontSize={3}
+            text="I Love React, WebGL, TypeScript"
+            fontSize={4}
           />
           <TextAnimation
             isMoveOverlay={isMoveOverlay}
-            text="FrontEnd Engineer @ Relie, inc"
-            fontSize={3}
+            text="This project includes my works, work history"
+            fontSize={4}
           />
           <TextAnimation
             isMoveOverlay={isMoveOverlay}
-            text="FrontEnd Engineer・Designer @ AkinaiOne, inc"
-            fontSize={3}
-          />
-          <TextAnimation
-            isMoveOverlay={isMoveOverlay}
-            text="FrontEnd Engineer・Designer @ ElevenBack LLC."
-            fontSize={3}
-          />
-          <TextAnimation
-            isMoveOverlay={isMoveOverlay}
-            text="Web Developer @ tambourine.inc"
-            fontSize={3}
-          />
-          <TextAnimation
-            isMoveOverlay={isMoveOverlay}
-            text="Ex. FrontEnd Engineer @ Tech Design, inc"
-            fontSize={3}
+            text="Welcome to cantact me!"
+            fontSize={4}
           />
         </div>
       </div>
