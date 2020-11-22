@@ -79,6 +79,19 @@
   },
   {
     "id": 7,
+    "img": "rakunote.jpg",
+    "pathname": "rakunote",
+    "info": {
+      "title": "RAKUNOTE (beta)",
+      "date": "sep. 23, 2020",
+      "tags": "Web Service",
+      "desc": "AkinaiOne,incの受託業務として開発したサービス",
+      "subDesc": "",
+      "link": "https://rakunote.app"
+    }
+  },
+  {
+    "id": 8,
     "img": "tambourine-podcast-site.jpg",
     "pathname": "tambourine-podcast-site",
     "info": {
@@ -91,7 +104,7 @@
     }
   },
   {
-    "id": 8,
+    "id": 9,
     "img": "veginning.jpg",
     "pathname": "veginning",
     "info": {
