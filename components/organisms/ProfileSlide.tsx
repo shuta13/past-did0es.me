@@ -41,7 +41,7 @@ export const ProfileSlide: React.FC<{ isLoaded: boolean }> = props => {
           />
           <TextAnimation
             isMoveOverlay={isMoveOverlay}
-            text="Software Engineer(Web, iOS) & UI/UX Designer in Kyoto."
+            text="Software Engineer(Web, iOS) & UI/UX Designer."
             fontSize={4}
           />
           <TextAnimation
