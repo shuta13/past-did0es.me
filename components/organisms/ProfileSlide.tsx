@@ -56,7 +56,7 @@ export const ProfileSlide: React.FC<{ isLoaded: boolean }> = props => {
           />
           <TextAnimation
             isMoveOverlay={isMoveOverlay}
-            text="Welcome to contact me !"
+            text="Welcome to contact me."
             fontSize={4}
           />
         </div>
