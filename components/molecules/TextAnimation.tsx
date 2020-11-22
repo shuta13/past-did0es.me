@@ -8,7 +8,7 @@ export const TextAnimation: React.FC<{
   fontSize: number;
   href?: string;
   link?: string;
-  textAlign?: "left" | "right";
+  textAlign?: "left" | "right" | "center";
   setIsClicked?: (isClicked: boolean) => void;
 }> = props => {
   const {
@@ -23,7 +23,8 @@ export const TextAnimation: React.FC<{
   const getTextAlign = () => {
     if (textAlign) {
       if (textAlign === "left") return "flex-start";
-      else return "flex-end";
+      else if (textAlign === "right") return "flex-end";
+      else if (textAlign === "center") return "center";
     }
   };
   return (
@@ -37,7 +38,7 @@ export const TextAnimation: React.FC<{
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          style={{ textDecoration: "none" }}
+          style={{ textDecoration: "none", fontSize: `${fontSize}rem` }}
         >
           {text}
         </a>
