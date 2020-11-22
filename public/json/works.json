@@ -45,7 +45,7 @@
     "info": {
       "title": "GARELLY",
       "date": "May 25, 2019",
-      "tags": "Web Components, 2D Graphics",
+      "tags": "Shadow DOM, Custom Elements, 2D Graphics",
       "desc": "過去に習作として制作した2Dグラフィックス作品をまとめたWebサイトです Webサイトのデザインから実装までを個人で行いました．  デザインはSketchを用いて実装しつつ，過去に制作したWebサイトのUIも参考にしました また，実装にはReactやVue.jsなどのライブラリ・フレームワークは用いず，試験的にWebComponentsを使用しました 合わせてTypeScriptの環境もWebpackで構築しました．  Webサイトに載せたグラフィックス作品はProcessingやPhotoshopを用いて制作したものです．",
       "subDesc": "",
       "link": "https://garelly.did0es.me"
