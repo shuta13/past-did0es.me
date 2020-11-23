@@ -29,7 +29,7 @@ const Did0esMe = ({ Component, pageProps }: AppProps) => {
       <Head>
         <title>did0es.me</title>
         <link
-          href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+Garamond&family=Poiret+One&family=Abel&?family=Ubuntu:wght@500&family=Montserrat&family=Thasadith&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Cormorant+Garamond&family=Poiret+One&family=Abel&?family=Ubuntu:wght@500&family=Libre+Caslon+Display&family=Thasadith&display=swap"
           rel="stylesheet"
         />
       </Head>

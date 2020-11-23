@@ -18,47 +18,49 @@ const Contact: React.FC<{
     setIsWorksActive(false);
   }, []);
   return (
-    <>
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          flexWrap: "wrap",
-          margin: "auto"
-        }}
-      >
+    <div
+      style={{
+        position: "fixed",
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexWrap: "wrap",
+        margin: "auto"
+      }}
+    >
+      <div style={{}}>
         <TextAnimation
           isMoveOverlay={isLoaded || isRouteChange}
           text="GitHub"
           fontSize={4}
           href="https://github.com/shuta13"
-          textAlign="center"
+          textAlign="left"
         />
         <TextAnimation
           isMoveOverlay={isLoaded || isRouteChange}
           text="Twitter"
           fontSize={4}
           href="https://twitter.com/did0es"
-          textAlign="center"
+          textAlign="left"
         />
         <TextAnimation
           isMoveOverlay={isLoaded || isRouteChange}
           text="Instagram"
           fontSize={4}
           href="https://www.instagram.com/did0es13"
-          textAlign="center"
+          textAlign="left"
         />
         <TextAnimation
           isMoveOverlay={isLoaded || isRouteChange}
           text="Scrapbox"
           fontSize={4}
           href="https://scrapbox.io/did0es"
-          textAlign="center"
+          textAlign="left"
         />
       </div>
-    </>
+    </div>
   );
 };
 

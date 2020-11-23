@@ -6,6 +6,9 @@
   transform: translateY(0%);
   transition: transform cubic-bezier(0.9, 0.23, 0.48, 0.97) 1.2s,
     opacity cubic-bezier(0.55, 0.04, 0.47, 0.98) 0.1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal_hide {
@@ -16,8 +19,16 @@
   opacity: 0;
 }
 
+.content {
+  position: relative;
+  max-width: 1048px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10em 0;
+}
+
 .text_wrap {
-  position: absolute;
-  top: 40%;
-  right: 56px;
+  margin: 0 32px;
 }

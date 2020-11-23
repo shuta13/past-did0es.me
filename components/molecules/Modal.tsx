@@ -14,23 +14,25 @@ export const Modal: React.FC<{
   }, [isClicked]);
   return (
     <div className={isClicked ? styles.modal : styles.modal_hide}>
-      <div className={styles.text_wrap}>
-        <TextAnimation
-          isMoveOverlay={isMoveOverlay}
-          text="WORKS"
-          fontSize={4}
-          link="/works"
-          textAlign="right"
-          setIsClicked={setIsClicked}
-        />
-        <TextAnimation
-          isMoveOverlay={isMoveOverlay}
-          text="CONTACT"
-          fontSize={4}
-          link="/contact"
-          textAlign="right"
-          setIsClicked={setIsClicked}
-        />
+      <div className={styles.content}>
+        <div className={styles.text_wrap}>
+          <TextAnimation
+            isMoveOverlay={isMoveOverlay}
+            text="WORKS"
+            fontSize={4}
+            link="/works"
+            textAlign="left"
+            setIsClicked={setIsClicked}
+          />
+          <TextAnimation
+            isMoveOverlay={isMoveOverlay}
+            text="CONTACT"
+            fontSize={4}
+            link="/contact"
+            textAlign="left"
+            setIsClicked={setIsClicked}
+          />
+        </div>
       </div>
     </div>
   );
