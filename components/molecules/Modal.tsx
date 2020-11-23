@@ -18,6 +18,14 @@ export const Modal: React.FC<{
         <div className={styles.text_wrap}>
           <TextAnimation
             isMoveOverlay={isMoveOverlay}
+            text="HOME"
+            fontSize={4}
+            link="/"
+            textAlign="left"
+            setIsClicked={setIsClicked}
+          />
+          <TextAnimation
+            isMoveOverlay={isMoveOverlay}
             text="WORKS"
             fontSize={4}
             link="/works"

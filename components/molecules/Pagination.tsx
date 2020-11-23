@@ -36,6 +36,7 @@ export const Pagination: React.FC<Props> = props => {
           icon={faCaretLeft}
           size="3x"
           color="#ffffff"
+          className={styles.icon}
           style={{ marginRight: 4 }}
         />
       </button>
@@ -51,6 +52,7 @@ export const Pagination: React.FC<Props> = props => {
           icon={faCaretRight}
           size="3x"
           color="#ffffff"
+          className={styles.icon}
           style={{ marginLeft: 4 }}
         />
       </button>
