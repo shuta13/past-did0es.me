@@ -34,7 +34,7 @@
   display: block;
   position: absolute;
   background: #ffffff;
-  height: 2px;
+  height: 4px;
   width: 40px;
   transition: transform cubic-bezier(0.62, 0.03, 0.42, 0.96) 1.2s,
     width cubic-bezier(0.62, 0.03, 0.42, 0.96) 1.2s;
@@ -44,7 +44,7 @@
   display: block;
   position: absolute;
   background: #ffffff;
-  height: 2px;
+  height: 4px;
   width: 24px;
   top: calc(50% - 1px);
   transition: transform cubic-bezier(0.62, 0.03, 0.42, 0.96) 1.2s,
