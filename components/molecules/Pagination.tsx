@@ -7,6 +7,7 @@ import {
   faCaretLeft,
   faCaretRight
 } from "@fortawesome/free-solid-svg-icons";
+import { TextAnimation } from "./TextAnimation";
 
 interface Props {
   currentSlideNumber: number;
@@ -32,12 +33,11 @@ export const Pagination: React.FC<Props> = props => {
         }
         onClick={handleOnClickPrev}
       >
-        <FontAwesomeIcon
-          icon={faCaretLeft}
-          size="3x"
-          color="#ffffff"
-          className={styles.icon}
-          style={{ marginRight: 4 }}
+        <TextAnimation
+          isMoveOverlay={true}
+          text="PREV"
+          fontSize={2.5}
+          textAlign="right"
         />
       </button>
       <button
@@ -48,12 +48,11 @@ export const Pagination: React.FC<Props> = props => {
         }
         onClick={handleOnClickNext}
       >
-        <FontAwesomeIcon
-          icon={faCaretRight}
-          size="3x"
-          color="#ffffff"
-          className={styles.icon}
-          style={{ marginLeft: 4 }}
+        <TextAnimation
+          isMoveOverlay={true}
+          text="NEXT"
+          fontSize={2.5}
+          textAlign="left"
         />
       </button>
     </>

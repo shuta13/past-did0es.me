@@ -36,17 +36,22 @@ export const ProfileSlide: React.FC<{ isLoaded: boolean }> = props => {
         <div className={styles.text_wrap}>
           <TextAnimation
             isMoveOverlay={isMoveOverlay}
-            text="Shuta HIRAI,"
+            text="SHUTA"
             fontSize={12}
           />
           <TextAnimation
             isMoveOverlay={isMoveOverlay}
-            text="AKA did0es"
-            fontSize={8}
+            text="HIRAI"
+            fontSize={12}
           />
           <TextAnimation
             isMoveOverlay={isMoveOverlay}
-            text="Software Engineer(Web, iOS) & UI/UX Designer."
+            text="DID0ES"
+            fontSize={12}
+          />
+          <TextAnimation
+            isMoveOverlay={isMoveOverlay}
+            text="FrontEnd Engineer, UI/UX Designer."
             fontSize={4}
           />
           <TextAnimation
@@ -54,7 +59,7 @@ export const ProfileSlide: React.FC<{ isLoaded: boolean }> = props => {
             text="I Love React, WebGL, TypeScript."
             fontSize={4}
           />
-          <TextAnimation
+          {/* <TextAnimation
             isMoveOverlay={isMoveOverlay}
             text="This project includes my works, work histories."
             fontSize={4}
@@ -63,8 +68,34 @@ export const ProfileSlide: React.FC<{ isLoaded: boolean }> = props => {
             isMoveOverlay={isMoveOverlay}
             text="Welcome to contact me."
             fontSize={4}
-          />
+          /> */}
         </div>
+      </div>
+      <div className={styles.edge_text_bottom_right}>
+        <TextAnimation
+          isMoveOverlay={isMoveOverlay}
+          text="MY WORK HISTORIES."
+          fontSize={1.5}
+          textAlign="right"
+        />
+      </div>
+      <div className={styles.edge_text_left}>
+        <TextAnimation
+          isMoveOverlay={isMoveOverlay}
+          text="PORTFOLIO."
+          fontSize={1.5}
+        />
+      </div>
+      <div
+        className={
+          isMoveOverlay
+            ? styles.icon_var_wrap_fade_in
+            : styles.icon_var_wrap_fade_out
+        }
+      >
+        <img src="/icon-var.svg" alt="Icon Var" width={32} height={32} />
+        <img src="/icon-var.svg" alt="Icon Var" width={32} height={32} />
+        <img src="/icon-var.svg" alt="Icon Var" width={32} height={32} />
       </div>
     </div>
   );

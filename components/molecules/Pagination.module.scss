@@ -8,14 +8,14 @@
   justify-content: center;
   align-items: center;
   position: fixed;
-  width: 64px;
-  height: 64px;
-  border: 2px solid #ffffff;
+  width: 8em;
+  height: 48px;
+  border-bottom: 4px solid #ffffff;
   bottom: 2.5em;
-  border-radius: 50%;
   transition: opacity cubic-bezier(0.55, 0.04, 0.47, 0.98) 0.8s;
   background: #1d1d1d;
   opacity: 1;
+  padding: 0;
 }
 
 .button_left {
@@ -43,5 +43,5 @@
 .icon {
   color: transparent;
   stroke: #ffffff;
-  stroke-width: 24;
+  stroke-width: 32;
 }

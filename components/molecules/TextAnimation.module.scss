@@ -11,10 +11,10 @@
   font-family: "Karla", sans-serif;
   letter-spacing: 1px;
   font-size: 2.5rem;
-  margin-bottom: 0.2em;
-  transition: transform cubic-bezier(0.9, 0.23, 0.48, 0.97) 1.2s;
+  // margin-bottom: 0.2em;
+  transition: transform cubic-bezier(0.9, 0.23, 0.48, 0.97) 1.6s;
   transition-delay: 0.4s;
-  transform: translateY(112%);
+  transform: translateY(104%);
 }
 
 .text_moved {

@@ -17,8 +17,8 @@ export const Header: React.FC<{
           className={styles.icon}
           src="/icon.jpg"
           alt="Icon"
-          width={56}
-          height={56}
+          width={48}
+          height={48}
           onClick={resetActiveMenu}
         />
       </Link>

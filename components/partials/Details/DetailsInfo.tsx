@@ -27,12 +27,12 @@ const DetailsInfo: React.FC<InfoParams> = props => {
         <TextAnimation
           isMoveOverlay={!isRouteChange}
           text={date}
-          fontSize={4}
+          fontSize={2.5}
         />
         <TextAnimation
           isMoveOverlay={!isRouteChange}
           text={tags}
-          fontSize={4}
+          fontSize={2.5}
         />
         {/* <div className={styles.title}>{info.title}</div>
       <div className={styles.date}>{info.date}</div>
@@ -50,7 +50,7 @@ const DetailsInfo: React.FC<InfoParams> = props => {
         <TextAnimation
           isMoveOverlay={true}
           text="VISIT"
-          fontSize={3}
+          fontSize={4}
           href={link}
         />
       </div>

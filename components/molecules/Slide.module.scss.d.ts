@@ -6,6 +6,7 @@ declare const styles: {
   readonly "overlay": string;
   readonly "title_wrap": string;
   readonly "date_wrap": string;
+  readonly "tags_wrap": string;
 };
 export = styles;
 
