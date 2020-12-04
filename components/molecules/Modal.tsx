@@ -19,7 +19,7 @@ export const Modal: React.FC<{
           <TextAnimation
             isMoveOverlay={isMoveOverlay}
             text="HOME"
-            fontSize={4}
+            fontSize={6}
             link="/"
             textAlign="left"
             setIsClicked={setIsClicked}
@@ -27,7 +27,7 @@ export const Modal: React.FC<{
           <TextAnimation
             isMoveOverlay={isMoveOverlay}
             text="WORKS"
-            fontSize={4}
+            fontSize={6}
             link="/works"
             textAlign="left"
             setIsClicked={setIsClicked}
@@ -35,7 +35,7 @@ export const Modal: React.FC<{
           <TextAnimation
             isMoveOverlay={isMoveOverlay}
             text="CONTACT"
-            fontSize={4}
+            fontSize={6}
             link="/contact"
             textAlign="left"
             setIsClicked={setIsClicked}

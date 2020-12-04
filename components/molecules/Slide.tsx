@@ -109,7 +109,7 @@ export const Slide: React.FC<Props> = props => {
         <div className={styles.title_wrap}>
           <TextAnimation
             isMoveOverlay={work.id === currentSlideNumber}
-            text={work?.info.title}
+            text={work?.info.title.toUpperCase()}
             fontSize={windowWidth > 768 ? 8 : windowWidth * 0.012}
           />
         </div>

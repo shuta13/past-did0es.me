@@ -21,18 +21,18 @@ const DetailsInfo: React.FC<InfoParams> = props => {
       <div className={styles.wrap}>
         <TextAnimation
           isMoveOverlay={!isRouteChange}
-          text={title}
-          fontSize={4}
+          text={title.toUpperCase()}
+          fontSize={8}
         />
         <TextAnimation
           isMoveOverlay={!isRouteChange}
           text={date}
-          fontSize={2}
+          fontSize={4}
         />
         <TextAnimation
           isMoveOverlay={!isRouteChange}
           text={tags}
-          fontSize={2}
+          fontSize={4}
         />
         {/* <div className={styles.title}>{info.title}</div>
       <div className={styles.date}>{info.date}</div>

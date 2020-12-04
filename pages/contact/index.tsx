@@ -34,28 +34,28 @@ const Contact: React.FC<{
         <TextAnimation
           isMoveOverlay={isLoaded || isRouteChange}
           text="GitHub"
-          fontSize={4}
+          fontSize={6}
           href="https://github.com/shuta13"
           textAlign="left"
         />
         <TextAnimation
           isMoveOverlay={isLoaded || isRouteChange}
           text="Twitter"
-          fontSize={4}
+          fontSize={6}
           href="https://twitter.com/did0es"
           textAlign="left"
         />
         <TextAnimation
           isMoveOverlay={isLoaded || isRouteChange}
           text="Instagram"
-          fontSize={4}
+          fontSize={6}
           href="https://www.instagram.com/did0es13"
           textAlign="left"
         />
         <TextAnimation
           isMoveOverlay={isLoaded || isRouteChange}
           text="Scrapbox"
-          fontSize={4}
+          fontSize={6}
           href="https://scrapbox.io/did0es"
           textAlign="left"
         />
