@@ -2,17 +2,17 @@ import styles from "./BackgroundTexts.module.scss";
 import React from "react";
 
 interface Props {
-  text: string;
+  svg: any;
   isRouteChange: boolean;
 }
 
 export const BackgroundTexts: React.FC<Props> = props => {
-  const { text, isRouteChange } = props;
+  const { svg, isRouteChange } = props;
   return (
     <div className={styles.wrap}>
-      <div className={styles.text}>{text}</div>
-      <div className={styles.text}>{text}</div>
-      <div className={styles.text}>{text}</div>
+      <img className={styles.svg} src={svg} />
+      <img className={styles.svg} src={svg} />
+      <img className={styles.svg} src={svg} />
     </div>
   );
 };

@@ -15,10 +15,10 @@ export const Header: React.FC<{
       <Link href="/">
         <img
           className={styles.icon}
-          src="/icon.jpg"
+          src="/svg/circle.svg"
           alt="Icon"
-          width={48}
-          height={48}
+          width={40}
+          height={40}
           onClick={resetActiveMenu}
         />
       </Link>

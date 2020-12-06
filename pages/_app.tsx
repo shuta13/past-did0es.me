@@ -34,6 +34,18 @@ const Did0esMe = ({ Component, pageProps }: AppProps) => {
           rel="stylesheet"
         />
       </Head>
+      {/* <div className={isRouteChange ? "FadeOut" : "FadeIn"}>
+        <BackgroundTexts
+          svg={
+            isWorksActive
+              ? require("../public/svg/works.svg")
+              : isContactActive
+              ? require("../public/svg/contact.svg")
+              : require("../public/svg/home.svg")
+          }
+          isRouteChange={isRouteChange}
+        />
+      </div> */}
       <div className={isRouteChange ? "FadeOut" : "FadeIn"}>
         {!isRouteChange && (
           <Component
@@ -52,7 +64,6 @@ const Did0esMe = ({ Component, pageProps }: AppProps) => {
         isWorksActive={isWorksActive}
         isContactActive={isContactActive}
       />
-      <BackgroundTexts text="HOME" isRouteChange={isRouteChange} />
       <Loading isLoaded={isLoaded} setIsLoaded={setIsLoaded} />
     </>
   );
