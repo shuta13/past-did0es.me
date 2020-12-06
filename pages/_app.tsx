@@ -6,6 +6,7 @@ import { Menu, sleep } from "../components/molecules/Menu";
 import { Header } from "../components/molecules/Header";
 import { AppProps } from "next/app";
 import { Router } from "next/router";
+import { BackgroundTexts } from "../components/molecules/BackgroundTexts";
 
 const Did0esMe = ({ Component, pageProps }: AppProps) => {
   const [isRouteChange, setIsRouteChange] = useState(false);
@@ -51,6 +52,7 @@ const Did0esMe = ({ Component, pageProps }: AppProps) => {
         isWorksActive={isWorksActive}
         isContactActive={isContactActive}
       />
+      <BackgroundTexts text="HOME" isRouteChange={isRouteChange} />
       <Loading isLoaded={isLoaded} setIsLoaded={setIsLoaded} />
     </>
   );

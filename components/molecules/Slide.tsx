@@ -121,8 +121,6 @@ export const Slide: React.FC<Props> = props => {
             textAlign="left"
           />
         </div>
-        {/* <div className={styles.date}>{work?.info.date}</div>
-        <div className={styles.title}>{work?.info.title}</div> */}
       </a>
     </Link>
   );
