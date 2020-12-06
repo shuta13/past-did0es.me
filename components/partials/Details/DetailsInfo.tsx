@@ -50,7 +50,7 @@ const DetailsInfo: React.FC<InfoParams> = props => {
         <TextAnimation
           isMoveOverlay={true}
           text="VISIT"
-          fontSize={4}
+          fontSize={2.8}
           href={link}
         />
       </div>
