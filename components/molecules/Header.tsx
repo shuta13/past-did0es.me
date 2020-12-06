@@ -15,7 +15,7 @@ export const Header: React.FC<{
       <Link href="/">
         <img
           className={styles.icon}
-          src="/svg/circle.svg"
+          src="/icon.jpg"
           alt="Icon"
           width={40}
           height={40}
