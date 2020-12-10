@@ -49,8 +49,7 @@ export const TextAnimation: React.FC<{
               <div
                 className={isMoveOverlay ? styles.text_moved : styles.text}
                 style={{
-                  fontSize: `${fontSize}rem`,
-                  cursor: "pointer"
+                  fontSize: `${fontSize}rem`
                 }}
                 onClick={() => setIsClicked && setIsClicked(false)}
               >

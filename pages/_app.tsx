@@ -1,5 +1,5 @@
 import "../assets/style/global.scss";
-import React, { useEffect, useState } from "react";
+import React, { CSSProperties, useEffect, useState } from "react";
 import Head from "next/head";
 import Loading from "../components/common/Loading";
 import { Menu, sleep } from "../components/molecules/Menu";
@@ -7,6 +7,27 @@ import { Header } from "../components/molecules/Header";
 import { AppProps } from "next/app";
 import { Router } from "next/router";
 import { BackgroundTexts } from "../components/molecules/BackgroundTexts";
+
+const Cursor = () => {
+  const [mouseStyles, setMouseStyle] = useState<CSSProperties>({
+    transform: "translate(0px, 0px)",
+    display: "none"
+  });
+
+  const handleMouseMove = (e: MouseEvent) => {
+    setMouseStyle({
+      transform: `translate(${e.clientX}px, ${e.clientY}px)`,
+      display: "block"
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  });
+
+  return <div className="Cursor" style={mouseStyles} />;
+};
 
 const Did0esMe = ({ Component, pageProps }: AppProps) => {
   const [isRouteChange, setIsRouteChange] = useState(false);
@@ -64,6 +85,7 @@ const Did0esMe = ({ Component, pageProps }: AppProps) => {
         isWorksActive={isWorksActive}
         isContactActive={isContactActive}
       />
+      <Cursor />
       <Loading isLoaded={isLoaded} setIsLoaded={setIsLoaded} />
     </>
   );

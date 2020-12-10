@@ -22,7 +22,7 @@
   // display: flex;
   // justify-content: center;
   // align-items: center;
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 .AppWorksImage {
@@ -35,7 +35,7 @@
   position: absolute;
   width: 320px;
   height: 160px;
-  transition: transform cubic-bezier(.98,.01,.83,1) .2s;
+  transition: transform cubic-bezier(0.98, 0.01, 0.83, 1) 0.2s;
   background: #00000090;
   transform: translateX(-100%) translateY(0%);
   padding: 16px;
@@ -46,7 +46,7 @@
 
 .AppWorksSquare {
   @extend .AppWorksSquareCommon;
-  transition-duration: .6s;
+  transition-duration: 0.6s;
 }
 
 .AppWorksSquareHovered {
@@ -69,13 +69,13 @@
   color: #ffffff;
   letter-spacing: 2px;
   transform: translateX(0%) translateY(100%);
-  transition: transform cubic-bezier(.16,.67,.64,.99) .3s;
-  transition-delay: .5s;
+  transition: transform cubic-bezier(0.16, 0.67, 0.64, 0.99) 0.3s;
+  transition-delay: 0.5s;
 }
 
 .AppWorksText {
   @extend .AppWorksTextCommon;
-  transition-delay: .0s;
+  transition-delay: 0s;
 }
 
 .AppWorksTextHovered {

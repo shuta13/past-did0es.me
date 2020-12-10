@@ -7,6 +7,7 @@ body {
   min-height: 100%;
   background: #1d1d1d;
   font-size: 0.8vw;
+  cursor: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -53,4 +54,14 @@ body {
   @extend .FadeCommon;
   // transform: translateX(0%);
   opacity: 1;
+}
+
+.Cursor {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  transform: translate(0px, 0px);
+  pointer-events: none;
 }
