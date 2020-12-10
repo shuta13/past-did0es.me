@@ -8,11 +8,7 @@ const Profile: React.FC = () => (
     <div className="ProfileClip">
       <AppTitle title="- Profile -" />
       <div className="ProfileImageWrap">
-        <img
-          className="ProfileImage"
-          src={require("../../../public/icon.jpg")}
-          alt="logo"
-        />
+        <img className="ProfileImage" src="/icon.jpg" alt="logo" />
       </div>
       <div className="ProfileDescriptionWrap">
         <div className="ProfileDescription">

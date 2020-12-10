@@ -95,7 +95,7 @@ export const Slide: React.FC<Props> = props => {
           <div className={styles.overlay} />
           <img
             className={styles.image}
-            src={require(`../../public/works/${work?.img}`)}
+            src={`/works/${work?.img}`}
             alt="Works Image"
           />
         </div>
