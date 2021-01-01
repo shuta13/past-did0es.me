@@ -77,12 +77,14 @@ export const ProfileSlide: React.FC<{ isLoaded: boolean }> = props => {
           text="MY WORKS & WORK HISTORIES"
           fontSize={1.2}
           textAlign="right"
+          fontStyle="italic"
         />
         <TextAnimation
           isMoveOverlay={isMoveOverlay}
           text="2019 - 2020"
           fontSize={1.2}
           textAlign="right"
+          fontStyle="italic"
         />
       </div>
       <div className={styles.edge_text_left}>
