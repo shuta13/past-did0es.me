@@ -110,14 +110,14 @@ export const Slide: React.FC<Props> = props => {
           <TextAnimation
             isMoveOverlay={work.id === currentSlideNumber}
             text={work?.info.title.toUpperCase()}
-            fontSize={windowWidth > 768 ? 12 : windowWidth * 0.012}
+            fontSize={windowWidth > 768 ? 11 : windowWidth * 0.01}
           />
         </div>
         <div className={styles.tags_wrap}>
           <TextAnimation
             isMoveOverlay={work.id === currentSlideNumber}
             text={work?.info.tags}
-            fontSize={3}
+            fontSize={2}
             textAlign="left"
           />
         </div>

@@ -115,5 +115,18 @@
       "subDesc": "",
       "link": "https://youtu.be/J_CrAM6PEwQ"
     }
+  },
+  {
+    "id": 10,
+    "img": "r18s-logo.jpg",
+    "pathname": "r18s-logo",
+    "info": {
+      "title": "R18S Logo",
+      "date": "Dec. 12, 2020",
+      "tags": "Gaming Clan Logo Design",
+      "desc": "",
+      "subDesc": "",
+      "link": "https://scrapbox.io/did0es/%E6%9C%88%E5%A0%B1_%E5%86%AC%E6%9C%9F_2021"
+    }
   }
 ]
