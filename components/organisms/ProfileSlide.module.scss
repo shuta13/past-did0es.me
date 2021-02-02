@@ -27,8 +27,8 @@
   bottom: 24px;
   left: 32px;
   fill: #ffffff;
-  transition: transform ease-in-out 1.8s,
-    opacity cubic-bezier(0.55, 0.04, 0.47, 0.98) 1.2s;
+  transition: transform ease-in-out 2s,
+    opacity cubic-bezier(0.55, 0.04, 0.47, 0.98) 1.6s;
 }
 
 .icon_var_wrap_fade_out {
@@ -53,8 +53,33 @@
   font-size: 1.5rem;
   position: fixed;
   font-weight: bold;
-  width: 100%;
   display: flex;
+}
+
+.edge_text_top {
+  @extend .edge_text_common;
+  top: 32px;
+  left: 96px;
+  right: 96px;
+  letter-spacing: 40px;
+  text-align: center;
+  justify-content: center;
+  line-height: 1.4em;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .edge_text_top {
+    letter-spacing: 2px;
+  }
+}
+
+.edge_text_bottom {
+  @extend .edge_text_common;
+  font-family: "Libre Barcode 128", cursive;
+  bottom: 32px;
+  font-size: 3.6rem;
+  font-weight: normal;
 }
 
 .edge_text_bottom_right {
@@ -63,6 +88,8 @@
   bottom: 32px;
   justify-content: flex-end;
   flex-wrap: wrap;
+  width: 16em;
+  min-width: 186px;
 }
 
 .edge_text_right_bottom {
@@ -78,7 +105,7 @@
   transform-origin: left;
   transform: rotate(-90deg);
   left: 40px;
-  bottom: 40%;
+  bottom: 28%;
   justify-content: center;
   flex-wrap: wrap;
 }

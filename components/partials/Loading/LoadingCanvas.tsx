@@ -11,6 +11,7 @@ import {
   TextureLoader,
   Clock
 } from "three";
+import { sleep } from "../../molecules/Menu";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const vert = require("../../shaders/Loading/index.vert");
@@ -81,7 +82,7 @@ const LoadingCanvas: React.FC<{
       },
       texture: {
         type: "t",
-        value: new TextureLoader().load("/loading.jpg", () => {
+        value: new TextureLoader().load("/icon-var.svg", () => {
           const material = new RawShaderMaterial({
             uniforms: uniforms,
             vertexShader: vert.default,
@@ -105,7 +106,8 @@ const LoadingCanvas: React.FC<{
           //   handleResize({ geometry, renderer })
           // );
           animate({ scene, camera, renderer, uniforms, clock });
-          setIsLoaded(true);
+          // delay
+          sleep(2000).then(() => setIsLoaded(true));
         })
       }
     };

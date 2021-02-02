@@ -7,6 +7,8 @@ declare const styles: {
   readonly "icon_var_wrap_fade_in": string;
   readonly "text_wrap": string;
   readonly "edge_text_common": string;
+  readonly "edge_text_top": string;
+  readonly "edge_text_bottom": string;
   readonly "edge_text_bottom_right": string;
   readonly "edge_text_right_bottom": string;
   readonly "edge_text_left": string;
