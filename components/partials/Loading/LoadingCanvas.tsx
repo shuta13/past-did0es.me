@@ -82,7 +82,7 @@ const LoadingCanvas: React.FC<{
       },
       texture: {
         type: "t",
-        value: new TextureLoader().load("/icon-var.svg", () => {
+        value: new TextureLoader().load("/icon-var.png", () => {
           const material = new RawShaderMaterial({
             uniforms: uniforms,
             vertexShader: vert.default,
