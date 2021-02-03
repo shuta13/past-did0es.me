@@ -31,21 +31,19 @@ const Face: React.FC<{ isMoveOverlay: boolean }> = props => {
 const Makeup: React.FC = () => {
   return (
     <>
-      <div className={styles.edge_text_top}>- WORKS & WORK HISTORIES -</div>
+      <div className={styles.edge_text_top}>WORKS & WORK HISTORIES</div>
       <div className={styles.edge_text_bottom_right}>
         <TextAnimation
           isMoveOverlay={true}
           text="11.30, 2019 -"
-          fontSize={4}
+          fontSize={3}
           textAlign="left"
-          fontStyle="italic"
         />
         <TextAnimation
           isMoveOverlay={true}
           text="The Present"
-          fontSize={4}
+          fontSize={3}
           textAlign="left"
-          fontStyle="italic"
         />
       </div>
       <div className={styles.edge_text_left}>
