@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Carousel.module.scss";
 import { Slide } from "../molecules/Slide";
-import works from "../../public/json/works.json";
+import response from "../../pages/api/response.json";
 import { Pagination } from "../molecules/Pagination";
 
 const workNames = [];
-works.map(work => workNames.push(work.info.title));
+response.map(res => workNames.push(res.info.title));
 
-export type Work = typeof works[0];
+export type Work = typeof response[0];
 
 export const Carousel: React.FC<{
   setIsMenuReset: (setIsMenuReset: boolean) => void;
@@ -20,22 +20,22 @@ export const Carousel: React.FC<{
   const [isSwipeSlideToRight, setIsSwipeSlideToRight] = useState(false);
 
   const handleOnClickPrev = () => {
-    works.map(work => {
-      if (work.id === currentSlideNumber - 1) {
-        setCurrentSlideNumber(work.id);
-        slideWidth !== 0 && setTranslateXValue(slideWidth * (work.id - 1));
+    response.map(res => {
+      if (res.id === currentSlideNumber - 1) {
+        setCurrentSlideNumber(res.id);
+        slideWidth !== 0 && setTranslateXValue(slideWidth * (res.id - 1));
       }
     });
   };
 
   const handleOnClickNext = () => {
-    works.map(work => {
-      if (work.id === currentSlideNumber + 1) {
-        setCurrentSlideNumber(work.id);
+    response.map(res => {
+      if (res.id === currentSlideNumber + 1) {
+        setCurrentSlideNumber(res.id);
         setTranslateXValue(
           translateXValue === 0 && slideWidth !== 0
             ? slideWidth
-            : slideWidth * (work.id - 1)
+            : slideWidth * (res.id - 1)
         );
       }
     });
@@ -61,19 +61,19 @@ export const Carousel: React.FC<{
         className={styles.wrap}
         style={{ transform: `translateX(-${translateXValue}px)` }}
       >
-        {works.map(work => (
+        {response.map(res => (
           <Slide
-            work={work}
-            key={work.id}
+            work={res}
+            key={res.id}
             style={{
-              transform: `translateX(${100 * (work.id - 1)}%) scale3d(${
-                work.id === currentSlideNumber ? 1.1 : 0.9
-              }, ${work.id === currentSlideNumber ? 1.1 : 0.9}, 1)`,
+              transform: `translateX(${100 * (res.id - 1)}%) scale3d(${
+                res.id === currentSlideNumber ? 1.1 : 0.9
+              }, ${res.id === currentSlideNumber ? 1.1 : 0.9}, 1)`,
               filter:
-                work.id === currentSlideNumber
+                res.id === currentSlideNumber
                   ? "brightness(1)"
                   : "brightness(0.3)",
-              pointerEvents: work.id === currentSlideNumber ? "auto" : "none"
+              pointerEvents: res.id === currentSlideNumber ? "auto" : "none"
             }}
             setSlideWidth={setSlideWidth}
             setIsSwipeSlideToLeft={setIsSwipeSlideToLeft}

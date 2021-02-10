@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import DetailsInfo from "./DetailsInfo";
 
-import works from "../../../public/json/works.json";
+import response from "../../../pages/api/response.json";
 import styles from "./Details.module.scss";
 import ImagePostProcess from "../../common/ImagePostProcess";
 import { useRouter } from "next/router";
@@ -13,24 +13,22 @@ const Details: React.FC<{
 }> = ({ name, isRouteChange }) => {
   return (
     <div className="container">
-      {works.map(work => (
-        <React.Fragment key={work.img}>
-          {work.img.split(".")[0] === name && (
+      {response.map(res => (
+        <React.Fragment key={res.img}>
+          {res.img.split(".")[0] === name && (
             <>
               <Head>
-                <title>did0es.me - {work.info.title}</title>
+                <title>did0es.me - {res.info.title}</title>
               </Head>
 
-              {!isRouteChange && (
-                <ImagePostProcess img={`/works/${work.img}`} />
-              )}
+              {!isRouteChange && <ImagePostProcess img={`/works/${res.img}`} />}
               <DetailsInfo
-                title={work.info.title}
-                date={work.info.date}
-                tags={work.info.tags}
-                desc={work.info.desc}
-                subDesc={work.info.subDesc}
-                link={work.info.link}
+                title={res.info.title}
+                date={res.info.date}
+                tags={res.info.tags}
+                desc={res.info.desc}
+                subDesc={res.info.subDesc}
+                link={res.info.link}
                 isRouteChange={isRouteChange}
               />
             </>

@@ -3,19 +3,19 @@ import React from "react";
 import AppTitle from "../../common/AppTitle";
 import AppWorks from "../../common/AppWorks";
 
-import works from "../../../public/json/works.json";
+import response from "../../../pages/api/response.json";
 
 export const Works: React.FC = () => {
   return (
     <div className="WorksWrap">
       <div className="WorksClip">
         <AppTitle title="- Works -" />
-        {works.map(work => (
+        {response.map(res => (
           <AppWorks
-            key={work.img}
-            img={`/works/${work.img}`}
-            title={work.info.title}
-            date={work.info.date}
+            key={res.img}
+            img={`/works/${res.img}`}
+            title={res.info.title}
+            date={res.info.date}
           />
         ))}
       </div>
