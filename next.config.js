@@ -20,19 +20,4 @@ module.exports = withImages({
     });
     return config;
   }
-  // exportPathMap: async function(
-  //   defaultPathMap,
-  //   { dev, dir, outDir, distDir, buildId }
-  // ) {
-  //   const paths = {
-  //     "/": { page: "/" },
-  //     "/works": { page: "/works" },
-  //     "/contact": { page: "/contact" },
-  //     "/api/v1": { page: "/api/v1" }
-  //   };
-  //   response.map(res => {
-  //     paths[`/works/${res.pathname}`] = { page: "/works/[name]" };
-  //   });
-  //   return paths;
-  // }
 });

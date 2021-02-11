@@ -2,18 +2,17 @@ import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import DetailsInfo from "./DetailsInfo";
 
-import response from "../../../pages/api/response.json";
-import styles from "./Details.module.scss";
 import ImagePostProcess from "../../common/ImagePostProcess";
-import { useRouter } from "next/router";
+import { Response } from "../../../shared/types/Response";
 
 const Details: React.FC<{
   name: string | string[];
   isRouteChange: boolean;
-}> = ({ name, isRouteChange }) => {
+  data: Response["data"];
+}> = ({ name, isRouteChange, data }) => {
   return (
     <div className="container">
-      {response.map(res => (
+      {data.map(res => (
         <React.Fragment key={res.img}>
           {res.img.split(".")[0] === name && (
             <>
