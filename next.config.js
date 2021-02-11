@@ -3,6 +3,7 @@ const withImages = require("next-images");
 const response = require("./pages/api/response.json");
 
 module.exports = withImages({
+  target: "serverless",
   env: {
     ENV: process.env.ENV
   },
