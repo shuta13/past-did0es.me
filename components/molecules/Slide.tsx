@@ -1,11 +1,11 @@
 import styles from "./Slide.module.scss";
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Work } from "../organisms/Carousel";
 import { TextAnimation } from "./TextAnimation";
+import { Response } from "../../shared/types/Response";
 
 interface Props {
-  work: Work;
+  work: Response["data"][0];
   style: React.CSSProperties;
   setSlideWidth: (slideWidth: number) => void;
   setIsSwipeSlideToLeft: (isSwipeSlideToLeft: boolean) => void;
