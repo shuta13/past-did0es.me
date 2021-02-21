@@ -99,6 +99,7 @@ export const Slide: React.FC<Props> = props => {
             alt="Works Image"
             width={1200}
             height={600}
+            loading="eager"
           />
           <div className={styles.overlay} />
         </div>

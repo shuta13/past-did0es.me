@@ -15,7 +15,7 @@ const DetailsHome: React.FC<{
 
   return (
     <>
-      {name && data.length > 0 && (
+      {name && (
         <Details name={name} isRouteChange={isRouteChange} data={data} />
       )}
     </>
