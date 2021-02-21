@@ -1,8 +1,6 @@
 const path = require("path");
-const withImages = require("next-images");
-const response = require("./pages/api/response.json");
 
-module.exports = withImages({
+module.exports = {
   target: "serverless",
   env: {
     ENV: process.env.ENV
@@ -20,4 +18,4 @@ module.exports = withImages({
     });
     return config;
   }
-});
+};

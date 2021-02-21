@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { TextAnimation } from "./TextAnimation";
 import { Response } from "../../shared/types/Response";
+import Image from "next/image";
 
 interface Props {
   work: Response["data"][0];
@@ -92,12 +93,14 @@ export const Slide: React.FC<Props> = props => {
         onClick={() => setIsMenuReset(true)}
       >
         <div className={styles.content}>
-          <div className={styles.overlay} />
-          <img
+          <Image
             className={styles.image}
             src={`/works/${work?.img}`}
             alt="Works Image"
+            width={1200}
+            height={600}
           />
+          <div className={styles.overlay} />
         </div>
         <div className={styles.date_wrap}>
           <TextAnimation

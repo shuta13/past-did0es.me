@@ -3,6 +3,7 @@ import React from "react";
 import Router from "next/router";
 import { sleep } from "./Menu";
 import Link from "next/link";
+import Image from "next/image";
 
 export const Header: React.FC<{
   isRouteChange: boolean;
@@ -13,14 +14,16 @@ export const Header: React.FC<{
   return (
     <div className={isRouteChange ? styles.clicked : styles.wrap}>
       <Link href="/">
-        <img
-          className={styles.icon}
-          src="/icon.jpg"
-          alt="Icon"
-          width={40}
-          height={40}
-          onClick={resetActiveMenu}
-        />
+        <a>
+          <Image
+            className={styles.icon}
+            src="/icon.jpg"
+            alt="Icon"
+            width={40}
+            height={40}
+            onClick={resetActiveMenu}
+          />
+        </a>
       </Link>
     </div>
   );
