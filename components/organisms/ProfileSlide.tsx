@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { sleep } from "../molecules/Menu";
 import { TextAnimation } from "../molecules/TextAnimation";
 
-const Face: React.FC<{ isMoveOverlay: boolean }> = props => {
+const Face: React.FC<{ isMoveOverlay: boolean }> = (props) => {
   const { isMoveOverlay } = props;
   return (
     <div className={styles.text_wrap}>
@@ -32,17 +32,11 @@ const Makeup: React.FC = () => {
   return (
     <>
       <div className={styles.edge_text_top}>WORKS & WORK HISTORIES</div>
-      <div className={styles.edge_text_bottom_right}>
+      <div className={styles.edge_text_bottom_left}>
         <TextAnimation
           isMoveOverlay={true}
-          text="11.30, 2019 -"
-          fontSize={3}
-          textAlign="left"
-        />
-        <TextAnimation
-          isMoveOverlay={true}
-          text="The Present"
-          fontSize={3}
+          text="11.30, 2019 - THE PRESENT"
+          fontSize={2.5}
           textAlign="left"
         />
       </div>
@@ -53,12 +47,11 @@ const Makeup: React.FC = () => {
           fontSize={2}
         />
       </div>
-      <div className={styles.edge_text_bottom}>f**k'in bored</div>
     </>
   );
 };
 
-export const ProfileSlide: React.FC<{ isLoaded: boolean }> = props => {
+export const ProfileSlide: React.FC<{ isLoaded: boolean }> = (props) => {
   const { isLoaded } = props;
   const [isMoveOverlay, setIsMoveOverlay] = useState(false);
   const [isInitialLoad, setIsInitialLoad] = useState(false);

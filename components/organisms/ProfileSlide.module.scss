@@ -58,12 +58,12 @@
 
 .edge_text_top {
   @extend .edge_text_common;
-  top: 32px;
-  left: 96px;
-  right: 96px;
-  letter-spacing: 40px;
-  text-align: center;
-  justify-content: center;
+  top: 64px;
+  // left: 96px;
+  right: 32px;
+  // letter-spacing: 40px;
+  // text-align: center;
+  // justify-content: center;
   line-height: 1.4em;
   font-size: 1.2rem;
 }
@@ -74,22 +74,14 @@
   }
 }
 
-.edge_text_bottom {
+.edge_text_bottom_left {
   @extend .edge_text_common;
-  font-family: "Libre Barcode 128", cursive;
+  left: 32px;
   bottom: 32px;
-  font-size: 3.6rem;
-  font-weight: normal;
-}
-
-.edge_text_bottom_right {
-  @extend .edge_text_common;
-  right: 32px;
-  bottom: 32px;
-  justify-content: flex-end;
   flex-wrap: wrap;
   width: 12em;
-  min-width: 186px;
+  min-width: 128px;
+  font-weight: normal;
 }
 
 .edge_text_right_bottom {
