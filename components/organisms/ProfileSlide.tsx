@@ -22,12 +22,12 @@ const Face: React.FC<{ isMoveOverlay: boolean }> = (props) => {
       />
       <TextAnimation
         isMoveOverlay={isMoveOverlay}
-        text="FrontEnd Engineer, UI/UX Designer"
+        text="Web Developer, Designer"
         fontSize={4}
       />
       <TextAnimation
         isMoveOverlay={isMoveOverlay}
-        text="I Love Development, Design, Arts."
+        text="I Love Developments, Designs, Arts."
         fontSize={4}
       />
     </div>
@@ -46,7 +46,7 @@ const Makeup: React.FC = () => {
           textAlign="left"
         />
       </div>
-      <div className={styles.edge_text_left}>
+      <div className={styles.edge_text_left_vertical}>
         <TextAnimation
           isMoveOverlay={true}
           text="#PORTFOLIO #WEBGL #GRAPHICS"
@@ -102,19 +102,15 @@ export const ProfileSlide: React.FC<ProfileSlideParams> = (props) => {
       <div className={styles.content}>
         <Face isMoveOverlay={isMoveOverlay} />
       </div>
-      <div
-        className={
-          isMoveOverlay
-            ? styles.icon_var_wrap_fade_in
-            : styles.icon_var_wrap_fade_out
-        }
-      >
+      <div className={isMoveOverlay ? styles.fade_in : styles.fade_out}>
         <Makeup />
       </div>
       <div className={styles.button_wrap}>
-        <ThemeButton color="theme" setCanvasColor={setCanvasColor} />
-        <ThemeButton color="twilight" setCanvasColor={setCanvasColor} />
-        <ThemeButton color="monotone" setCanvasColor={setCanvasColor} />
+        <div className={isMoveOverlay ? styles.fade_in : styles.fade_out}>
+          <ThemeButton color="theme" setCanvasColor={setCanvasColor} />
+          <ThemeButton color="twilight" setCanvasColor={setCanvasColor} />
+          <ThemeButton color="monotone" setCanvasColor={setCanvasColor} />
+        </div>
       </div>
     </div>
   );
