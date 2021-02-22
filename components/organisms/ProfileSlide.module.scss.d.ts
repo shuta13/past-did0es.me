@@ -11,6 +11,11 @@ declare const styles: {
   readonly "edge_text_bottom_left": string;
   readonly "edge_text_right_bottom": string;
   readonly "edge_text_left": string;
+  readonly "button_common": string;
+  readonly "button_theme": string;
+  readonly "button_twilight": string;
+  readonly "button_monotone": string;
+  readonly "button_wrap": string;
 };
 export = styles;
 

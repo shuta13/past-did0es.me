@@ -8,6 +8,7 @@ precision highp float;
 
 uniform vec2 resolution;
 uniform float time;
+uniform int canvasColor;
 
 // Some useful functions
 vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
@@ -104,13 +105,23 @@ void main() {
   float sync = time * .2;
   uv += .5;
 
-  if (snoise(vec2(uv.x + sync, uv.x + sync)) < 1.0) {
+  if (snoise(vec2(uv.x + sync, uv.x + sync)) < 1.0 && canvasColor == 1) {
+    // theme
     color.r = vec3(mix(uv.x, uv.x, snoise(vec2(uv.x + time, uv.y + time)))).g * .10;
     color.g += vec3(mix(uv.x, uv.x, snoise(vec2(uv.x + time, uv.y + time)))).g * .50;
     color.b += vec3(mix(uv.y, uv.y, snoise(vec2(uv.x + time, uv.y + time)))).b * .40;
-    // 光沢
-    color += smoothstep(.2, .45, snoise(uv + sync) * .4);
+  } else if (snoise(vec2(uv.x + sync, uv.x + sync)) < 1.0 && canvasColor == 2) {
+    // twilight
+    color.r += vec3(mix(uv.x, uv.x, snoise(vec2(uv.x + time, uv.y + time)))).r * .90;
+    color.g = vec3(mix(uv.x, uv.x, snoise(vec2(uv.x + time, uv.y + time)))).g * .20;
+    color.b += vec3(mix(uv.y, uv.y, snoise(vec2(uv.x + time, uv.y + time)))).b * .90;
+  } else if (snoise(vec2(uv.x + sync, uv.x + sync)) < 1.0 && canvasColor == 3) {
+    // monotone
+    color.r = color.g = color.b = vec3(mix(uv.x, uv.x, snoise(vec2(uv.x + time, uv.y + time)))).r * .15;
   }
+
+  // 光沢
+  color += smoothstep(.2, .45, snoise(uv + sync) * .4);
 
   /// voronoi : https://thebookofshaders.com/edit.php#12/vorono-01.frag
   float minDist = 10.;

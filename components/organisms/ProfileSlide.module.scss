@@ -101,3 +101,37 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.button_common {
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  border: none;
+  width: 40px;
+  height: 40px;
+  margin: 8px 0;
+  border-radius: 50%;
+}
+
+.button_theme {
+  @extend .button_common;
+  background: linear-gradient(225deg, #72dc70 0%, #334c7c 100%);
+}
+
+.button_twilight {
+  @extend .button_common;
+  background: linear-gradient(225deg, #9270dc 0%, #7c3333 100%);
+}
+
+.button_monotone {
+  @extend .button_common;
+  background: linear-gradient(225deg, #d7d7d7 0%, #2b2b2b 100%);
+}
+
+.button_wrap {
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  right: 32px;
+  width: 40px;
+}

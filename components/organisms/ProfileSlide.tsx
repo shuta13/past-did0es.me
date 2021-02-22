@@ -1,7 +1,13 @@
 import styles from "./ProfileSlide.module.scss";
-import React, { useEffect, useState } from "react";
 import { sleep } from "../molecules/Menu";
 import { TextAnimation } from "../molecules/TextAnimation";
+import { CanvasColor } from "../../pages";
+import { useEffect, useState } from "react";
+
+interface ProfileSlideParams {
+  isLoaded: boolean;
+  setCanvasColor: (canvasColor: CanvasColor) => void;
+}
 
 const Face: React.FC<{ isMoveOverlay: boolean }> = (props) => {
   const { isMoveOverlay } = props;
@@ -51,8 +57,27 @@ const Makeup: React.FC = () => {
   );
 };
 
-export const ProfileSlide: React.FC<{ isLoaded: boolean }> = (props) => {
-  const { isLoaded } = props;
+const ThemeButton: React.FC<{
+  color: CanvasColor;
+  setCanvasColor: ProfileSlideParams["setCanvasColor"];
+}> = (props) => {
+  const { color, setCanvasColor } = props;
+  return (
+    <button
+      onClick={() => setCanvasColor(color)}
+      className={
+        color === "theme"
+          ? styles.button_theme
+          : color === "twilight"
+          ? styles.button_twilight
+          : styles.button_monotone
+      }
+    />
+  );
+};
+
+export const ProfileSlide: React.FC<ProfileSlideParams> = (props) => {
+  const { isLoaded, setCanvasColor } = props;
   const [isMoveOverlay, setIsMoveOverlay] = useState(false);
   const [isInitialLoad, setIsInitialLoad] = useState(false);
 
@@ -85,6 +110,11 @@ export const ProfileSlide: React.FC<{ isLoaded: boolean }> = (props) => {
         }
       >
         <Makeup />
+      </div>
+      <div className={styles.button_wrap}>
+        <ThemeButton color="theme" setCanvasColor={setCanvasColor} />
+        <ThemeButton color="twilight" setCanvasColor={setCanvasColor} />
+        <ThemeButton color="monotone" setCanvasColor={setCanvasColor} />
       </div>
     </div>
   );

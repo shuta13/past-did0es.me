@@ -1,5 +1,4 @@
 import styles from "./Main.module.scss";
-import React, { useState, useEffect } from "react";
 import {
   Scene,
   OrthographicCamera,
@@ -8,23 +7,26 @@ import {
   RawShaderMaterial,
   Mesh,
   Vector2,
-  Clock
+  Clock,
 } from "three";
+import { useEffect } from "react";
+import { CanvasColor } from "../../pages";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const vert = require("../../shaders/Main/index.vert");
+const vert = require("../shaders/Main/index.vert");
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const frag = require("../../shaders/Main/index.frag");
+const frag = require("../shaders/Main/index.frag");
 
-type AnimateParams = {
+interface AnimateParams {
   scene: Scene;
   camera: OrthographicCamera;
   renderer: WebGLRenderer;
   uniforms: any;
   clock: Clock;
-};
+}
 
-const Main: React.FC = () => {
+export const Main: React.FC<{ canvasColor: CanvasColor }> = (props) => {
+  const { canvasColor } = props;
   let isNeedsStopAnimate = false;
   let animationFrameId = 0;
   const handleResize = (renderer: WebGLRenderer) => {
@@ -37,7 +39,7 @@ const Main: React.FC = () => {
     camera,
     renderer,
     uniforms,
-    clock
+    clock,
   }: AnimateParams) => {
     animationFrameId = requestAnimationFrame(() =>
       animate({ scene, camera, renderer, uniforms, clock })
@@ -60,20 +62,24 @@ const Main: React.FC = () => {
     const uniforms = {
       time: {
         type: "f",
-        value: 0.0
+        value: 0.0,
       },
       resolution: {
         type: "v2",
         value: new Vector2(
           window.innerWidth * window.devicePixelRatio,
           window.innerHeight * window.devicePixelRatio
-        )
-      }
+        ),
+      },
+      canvasColor: {
+        type: "i",
+        value: canvasColor === "theme" ? 1 : canvasColor === "twilight" ? 2 : 3,
+      },
     };
     const material = new RawShaderMaterial({
       uniforms: uniforms,
       vertexShader: vert.default,
-      fragmentShader: frag.default
+      fragmentShader: frag.default,
     });
     const mesh = new Mesh(geometry, material);
     scene.add(mesh);
@@ -84,7 +90,7 @@ const Main: React.FC = () => {
       antialias: false,
       alpha: false,
       stencil: false,
-      depth: false
+      depth: false,
     });
     renderer.setClearColor(0x1d1d1d);
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -98,5 +104,3 @@ const Main: React.FC = () => {
   });
   return <canvas ref={onCanvasLoaded} className={styles.wrap} />;
 };
-
-export default Main;
