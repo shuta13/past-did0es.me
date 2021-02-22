@@ -6,17 +6,12 @@ import { ProfileSlide } from "../components/organisms/ProfileSlide";
 const Home: React.FC<{
   isLoaded: boolean;
   isRouteChange: boolean;
-}> = props => {
+}> = (props) => {
   const { isLoaded, isRouteChange } = props;
   return (
     <div className="container">
       {!isRouteChange && <Main />}
       <ProfileSlide isLoaded={isLoaded} />
-      {/* <Profile /> */}
-      {/* <Works /> */}
-      {/* <Skills /> */}
-      {/* <Social /> */}
-      {/* <Copyright /> */}
     </div>
   );
 };
