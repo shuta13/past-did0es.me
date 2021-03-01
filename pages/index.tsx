@@ -9,7 +9,7 @@ const Home: React.FC<{
   isRouteChange: boolean;
 }> = (props) => {
   const { isLoaded, isRouteChange } = props;
-  const [canvasColor, setCanvasColor] = useState<CanvasColor>("theme");
+  const [canvasColor, setCanvasColor] = useState<CanvasColor>("monotone");
   return (
     <div className="container">
       {!isRouteChange && <Main canvasColor={canvasColor} />}

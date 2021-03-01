@@ -107,9 +107,9 @@ export const ProfileSlide: React.FC<ProfileSlideParams> = (props) => {
       </div>
       <div className={styles.button_wrap}>
         <div className={isMoveOverlay ? styles.fade_in : styles.fade_out}>
+          <ThemeButton color="monotone" setCanvasColor={setCanvasColor} />
           <ThemeButton color="theme" setCanvasColor={setCanvasColor} />
           <ThemeButton color="twilight" setCanvasColor={setCanvasColor} />
-          <ThemeButton color="monotone" setCanvasColor={setCanvasColor} />
         </div>
       </div>
     </div>

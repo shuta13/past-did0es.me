@@ -7,7 +7,7 @@ import { Response } from "../../shared/types/Response";
 export const Carousel: React.FC<{
   setIsMenuReset: (setIsMenuReset: boolean) => void;
   data: Response["data"];
-}> = props => {
+}> = (props) => {
   const { setIsMenuReset, data } = props;
   const [currentSlideNumber, setCurrentSlideNumber] = useState(1);
   const [translateXValue, setTranslateXValue] = useState(0);
@@ -16,7 +16,7 @@ export const Carousel: React.FC<{
   const [isSwipeSlideToRight, setIsSwipeSlideToRight] = useState(false);
 
   const handleOnClickPrev = () => {
-    data.map(res => {
+    data.map((res) => {
       if (res.id === currentSlideNumber - 1) {
         setCurrentSlideNumber(res.id);
         slideWidth !== 0 && setTranslateXValue(slideWidth * (res.id - 1));
@@ -25,7 +25,7 @@ export const Carousel: React.FC<{
   };
 
   const handleOnClickNext = () => {
-    data.map(res => {
+    data.map((res) => {
       if (res.id === currentSlideNumber + 1) {
         setCurrentSlideNumber(res.id);
         setTranslateXValue(
@@ -57,19 +57,25 @@ export const Carousel: React.FC<{
         className={styles.wrap}
         style={{ transform: `translateX(-${translateXValue}px)` }}
       >
-        {data.map(res => (
+        {data.map((res) => (
           <Slide
             work={res}
             key={res.id}
             style={{
-              transform: `translateX(${100 * (res.id - 1)}%) scale3d(${
-                res.id === currentSlideNumber ? 1.1 : 0.9
-              }, ${res.id === currentSlideNumber ? 1.1 : 0.9}, 1)`,
+              transform: `
+                translateX(
+                  ${100 * (res.id - 1)}%
+                )
+                scale3d(
+                  ${res.id === currentSlideNumber ? 1.1 : 0.9},
+                  ${res.id === currentSlideNumber ? 1.1 : 0.9}, 1
+                )
+              `,
               filter:
                 res.id === currentSlideNumber
                   ? "brightness(1)"
                   : "brightness(0.3)",
-              pointerEvents: res.id === currentSlideNumber ? "auto" : "none"
+              pointerEvents: res.id === currentSlideNumber ? "auto" : "none",
             }}
             setSlideWidth={setSlideWidth}
             setIsSwipeSlideToLeft={setIsSwipeSlideToLeft}
