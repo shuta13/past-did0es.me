@@ -8,7 +8,7 @@ const Work: React.FC<{
   setIsWorksActive: (isWorksActive: boolean) => void;
   setIsContactActive: (isContactActive: boolean) => void;
   data: Response["data"];
-}> = props => {
+}> = (props) => {
   const { setIsMenuReset, setIsWorksActive, setIsContactActive, data } = props;
 
   useEffect(() => {
