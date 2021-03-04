@@ -6,9 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --fix './{components,pages,store}/**/*.{ts,tsx}'",
-    "format": "prettier --write './{index.tsx,components,pages,store}/**/*.{ts,tsx}'",
-    "tcm": "tcm -p 'components/**/*.module.scss'"
+    "lint": "eslint --fix 'src/{components,pages,store}/**/*.{ts,tsx}'",
+    "format": "prettier --write 'src/{index.tsx,components,pages,store}/**/*.{ts,tsx}'",
+    "tcm": "tcm -p 'src/components/**/*.module.scss'"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",

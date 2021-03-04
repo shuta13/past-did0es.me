@@ -1,4 +1,4 @@
-import styles from "./ImagePostProcess.module.scss";
+import styles from "./index.module.scss";
 import React, { useRef, useEffect, useState } from "react";
 import Router from "next/router";
 import {
@@ -10,13 +10,13 @@ import {
   Mesh,
   Vector2,
   TextureLoader,
-  Clock
+  Clock,
 } from "three";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const vert = require("../shaders/ImagePostProcess/index.vert");
+const vert = require("./index.vert");
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const frag = require("../shaders/ImagePostProcess/index.frag");
+const frag = require("./index.frag");
 
 type AnimateParams = {
   scene: Scene;
@@ -42,7 +42,7 @@ const ImagePostProcess: React.FC<{
     width: 0,
     height: 0,
     imageWidth: 0,
-    imageHeight: 0
+    imageHeight: 0,
   };
   let isNeedsStopAnimate = false;
   const parentRef = useRef<HTMLDivElement>(null);
@@ -57,7 +57,7 @@ const ImagePostProcess: React.FC<{
     const aspectRatio = config.width / config.height;
     const scene = {
       width: 0,
-      height: 0
+      height: 0,
     };
     if (config.width >= config.height) {
       scene.width = 2.0;
@@ -83,7 +83,7 @@ const ImagePostProcess: React.FC<{
     renderer,
     uniforms,
     clock,
-    image
+    image,
   }: AnimateParams) => {
     if (isNeedsStopAnimate) return;
     animationFrameId = requestAnimationFrame(() =>
@@ -123,26 +123,26 @@ const ImagePostProcess: React.FC<{
       const uniforms = {
         time: {
           type: "f",
-          value: 0.0
+          value: 0.0,
         },
         resolution: {
           type: "v2",
-          value: new Vector2(config.width, config.height)
+          value: new Vector2(config.width, config.height),
         },
         texture: {
           type: "t",
-          value: new TextureLoader().load(textureImage)
+          value: new TextureLoader().load(textureImage),
         },
         textureSize: {
           type: "v2",
-          value: new Vector2(config.imageWidth, config.imageHeight)
-        }
+          value: new Vector2(config.imageWidth, config.imageHeight),
+        },
       };
       const geometry = new PlaneBufferGeometry(2, 2);
       const material = new RawShaderMaterial({
         uniforms: uniforms,
         vertexShader: vert.default,
-        fragmentShader: frag.default
+        fragmentShader: frag.default,
       });
       const mesh = new Mesh(geometry, material);
       scene.add(mesh);

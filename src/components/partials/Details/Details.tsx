@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import DetailsInfo from "./DetailsInfo";
 
-import ImagePostProcess from "../../common/ImagePostProcess";
+import ImagePostProcess from "../../shaders/ImagePostProcess";
 import { Response } from "../../../shared/types/Response";
 
 const Details: React.FC<{
