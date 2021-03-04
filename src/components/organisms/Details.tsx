@@ -3,12 +3,12 @@ import Head from "next/head";
 import DetailsInfo from "../molecules/DetailsInfo";
 
 import ImagePostProcess from "../shaders/ImagePostProcess";
-import { Response } from "../../shared/types/Response";
+import { IResponse } from "../../shared/types/Response";
 
 const Details: React.FC<{
   name: string | string[];
   isRouteChange: boolean;
-  data: Response["data"];
+  data: IResponse["data"];
 }> = ({ name, isRouteChange, data }) => {
   return (
     <div className="container">

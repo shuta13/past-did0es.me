@@ -2,13 +2,13 @@ import { GetStaticProps } from "next";
 import React, { useEffect } from "react";
 import { Carousel } from "../../components/organisms/Carousel";
 import { END_POINT_URL } from "../../config";
-import { Response } from "../../shared/types/Response";
+import { IResponse } from "../../shared/types/Response";
 
 const Work: React.FC<{
   setIsMenuReset: (isMenuReset: boolean) => void;
   setIsWorksActive: (isWorksActive: boolean) => void;
   setIsContactActive: (isContactActive: boolean) => void;
-  data: Response["data"];
+  data: IResponse["data"];
 }> = (props) => {
   const { setIsMenuReset, setIsWorksActive, setIsContactActive, data } = props;
 
@@ -28,7 +28,7 @@ const Work: React.FC<{
 
 export const getStaticProps = async () => {
   const res = await fetch(`${END_POINT_URL}/api/v1`);
-  const data: Response["data"] = await res.json();
+  const data: IResponse["data"] = await res.json();
   return { props: { data } };
 };
 

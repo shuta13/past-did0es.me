@@ -1,18 +1,22 @@
 import React from "react";
+import { IResponse } from "../../shared/types/Response";
 
 import styles from "./DetailsInfo.module.scss";
 import { TextAnimation } from "./TextAnimation";
 
-type InfoParams = {
+type StringOrBoolean = string | boolean;
+
+// TODO: IResponse の型持ってきたい
+interface DetailsInfoParams {
   title: string;
   date: string;
   tags: string;
   desc: string;
   link: string;
   isRouteChange: boolean;
-};
+}
 
-const DetailsInfo: React.FC<InfoParams> = (props) => {
+const DetailsInfo: React.FC<DetailsInfoParams> = (props) => {
   const { title, date, tags, desc, link, isRouteChange } = props;
   return (
     <>

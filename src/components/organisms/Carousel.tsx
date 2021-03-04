@@ -2,11 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./Carousel.module.scss";
 import { Slide } from "../molecules/Slide";
 import { Pagination } from "../molecules/Pagination";
-import { Response } from "../../shared/types/Response";
+import { IResponse } from "../../shared/types/Response";
 
 export const Carousel: React.FC<{
   setIsMenuReset: (setIsMenuReset: boolean) => void;
-  data: Response["data"];
+  data: IResponse["data"];
 }> = (props) => {
   const { setIsMenuReset, data } = props;
   const [currentSlideNumber, setCurrentSlideNumber] = useState(1);

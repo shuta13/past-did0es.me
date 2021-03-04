@@ -1,4 +1,4 @@
-export interface Response {
+export interface IResponse {
   data: {
     id: number;
     img: string;

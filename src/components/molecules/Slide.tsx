@@ -2,10 +2,10 @@ import styles from "./Slide.module.scss";
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { TextAnimation } from "./TextAnimation";
-import { Response } from "../../shared/types/Response";
+import { IResponse } from "../../shared/types/Response";
 
 interface Props {
-  work: Response["data"][0];
+  work: IResponse["data"][0];
   style: React.CSSProperties;
   setSlideWidth: (slideWidth: number) => void;
   setIsSwipeSlideToLeft: (isSwipeSlideToLeft: boolean) => void;
@@ -14,7 +14,7 @@ interface Props {
   setIsMenuReset: (isMenuReset: boolean) => void;
 }
 
-export const Slide: React.FC<Props> = props => {
+export const Slide: React.FC<Props> = (props) => {
   const {
     work,
     style,
@@ -22,7 +22,7 @@ export const Slide: React.FC<Props> = props => {
     setIsSwipeSlideToLeft,
     setIsSwipeSlideToRight,
     currentSlideNumber,
-    setIsMenuReset
+    setIsMenuReset,
   } = props;
   const [startMousePosition, setStartMousePosition] = useState(0);
   const [isFirstDragCaptured, setIsFirstDragCaptured] = useState(false);
