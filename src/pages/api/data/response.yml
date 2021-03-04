@@ -1,0 +1,101 @@
+---
+- id: 1
+  img: maraviglia-archives.jpg
+  pathname: maraviglia-archives
+  info:
+    title: Maraviglia
+    date: Apr. 11, 2020
+    tags: Website
+    desc: ""
+    subDesc: ""
+    link: https://maraviglia.now.sh
+- id: 2
+  img: rev.jpg
+  pathname: rev
+  info:
+    title: Re:V
+    date: July 29, 2020
+    tags: Audio Visualizer App
+    desc: ""
+    subDesc: ""
+    link: https://re-v.vercel.app
+- id: 3
+  img: garelly.jpg
+  pathname: garelly
+  info:
+    title: GARELLY
+    date: May 25, 2019
+    tags: Website
+    desc: ""
+    subDesc: ""
+    link: https://garelly.did0es.me
+- id: 4
+  img: atelier.jpg
+  pathname: atelier
+  info:
+    title: atelier
+    date: Apr. 18, 2020
+    tags: Website
+    desc: ""
+    subDesc: ""
+    link: https://did0es-atelier.vercel.app/
+- id: 5
+  img: vue-tsx-keyframes.jpg
+  pathname: vue-tsx-keyframes
+  info:
+    title: vue-tsx-keyframes
+    date: Feb. 23, 2020
+    tags: Cheap Node Package
+    desc: ""
+    subDesc: ""
+    link: https://github.com/shuta13/vue-tsx-keyframes
+- id: 6
+  img: candy.jpg
+  pathname: candy
+  info:
+    title: Candy
+    date: Feb. 23, 2020
+    tags: Web Service
+    desc: ""
+    subDesc: ""
+    link: https://candy.ac
+- id: 7
+  img: elevenback-fc2019-flyer.jpg
+  pathname: elevenback-fc2019-flyer
+  info:
+    title: ElevenBack FC2019 Flyer
+    date: Nov. 30, 2019
+    tags: Flyer
+    desc: ""
+    subDesc: ""
+    link: https://techblog.elevenback.co.jp/entry/2019/11/08/145616
+- id: 8
+  img: rakunote.jpg
+  pathname: rakunote
+  info:
+    title: RAKUNOTE (beta)
+    date: sep. 23, 2020
+    tags: Web Service
+    desc: ""
+    subDesc: ""
+    link: https://www.rakunote.app/
+- id: 9
+  img: tambourine-podcast-site.jpg
+  pathname: tambourine-podcast-site
+  info:
+    title: tambourine podcast site
+    date: Feb. 23, 2020
+    tags: Podcast
+    desc: ""
+    subDesc: ""
+    link: https://developers.tam-bourine.co.jp/entry/2019/12/19/190000
+- id: 10
+  img: veginning.jpg
+  pathname: veginning
+  info:
+    title: Veginning
+    date: Jan. 10, 2020
+    tags: Future Bass
+    desc: ""
+    subDesc: ""
+    link: https://youtu.be/J_CrAM6PEwQ

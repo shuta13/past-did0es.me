@@ -1,6 +1,7 @@
 import { GetStaticProps } from "next";
 import React, { useEffect } from "react";
 import { Carousel } from "../../components/organisms/Carousel";
+import { END_POINT_URL } from "../../config";
 import { Response } from "../../shared/types/Response";
 
 const Work: React.FC<{
@@ -26,7 +27,7 @@ const Work: React.FC<{
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch("https://did0es.me/api/v1");
+  const res = await fetch(`${END_POINT_URL}/api/v1`);
   const data: Response["data"] = await res.json();
   return { props: { data } };
 };

@@ -1,14 +1,14 @@
 import React from "react";
-import { GetStaticProps } from "next";
 
 import Details from "../../components/partials/Details/Details";
 import { useRouter } from "next/router";
 import { Response } from "../../shared/types/Response";
+import { END_POINT_URL } from "../../config";
 
 const DetailsHome: React.FC<{
   isRouteChange: boolean;
   data: Response["data"];
-}> = props => {
+}> = (props) => {
   const router = useRouter();
   const { isRouteChange, data } = props;
   const { name } = router.query;
@@ -23,14 +23,14 @@ const DetailsHome: React.FC<{
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch("https://did0es.me/api/v1");
+  const res = await fetch(`${END_POINT_URL}/api/v1`);
   const data: Response["data"] = await res.json();
-  const paths = data.map(d => `/works/${d.pathname}`);
+  const paths = data.map((d) => `/works/${d.pathname}`);
   return { paths, fallback: false };
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch("https://did0es.me/api/v1");
+  const res = await fetch(`${END_POINT_URL}/api/v1`);
   const data: Response["data"] = await res.json();
   return { props: { data } };
 };
