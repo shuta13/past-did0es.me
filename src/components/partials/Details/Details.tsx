@@ -12,7 +12,7 @@ const Details: React.FC<{
 }> = ({ name, isRouteChange, data }) => {
   return (
     <div className="container">
-      {data.map(res => (
+      {data.map((res) => (
         <React.Fragment key={res.img}>
           {res.img.split(".")[0] === name && (
             <>
@@ -26,7 +26,6 @@ const Details: React.FC<{
                 date={res.info.date}
                 tags={res.info.tags}
                 desc={res.info.desc}
-                subDesc={res.info.subDesc}
                 link={res.info.link}
                 isRouteChange={isRouteChange}
               />

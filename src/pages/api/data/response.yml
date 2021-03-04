@@ -7,7 +7,6 @@
     date: Apr. 11, 2020
     tags: Website
     desc: ""
-    subDesc: ""
     link: https://maraviglia.now.sh
 - id: 2
   img: rev.jpg
@@ -17,7 +16,6 @@
     date: July 29, 2020
     tags: Audio Visualizer App
     desc: ""
-    subDesc: ""
     link: https://re-v.vercel.app
 - id: 3
   img: garelly.jpg
@@ -27,7 +25,6 @@
     date: May 25, 2019
     tags: Website
     desc: ""
-    subDesc: ""
     link: https://garelly.did0es.me
 - id: 4
   img: atelier.jpg
@@ -37,7 +34,6 @@
     date: Apr. 18, 2020
     tags: Website
     desc: ""
-    subDesc: ""
     link: https://did0es-atelier.vercel.app/
 - id: 5
   img: vue-tsx-keyframes.jpg
@@ -47,7 +43,6 @@
     date: Feb. 23, 2020
     tags: Cheap Node Package
     desc: ""
-    subDesc: ""
     link: https://github.com/shuta13/vue-tsx-keyframes
 - id: 6
   img: candy.jpg
@@ -57,7 +52,6 @@
     date: Feb. 23, 2020
     tags: Web Service
     desc: ""
-    subDesc: ""
     link: https://candy.ac
 - id: 7
   img: elevenback-fc2019-flyer.jpg
@@ -67,7 +61,6 @@
     date: Nov. 30, 2019
     tags: Flyer
     desc: ""
-    subDesc: ""
     link: https://techblog.elevenback.co.jp/entry/2019/11/08/145616
 - id: 8
   img: rakunote.jpg
@@ -77,7 +70,6 @@
     date: sep. 23, 2020
     tags: Web Service
     desc: ""
-    subDesc: ""
     link: https://www.rakunote.app/
 - id: 9
   img: tambourine-podcast-site.jpg
@@ -87,7 +79,6 @@
     date: Feb. 23, 2020
     tags: Podcast
     desc: ""
-    subDesc: ""
     link: https://developers.tam-bourine.co.jp/entry/2019/12/19/190000
 - id: 10
   img: veginning.jpg
@@ -97,5 +88,4 @@
     date: Jan. 10, 2020
     tags: Future Bass
     desc: ""
-    subDesc: ""
     link: https://youtu.be/J_CrAM6PEwQ

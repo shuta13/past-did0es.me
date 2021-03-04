@@ -1,7 +1,6 @@
 import React from "react";
 
 import styles from "./DetailsInfo.module.scss";
-import { ExternalLink } from "../../common/ExternalLink";
 import { TextAnimation } from "../../molecules/TextAnimation";
 
 type InfoParams = {
@@ -9,13 +8,12 @@ type InfoParams = {
   date: string;
   tags: string;
   desc: string;
-  subDesc?: string;
   link: string;
   isRouteChange: boolean;
 };
 
-const DetailsInfo: React.FC<InfoParams> = props => {
-  const { title, date, tags, desc, subDesc, link, isRouteChange } = props;
+const DetailsInfo: React.FC<InfoParams> = (props) => {
+  const { title, date, tags, desc, link, isRouteChange } = props;
   return (
     <>
       <div className={styles.wrap}>
@@ -34,17 +32,6 @@ const DetailsInfo: React.FC<InfoParams> = props => {
           text={tags}
           fontSize={2.5}
         />
-        {/* <div className={styles.title}>{info.title}</div>
-      <div className={styles.date}>{info.date}</div>
-      <div className={styles.tags}>{info.tags}</div> */}
-        {/* <div className={styles.description}>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: info.desc.replace(/\s/g, "<br />")
-          }}
-        />
-      </div> */}
-        {/* {info.subDesc && <div className={styles.text}>{info.subDesc}</div>} */}
       </div>
       <div className={styles.link_wrap}>
         <TextAnimation
