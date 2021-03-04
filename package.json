@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint --fix 'src/{components,pages,store}/**/*.{ts,tsx}'",
     "format": "prettier --write 'src/{index.tsx,components,pages,store}/**/*.{ts,tsx}'",
-    "tcm": "tcm -p 'src/components/**/*.module.scss'"
+    "tcm": "tcm -p 'src/components/**/*.module.scss'",
+    "datagen": "src/scripts/generate-response-json.sh"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",

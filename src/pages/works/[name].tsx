@@ -25,7 +25,9 @@ const DetailsHome: React.FC<{
 export const getStaticPaths = async () => {
   const res = await fetch(`${END_POINT_URL}/api/v1`);
   const data: IResponse["data"] = await res.json();
-  const paths = data.map((d) => `/works/${d.pathname}`);
+  const paths = data.map((d) => ({
+    params: { name: `/works/${d.pathname}` },
+  }));
   return { paths, fallback: false };
 };
 
