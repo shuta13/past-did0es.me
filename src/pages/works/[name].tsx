@@ -1,6 +1,6 @@
 import React from "react";
 
-import Details from "../../components/partials/Details/Details";
+import Details from "../../components/organisms/Details";
 import { useRouter } from "next/router";
 import { Response } from "../../shared/types/Response";
 import { END_POINT_URL } from "../../config";
