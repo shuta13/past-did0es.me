@@ -1,3 +1,8 @@
 export interface Response {
-  data: { [key: string]: any }[];
+  data: {
+    id: number;
+    img: string;
+    pathname: string;
+    info: { [key: string]: string };
+  }[];
 }
