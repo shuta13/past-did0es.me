@@ -1,7 +1,7 @@
 import "../shared/styles/global.scss";
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import Loading from "../components/common/Loading";
+import Loading from "../components/organisms/Loading";
 import { Menu, sleep } from "../components/molecules/Menu";
 import { Header } from "../components/molecules/Header";
 import { AppProps } from "next/app";

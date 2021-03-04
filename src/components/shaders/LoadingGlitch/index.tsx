@@ -1,4 +1,4 @@
-import styles from "./LoadingCanvas.module.scss";
+import styles from "./index.module.scss";
 import React, { useEffect } from "react";
 import {
   Scene,
@@ -9,14 +9,14 @@ import {
   Mesh,
   Vector2,
   TextureLoader,
-  Clock
+  Clock,
 } from "three";
 import { sleep } from "../../molecules/Menu";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const vert = require("../../shaders/Loading/index.vert");
+const vert = require("./index.vert");
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const frag = require("../../shaders/Loading/index.frag");
+const frag = require("./index.frag");
 
 type AnimateParams = {
   scene: Scene;
@@ -30,9 +30,9 @@ type HandleResizeParams = {
   renderer: WebGLRenderer;
 };
 
-const LoadingCanvas: React.FC<{
+const LoadingGlitch: React.FC<{
   setIsLoaded: (isLoaded: boolean) => void;
-}> = props => {
+}> = (props) => {
   // let isNeedsStopUpdate = false;
   // const handleResize = ({ geometry, renderer }: HandleResizeParams) => {
   //   isNeedsStopUpdate = true;
@@ -46,7 +46,7 @@ const LoadingCanvas: React.FC<{
     camera,
     renderer,
     uniforms,
-    clock
+    clock,
   }: AnimateParams) => {
     // if (isNeedsStopUpdate) return;
     animationFrameId = requestAnimationFrame(() =>
@@ -71,14 +71,14 @@ const LoadingCanvas: React.FC<{
     const uniforms = {
       time: {
         type: "f",
-        value: 0.0
+        value: 0.0,
       },
       resolution: {
         type: "v2",
         value: new Vector2(
           width * window.devicePixelRatio,
           height * window.devicePixelRatio
-        )
+        ),
       },
       texture: {
         type: "t",
@@ -86,7 +86,7 @@ const LoadingCanvas: React.FC<{
           const material = new RawShaderMaterial({
             uniforms: uniforms,
             vertexShader: vert.default,
-            fragmentShader: frag.default
+            fragmentShader: frag.default,
           });
           const mesh = new Mesh(geometry, material);
           scene.add(mesh);
@@ -95,7 +95,7 @@ const LoadingCanvas: React.FC<{
           const renderer = new WebGLRenderer({
             canvas: canvas,
             antialias: false,
-            alpha: false
+            alpha: false,
           });
           renderer.setClearColor(0x1d1d1d);
           renderer.setPixelRatio(window.devicePixelRatio);
@@ -108,8 +108,8 @@ const LoadingCanvas: React.FC<{
           animate({ scene, camera, renderer, uniforms, clock });
           // delay
           sleep(2000).then(() => setIsLoaded(true));
-        })
-      }
+        }),
+      },
     };
   };
   useEffect(() => {
@@ -118,4 +118,4 @@ const LoadingCanvas: React.FC<{
   return <canvas ref={onCanvasLoaded} className={styles.wrap} />;
 };
 
-export default LoadingCanvas;
+export default LoadingGlitch;

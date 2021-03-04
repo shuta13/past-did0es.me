@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Main } from "../components/organisms/Main";
+import { Main } from "../components/shaders/Main";
 import { ProfileSlide } from "../components/organisms/ProfileSlide";
 
 export type CanvasColor = "theme" | "twilight" | "monotone";

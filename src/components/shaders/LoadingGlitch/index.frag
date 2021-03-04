@@ -110,6 +110,7 @@ void main() {
   // glitch
   if (mod(uv.y, 1.) < 1. && mod(time, 2.) < 2. * snoise(vec3(uv.x, uv.x, time * 2.))) {
     uv = vec2(floor(uv * size)) / size;
+    size += 10.;
     color += texture2D(texture, vec2(uv.x - .01, uv.y)).rgb;
   } else {
     color.r += texture2D(texture, vec2(uv.x + .015, uv.y)).r;

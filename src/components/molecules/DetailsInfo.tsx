@@ -1,7 +1,7 @@
 import React from "react";
 
 import styles from "./DetailsInfo.module.scss";
-import { TextAnimation } from "../../molecules/TextAnimation";
+import { TextAnimation } from "./TextAnimation";
 
 type InfoParams = {
   title: string;
